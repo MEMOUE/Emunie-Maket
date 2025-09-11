@@ -1,0 +1,16 @@
+# Requirements minimal pour EmunieBack
+Django==5.2.6
+djangorestframework==3.15.2
+djangorestframework-simplejwt==5.3.0
+django-cors-headers==4.3.1
+django-filter==23.3
+django-mptt==0.15.0
+django-phonenumber-field[phonenumbers]==7.1.0
+django-extensions==3.2.3
+python-decouple==3.8
+Pillow==10.0.1
+
+# Dépendances optionnelles (installer si besoin)
+# requests==2.31.0
+# celery==5.3.2
+# redis==5.0.1
