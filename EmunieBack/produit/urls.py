@@ -13,10 +13,20 @@ urlpatterns = [
     path('<uuid:pk>/', views.AdDetailView.as_view(), name='ad_detail'),
     path('<uuid:pk>/update/', views.AdUpdateView.as_view(), name='ad_update'),
     path('<uuid:pk>/delete/', views.AdDeleteView.as_view(), name='ad_delete'),
+    path('<uuid:pk>/statistics/', views.ad_statistics, name='ad_statistics'),
     
     # === GESTION UTILISATEUR ===
     # Annonces de l'utilisateur connecté
     path('my-ads/', views.MyAdsView.as_view(), name='my_ads'),
+    
+    # === FAVORIS ===
+    # Gestion des favoris
+    path('favorites/', views.FavoriteListView.as_view(), name='favorite_list'),
+    path('favorites/toggle/', views.FavoriteToggleView.as_view(), name='favorite_toggle'),
+    
+    # === SIGNALEMENTS ===
+    # Signaler une annonce
+    path('<uuid:ad_id>/report/', views.AdReportCreateView.as_view(), name='ad_report'),
     
     # === CATÉGORIES ===
     # CRUD catégories

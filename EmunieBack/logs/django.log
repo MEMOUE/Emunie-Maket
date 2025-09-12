@@ -1,0 +1,60 @@
+INFO 2025-09-11 15:52:57,965 autoreload 15300 4204 Watching for file changes with StatReloader
+INFO 2025-09-11 15:53:31,727 basehttp 15300 15748 "GET /api/redoc/ HTTP/1.1" 200 730
+INFO 2025-09-11 15:53:32,966 basehttp 15300 15748 "GET /api/schema/ HTTP/1.1" 200 78874
+INFO 2025-09-11 15:53:46,711 basehttp 15300 15748 "GET /api/docs/ HTTP/1.1" 200 4912
+INFO 2025-09-11 15:53:47,102 basehttp 15300 15748 "GET /api/schema/ HTTP/1.1" 200 163945
+WARNING 2025-09-11 15:54:28,125 log 15300 15748 Unauthorized: /api/v1/users/profile/stats/
+WARNING 2025-09-11 15:54:28,127 basehttp 15300 15748 "GET /api/v1/users/profile/stats/ HTTP/1.1" 401 58
+WARNING 2025-09-11 15:57:18,420 log 15300 15748 Bad Request: /api/v1/users/register/
+WARNING 2025-09-11 15:57:18,423 basehttp 15300 15748 "POST /api/v1/users/register/ HTTP/1.1" 400 145
+INFO 2025-09-11 15:58:02,176 basehttp 15300 15748 "GET /api/schema/ HTTP/1.1" 200 78874
+INFO 2025-09-11 16:00:36,105 basehttp 15300 7908 "GET /api/redoc/ HTTP/1.1" 200 730
+INFO 2025-09-11 16:00:36,853 basehttp 15300 7908 "GET /api/schema/ HTTP/1.1" 200 78874
+INFO 2025-09-11 19:37:54,634 basehttp 15300 14220 "GET /api/docs/ HTTP/1.1" 200 4912
+INFO 2025-09-11 19:37:54,871 basehttp 15300 14220 "GET /api/schema/ HTTP/1.1" 200 163945
+INFO 2025-09-12 15:14:46,387 basehttp 15300 15804 "GET /api/docs/ HTTP/1.1" 200 4912
+INFO 2025-09-12 15:14:46,792 basehttp 15300 15804 "GET /api/schema/ HTTP/1.1" 200 163945
+INFO 2025-09-12 15:16:38,321 autoreload 15300 4204 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:16:50,947 autoreload 2532 2656 Watching for file changes with StatReloader
+INFO 2025-09-12 15:16:59,632 autoreload 2532 2656 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:17:00,523 autoreload 20644 1192 Watching for file changes with StatReloader
+INFO 2025-09-12 15:17:03,260 autoreload 20644 1192 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:17:03,920 autoreload 20548 18500 Watching for file changes with StatReloader
+INFO 2025-09-12 15:17:14,282 autoreload 20548 18500 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:17:15,093 autoreload 13868 20640 Watching for file changes with StatReloader
+INFO 2025-09-12 15:17:20,476 basehttp 13868 17716 "GET /api/docs/ HTTP/1.1" 200 4912
+INFO 2025-09-12 15:17:20,987 basehttp 13868 17716 "GET /api/schema/ HTTP/1.1" 200 163945
+INFO 2025-09-12 15:17:27,274 basehttp 13868 17716 "GET /api/docs/ HTTP/1.1" 200 4912
+INFO 2025-09-12 15:17:27,549 basehttp 13868 17716 "GET /api/schema/ HTTP/1.1" 200 163945
+INFO 2025-09-12 15:17:43,642 autoreload 13868 20640 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:17:44,474 autoreload 3968 8332 Watching for file changes with StatReloader
+INFO 2025-09-12 15:17:46,084 autoreload 3968 8332 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:17:46,808 autoreload 20768 20320 Watching for file changes with StatReloader
+INFO 2025-09-12 15:18:02,440 basehttp 20768 6284 "GET /api/docs/ HTTP/1.1" 200 4912
+INFO 2025-09-12 15:18:02,759 basehttp 20768 6284 "GET /api/schema/ HTTP/1.1" 200 163945
+INFO 2025-09-12 15:19:30,896 autoreload 20768 20320 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:19:31,903 autoreload 16244 1304 Watching for file changes with StatReloader
+INFO 2025-09-12 15:19:36,692 autoreload 16244 1304 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:19:37,352 autoreload 11136 18104 Watching for file changes with StatReloader
+INFO 2025-09-12 15:19:39,941 autoreload 11136 18104 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:19:40,602 autoreload 10860 18820 Watching for file changes with StatReloader
+INFO 2025-09-12 15:19:46,436 autoreload 10860 18820 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:19:47,085 autoreload 1596 12696 Watching for file changes with StatReloader
+INFO 2025-09-12 15:19:48,644 autoreload 1596 12696 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:19:49,286 autoreload 3444 19436 Watching for file changes with StatReloader
+INFO 2025-09-12 15:19:50,870 autoreload 3444 19436 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:19:51,547 autoreload 17876 7880 Watching for file changes with StatReloader
+INFO 2025-09-12 15:19:57,448 autoreload 17876 7880 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:19:58,093 autoreload 7300 14072 Watching for file changes with StatReloader
+INFO 2025-09-12 15:20:00,706 autoreload 7300 14072 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:20:01,430 autoreload 19420 12052 Watching for file changes with StatReloader
+INFO 2025-09-12 15:20:04,052 autoreload 19420 12052 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:20:04,793 autoreload 8548 21060 Watching for file changes with StatReloader
+INFO 2025-09-12 15:20:27,110 autoreload 8548 21060 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:20:27,954 autoreload 18416 19432 Watching for file changes with StatReloader
+INFO 2025-09-12 15:20:36,228 basehttp 18416 18936 "GET /api/docs/ HTTP/1.1" 200 4912
+INFO 2025-09-12 15:20:36,429 basehttp 18416 18936 "GET /api/schema/ HTTP/1.1" 200 163945
+INFO 2025-09-12 15:20:58,392 autoreload 18416 19432 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:20:59,100 autoreload 18420 1232 Watching for file changes with StatReloader
+INFO 2025-09-12 15:21:03,863 autoreload 18420 1232 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
+INFO 2025-09-12 15:21:04,514 autoreload 9980 16464 Watching for file changes with StatReloader
