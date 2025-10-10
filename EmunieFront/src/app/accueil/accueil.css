@@ -1,0 +1,74 @@
+/* Animation pour le titre */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+/* Limitation de lignes pour les textes */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Styles pour le dropdown des sous-catégories */
+.category-dropdown {
+  scrollbar-width: thin;
+  scrollbar-color: #f97316 #f3f4f6;
+  z-index: 100;
+  position: absolute;
+}
+
+.category-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.category-dropdown::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+.category-dropdown::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 10px;
+}
+
+.category-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* Assurer que la carte parent passe au-dessus lors du hover */
+.group:hover {
+  z-index: 100 !important;
+  position: relative;
+}
+
+/* Boutons PrimeNG personnalisés */
+::ng-deep .p-button {
+  border-radius: 0.5rem !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .p-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animate-fade-in {
+    font-size: 2rem;
+  }
+}

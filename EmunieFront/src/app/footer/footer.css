@@ -1,0 +1,41 @@
+/* Animations pour les liens */
+footer a {
+  position: relative;
+  display: inline-block;
+}
+
+footer a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(to right, #f97316, #16a34a);
+  transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+  width: 100%;
+}
+
+/* Style pour l'input email */
+footer input[type="email"]:focus {
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* Animation pour les icônes sociales */
+footer .social-icon {
+  transition: all 0.3s ease;
+}
+
+footer .social-icon:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+}

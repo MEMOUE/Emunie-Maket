@@ -1,1 +1,175 @@
-<p>footer works!</p>
+<footer class="bg-gray-900 text-gray-300">
+  <!-- Section principale -->
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+
+      <!-- À propos -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white w-12 h-12 rounded-xl flex items-center justify-center">
+            <i class="pi pi-shopping-bag text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent">
+              Emunie-Market
+            </h3>
+          </div>
+        </div>
+        <p class="text-gray-400 mb-6 leading-relaxed">
+          La première marketplace 100% ivoirienne pour acheter et vendre en toute confiance.
+          Rejoignez notre communauté et profitez d'une expérience unique.
+        </p>
+
+        <!-- Réseaux sociaux -->
+        <div class="flex gap-3">
+          @for (social of socialLinks; track social.icon) {
+            <a
+              [href]="social.url"
+              class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition-all {{ social.color }} hover:scale-110">
+              <i class="pi {{ social.icon }}"></i>
+            </a>
+          }
+        </div>
+      </div>
+
+      <!-- Liens rapides -->
+      <div>
+        <h4 class="text-white font-bold text-lg mb-4">Liens Rapides</h4>
+        <ul class="space-y-3">
+          @for (link of quickLinks; track link.label) {
+            <li>
+              <a
+                [href]="link.url"
+                class="text-gray-400 hover:text-orange-500 transition-colors flex items-center gap-2 group">
+                <i class="pi pi-angle-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                {{ link.label }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Catégories -->
+      <div>
+        <h4 class="text-white font-bold text-lg mb-4">Catégories</h4>
+        <ul class="space-y-3">
+          @for (category of categories; track category.label) {
+            <li>
+              <a
+                [href]="category.url"
+                class="text-gray-400 hover:text-orange-500 transition-colors flex items-center gap-2 group">
+                <i class="pi pi-angle-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                {{ category.label }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h4 class="text-white font-bold text-lg mb-4">Support</h4>
+        <ul class="space-y-3">
+          @for (item of support; track item.label) {
+            <li>
+              <a
+                [href]="item.url"
+                class="text-gray-400 hover:text-orange-500 transition-colors flex items-center gap-2 group">
+                <i class="pi pi-angle-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                {{ item.label }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="mt-12 pt-8 border-t border-gray-800">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h4 class="text-white font-bold text-xl mb-2">Restez informé !</h4>
+          <p class="text-gray-400">Abonnez-vous à notre newsletter pour recevoir nos meilleures offres</p>
+        </div>
+        <div class="flex gap-2">
+          <input
+            type="email"
+            placeholder="Votre adresse email..."
+            class="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors">
+          <button class="px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all whitespace-nowrap">
+            S'abonner
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Méthodes de paiement -->
+    <div class="mt-8 pt-8 border-t border-gray-800">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-center md:text-left">
+          <p class="text-gray-400 text-sm mb-2">Méthodes de paiement acceptées</p>
+          <div class="flex gap-3 flex-wrap justify-center md:justify-start">
+            @for (method of paymentMethods; track method.name) {
+              <div class="bg-gray-800 px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-700 transition-colors">
+                <i class="pi {{ method.icon }} text-orange-500"></i>
+                <span class="text-xs text-gray-400">{{ method.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="mt-8 pt-8 border-t border-gray-800">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+        <div class="flex items-center justify-center md:justify-start gap-3">
+          <div class="bg-orange-500/10 w-12 h-12 rounded-full flex items-center justify-center">
+            <i class="pi pi-phone text-orange-500"></i>
+          </div>
+          <div>
+            <p class="text-gray-500 text-xs">Appelez-nous</p>
+            <p class="text-white font-semibold">+225 07 XX XX XX XX</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center md:justify-start gap-3">
+          <div class="bg-green-500/10 w-12 h-12 rounded-full flex items-center justify-center">
+            <i class="pi pi-envelope text-green-500"></i>
+          </div>
+          <div>
+            <p class="text-gray-500 text-xs">Écrivez-nous</p>
+            <p class="text-white font-semibold">contact@emunie-market.ci</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center md:justify-start gap-3">
+          <div class="bg-blue-500/10 w-12 h-12 rounded-full flex items-center justify-center">
+            <i class="pi pi-map-marker text-blue-500"></i>
+          </div>
+          <div>
+            <p class="text-gray-500 text-xs">Visitez-nous</p>
+            <p class="text-white font-semibold">Abidjan, Côte d'Ivoire</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="bg-gray-950 py-6">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+        <p class="text-gray-500">
+          © {{ currentYear }} <span class="text-orange-500 font-semibold">Emunie-Market</span>. Tous droits réservés.
+        </p>
+        <div class="flex gap-6 flex-wrap justify-center">
+          <a href="#" class="text-gray-500 hover:text-orange-500 transition-colors">Conditions</a>
+          <a href="#" class="text-gray-500 hover:text-orange-500 transition-colors">Confidentialité</a>
+          <a href="#" class="text-gray-500 hover:text-orange-500 transition-colors">Cookies</a>
+          <a href="#" class="text-gray-500 hover:text-orange-500 transition-colors">Plan du site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
