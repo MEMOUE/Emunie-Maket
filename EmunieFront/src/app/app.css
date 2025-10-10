@@ -1,0 +1,65 @@
+/* Configuration de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+}
+
+/* Personnalisation PrimeNG Input */
+::ng-deep .p-inputtext {
+  font-family: inherit;
+  background-color: white !important;
+  color: #1f2937 !important;
+}
+
+::ng-deep .p-inputtext::placeholder {
+  color: #9ca3af !important;
+  opacity: 1;
+}
+
+::ng-deep .p-inputtext:focus {
+  box-shadow: 0 0 0 0.2rem rgba(249, 115, 22, 0.2);
+  border-color: #f97316;
+  background-color: white !important;
+}
+
+/* Style pour l'icône de recherche */
+::ng-deep .p-input-icon-left > i {
+  color: #9ca3af;
+}
+
+::ng-deep .p-input-icon-left > .p-inputtext {
+  padding-left: 2.5rem;
+}
+
+/* Bouton Orange personnalisé */
+::ng-deep .p-button {
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .p-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation smooth pour le menu mobile */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav {
+  animation: slideDown 0.3s ease;
+}
