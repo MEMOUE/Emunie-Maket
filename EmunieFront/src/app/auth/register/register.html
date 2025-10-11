@@ -1,1 +1,219 @@
-<p>register works!</p>
+<div class="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-2xl w-full">
+
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <div class="flex justify-center mb-4">
+        <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
+          <i class="pi pi-user-plus text-3xl"></i>
+        </div>
+      </div>
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">
+        Créer un compte
+      </h2>
+      <p class="text-gray-600">
+        Rejoignez Emunie-Market et commencez à vendre ou acheter dès maintenant
+      </p>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+
+      <!-- Messages -->
+      @if (successMessage) {
+        <p-message severity="success" [text]="successMessage" styleClass="w-full mb-4"></p-message>
+      }
+      @if (errorMessage) {
+        <p-message severity="error" [text]="errorMessage" styleClass="w-full mb-4"></p-message>
+      }
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-6">
+
+        <!-- Nom d'utilisateur -->
+        <div>
+          <label for="username" class="block text-sm font-semibold text-gray-700 mb-2">
+            Nom d'utilisateur *
+          </label>
+          <input
+            pInputText
+            id="username"
+            formControlName="username"
+            placeholder="Choisissez un nom d'utilisateur"
+            [class.p-invalid]="isFieldInvalid('username')"
+            class="w-full" />
+          @if (getFieldError('username')) {
+            <small class="text-red-500 mt-1 block">{{ getFieldError('username') }}</small>
+          }
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+            Adresse email *
+          </label>
+          <input
+            pInputText
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="votre@email.com"
+            [class.p-invalid]="isFieldInvalid('email')"
+            class="w-full" />
+          @if (getFieldError('email')) {
+            <small class="text-red-500 mt-1 block">{{ getFieldError('email') }}</small>
+          }
+        </div>
+
+        <!-- Téléphone -->
+        <div>
+          <label for="phone_number" class="block text-sm font-semibold text-gray-700 mb-2">
+            Numéro de téléphone *
+          </label>
+          <input
+            pInputText
+            id="phone_number"
+            formControlName="phone_number"
+            placeholder="+225 07 XX XX XX XX"
+            [class.p-invalid]="isFieldInvalid('phone_number')"
+            class="w-full" />
+          @if (getFieldError('phone_number')) {
+            <small class="text-red-500 mt-1 block">{{ getFieldError('phone_number') }}</small>
+          }
+        </div>
+
+        <!-- Prénom et Nom -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="first_name" class="block text-sm font-semibold text-gray-700 mb-2">
+              Prénom *
+            </label>
+            <input
+              pInputText
+              id="first_name"
+              formControlName="first_name"
+              placeholder="Votre prénom"
+              [class.p-invalid]="isFieldInvalid('first_name')"
+              class="w-full" />
+            @if (getFieldError('first_name')) {
+              <small class="text-red-500 mt-1 block">{{ getFieldError('first_name') }}</small>
+            }
+          </div>
+
+          <div>
+            <label for="last_name" class="block text-sm font-semibold text-gray-700 mb-2">
+              Nom *
+            </label>
+            <input
+              pInputText
+              id="last_name"
+              formControlName="last_name"
+              placeholder="Votre nom"
+              [class.p-invalid]="isFieldInvalid('last_name')"
+              class="w-full" />
+            @if (getFieldError('last_name')) {
+              <small class="text-red-500 mt-1 block">{{ getFieldError('last_name') }}</small>
+            }
+          </div>
+        </div>
+
+        <!-- Mot de passe -->
+        <div>
+          <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">
+            Mot de passe *
+          </label>
+          <p-password
+            id="password"
+            formControlName="password"
+            placeholder="Minimum 8 caractères"
+            [toggleMask]="true"
+            [feedback]="true"
+            [class.p-invalid]="isFieldInvalid('password')"
+            styleClass="w-full"
+            inputStyleClass="w-full">
+          </p-password>
+          @if (getFieldError('password')) {
+            <small class="text-red-500 mt-1 block">{{ getFieldError('password') }}</small>
+          }
+        </div>
+
+        <!-- Confirmation mot de passe -->
+        <div>
+          <label for="password_confirm" class="block text-sm font-semibold text-gray-700 mb-2">
+            Confirmer le mot de passe *
+          </label>
+          <p-password
+            id="password_confirm"
+            formControlName="password_confirm"
+            placeholder="Confirmez votre mot de passe"
+            [toggleMask]="true"
+            [feedback]="false"
+            [class.p-invalid]="isFieldInvalid('password_confirm')"
+            styleClass="w-full"
+            inputStyleClass="w-full">
+          </p-password>
+          @if (getFieldError('password_confirm')) {
+            <small class="text-red-500 mt-1 block">{{ getFieldError('password_confirm') }}</small>
+          }
+        </div>
+
+        <!-- Conditions -->
+        <div class="bg-orange-50 rounded-lg p-4 border border-orange-200">
+          <p class="text-sm text-gray-600">
+            En créant un compte, vous acceptez nos
+            <a href="#" class="text-orange-600 hover:text-orange-700 font-semibold">Conditions d'utilisation</a>
+            et notre
+            <a href="#" class="text-orange-600 hover:text-orange-700 font-semibold">Politique de confidentialité</a>
+          </p>
+        </div>
+
+        <!-- Bouton Submit -->
+        <p-button
+          type="submit"
+          label="Créer mon compte"
+          icon="pi pi-user-plus"
+          [loading]="loading"
+          [disabled]="loading"
+          styleClass="w-full bg-gradient-to-r from-orange-500 to-orange-600 border-0 hover:from-orange-600 hover:to-orange-700 font-semibold py-3">
+        </p-button>
+
+        <!-- Lien vers Login -->
+        <div class="text-center pt-4 border-t border-gray-200">
+          <p class="text-gray-600">
+            Vous avez déjà un compte ?
+            <a routerLink="/login" class="text-orange-600 hover:text-orange-700 font-semibold ml-1">
+              Se connecter
+            </a>
+          </p>
+        </div>
+      </form>
+
+      <!-- Options de connexion sociale -->
+      <div class="mt-6">
+        <div class="relative">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-gray-300"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="px-4 bg-white text-gray-500">Ou continuez avec</span>
+          </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-2 gap-3">
+          <button
+            type="button"
+            class="w-full inline-flex justify-center items-center gap-2 py-3 px-4 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 transition-colors">
+            <i class="pi pi-google text-xl text-red-500"></i>
+            <span class="text-sm font-medium text-gray-700">Google</span>
+          </button>
+
+          <button
+            type="button"
+            class="w-full inline-flex justify-center items-center gap-2 py-3 px-4 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 transition-colors">
+            <i class="pi pi-facebook text-xl text-blue-600"></i>
+            <span class="text-sm font-medium text-gray-700">Facebook</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

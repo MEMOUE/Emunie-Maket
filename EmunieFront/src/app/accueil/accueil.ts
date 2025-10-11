@@ -71,7 +71,7 @@ export class Accueil {
       ]
     },
     {
-      icon: 'pi-couch',
+      icon: 'pi-map-marker',
       name: 'Maison & Jardin',
       count: 11587,
       color: 'from-cyan-500 to-cyan-600',
@@ -126,20 +126,6 @@ export class Accueil {
       ]
     },
     {
-      icon: 'pi-user-plus',
-      name: 'Demandes d’emploi (Candidatures)', // Précision que ce sont des candidatures
-      count: 619,
-      color: 'from-indigo-500 to-indigo-600',
-      subcategories: [
-        'Autres demandes d’emploi',
-        'Emplois de Maison (Nounou, Nettoyage)', // Terminologie locale
-        'Chauffeur, Coursier & Conducteur',
-        'Restauration & Cuisine',
-        'Sécurité & Gardiennage',
-
-      ]
-    },
-    {
       icon: 'pi-wrench',
       name: 'Matériaux & Équipements Pro',
       count: 1489,
@@ -167,20 +153,20 @@ export class Accueil {
       ]
     },
     {
-      icon: 'pi-paw',
-      name: 'Animaux & Élevage', // Élevage pour le côté commercial
+      icon: 'pi-globe', // Représente clairement les animaux
+      name: 'Animaux & Élevage',
       count: 0,
-      color: 'from-brown-500 to-brown-600',
+      color: 'from-amber-500 to-orange-600', // Couleurs chaleureuses et naturelles
       subcategories: [
         'Chiens & Chiots',
         'Chats & Chatons',
-        'Volailles (Poulets, Pintades...)', // Très important
+        'Volailles (Poulets, Pintades...)',
         'Bovins & Petits ruminants (Moutons, Chèvres)',
         'Accessoires & Aliments pour animaux',
         'Autres animaux (Exotiques, Aquatiques)',
-
       ]
     }
+
   ];
   featuredProducts = [
     {

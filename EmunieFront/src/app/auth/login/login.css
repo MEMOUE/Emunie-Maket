@@ -1,0 +1,117 @@
+/* Styles pour les inputs PrimeNG */
+::ng-deep .p-inputtext {
+  border-radius: 0.5rem;
+  border: 2px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .p-inputtext:hover {
+  border-color: #f97316;
+}
+
+::ng-deep .p-inputtext:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+::ng-deep .p-inputtext.p-invalid {
+  border-color: #ef4444;
+}
+
+/* Input avec icône */
+.relative input {
+  padding-left: 3rem;
+}
+
+/* Styles pour le password */
+::ng-deep .p-password {
+  width: 100%;
+}
+
+::ng-deep .p-password input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+}
+
+::ng-deep .p-password input:hover {
+  border-color: #f97316;
+}
+
+::ng-deep .p-password input:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+::ng-deep .p-password.p-invalid input {
+  border-color: #ef4444;
+}
+
+/* Checkbox */
+::ng-deep .p-checkbox .p-checkbox-box {
+  border: 2px solid #e5e7eb;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .p-checkbox .p-checkbox-box:hover {
+  border-color: #f97316;
+}
+
+::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+  background-color: #f97316;
+  border-color: #f97316;
+}
+
+/* Boutons */
+::ng-deep .p-button {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .p-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+}
+
+/* Messages */
+::ng-deep .p-message {
+  border-radius: 0.5rem;
+  border-width: 2px;
+}
+
+/* Animation d'entrée */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-white {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Boutons sociaux */
+button[type="button"] {
+  transition: all 0.3s ease;
+}
+
+button[type="button"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .bg-white {
+    padding: 1.5rem;
+  }
+}
