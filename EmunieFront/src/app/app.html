@@ -72,11 +72,23 @@
       <!-- Actions à droite -->
       <div class="flex items-center gap-3">
 
-        <!-- User/Connexion -->
-        <button class="hidden sm:flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium">
-          <i class="pi pi-user"></i>
-          <span>Connexion</span>
-        </button>
+        <!-- Boutons Inscription/Connexion Desktop -->
+        <div class="hidden sm:flex items-center gap-2">
+          <button
+            [routerLink]="'/register'"
+            class="px-4 py-2 bg-white border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-colors font-medium flex items-center gap-2">
+            <i class="pi pi-user-plus"></i>
+            <span>Inscription</span>
+          </button>
+
+          <button
+            [routerLink]="'/login'"
+            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium flex items-center gap-2">
+            <i class="pi pi-sign-in"></i>
+            <span>Connexion</span>
+          </button>
+
+        </div>
 
         <!-- Menu Mobile -->
         <button
@@ -139,47 +151,72 @@
           <div class="border-t border-gray-200"></div>
         </div>
 
-        <!-- Connexion Mobile -->
-        <div class="px-2">
-          <button class="w-full px-4 py-3 bg-green-600 text-white rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-green-700 transition-colors">
-            <i class="pi pi-user"></i>
+        <!-- Boutons Connexion/Inscription Mobile -->
+        <div class="px-2 space-y-2">
+          <button
+            [routerLink]="'/register'"
+            class="px-4 py-2 bg-white border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-colors font-medium flex items-center gap-2">
+            <i class="pi pi-user-plus"></i>
+            <span>Inscription</span>
+          </button>
+
+          <button
+            [routerLink]="'/login'"
+            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium flex items-center gap-2">
+            <i class="pi pi-sign-in"></i>
             <span>Connexion</span>
           </button>
+
         </div>
       </nav>
+
     }
   </div>
 </header>
 
-<!-- Barre de Recherche et Vendre -->
-<div class="bg-gradient-to-r from-orange-50 to-green-50 border-b border-gray-200 shadow-sm">
-  <div class="max-w-7xl mx-auto px-4 py-4">
-    <div class="flex items-center gap-4 flex-wrap sm:flex-nowrap">
+<!-- Barre de Recherche et Vendre - Ajustée et Centrée -->
+<div class="bg-gradient-to-r from-orange-50 to-green-50 py-8">
+  <div class="max-w-6xl mx-auto px-4 flex justify-center">
 
-      <!-- Champ de Recherche -->
-      <div class="flex-1 w-full sm:w-auto">
-        <span class="p-input-icon-left w-full">
-          <i class="pi pi-search text-gray-400"></i>
+    <!-- Container principal centré -->
+    <div class="grid grid-cols-1 lg:grid-cols-10 gap-6 items-center w-full lg:w-3/4">
+
+      <!-- Champ de Recherche élargi -->
+      <div class="lg:col-span-7">
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <i class="pi pi-search text-gray-500 text-lg"></i>
+          </div>
           <input
-            pInputText
             type="text"
-            placeholder="Rechercher un article, une catégorie..."
-            class="w-full pl-10 pr-4 py-3 border-2 border-white bg-white rounded-lg focus:border-orange-500 shadow-sm hover:shadow-md transition-shadow" />
-        </span>
+            placeholder="Rechercher une annonce..."
+            class="w-full pl-12 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg
+                   text-white placeholder-gray-500 focus:outline-none focus:border-orange-500
+                   transition-colors">
+        </div>
       </div>
 
-      <!-- Bouton Vendre -->
-      <button
-        (click)="setActiveTab('vendre')"
-        [class.ring-2]="activeTab() === 'vendre'"
-        [class.ring-orange-500]="activeTab() === 'vendre'"
-        class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:from-orange-600 hover:to-orange-700 shadow-md hover:shadow-lg transition-all">
-        <i class="pi pi-plus-circle text-lg"></i>
-        <span>Publier une annonce</span>
-      </button>
+      <!-- Bouton Publier une annonce -->
+      <div class="lg:col-span-3">
+        <button
+          (click)="setActiveTab('vendre')"
+          [class.ring-4]="activeTab() === 'vendre'"
+          [class.ring-orange-300]="activeTab() === 'vendre'"
+          class="w-full px-4 py-3 bg-gradient-to-r from-orange-500 to-orange-600
+                 text-white rounded-full font-bold text-base
+                 flex items-center justify-center gap-3
+                 hover:from-orange-600 hover:to-orange-700
+                 shadow-lg hover:shadow-xl
+                 transition-all duration-200">
+          <i class="pi pi-plus-circle text-xl"></i>
+          <span>Publier une annonce</span>
+        </button>
+      </div>
+
     </div>
   </div>
 </div>
+
 
 <!-- Contenu -->
 <router-outlet />

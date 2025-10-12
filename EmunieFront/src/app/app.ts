@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { Footer } from './footer/footer';
@@ -10,8 +11,10 @@ import { Footer } from './footer/footer';
   imports: [
     RouterOutlet,
     CommonModule,
+    FormsModule,
     ButtonModule,
     InputTextModule,
+    RouterLink,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -20,6 +23,7 @@ export class App {
   protected readonly title = signal('Emunie-Market');
   protected activeTab = signal('accueil');
   protected mobileMenuOpen = signal(false);
+  protected searchQuery = signal('');
 
   constructor(private router: Router) {}
 
@@ -33,5 +37,10 @@ export class App {
 
   toggleMobileMenu() {
     this.mobileMenuOpen.update(value => !value);
+  }
+
+  onSearch() {
+    console.log('Recherche:', this.searchQuery());
+    // Implémenter la logique de recherche
   }
 }
