@@ -1,0 +1,201 @@
+/* Styles PrimeNG personnalisés pour le dashboard */
+
+/* Tabs */
+::ng-deep .p-tabview .p-tabview-nav {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link:hover {
+  color: #f97316;
+  background: #fff7ed;
+}
+
+::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  color: #f97316;
+  border-bottom: 3px solid #f97316;
+  background: transparent;
+}
+
+::ng-deep .p-tabview .p-tabview-panels {
+  padding: 0;
+  background: transparent;
+}
+
+/* Table */
+::ng-deep .p-datatable .p-datatable-header {
+  background: transparent;
+  border: none;
+  padding: 1rem 0;
+}
+
+::ng-deep .p-datatable .p-datatable-thead > tr > th {
+  background: #f9fafb;
+  border: none;
+  font-weight: 700;
+  color: #374151;
+  padding: 1rem;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr {
+  background: white;
+  transition: all 0.2s ease;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr:hover {
+  background: #fff7ed;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+  border: none;
+  border-bottom: 1px solid #f3f4f6;
+  padding: 1rem;
+  color: #1f2937;
+}
+
+::ng-deep .p-datatable-striped .p-datatable-tbody > tr:nth-child(even) {
+  background: #fafafa;
+}
+
+::ng-deep .p-datatable-striped .p-datatable-tbody > tr:nth-child(even):hover {
+  background: #fff7ed;
+}
+
+/* Tags */
+::ng-deep .p-tag {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Dialog */
+::ng-deep .p-dialog {
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+::ng-deep .p-dialog .p-dialog-content {
+  padding: 1.5rem;
+  background: #fafafa;
+}
+
+::ng-deep .p-dialog .p-dialog-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-white {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Cards hover effect */
+.bg-white:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* Buttons */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Stats cards animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.stat-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Premium badge */
+.premium-badge {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}-header {
+   background: linear-gradient(to right, #f97316, #ea580c);
+   color: white;
+   border-radius: 1rem 1rem 0 0;
+   padding: 1.5rem;
+   font-weight: 700;
+   font-size: 1.25rem;
+ }
+
+::ng-deep .p-dialog .p-dialog-header .p-dialog-header-icon {
+  color: white;
+}
+
+::ng-deep .p-dialog .p-dialog-header .p-dialog-header-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+

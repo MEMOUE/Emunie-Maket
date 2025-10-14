@@ -6,7 +6,7 @@
     <div class="flex items-center justify-between h-20">
 
       <!-- Logo Section -->
-      <div class="flex items-center gap-3 cursor-pointer group">
+      <div class="flex items-center gap-3 cursor-pointer group" (click)="setActiveTab('accueil')">
         <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white w-12 h-12 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
           <i class="pi pi-shopping-bag text-2xl"></i>
         </div>
@@ -37,7 +37,7 @@
           class="group relative text-gray-700 font-medium hover:text-orange-500 transition-colors py-2">
           <span class="flex items-center gap-2">
             <i class="pi pi-shopping-cart"></i>
-            Acheter Pub
+            Acheter
           </span>
           @if (activeTab() === 'acheter') {
             <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-500 to-green-600"></span>
@@ -72,23 +72,64 @@
       <!-- Actions à droite -->
       <div class="flex items-center gap-3">
 
-        <!-- Boutons Inscription/Connexion Desktop -->
-        <div class="hidden sm:flex items-center gap-2">
-          <button
-            [routerLink]="'/register'"
-            class="px-4 py-2 bg-white border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-colors font-medium flex items-center gap-2">
-            <i class="pi pi-user-plus"></i>
-            <span>Inscription</span>
-          </button>
+        <!-- SI CONNECTÉ -->
+        @if (isAuthenticated()) {
+          <!-- Desktop -->
+          <div class="hidden sm:flex items-center gap-3">
+            <!-- Avatar et menu utilisateur -->
+            <div class="flex items-center gap-2 px-3 py-2 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors cursor-pointer group">
+              @if (currentUser()?.avatar) {
+                <img [src]="currentUser()?.avatar" alt="Avatar" class="w-8 h-8 rounded-full object-cover border-2 border-orange-500">
+              } @else {
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-sm">
+                  {{ getUserInitials() }}
+                </div>
+              }
+              <div class="flex flex-col">
+                <span class="text-sm font-semibold text-gray-800">{{ currentUser()?.first_name }}</span>
+                @if (currentUser()?.is_premium_active) {
+                  <span class="text-xs text-orange-600 font-semibold flex items-center gap-1">
+                    <i class="pi pi-star-fill text-xs"></i>
+                    Premium
+                  </span>
+                }
+              </div>
+            </div>
 
-          <button
-            [routerLink]="'/login'"
-            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium flex items-center gap-2">
-            <i class="pi pi-sign-in"></i>
-            <span>Connexion</span>
-          </button>
+            <!-- Bouton Dashboard -->
+            <button
+              [routerLink]="'/dashboard'"
+              class="px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg hover:from-orange-600 hover:to-orange-700 transition-colors font-medium flex items-center gap-2">
+              <i class="pi pi-chart-line"></i>
+              <span>Dashboard</span>
+            </button>
 
-        </div>
+            <!-- Bouton Déconnexion -->
+            <button
+              (click)="logout()"
+              class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium flex items-center gap-2">
+              <i class="pi pi-sign-out"></i>
+              <span>Déconnexion</span>
+            </button>
+          </div>
+        } @else {
+          <!-- SI NON CONNECTÉ - Desktop -->
+          <div class="hidden sm:flex items-center gap-2">
+            <button
+              [routerLink]="'/register'"
+              class="px-4 py-2 bg-white border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-colors font-medium flex items-center gap-2">
+              <i class="pi pi-user-plus"></i>
+              <span>Inscription</span>
+            </button>
+
+            <button
+              [routerLink]="'/login'"
+              class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium flex items-center gap-2">
+              <i class="pi pi-sign-in"></i>
+              <span>Connexion</span>
+            </button>
+          </div>
+        }
 
         <!-- Menu Mobile -->
         <button
@@ -151,37 +192,74 @@
           <div class="border-t border-gray-200"></div>
         </div>
 
-        <!-- Boutons Connexion/Inscription Mobile -->
-        <div class="px-2 space-y-2">
+        <!-- Actions Mobile -->
+        @if (isAuthenticated()) {
+          <!-- Profil utilisateur -->
+          <div class="px-4 py-3 bg-orange-50 rounded-lg">
+            <div class="flex items-center gap-3 mb-3">
+              @if (currentUser()?.avatar) {
+                <img [src]="currentUser()?.avatar" alt="Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-orange-500">
+              } @else {
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold">
+                  {{ getUserInitials() }}
+                </div>
+              }
+              <div>
+                <p class="font-semibold text-gray-800">{{ currentUser()?.full_name }}</p>
+                <p class="text-xs text-gray-600">{{ currentUser()?.email }}</p>
+                @if (currentUser()?.is_premium_active) {
+                  <span class="text-xs text-orange-600 font-semibold flex items-center gap-1">
+                    <i class="pi pi-star-fill text-xs"></i>
+                    Premium
+                  </span>
+                }
+              </div>
+            </div>
+          </div>
+
           <button
-            [routerLink]="'/register'"
-            class="px-4 py-2 bg-white border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-colors font-medium flex items-center gap-2">
-            <i class="pi pi-user-plus"></i>
-            <span>Inscription</span>
+            [routerLink]="'/dashboard'"
+            (click)="mobileMenuOpen.set(false)"
+            class="w-full px-4 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-medium flex items-center gap-2 justify-center">
+            <i class="pi pi-chart-line"></i>
+            <span>Mon Dashboard</span>
           </button>
 
           <button
-            [routerLink]="'/login'"
-            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium flex items-center gap-2">
-            <i class="pi pi-sign-in"></i>
-            <span>Connexion</span>
+            (click)="logout()"
+            class="w-full px-4 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium flex items-center gap-2 justify-center">
+            <i class="pi pi-sign-out"></i>
+            <span>Déconnexion</span>
           </button>
+        } @else {
+          <!-- Boutons Connexion/Inscription Mobile -->
+          <div class="px-2 space-y-2">
+            <button
+              [routerLink]="'/register'"
+              (click)="mobileMenuOpen.set(false)"
+              class="w-full px-4 py-3 bg-white border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-colors font-medium flex items-center gap-2 justify-center">
+              <i class="pi pi-user-plus"></i>
+              <span>Inscription</span>
+            </button>
 
-        </div>
+            <button
+              [routerLink]="'/login'"
+              (click)="mobileMenuOpen.set(false)"
+              class="w-full px-4 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium flex items-center gap-2 justify-center">
+              <i class="pi pi-sign-in"></i>
+              <span>Connexion</span>
+            </button>
+          </div>
+        }
       </nav>
-
     }
   </div>
 </header>
 
-<!-- Barre de Recherche et Vendre - Ajustée et Centrée -->
+<!-- Barre de Recherche et Vendre -->
 <div class="bg-gradient-to-r from-orange-50 to-green-50 py-8">
   <div class="max-w-6xl mx-auto px-4 flex justify-center">
-
-    <!-- Container principal centré -->
     <div class="grid grid-cols-1 lg:grid-cols-10 gap-6 items-center w-full lg:w-3/4">
-
-      <!-- Champ de Recherche élargi -->
       <div class="lg:col-span-7">
         <div class="relative">
           <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -190,13 +268,12 @@
           <input
             type="text"
             placeholder="Rechercher une annonce..."
-            class="w-full pl-12 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg
-                   text-white placeholder-gray-500 focus:outline-none focus:border-orange-500
+            class="w-full pl-12 pr-4 py-3 bg-white border-2 border-gray-200 rounded-lg
+                   text-gray-800 placeholder-gray-500 focus:outline-none focus:border-orange-500
                    transition-colors">
         </div>
       </div>
 
-      <!-- Bouton Publier une annonce -->
       <div class="lg:col-span-3">
         <button
           (click)="setActiveTab('vendre')"
@@ -212,11 +289,9 @@
           <span>Publier une annonce</span>
         </button>
       </div>
-
     </div>
   </div>
 </div>
-
 
 <!-- Contenu -->
 <router-outlet />
