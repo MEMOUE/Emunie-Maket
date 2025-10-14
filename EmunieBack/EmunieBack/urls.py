@@ -11,9 +11,9 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 from drf_spectacular.views import (
-    SpectacularAPIView, 
-    SpectacularSwaggerView, 
-    SpectacularRedocView  # ✅ Ajout de ReDoc
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+    SpectacularRedocView
 )
 
 urlpatterns = [
@@ -21,42 +21,51 @@ urlpatterns = [
     # ADMINISTRATION
     # ==========================================
     path('admin/', admin.site.urls),
-    
+
     # ==========================================
-    # AUTHENTIFICATION JWT
+    # AUTHENTIFICATION (Token + JWT)
     # ==========================================
-    path('api/auth/', include([
+    # Authentification Token (pour Angular)
+    path('api/auth/', include('user.auth_urls')),  # ✅ AJOUTÉ
+
+    # Authentification JWT (alternative)
+    path('api/jwt/', include([
         path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
         path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
         path('verify/', TokenVerifyView.as_view(), name='token_verify'),
     ])),
-    
+
     # ==========================================
-    # API ENDPOINTS
+    # API ENDPOINTS (compatibles avec Angular)
     # ==========================================
+    # URLs directes pour Angular
+    path('api/user/', include('user.urls')),  # ✅ AJOUTÉ
+    path('api/produit/', include('produit.urls')),  # ✅ AJOUTÉ
+    path('api/monetisation/', include('monetisation.urls')),  # ✅ AJOUTÉ
+
+    # URLs versionnées (optionnel, gardé pour compatibilité)
     path('api/v1/', include([
         path('users/', include('user.urls')),
     ])),
-
     path('api/v2/', include([
         path('ads/', include('produit.urls')),
     ])),
     path('api/v3/', include([
         path('monetisation/', include('monetisation.urls')),
     ])),
-    
+
     # ==========================================
     # DOCUMENTATION API
     # ==========================================
     # Schéma OpenAPI
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
-    
+
     # Interface Swagger UI
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-    
+
     # Interface ReDoc (alternative à Swagger)
     path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
-    
+
     # ==========================================
     # REDIRECTIONS POUR LA RACINE
     # ==========================================
@@ -69,15 +78,9 @@ urlpatterns = [
 if settings.DEBUG:
     # Servir les fichiers media en développement
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    
+
     # Servir les fichiers statiques en développement
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    
-    # Optionnel: Django Debug Toolbar (à décommenter si installé)
-    # import debug_toolbar
-    # urlpatterns = [
-    #     path('__debug__/', include(debug_toolbar.urls)),
-    # ] + urlpatterns
 
 # ==========================================
 # GESTION DES ERREURS (PRODUCTION)
