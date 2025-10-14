@@ -25,17 +25,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # Third party apps
     'rest_framework',
+    'rest_framework.authtoken',  # ✅ AJOUTÉ pour Token Authentication
     'rest_framework_simplejwt',
     'corsheaders',
     'django_filters',
     'mptt',
     'phonenumber_field',
     'django_extensions',
-    'drf_spectacular',  # ✅ Ajouté pour Swagger
-    
+    'drf_spectacular',
+
     # Local apps
     'user',
     'produit',
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # ✅ DOIT être en PREMIER
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -83,6 +84,7 @@ DATABASES = {
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # ✅ Token Auth en PREMIER
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
@@ -98,6 +100,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',  # ✅ Pour tester dans le navigateur
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
@@ -111,8 +114,10 @@ SIMPLE_JWT = {
     'UPDATE_LAST_LOGIN': True,
 }
 
-# CORS configuration
+# CORS configuration - ✅ AJOUTÉ Angular port 4200
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",  # ✅ Angular dev server
+    "http://127.0.0.1:4200",  # ✅ Angular dev server
     "http://localhost:3000",  # React dev server
     "http://127.0.0.1:3000",
     "http://localhost:8080",  # Vue dev server
@@ -120,6 +125,29 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+# ✅ AJOUTÉ - Méthodes HTTP autorisées
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+# ✅ AJOUTÉ - Headers autorisés
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
