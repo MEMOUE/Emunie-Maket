@@ -4,47 +4,48 @@ from . import views
 app_name = 'produit'
 
 urlpatterns = [
+    # === DONNÉES DE BASE ===
+    # Catégories et villes
+    path('categories/', views.get_categories, name='categories'),
+    path('cities/', views.get_cities, name='cities'),
+
     # === ANNONCES PRINCIPALES ===
     # Liste et création d'annonces
-    path('', views.AdListView.as_view(), name='ad_list'),
-    path('create/', views.AdCreateView.as_view(), name='ad_create'),
-    
+    path('ads/', views.AdListView.as_view(), name='ad_list'),
+    path('ads/create/', views.AdCreateView.as_view(), name='ad_create'),
+    path('ads/check-limit/', views.check_ad_limit, name='check_ad_limit'),
+
     # CRUD d'annonces spécifiques
-    path('<uuid:pk>/', views.AdDetailView.as_view(), name='ad_detail'),
-    path('<uuid:pk>/update/', views.AdUpdateView.as_view(), name='ad_update'),
-    path('<uuid:pk>/delete/', views.AdDeleteView.as_view(), name='ad_delete'),
-    path('<uuid:pk>/statistics/', views.ad_statistics, name='ad_statistics'),
-    
+    path('ads/<uuid:pk>/', views.AdDetailView.as_view(), name='ad_detail'),
+    path('ads/<uuid:pk>/update/', views.AdUpdateView.as_view(), name='ad_update'),
+    path('ads/<uuid:pk>/delete/', views.AdDeleteView.as_view(), name='ad_delete'),
+    path('ads/<uuid:pk>/statistics/', views.ad_statistics, name='ad_statistics'),
+
     # === GESTION UTILISATEUR ===
     # Annonces de l'utilisateur connecté
     path('my-ads/', views.MyAdsView.as_view(), name='my_ads'),
-    
+
     # === FAVORIS ===
     # Gestion des favoris
     path('favorites/', views.FavoriteListView.as_view(), name='favorite_list'),
     path('favorites/toggle/', views.FavoriteToggleView.as_view(), name='favorite_toggle'),
-    
+
     # === SIGNALEMENTS ===
     # Signaler une annonce
-    path('<uuid:ad_id>/report/', views.AdReportCreateView.as_view(), name='ad_report'),
-    
-    # === CATÉGORIES ===
-    # CRUD catégories
-    path('categories/', views.CategoryListView.as_view(), name='category_list'),
-    path('categories/<int:pk>/', views.CategoryDetailView.as_view(), name='category_detail'),
-    
-    # Attributs de catégories
-    path('categories/<int:category_id>/attributes/', views.CategoryAttributesView.as_view(), name='category_attributes'),
-    
-    # === LOCALISATIONS ===
-    # CRUD localisations
-    path('locations/', views.LocationListView.as_view(), name='location_list'),
-    path('locations/<int:pk>/', views.LocationDetailView.as_view(), name='location_detail'),
-    
-    # === RECHERCHE ET NAVIGATION ===
-    # Recherche
-    path('search/trending/', views.trending_searches, name='trending_searches'),
-    
+    path('ads/<uuid:ad_id>/report/', views.AdReportCreateView.as_view(), name='ad_report'),
+
+    # === PUBLICITÉS PAYANTES ===
+    # Liste et création de publicités
+    path('advertisements/', views.AdvertisementListView.as_view(), name='advertisement_list'),
+    path('advertisements/create/', views.AdvertisementCreateView.as_view(), name='advertisement_create'),
+    path('advertisements/my/', views.MyAdvertisementsView.as_view(), name='my_advertisements'),
+    path('advertisements/<int:pk>/', views.AdvertisementDetailView.as_view(), name='advertisement_detail'),
+    path('advertisements/<int:pk>/statistics/', views.advertisement_statistics, name='advertisement_statistics'),
+
+    # Tracking des publicités
+    path('advertisements/<int:pk>/impression/', views.track_ad_impression, name='track_ad_impression'),
+    path('advertisements/<int:pk>/click/', views.track_ad_click, name='track_ad_click'),
+
     # === DONNÉES PUBLIQUES ===
     # Page d'accueil et données générales
     path('home-data/', views.home_data, name='home_data'),
