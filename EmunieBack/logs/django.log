@@ -58,3 +58,164 @@ INFO 2025-09-12 15:20:58,392 autoreload 18416 19432 C:\Users\konem\projets\Emuni
 INFO 2025-09-12 15:20:59,100 autoreload 18420 1232 Watching for file changes with StatReloader
 INFO 2025-09-12 15:21:03,863 autoreload 18420 1232 C:\Users\konem\projets\Emunie-Maket\EmunieBack\EmunieBack\urls.py changed, reloading.
 INFO 2025-09-12 15:21:04,514 autoreload 9980 16464 Watching for file changes with StatReloader
+INFO 2025-10-12 13:10:16,463 autoreload 26665 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 13:13:20,093 autoreload 26693 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 13:16:35,400 autoreload 26746 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 13:22:26,658 autoreload 26814 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:12:47,818 autoreload 44339 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:13:42,853 autoreload 44386 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:14:32,811 autoreload 44452 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:18:59,452 autoreload 44466 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:22:00,120 autoreload 44497 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:26:25,157 autoreload 44544 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:27:34,948 autoreload 44584 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:28:28,678 autoreload 44616 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:29:44,759 autoreload 44645 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:30:31,806 autoreload 44681 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:31:33,187 autoreload 44734 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:33:41,146 autoreload 44804 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:34:48,419 autoreload 44841 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:37:28,736 autoreload 44856 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:38:18,573 autoreload 44886 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-12 21:39:07,647 basehttp 44886 6202748928 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-12 21:39:08,451 basehttp 44886 6202748928 "GET / HTTP/1.1" 200 4912
+WARNING 2025-10-12 21:39:10,478 log 44886 6219575296 Not Found: /apple-touch-icon-precomposed.png
+WARNING 2025-10-12 21:39:10,479 basehttp 44886 6219575296 "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 3883
+INFO 2025-10-12 21:39:10,535 basehttp 44886 6202748928 "GET /api/schema/ HTTP/1.1" 200 163945
+WARNING 2025-10-12 21:39:10,562 log 44886 6219575296 Not Found: /apple-touch-icon.png
+WARNING 2025-10-12 21:39:10,563 basehttp 44886 6219575296 "GET /apple-touch-icon.png HTTP/1.1" 404 3847
+INFO 2025-10-12 21:43:07,175 basehttp 44886 6202748928 "OPTIONS /api/user/register/ HTTP/1.1" 200 0
+INFO 2025-10-12 21:43:39,245 basehttp 44886 6202748928 "OPTIONS /api/user/register/ HTTP/1.1" 200 0
+INFO 2025-10-12 21:43:53,718 basehttp 44886 6202748928 "OPTIONS /api/user/register/ HTTP/1.1" 200 0
+INFO 2025-10-12 21:43:54,535 basehttp 44886 6202748928 "OPTIONS /api/user/register/ HTTP/1.1" 200 0
+INFO 2025-10-12 21:44:02,789 basehttp 44886 6202748928 "OPTIONS /api/user/register/ HTTP/1.1" 200 0
+INFO 2025-10-12 21:44:03,274 basehttp 44886 6202748928 "OPTIONS /api/user/register/ HTTP/1.1" 200 0
+INFO 2025-10-12 21:44:04,041 basehttp 44886 6202748928 "OPTIONS /api/user/register/ HTTP/1.1" 200 0
+INFO 2025-10-13 14:17:34,637 autoreload 46030 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-13 14:18:40,591 basehttp 46030 6158102528 "OPTIONS /api/user/register/ HTTP/1.1" 200 0
+INFO 2025-10-13 14:19:17,463 basehttp 46030 6158102528 "OPTIONS /api/user/login/ HTTP/1.1" 200 0
+INFO 2025-10-13 14:23:29,275 autoreload 46071 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-13 14:23:57,418 basehttp 46071 6166687744 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-13 14:23:57,591 basehttp 46071 6166687744 "GET /api/schema/ HTTP/1.1" 200 163945
+INFO 2025-10-13 14:23:59,404 basehttp 46071 6166687744 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-13 14:23:59,487 basehttp 46071 6166687744 "GET /api/schema/ HTTP/1.1" 200 163945
+INFO 2025-10-13 14:24:03,427 basehttp 46071 6166687744 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-13 14:24:03,509 basehttp 46071 6166687744 "GET /api/schema/ HTTP/1.1" 200 163945
+INFO 2025-10-13 14:24:05,193 basehttp 46071 6166687744 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-13 14:24:05,216 basehttp 46071 6166687744 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4224
+INFO 2025-10-13 14:24:05,249 basehttp 46071 6183514112 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-13 14:24:05,250 basehttp 46071 6166687744 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-13 14:24:05,250 basehttp 46071 6200340480 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-13 14:24:05,250 basehttp 46071 6250819584 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-13 14:24:05,250 basehttp 46071 6233993216 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-13 14:24:05,251 basehttp 46071 6217166848 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-13 14:24:05,251 basehttp 46071 6183514112 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+WARNING 2025-10-13 14:24:05,262 log 46071 6166687744 Not Found: /favicon.ico
+WARNING 2025-10-13 14:24:05,262 basehttp 46071 6166687744 "GET /favicon.ico HTTP/1.1" 404 3820
+INFO 2025-10-13 14:24:08,957 basehttp 46071 6233993216 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-13 14:24:08,966 basehttp 46071 6217166848 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4224
+INFO 2025-10-13 14:24:29,719 basehttp 46071 6183514112 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4479
+INFO 2025-10-13 14:24:44,027 basehttp 46071 6183514112 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-13 14:24:44,044 basehttp 46071 6183514112 "GET /admin/ HTTP/1.1" 200 21715
+INFO 2025-10-13 14:24:44,050 basehttp 46071 6183514112 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-13 14:24:44,057 basehttp 46071 6183514112 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-13 14:24:44,058 basehttp 46071 6166687744 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-13 14:25:07,026 basehttp 46071 6166687744 "GET /admin/user/emailverification/ HTTP/1.1" 200 21599
+INFO 2025-10-13 14:25:07,035 basehttp 46071 6183514112 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-13 14:25:07,043 basehttp 46071 6217166848 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-13 14:25:07,044 basehttp 46071 6183514112 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-13 14:25:07,044 basehttp 46071 6166687744 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-13 14:25:07,045 basehttp 46071 6250819584 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-13 14:25:07,046 basehttp 46071 6233993216 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-13 14:25:07,048 basehttp 46071 6183514112 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-13 14:25:07,048 basehttp 46071 6217166848 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-13 14:25:07,048 basehttp 46071 6233993216 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-13 14:25:07,051 basehttp 46071 6200340480 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-13 14:25:07,053 basehttp 46071 6250819584 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-10-13 14:25:07,054 basehttp 46071 6166687744 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-13 14:25:07,077 basehttp 46071 6217166848 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-13 14:25:07,077 basehttp 46071 6183514112 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-13 14:25:13,185 basehttp 46071 6200340480 "GET /admin/user/customuser/ HTTP/1.1" 200 25954
+INFO 2025-10-13 14:25:13,195 basehttp 46071 6166687744 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-10-13 14:25:13,198 basehttp 46071 6217166848 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-10-13 14:25:13,199 basehttp 46071 6250819584 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-13 14:25:13,216 basehttp 46071 6183514112 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-13 14:25:28,880 basehttp 46071 6200340480 "GET /admin/user/userrating/ HTTP/1.1" 200 20626
+INFO 2025-10-13 14:25:28,895 basehttp 46071 6166687744 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-13 14:25:31,342 basehttp 46071 6250819584 "GET /admin/produit/category/ HTTP/1.1" 200 20342
+INFO 2025-10-13 14:25:31,353 basehttp 46071 6183514112 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-10-13 14:25:31,357 basehttp 46071 6233993216 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-13 14:25:31,357 basehttp 46071 6200340480 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11973
+INFO 2025-10-13 14:25:37,115 basehttp 46071 6217166848 "GET /admin/produit/ad/ HTTP/1.1" 200 23364
+INFO 2025-10-13 14:25:37,129 basehttp 46071 6250819584 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-13 14:25:45,447 basehttp 46071 6233993216 "GET /admin/user/customuser/ HTTP/1.1" 200 25954
+INFO 2025-10-13 14:25:45,460 basehttp 46071 6200340480 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-13 14:26:28,978 basehttp 46071 6166687744 "GET /admin/user/customuser/ HTTP/1.1" 200 25954
+INFO 2025-10-13 14:26:28,986 basehttp 46071 6183514112 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-13 14:27:57,961 basehttp 46071 6183514112 "GET /admin/user/userrating/ HTTP/1.1" 200 20626
+INFO 2025-10-13 14:27:57,978 basehttp 46071 6183514112 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-13 14:28:01,258 basehttp 46071 6183514112 "GET /admin/user/customuser/ HTTP/1.1" 200 25954
+INFO 2025-10-13 14:28:01,264 basehttp 46071 6200340480 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-14 19:58:09,237 autoreload 47709 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-14 19:58:14,146 basehttp 47709 6194098176 "GET /admin/user/customuser/ HTTP/1.1" 200 25954
+INFO 2025-10-14 19:58:14,167 basehttp 47709 6194098176 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-14 19:58:14,169 basehttp 47709 6210924544 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,170 basehttp 47709 6194098176 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,170 basehttp 47709 6227750912 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,171 basehttp 47709 6244577280 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,171 basehttp 47709 6278230016 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,171 basehttp 47709 6261403648 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,171 basehttp 47709 6210924544 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,172 basehttp 47709 6227750912 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,172 basehttp 47709 6194098176 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,172 basehttp 47709 6278230016 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,173 basehttp 47709 6244577280 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,173 basehttp 47709 6261403648 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,173 basehttp 47709 6227750912 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,174 basehttp 47709 6210924544 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,174 basehttp 47709 6278230016 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,174 basehttp 47709 6194098176 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,174 basehttp 47709 6244577280 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,174 basehttp 47709 6227750912 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,174 basehttp 47709 6261403648 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,198 basehttp 47709 6210924544 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,199 basehttp 47709 6194098176 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,199 basehttp 47709 6278230016 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-10-14 19:58:14,200 basehttp 47709 6244577280 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-10-14 20:18:05,724 autoreload 47709 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py changed, reloading.
+INFO 2025-10-14 20:18:06,116 autoreload 47798 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-14 20:19:18,544 autoreload 47798 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py changed, reloading.
+INFO 2025-10-14 20:19:18,974 autoreload 47837 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-14 20:19:51,542 autoreload 47837 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/user/serializers.py changed, reloading.
+INFO 2025-10-14 20:19:51,886 autoreload 47874 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-14 20:20:11,878 autoreload 47874 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-10-14 20:20:12,128 autoreload 47902 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-14 20:20:30,955 autoreload 47902 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py changed, reloading.
+INFO 2025-10-14 20:20:31,229 autoreload 47925 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-14 20:20:51,223 autoreload 47925 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/urls.py changed, reloading.
+INFO 2025-10-14 20:20:51,477 autoreload 47953 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-14 20:21:30,325 autoreload 47953 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/admin.py changed, reloading.
+INFO 2025-10-14 20:21:30,570 autoreload 47989 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-14 20:23:19,433 autoreload 48052 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-14 20:23:28,165 basehttp 48052 6125219840 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-14 20:23:28,333 basehttp 48052 6125219840 "GET /api/schema/ HTTP/1.1" 200 168709
+INFO 2025-10-14 20:24:08,226 basehttp 48052 6125219840 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-14 20:24:08,371 basehttp 48052 6125219840 "GET /api/schema/ HTTP/1.1" 200 168709
+WARNING 2025-10-14 20:24:38,212 log 48052 6125219840 Bad Request: /api/v2/ads/favorites/toggle/
+WARNING 2025-10-14 20:24:38,213 basehttp 48052 6125219840 "POST /api/v2/ads/favorites/toggle/ HTTP/1.1" 400 24
+INFO 2025-10-14 20:27:30,407 basehttp 48052 6125219840 "GET /admin/user/customuser/ HTTP/1.1" 200 25102
+INFO 2025-10-14 20:27:30,418 basehttp 48052 6125219840 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-14 20:27:31,819 basehttp 48052 6125219840 "GET /admin/user/customuser/ HTTP/1.1" 200 25102
+INFO 2025-10-14 20:27:31,833 basehttp 48052 6125219840 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-14 20:27:54,444 basehttp 48052 6125219840 "GET /admin/monetisation/usersubscription/ HTTP/1.1" 200 21154
+INFO 2025-10-14 20:27:54,458 basehttp 48052 6125219840 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-14 20:27:58,480 basehttp 48052 6125219840 "GET /admin/monetisation/transaction/ HTTP/1.1" 200 21899
+INFO 2025-10-14 20:27:58,493 basehttp 48052 6125219840 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-14 20:28:03,465 basehttp 48052 6125219840 "GET /admin/produit/adimage/ HTTP/1.1" 200 20308
+INFO 2025-10-14 20:28:03,476 basehttp 48052 6142046208 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-10-14 20:28:03,479 basehttp 48052 6125219840 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-14 20:28:03,480 basehttp 48052 6142046208 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-10-14 20:28:15,503 basehttp 48052 6142046208 "GET /admin/produit/favorite/ HTTP/1.1" 200 19577
+INFO 2025-10-14 20:28:15,518 basehttp 48052 6125219840 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-14 20:28:17,017 basehttp 48052 6125219840 "GET /admin/produit/advertisement/ HTTP/1.1" 200 21479
+INFO 2025-10-14 20:28:17,030 basehttp 48052 6142046208 "GET /admin/jsi18n/ HTTP/1.1" 200 8634

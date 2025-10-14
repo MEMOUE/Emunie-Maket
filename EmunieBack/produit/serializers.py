@@ -1,39 +1,11 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from .models import (
-    Category, Location, Ad, AdImage, AdVideo, AdAttribute, 
-    AdAttributeValue, AdAttributeChoice, Favorite, AdReport
+    Ad, AdImage, AdVideo, Advertisement, Favorite, AdReport,
+    CATEGORY_CHOICES, CITY_CHOICES
 )
 
 User = get_user_model()
-
-class CategorySerializer(serializers.ModelSerializer):
-    """Serializer pour les catégories"""
-    children = serializers.SerializerMethodField()
-    ads_count = serializers.SerializerMethodField()
-    
-    class Meta:
-        model = Category
-        fields = ('id', 'name', 'slug', 'icon', 'parent', 'children', 'ads_count', 'order')
-    
-    def get_children(self, obj):
-        if obj.children.exists():
-            return CategorySerializer(obj.children.filter(is_active=True), many=True).data
-        return []
-    
-    def get_ads_count(self, obj):
-        return obj.ads.filter(status='active').count()
-
-class LocationSerializer(serializers.ModelSerializer):
-    """Serializer pour les localisations"""
-    ads_count = serializers.SerializerMethodField()
-    
-    class Meta:
-        model = Location
-        fields = ('id', 'name', 'parent', 'latitude', 'longitude', 'ads_count')
-    
-    def get_ads_count(self, obj):
-        return obj.ads.filter(status='active').count()
 
 class AdImageSerializer(serializers.ModelSerializer):
     """Serializer pour les images d'annonces"""
@@ -49,57 +21,26 @@ class AdVideoSerializer(serializers.ModelSerializer):
         fields = ('id', 'video', 'thumbnail', 'caption', 'duration', 'created_at')
         read_only_fields = ('id', 'created_at')
 
-class AdAttributeChoiceSerializer(serializers.ModelSerializer):
-    """Serializer pour les choix d'attributs"""
-    class Meta:
-        model = AdAttributeChoice
-        fields = ('id', 'value', 'order')
-
-class AdAttributeSerializer(serializers.ModelSerializer):
-    """Serializer pour les attributs d'annonces"""
-    choices = AdAttributeChoiceSerializer(many=True, read_only=True)
-    
-    class Meta:
-        model = AdAttribute
-        fields = ('id', 'name', 'slug', 'input_type', 'is_required', 'is_filterable', 'choices')
-
-class AdAttributeSerializer(serializers.ModelSerializer):
-    """Serializer pour les attributs d'annonces"""
-    choices = AdAttributeChoiceSerializer(many=True, read_only=True)
-    
-    class Meta:
-        model = AdAttribute
-        fields = ('id', 'name', 'slug', 'input_type', 'is_required', 'is_filterable', 'choices')
-
-class AdAttributeValueSerializer(serializers.ModelSerializer):
-    """Serializer pour les valeurs d'attributs"""
-    attribute_name = serializers.CharField(source='attribute.name', read_only=True)
-    attribute_slug = serializers.CharField(source='attribute.slug', read_only=True)
-    
-    class Meta:
-        model = AdAttributeValue
-        fields = ('id', 'attribute', 'attribute_name', 'attribute_slug', 'value')
-
 class AdListSerializer(serializers.ModelSerializer):
     """Serializer pour la liste des annonces"""
     user_name = serializers.CharField(source='user.full_name', read_only=True)
     user_avatar = serializers.ImageField(source='user.avatar', read_only=True)
-    category_name = serializers.CharField(source='category.name', read_only=True)
-    location_name = serializers.CharField(source='location.name', read_only=True)
+    category_display = serializers.CharField(source='get_category_display', read_only=True)
+    city_display = serializers.CharField(source='get_city_display', read_only=True)
     primary_image = serializers.SerializerMethodField()
     is_favorited = serializers.SerializerMethodField()
     time_since_published = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = Ad
         fields = (
             'id', 'title', 'slug', 'price', 'currency', 'is_negotiable',
-            'user_name', 'user_avatar', 'category_name', 'location_name',
-            'primary_image', 'is_favorited', 'is_featured', 'is_urgent',
-            'views_count', 'favorites_count', 'status', 'created_at',
-            'time_since_published', 'expires_at'
+            'user_name', 'user_avatar', 'category', 'category_display',
+            'city', 'city_display', 'primary_image', 'is_favorited',
+            'is_featured', 'is_urgent', 'views_count', 'favorites_count',
+            'status', 'created_at', 'time_since_published', 'expires_at'
         )
-    
+
     def get_primary_image(self, obj):
         primary_image = obj.images.filter(is_primary=True).first()
         if primary_image:
@@ -108,13 +49,13 @@ class AdListSerializer(serializers.ModelSerializer):
         if first_image:
             return self.context['request'].build_absolute_uri(first_image.image.url)
         return None
-    
+
     def get_is_favorited(self, obj):
         request = self.context.get('request')
         if request and request.user.is_authenticated:
             return obj.favorited_by.filter(user=request.user).exists()
         return False
-    
+
     def get_time_since_published(self, obj):
         if obj.published_at:
             from django.utils import timezone
@@ -125,26 +66,25 @@ class AdListSerializer(serializers.ModelSerializer):
 class AdDetailSerializer(serializers.ModelSerializer):
     """Serializer détaillé pour une annonce"""
     user = serializers.SerializerMethodField()
-    category = CategorySerializer(read_only=True)
-    location = LocationSerializer(read_only=True)
+    category_display = serializers.CharField(source='get_category_display', read_only=True)
+    city_display = serializers.CharField(source='get_city_display', read_only=True)
     images = AdImageSerializer(many=True, read_only=True)
     videos = AdVideoSerializer(many=True, read_only=True)
-    attribute_values = AdAttributeValueSerializer(many=True, read_only=True)
     is_favorited = serializers.SerializerMethodField()
     is_owner = serializers.SerializerMethodField()
     related_ads = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = Ad
         fields = (
             'id', 'title', 'slug', 'description', 'price', 'currency', 'is_negotiable',
-            'ad_type', 'user', 'category', 'location', 'address', 'latitude', 'longitude',
-            'contact_phone', 'contact_email', 'whatsapp_number', 'images', 'videos',
-            'attribute_values', 'is_favorited', 'is_owner', 'is_featured', 'is_urgent',
-            'views_count', 'favorites_count', 'status', 'created_at', 'updated_at',
-            'published_at', 'expires_at', 'related_ads'
+            'ad_type', 'user', 'category', 'category_display', 'city', 'city_display',
+            'address', 'latitude', 'longitude', 'contact_phone', 'contact_email',
+            'whatsapp_number', 'images', 'videos', 'is_favorited', 'is_owner',
+            'is_featured', 'is_urgent', 'views_count', 'favorites_count', 'status',
+            'created_at', 'updated_at', 'published_at', 'expires_at', 'related_ads'
         )
-    
+
     def get_user(self, obj):
         return {
             'id': obj.user.id,
@@ -154,84 +94,81 @@ class AdDetailSerializer(serializers.ModelSerializer):
             'average_rating': obj.user.average_rating,
             'total_ads': obj.user.total_ads,
             'location': obj.user.location,
+            'is_premium': obj.user.is_premium_active,
             'created_at': obj.user.created_at
         }
-    
+
     def get_is_favorited(self, obj):
         request = self.context.get('request')
         if request and request.user.is_authenticated:
             return obj.favorited_by.filter(user=request.user).exists()
         return False
-    
+
     def get_is_owner(self, obj):
         request = self.context.get('request')
         if request and request.user.is_authenticated:
             return obj.user == request.user
         return False
-    
+
     def get_related_ads(self, obj):
         related = Ad.objects.filter(
             category=obj.category,
             status='active'
         ).exclude(id=obj.id)[:4]
-        
+
         return AdListSerializer(related, many=True, context=self.context).data
 
 class AdCreateUpdateSerializer(serializers.ModelSerializer):
     """Serializer pour créer/modifier une annonce"""
-    attribute_values = serializers.JSONField(required=False, allow_null=True)
-    
+
     class Meta:
         model = Ad
         fields = (
             'title', 'description', 'price', 'currency', 'is_negotiable',
-            'ad_type', 'category', 'location', 'address', 'latitude', 'longitude',
+            'ad_type', 'category', 'city', 'address', 'latitude', 'longitude',
             'contact_phone', 'contact_email', 'whatsapp_number', 'is_urgent',
-            'expires_at', 'attribute_values'
+            'expires_at'
         )
-    
-    def create(self, validated_data):
-        attribute_values_data = validated_data.pop('attribute_values', {})
-        ad = Ad.objects.create(**validated_data)
-        
-        # Créer les valeurs d'attributs
-        self._create_attribute_values(ad, attribute_values_data)
-        
-        return ad
-    
-    def update(self, instance, validated_data):
-        attribute_values_data = validated_data.pop('attribute_values', {})
-        
-        # Mettre à jour l'annonce
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        
-        # Mettre à jour les valeurs d'attributs
-        instance.attribute_values.all().delete()
-        self._create_attribute_values(instance, attribute_values_data)
-        
-        return instance
-    
-    def _create_attribute_values(self, ad, attribute_values_data):
-        if not attribute_values_data:
-            return
-        
-        for attribute_id, value in attribute_values_data.items():
-            try:
-                attribute = AdAttribute.objects.get(id=attribute_id)
-                AdAttributeValue.objects.create(
-                    ad=ad,
-                    attribute=attribute,
-                    value=str(value)
+
+    def validate(self, attrs):
+        request = self.context.get('request')
+
+        # Vérifier si l'utilisateur peut créer une annonce
+        if self.instance is None:  # Création uniquement
+            if not request.user.can_create_ad:
+                raise serializers.ValidationError(
+                    f"Limite d'annonces atteinte. Vous avez déjà {request.user.ads.filter(status='active').count()} annonces actives. "
+                    f"Passez au compte premium pour publier des annonces illimitées."
                 )
-            except AdAttribute.DoesNotExist:
-                continue
+
+        return attrs
+
+    def create(self, validated_data):
+        from django.utils import timezone
+        from datetime import timedelta
+
+        # Calculer la date d'expiration (30 jours par défaut)
+        if 'expires_at' not in validated_data or not validated_data['expires_at']:
+            validated_data['expires_at'] = timezone.now() + timedelta(days=30)
+
+        # Générer un slug unique
+        from django.utils.text import slugify
+        title = validated_data['title']
+        slug = slugify(title)
+        counter = 1
+        while Ad.objects.filter(slug=slug).exists():
+            slug = f"{slugify(title)}-{counter}"
+            counter += 1
+
+        validated_data['slug'] = slug
+        ad = Ad.objects.create(**validated_data)
+
+        return ad
 
 class FavoriteSerializer(serializers.ModelSerializer):
     """Serializer pour les favoris"""
     ad = AdListSerializer(read_only=True)
-    
+
     class Meta:
         model = Favorite
         fields = ('id', 'ad', 'created_at')
@@ -240,20 +177,85 @@ class FavoriteSerializer(serializers.ModelSerializer):
 class AdReportSerializer(serializers.ModelSerializer):
     """Serializer pour signaler une annonce"""
     reporter_name = serializers.CharField(source='reporter.full_name', read_only=True)
-    
+
     class Meta:
         model = AdReport
         fields = ('id', 'reason', 'description', 'reporter_name', 'created_at', 'is_resolved')
         read_only_fields = ('id', 'reporter_name', 'created_at', 'is_resolved')
 
-class AdStatsSerializer(serializers.Serializer):
-    """Serializer pour les statistiques d'une annonce"""
-    views_count = serializers.IntegerField()
-    favorites_count = serializers.IntegerField()
-    contacts_count = serializers.IntegerField()
-    views_today = serializers.IntegerField()
-    views_this_week = serializers.IntegerField()
-    views_this_month = serializers.IntegerField()
-    top_referrers = serializers.ListField()
-    location_stats = serializers.DictField()
-    device_stats = serializers.DictField()
+class AdvertisementSerializer(serializers.ModelSerializer):
+    """Serializer pour les publicités payantes"""
+    user_name = serializers.CharField(source='user.full_name', read_only=True)
+    duration_days = serializers.SerializerMethodField()
+    is_running = serializers.ReadOnlyField()
+    ctr = serializers.ReadOnlyField()
+
+    class Meta:
+        model = Advertisement
+        fields = (
+            'id', 'user', 'user_name', 'title', 'link', 'image',
+            'duration_hours', 'duration_days', 'price_per_day', 'total_price',
+            'start_date', 'end_date', 'is_active', 'is_approved',
+            'impressions', 'clicks', 'ctr', 'is_running', 'created_at'
+        )
+        read_only_fields = ('id', 'user', 'total_price', 'impressions', 'clicks', 'created_at')
+
+    def get_duration_days(self, obj):
+        return obj.duration_hours / 24
+
+    def validate_image(self, value):
+        """Valider la taille de l'affiche (max 2Mo)"""
+        if value and value.size > 2 * 1024 * 1024:
+            raise serializers.ValidationError("La taille de l'affiche ne doit pas dépasser 2Mo.")
+        return value
+
+    def validate_duration_hours(self, value):
+        """S'assurer que la durée est un multiple de 24h"""
+        if value % 24 != 0:
+            raise serializers.ValidationError("La durée doit être un multiple de 24 heures (1 jour, 2 jours, etc.)")
+        return value
+
+class AdvertisementCreateSerializer(serializers.ModelSerializer):
+    """Serializer pour créer une publicité"""
+
+    class Meta:
+        model = Advertisement
+        fields = ('title', 'link', 'image', 'duration_hours', 'start_date')
+
+    def validate_image(self, value):
+        """Valider la taille de l'affiche (max 2Mo)"""
+        if value and value.size > 2 * 1024 * 1024:
+            raise serializers.ValidationError("La taille de l'affiche ne doit pas dépasser 2Mo.")
+        return value
+
+    def validate_duration_hours(self, value):
+        """S'assurer que la durée est un multiple de 24h"""
+        if value % 24 != 0:
+            raise serializers.ValidationError("La durée doit être un multiple de 24 heures.")
+        if value < 24:
+            raise serializers.ValidationError("La durée minimale est de 24 heures.")
+        return value
+
+    def create(self, validated_data):
+        from django.utils import timezone
+        from datetime import timedelta
+
+        # Calculer la date de fin
+        start_date = validated_data['start_date']
+        duration_hours = validated_data['duration_hours']
+        validated_data['end_date'] = start_date + timedelta(hours=duration_hours)
+
+        # Le prix sera calculé automatiquement dans le modèle
+        advertisement = Advertisement.objects.create(**validated_data)
+
+        return advertisement
+
+class CategoryChoiceSerializer(serializers.Serializer):
+    """Serializer pour les choix de catégories"""
+    value = serializers.CharField()
+    label = serializers.CharField()
+
+class CityChoiceSerializer(serializers.Serializer):
+    """Serializer pour les choix de villes"""
+    value = serializers.CharField()
+    label = serializers.CharField()
