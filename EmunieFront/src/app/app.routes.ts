@@ -21,6 +21,7 @@ export const routes: Routes = [
     path: 'register',
     component: Register
   },
+
   {
     path: 'acheter',
     loadComponent: () => import('./accueil/accueil').then(m => m.Accueil) // Temporaire
