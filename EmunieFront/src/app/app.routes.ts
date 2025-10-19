@@ -43,6 +43,22 @@ export const routes: Routes = [
     loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard) // Temporaire
   },
   {
+    path: 'dashboard/buy-pub',
+    loadComponent: () => import('./publicite/new-publicite/new-publicite').then(m => m.NewPublicite) // Temporaire
+  },
+  {
+    path: 'dashboard/my-ads',
+    loadComponent: () => import('./annonces/list-annonce/list-annonce').then(m => m.ListAnnonce) // Temporaire
+  },
+  {
+    path: 'dashboard/new-ad',
+    loadComponent: () => import('./annonces/new-anonce/new-anonce').then(m => m.NewAnonce) // Temporaire
+  },
+  {
+    path: 'dashboard/overview',
+    loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard) // Temporaire
+  },
+  {
     path: '**',
     redirectTo: 'accueil'
   }
