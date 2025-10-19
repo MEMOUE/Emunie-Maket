@@ -39,6 +39,10 @@ export const routes: Routes = [
     loadComponent: () => import('./accueil/accueil').then(m => m.Accueil) // Temporaire
   },
   {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard) // Temporaire
+  },
+  {
     path: '**',
     redirectTo: 'accueil'
   }
