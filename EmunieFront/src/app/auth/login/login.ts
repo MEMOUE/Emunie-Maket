@@ -38,7 +38,7 @@ export class Login implements OnInit {
   ) {
     // Rediriger si déjà connecté
     if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/accueil']);
+      this.router.navigate(['/dashboard']);
     }
 
     this.loginForm = this.fb.group({
@@ -101,7 +101,7 @@ export class Login implements OnInit {
         this.successMessage = `Bienvenue ${response.user.full_name || response.user.username} !`;
 
         // Redirection vers la page demandée ou l'accueil
-        const returnUrl = sessionStorage.getItem('returnUrl') || '/accueil';
+        const returnUrl = sessionStorage.getItem('returnUrl') || '/dashboard';
         sessionStorage.removeItem('returnUrl');
 
         setTimeout(() => {

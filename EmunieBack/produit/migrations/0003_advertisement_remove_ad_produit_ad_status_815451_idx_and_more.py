@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=200, verbose_name='Titre de la publicité')),
                 ('link', models.URLField(verbose_name='Lien de destination')),
-                ('image', models.ImageField(help_text='Taille maximale: 2Mo. Formats acceptés: jpg, jpeg, png, gif', upload_to='advertisements/', validators=[produit.models.validate_ad_image_size, django.core.validators.FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif'])], verbose_name='Affiche publicitaire')),
+                ('image', models.ImageField(help_text='Taille maximale: 2Mo. Formats acceptés: jpg, jpeg, png, gif', upload_to='publicite/', validators=[produit.models.validate_ad_image_size, django.core.validators.FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif'])], verbose_name='Affiche publicitaire')),
                 ('duration_hours', models.PositiveIntegerField(default=24, help_text='Durée en heures (minimum 24h)', validators=[django.core.validators.MinValueValidator(24)])),
                 ('price_per_day', models.DecimalField(decimal_places=2, default=1000, max_digits=10, verbose_name='Prix par jour (FCFA)')),
                 ('total_price', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Prix total')),
@@ -84,6 +84,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='advertisement',
             name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='advertisements', to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='publicite', to=settings.AUTH_USER_MODEL),
         ),
     ]

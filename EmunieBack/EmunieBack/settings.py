@@ -26,9 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Third party apps
     'rest_framework',
-    'rest_framework.authtoken',  # ✅ AJOUTÉ pour Token Authentication
+    'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'corsheaders',
     'django_filters',
@@ -37,7 +36,6 @@ INSTALLED_APPS = [
     'django_extensions',
     'drf_spectacular',
 
-    # Local apps
     'user',
     'produit',
     'monetisation',

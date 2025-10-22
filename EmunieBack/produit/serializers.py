@@ -183,7 +183,7 @@ class AdReportSerializer(serializers.ModelSerializer):
         fields = ('id', 'reason', 'description', 'reporter_name', 'created_at', 'is_resolved')
         read_only_fields = ('id', 'reporter_name', 'created_at', 'is_resolved')
 
-class AdvertisementSerializer(serializers.ModelSerializer):
+class publiciteerializer(serializers.ModelSerializer):
     """Serializer pour les publicités payantes"""
     user_name = serializers.CharField(source='user.full_name', read_only=True)
     duration_days = serializers.SerializerMethodField()
@@ -242,7 +242,10 @@ class AdvertisementCreateSerializer(serializers.ModelSerializer):
 
         # Calculer la date de fin
         start_date = validated_data['start_date']
-        duration_hours = validated_data['duration_hours']
+        duration_hours = validated_data.get('duration_hours')
+        if duration_hours is None:
+            raise serializers.ValidationError("Le champ 'duration_hours' est requis.")
+
         validated_data['end_date'] = start_date + timedelta(hours=duration_hours)
 
         # Le prix sera calculé automatiquement dans le modèle

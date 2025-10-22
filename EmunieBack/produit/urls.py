@@ -36,15 +36,15 @@ urlpatterns = [
 
     # === PUBLICITÉS PAYANTES ===
     # Liste et création de publicités
-    path('advertisements/', views.AdvertisementListView.as_view(), name='advertisement_list'),
-    path('advertisements/create/', views.AdvertisementCreateView.as_view(), name='advertisement_create'),
-    path('advertisements/my/', views.MyAdvertisementsView.as_view(), name='my_advertisements'),
-    path('advertisements/<int:pk>/', views.AdvertisementDetailView.as_view(), name='advertisement_detail'),
-    path('advertisements/<int:pk>/statistics/', views.advertisement_statistics, name='advertisement_statistics'),
-
-    # Tracking des publicités
-    path('advertisements/<int:pk>/impression/', views.track_ad_impression, name='track_ad_impression'),
-    path('advertisements/<int:pk>/click/', views.track_ad_click, name='track_ad_click'),
+    # path('publicite/', views.AdvertisementListView.as_view(), name='advertisement_list'),
+    # path('publicite/create/', views.AdvertisementCreateView.as_view(), name='advertisement_create'),
+    # path('publicite/my/', views.MypubliciteView.as_view(), name='my_publicite'),
+    # path('publicite/<int:pk>/', views.AdvertisementDetailView.as_view(), name='advertisement_detail'),
+    # path('publicite/<int:pk>/statistics/', views.advertisement_statistics, name='advertisement_statistics'),
+    #
+    # # Tracking des publicités
+    # path('publicite/<int:pk>/impression/', views.track_ad_impression, name='track_ad_impression'),
+    # path('publicite/<int:pk>/click/', views.track_ad_click, name='track_ad_click'),
 
     # === DONNÉES PUBLIQUES ===
     # Page d'accueil et données générales
