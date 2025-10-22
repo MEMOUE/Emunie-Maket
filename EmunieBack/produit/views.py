@@ -17,7 +17,7 @@ from .models import (
 from .serializers import (
     AdListSerializer, AdDetailSerializer, AdCreateUpdateSerializer,
     AdImageSerializer, AdVideoSerializer, FavoriteSerializer, AdReportSerializer,
-    AdvertisementSerializer, AdvertisementCreateSerializer,
+    publiciteerializer, AdvertisementCreateSerializer,
     CategoryChoiceSerializer, CityChoiceSerializer
 )
 from .permissions import IsOwnerOrReadOnly
@@ -324,7 +324,7 @@ def ad_statistics(request, pk):
 
 class AdvertisementListView(generics.ListAPIView):
     """Liste des publicités actives"""
-    serializer_class = AdvertisementSerializer
+    serializer_class = publiciteerializer
     permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
@@ -336,9 +336,9 @@ class AdvertisementListView(generics.ListAPIView):
             end_date__gte=now
         ).order_by('?')  # Ordre aléatoire
 
-class MyAdvertisementsView(generics.ListAPIView):
+class MypubliciteView(generics.ListAPIView):
     """Mes publicités"""
-    serializer_class = AdvertisementSerializer
+    serializer_class = publiciteerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
@@ -355,7 +355,7 @@ class AdvertisementCreateView(generics.CreateAPIView):
 
 class AdvertisementDetailView(generics.RetrieveAPIView):
     """Détail d'une publicité"""
-    serializer_class = AdvertisementSerializer
+    serializer_class = publiciteerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):

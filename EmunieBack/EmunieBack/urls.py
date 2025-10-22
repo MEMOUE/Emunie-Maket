@@ -36,23 +36,14 @@ urlpatterns = [
     ])),
 
     # ==========================================
-    # API ENDPOINTS (compatibles avec Angular)
+    # API ENDPOINTS
     # ==========================================
     # URLs directes pour Angular
     path('api/user/', include('user.urls')),  # ✅ AJOUTÉ
     path('api/produit/', include('produit.urls')),  # ✅ AJOUTÉ
     path('api/monetisation/', include('monetisation.urls')),  # ✅ AJOUTÉ
+    path('api/publicite/', include('produit.urls_publicite')),  # ✅ AJOUTÉ
 
-    # URLs versionnées (optionnel, gardé pour compatibilité)
-    path('api/v1/', include([
-        path('users/', include('user.urls')),
-    ])),
-    path('api/v2/', include([
-        path('ads/', include('produit.urls')),
-    ])),
-    path('api/v3/', include([
-        path('monetisation/', include('monetisation.urls')),
-    ])),
 
     # ==========================================
     # DOCUMENTATION API

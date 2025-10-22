@@ -52,7 +52,7 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard/new-ad',
-    loadComponent: () => import('./annonces/new-anonce/new-anonce').then(m => m.NewAnonce) // Temporaire
+    loadComponent: () => import('./annonces/new-anonce/new-anonce').then(m => m.NewAnonceComponent) // Temporaire
   },
   {
     path: 'dashboard/overview',

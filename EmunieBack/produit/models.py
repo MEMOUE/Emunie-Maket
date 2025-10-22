@@ -326,13 +326,13 @@ def validate_ad_image_size(file):
 
 class Advertisement(models.Model):
     """Publicités payantes (bannières publicitaires)"""
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='advertisements')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='publicite')
     title = models.CharField(max_length=200, verbose_name='Titre de la publicité')
     link = models.URLField(verbose_name='Lien de destination')
 
     # Affiche publicitaire avec validation de taille
     image = models.ImageField(
-        upload_to='advertisements/',
+        upload_to='publicite/',
         validators=[
             validate_ad_image_size,
             FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif'])

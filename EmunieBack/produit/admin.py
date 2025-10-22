@@ -189,7 +189,7 @@ class AdvertisementAdmin(admin.ModelAdmin):
         }),
     )
 
-    actions = ['approve_advertisements', 'activate_advertisements', 'deactivate_advertisements']
+    actions = ['approve_publicite', 'activate_publicite', 'deactivate_publicite']
 
     def duration_days_display(self, obj):
         return f"{obj.duration_hours / 24:.0f} jour(s)"
@@ -205,20 +205,20 @@ class AdvertisementAdmin(admin.ModelAdmin):
         return 'Aucune image'
     image_preview.short_description = 'Aperçu de l\'affiche'
 
-    def approve_advertisements(self, request, queryset):
+    def approve_publicite(self, request, queryset):
         updated = queryset.update(is_approved=True)
         self.message_user(request, f'{updated} publicité(s) approuvée(s).')
-    approve_advertisements.short_description = 'Approuver les publicités'
+    approve_publicite.short_description = 'Approuver les publicités'
 
-    def activate_advertisements(self, request, queryset):
+    def activate_publicite(self, request, queryset):
         updated = queryset.update(is_active=True)
         self.message_user(request, f'{updated} publicité(s) activée(s).')
-    activate_advertisements.short_description = 'Activer les publicités'
+    activate_publicite.short_description = 'Activer les publicités'
 
-    def deactivate_advertisements(self, request, queryset):
+    def deactivate_publicite(self, request, queryset):
         updated = queryset.update(is_active=False)
         self.message_user(request, f'{updated} publicité(s) désactivée(s).')
-    deactivate_advertisements.short_description = 'Désactiver les publicités'
+    deactivate_publicite.short_description = 'Désactiver les publicités'
 
 @admin.register(Favorite)
 class FavoriteAdmin(admin.ModelAdmin):
