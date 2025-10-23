@@ -1,13 +1,15 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from django.db.models import Count
-from .models import Ad, AdImage, AdVideo, Advertisement, Favorite, AdView, AdReport
+from .models import Ad, AdImage, Advertisement, Favorite, AdView, AdReport
 
 class AdImageInline(admin.TabularInline):
     """Inline pour les images d'annonces"""
     model = AdImage
-    extra = 0
-    fields = ('image', 'caption', 'order', 'is_primary')
+    extra = 1
+    max_num = 3
+    min_num = 1
+    fields = ('image', 'image_preview', 'caption', 'order', 'is_primary')
     readonly_fields = ('image_preview',)
 
     def image_preview(self, obj):
@@ -16,19 +18,14 @@ class AdImageInline(admin.TabularInline):
         return 'Aucune image'
     image_preview.short_description = 'Aperçu'
 
-class AdVideoInline(admin.TabularInline):
-    """Inline pour les vidéos d'annonces"""
-    model = AdVideo
-    extra = 0
-    fields = ('video', 'thumbnail', 'caption', 'duration')
 
 @admin.register(Ad)
 class AdAdmin(admin.ModelAdmin):
     """Administration des annonces"""
     list_display = (
         'title', 'user', 'category', 'city', 'price', 'status',
-        'is_featured', 'is_urgent', 'views_count', 'favorites_count',
-        'created_at', 'expires_at'
+        'is_featured', 'is_urgent', 'images_count', 'views_count',
+        'favorites_count', 'created_at', 'expires_at'
     )
     list_filter = (
         'status', 'ad_type', 'is_featured', 'is_urgent', 'is_negotiable',
@@ -37,7 +34,7 @@ class AdAdmin(admin.ModelAdmin):
     search_fields = ('title', 'description', 'user__username')
     readonly_fields = (
         'id', 'slug', 'views_count', 'favorites_count', 'created_at',
-        'updated_at', 'published_at'
+        'updated_at', 'published_at', 'images_count'
     )
     raw_id_fields = ('user', 'moderated_by')
     list_editable = ('is_featured', 'is_urgent')
@@ -68,7 +65,10 @@ class AdAdmin(admin.ModelAdmin):
             )
         }),
         ('Statistiques', {
-            'fields': ('views_count', 'favorites_count', 'created_at', 'updated_at', 'published_at'),
+            'fields': (
+                'views_count', 'favorites_count', 'images_count',
+                'created_at', 'updated_at', 'published_at'
+            ),
             'classes': ('collapse',)
         }),
         ('Modération', {
@@ -79,9 +79,13 @@ class AdAdmin(admin.ModelAdmin):
         }),
     )
 
-    inlines = [AdImageInline, AdVideoInline]
+    inlines = [AdImageInline]
 
     actions = ['approve_ads', 'reject_ads', 'feature_ads', 'unfeature_ads']
+
+    def images_count(self, obj):
+        return obj.images.count()
+    images_count.short_description = 'Nb Images'
 
     def approve_ads(self, request, queryset):
         from django.utils import timezone
@@ -115,6 +119,7 @@ class AdAdmin(admin.ModelAdmin):
         self.message_user(request, f'{updated} annonce(s) retirée(s) de la mise en avant.')
     unfeature_ads.short_description = 'Retirer de la mise en avant'
 
+
 @admin.register(AdImage)
 class AdImageAdmin(admin.ModelAdmin):
     """Administration des images d'annonces"""
@@ -134,23 +139,6 @@ class AdImageAdmin(admin.ModelAdmin):
         return 'Aucune image'
     image_preview.short_description = 'Aperçu'
 
-@admin.register(AdVideo)
-class AdVideoAdmin(admin.ModelAdmin):
-    """Administration des vidéos d'annonces"""
-    list_display = ('ad_title', 'video_preview', 'caption', 'duration', 'created_at')
-    list_filter = ('created_at',)
-    search_fields = ('ad__title', 'caption')
-    raw_id_fields = ('ad',)
-
-    def ad_title(self, obj):
-        return obj.ad.title
-    ad_title.short_description = 'Annonce'
-
-    def video_preview(self, obj):
-        if obj.thumbnail:
-            return format_html('<img src="{}" style="max-height: 50px;"/>', obj.thumbnail.url)
-        return 'Aucune miniature'
-    video_preview.short_description = 'Aperçu'
 
 @admin.register(Advertisement)
 class AdvertisementAdmin(admin.ModelAdmin):
@@ -220,6 +208,7 @@ class AdvertisementAdmin(admin.ModelAdmin):
         self.message_user(request, f'{updated} publicité(s) désactivée(s).')
     deactivate_publicite.short_description = 'Désactiver les publicités'
 
+
 @admin.register(Favorite)
 class FavoriteAdmin(admin.ModelAdmin):
     """Administration des favoris"""
@@ -231,6 +220,7 @@ class FavoriteAdmin(admin.ModelAdmin):
     def ad_title(self, obj):
         return obj.ad.title
     ad_title.short_description = 'Annonce'
+
 
 @admin.register(AdView)
 class AdViewAdmin(admin.ModelAdmin):
@@ -244,6 +234,7 @@ class AdViewAdmin(admin.ModelAdmin):
     def ad_title(self, obj):
         return obj.ad.title
     ad_title.short_description = 'Annonce'
+
 
 @admin.register(AdReport)
 class AdReportAdmin(admin.ModelAdmin):
@@ -272,6 +263,7 @@ class AdReportAdmin(admin.ModelAdmin):
         )
         self.message_user(request, f'{updated} signalement(s) résolu(s).')
     resolve_reports.short_description = 'Marquer comme résolu'
+
 
 # Personnalisation de l'interface d'administration
 admin.site.site_header = "Administration Emunie"
