@@ -11,13 +11,13 @@ from datetime import timedelta
 User = get_user_model()
 
 from .models import (
-    Ad, AdImage, AdVideo, Advertisement, Favorite, AdReport, AdView, AdStatus,
+    Ad, AdImage, Advertisement, Favorite, AdReport, AdView, AdStatus,
     CATEGORY_CHOICES, CITY_CHOICES
 )
 from .serializers import (
     AdListSerializer, AdDetailSerializer, AdCreateUpdateSerializer,
-    AdImageSerializer, AdVideoSerializer, FavoriteSerializer, AdReportSerializer,
-    publiciteerializer, AdvertisementCreateSerializer,
+    AdImageSerializer, FavoriteSerializer, AdReportSerializer,
+    AdvertisementSerializer, AdvertisementCreateSerializer,
     CategoryChoiceSerializer, CityChoiceSerializer
 )
 from .permissions import IsOwnerOrReadOnly
@@ -73,7 +73,7 @@ class AdListView(generics.ListAPIView):
 
 class AdDetailView(generics.RetrieveAPIView):
     """Détail d'une annonce"""
-    queryset = Ad.objects.select_related('user').prefetch_related('images', 'videos')
+    queryset = Ad.objects.select_related('user').prefetch_related('images')
     serializer_class = AdDetailSerializer
     permission_classes = [permissions.AllowAny]
     lookup_field = 'pk'
@@ -308,6 +308,7 @@ def ad_statistics(request, pk):
     stats = {
         'total_views': ad.views_count,
         'total_favorites': ad.favorites_count,
+        'total_images': ad.images.count(),
         'views_today': ad.views.filter(created_at__date=timezone.now().date()).count(),
         'views_this_week': ad.views.filter(
             created_at__gte=timezone.now() - timedelta(days=7)
@@ -324,7 +325,7 @@ def ad_statistics(request, pk):
 
 class AdvertisementListView(generics.ListAPIView):
     """Liste des publicités actives"""
-    serializer_class = publiciteerializer
+    serializer_class = AdvertisementSerializer
     permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
@@ -336,9 +337,9 @@ class AdvertisementListView(generics.ListAPIView):
             end_date__gte=now
         ).order_by('?')  # Ordre aléatoire
 
-class MypubliciteView(generics.ListAPIView):
+class MyAdvertisementsView(generics.ListAPIView):
     """Mes publicités"""
-    serializer_class = publiciteerializer
+    serializer_class = AdvertisementSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
@@ -355,7 +356,7 @@ class AdvertisementCreateView(generics.CreateAPIView):
 
 class AdvertisementDetailView(generics.RetrieveAPIView):
     """Détail d'une publicité"""
-    serializer_class = publiciteerializer
+    serializer_class = AdvertisementSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
@@ -426,3 +427,10 @@ def check_ad_limit(request):
         'message': 'Vous pouvez créer une annonce' if can_create else
         'Limite atteinte. Passez au premium pour publier plus d\'annonces.'
     })
+
+class MypubliciteView(APIView):
+    def get(self, request):
+        # Exemple : retourner les publicités de l’utilisateur connecté
+        publicites = Advertisement.objects.filter(user=request.user)
+        serializer = AdvertisementSerializer(publicites, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

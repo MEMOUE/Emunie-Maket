@@ -185,37 +185,101 @@ class Ad(models.Model):
     def is_expired(self):
         return self.expires_at <= timezone.now()
 
+    @property
+    def images_count(self):
+        return self.images.count()
+
+    def clean(self):
+        """Validation personnalisée"""
+        super().clean()
+
+        # Vérifier qu'il y a au moins 1 image (lors de la mise à jour)
+        if self.pk:
+            images_count = self.images.count()
+            if images_count < 1:
+                raise ValidationError('Une annonce doit avoir au moins 1 image.')
+            if images_count > 3:
+                raise ValidationError('Une annonce ne peut avoir que 3 images maximum.')
+
     def save(self, *args, **kwargs):
         if self.status == AdStatus.ACTIVE and not self.published_at:
             self.published_at = timezone.now()
         super().save(*args, **kwargs)
 
+
+def validate_image_size(image):
+    """Valider la taille de l'image (max 5Mo)"""
+    max_size_mb = 5
+    if image.size > max_size_mb * 1024 * 1024:
+        raise ValidationError(f'La taille de l\'image ne doit pas dépasser {max_size_mb}Mo')
+
+
 class AdImage(models.Model):
-    """Images des annonces"""
+    """Images des annonces (1 minimum, 3 maximum)"""
     ad = models.ForeignKey(Ad, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to='ads/images/')
+    image = models.ImageField(
+        upload_to='ads/images/%Y/%m/%d/',
+        validators=[
+            validate_image_size,
+            FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif', 'webp'])
+        ],
+        help_text='Formats acceptés: jpg, jpeg, png, gif, webp. Taille max: 5Mo'
+    )
     caption = models.CharField(max_length=200, blank=True)
-    order = models.PositiveIntegerField(default=0)
+    order = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     is_primary = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['order', 'created_at']
+        unique_together = [['ad', 'order']]
 
     def __str__(self):
-        return f"Image for {self.ad.title}"
+        return f"Image {self.order + 1} for {self.ad.title}"
 
-class AdVideo(models.Model):
-    """Vidéos des annonces"""
-    ad = models.ForeignKey(Ad, on_delete=models.CASCADE, related_name='videos')
-    video = models.FileField(upload_to='ads/videos/')
-    thumbnail = models.ImageField(upload_to='ads/thumbnails/', null=True, blank=True)
-    caption = models.CharField(max_length=200, blank=True)
-    duration = models.PositiveIntegerField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    def clean(self):
+        """Validation personnalisée"""
+        super().clean()
 
-    def __str__(self):
-        return f"Video for {self.ad.title}"
+        # Vérifier l'ordre (0, 1, 2)
+        if self.order > 2:
+            raise ValidationError('L\'ordre de l\'image doit être entre 0 et 2.')
+
+        # Validation: Maximum 3 images par annonce
+        if self.ad_id:
+            existing_images = AdImage.objects.filter(ad=self.ad).exclude(pk=self.pk).count()
+            if existing_images >= 3:
+                raise ValidationError('Une annonce ne peut contenir que 3 images maximum.')
+
+        # Si is_primary est True, désactiver les autres images primaires
+        if self.is_primary and self.ad_id:
+            AdImage.objects.filter(ad=self.ad, is_primary=True).exclude(pk=self.pk).update(is_primary=False)
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+
+        # Si c'est la première image, la définir comme primaire
+        if not self.pk and self.ad_id:
+            if not AdImage.objects.filter(ad=self.ad).exists():
+                self.is_primary = True
+                self.order = 0
+
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        """Empêcher la suppression si c'est la dernière image"""
+        if self.ad.images.count() <= 1:
+            raise ValidationError('Impossible de supprimer la dernière image. Une annonce doit avoir au moins 1 image.')
+
+        # Supprimer le fichier physique
+        if self.image:
+            try:
+                self.image.delete(save=False)
+            except Exception as e:
+                print(f"Erreur lors de la suppression de l'image: {e}")
+
+        super().delete(*args, **kwargs)
+
 
 class AdAttribute(models.Model):
     """Attributs dynamiques pour les annonces"""
@@ -332,7 +396,7 @@ class Advertisement(models.Model):
 
     # Affiche publicitaire avec validation de taille
     image = models.ImageField(
-        upload_to='publicite/',
+        upload_to='publicite/%Y/%m/',
         validators=[
             validate_ad_image_size,
             FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif'])

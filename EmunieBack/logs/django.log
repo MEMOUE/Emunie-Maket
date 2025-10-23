@@ -211,7 +211,7 @@ INFO 2025-10-14 20:27:54,444 basehttp 48052 6125219840 "GET /admin/monetisation/
 INFO 2025-10-14 20:27:54,458 basehttp 48052 6125219840 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
 INFO 2025-10-14 20:27:58,480 basehttp 48052 6125219840 "GET /admin/monetisation/transaction/ HTTP/1.1" 200 21899
 INFO 2025-10-14 20:27:58,493 basehttp 48052 6125219840 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
-INFO 2025-10-14 20:28:03,465 basehttp 48052 6125219840 "GET /admin/produit/adimage/ HTTP/1.1" 200 20308
+INFO 2025-10-14 20:28:03,465 basehttp 48052 6125219840 "GET /admin/produit/ad/ HTTP/1.1" 200 20308
 INFO 2025-10-14 20:28:03,476 basehttp 48052 6142046208 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
 INFO 2025-10-14 20:28:03,479 basehttp 48052 6125219840 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
 INFO 2025-10-14 20:28:03,480 basehttp 48052 6142046208 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
@@ -643,3 +643,1675 @@ INFO 2025-10-22 17:38:41,575 basehttp 73108 13321187328 "GET /api/produit/cities
 INFO 2025-10-22 17:39:26,180 basehttp 73108 13304360960 "OPTIONS /api/produit/ads/create/ HTTP/1.1" 200 0
 WARNING 2025-10-22 17:39:26,201 log 73108 13304360960 Bad Request: /api/produit/ads/create/
 WARNING 2025-10-22 17:39:26,201 basehttp 73108 13304360960 "POST /api/produit/ads/create/ HTTP/1.1" 400 75
+WARNING 2025-10-22 17:43:29,753 log 73108 13321187328 Bad Request: /api/auth/login/
+WARNING 2025-10-22 17:43:29,753 basehttp 73108 13321187328 "POST /api/auth/login/ HTTP/1.1" 400 53
+INFO 2025-10-22 17:44:13,252 basehttp 73108 13321187328 "POST /api/jwt/login/ HTTP/1.1" 200 483
+WARNING 2025-10-22 17:45:07,624 log 73108 13304360960 Not Found: /api/publicite/1/statistics/
+WARNING 2025-10-22 17:45:07,625 basehttp 73108 13304360960 "GET /api/publicite/1/statistics/ HTTP/1.1" 404 34
+INFO 2025-10-22 17:45:40,359 basehttp 73108 13304360960 "GET /api/user/profile/ HTTP/1.1" 200 454
+WARNING 2025-10-22 17:47:03,667 log 73108 13304360960 Bad Request: /api/publicite/create/
+WARNING 2025-10-22 17:47:03,667 basehttp 73108 13304360960 "POST /api/publicite/create/ HTTP/1.1" 400 237
+WARNING 2025-10-22 17:48:30,139 log 73108 13321187328 Not Found: /apple-touch-icon-precomposed.png
+WARNING 2025-10-22 17:48:30,145 log 73108 13338013696 Not Found: /apple-touch-icon.png
+WARNING 2025-10-22 17:48:30,149 log 73108 13354840064 Not Found: /favicon.ico
+WARNING 2025-10-22 17:48:30,150 basehttp 73108 13338013696 "GET /apple-touch-icon.png HTTP/1.1" 404 4172
+WARNING 2025-10-22 17:48:30,150 basehttp 73108 13321187328 "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 4208
+WARNING 2025-10-22 17:48:30,150 basehttp 73108 13354840064 "GET /favicon.ico HTTP/1.1" 404 4145
+WARNING 2025-10-22 17:48:47,527 log 73108 13371666432 Bad Request: /api/publicite/create/
+WARNING 2025-10-22 17:48:47,528 basehttp 73108 13371666432 "POST /api/publicite/create/ HTTP/1.1" 400 103
+WARNING 2025-10-22 17:49:10,339 log 73108 13371666432 Bad Request: /api/publicite/create/
+WARNING 2025-10-22 17:49:10,342 basehttp 73108 13371666432 "POST /api/publicite/create/ HTTP/1.1" 400 69
+INFO 2025-10-22 17:49:27,541 basehttp 73108 13371666432 "POST /api/publicite/create/ HTTP/1.1" 201 205
+INFO 2025-10-22 17:49:53,710 basehttp 73108 13371666432 "GET /admin/produit/advertisement/ HTTP/1.1" 200 26453
+INFO 2025-10-22 17:49:53,715 basehttp 73108 13304360960 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-22 17:50:01,062 basehttp 73108 13304360960 "GET /admin/produit/advertisement/ HTTP/1.1" 200 26453
+INFO 2025-10-22 17:50:01,067 basehttp 73108 13371666432 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+WARNING 2025-10-22 17:54:14,341 log 73108 13321187328 Bad Request: /api/publicite/create/
+WARNING 2025-10-22 17:54:14,342 basehttp 73108 13321187328 "POST /api/publicite/create/ HTTP/1.1" 400 69
+WARNING 2025-10-22 17:56:19,847 log 73108 13321187328 Bad Request: /api/produit/ads/create/
+WARNING 2025-10-22 17:56:19,847 basehttp 73108 13321187328 "POST /api/produit/ads/create/ HTTP/1.1" 400 46
+WARNING 2025-10-22 17:56:45,989 log 73108 13321187328 Bad Request: /api/produit/ads/create/
+WARNING 2025-10-22 17:56:45,989 basehttp 73108 13321187328 "POST /api/produit/ads/create/ HTTP/1.1" 400 83
+INFO 2025-10-22 17:57:13,866 basehttp 73108 13321187328 "POST /api/produit/ads/create/ HTTP/1.1" 201 369
+INFO 2025-10-22 17:57:31,206 basehttp 73108 13321187328 "GET /admin/produit/adimage/ HTTP/1.1" 200 21299
+INFO 2025-10-22 17:57:31,218 basehttp 73108 13321187328 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-22 17:57:35,663 basehttp 73108 13321187328 "GET /admin/produit/adreport/ HTTP/1.1" 200 21474
+INFO 2025-10-22 17:57:35,679 basehttp 73108 13321187328 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-22 17:57:38,465 basehttp 73108 13321187328 "GET /admin/produit/adview/ HTTP/1.1" 200 20559
+INFO 2025-10-22 17:57:38,481 basehttp 73108 13321187328 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-22 17:57:41,298 basehttp 73108 13321187328 "GET /admin/produit/ad/ HTTP/1.1" 200 31803
+INFO 2025-10-22 17:57:41,306 basehttp 73108 13321187328 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-22 18:08:19,210 autoreload 73108 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py changed, reloading.
+INFO 2025-10-22 18:08:19,664 autoreload 73543 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-22 18:09:14,271 autoreload 73567 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-22 18:11:35,942 autoreload 73567 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/admin.py changed, reloading.
+INFO 2025-10-22 18:11:36,298 autoreload 73641 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-22 18:19:08,286 autoreload 73783 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-22 18:19:19,664 basehttp 73783 6201667584 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-22 18:19:19,825 basehttp 73783 6201667584 "GET /api/schema/ HTTP/1.1" 200 168782
+INFO 2025-10-23 05:58:22,807 basehttp 73783 6201667584 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-23 05:58:23,014 basehttp 73783 6201667584 "GET /api/schema/ HTTP/1.1" 200 168782
+INFO 2025-10-23 06:00:57,270 autoreload 73783 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py changed, reloading.
+INFO 2025-10-23 06:00:57,663 autoreload 74668 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:09:44,174 autoreload 74668 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py changed, reloading.
+INFO 2025-10-23 06:09:44,563 autoreload 74707 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:09:46,791 autoreload 74707 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py changed, reloading.
+INFO 2025-10-23 06:09:47,051 autoreload 74722 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:45:41,195 autoreload 74722 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py changed, reloading.
+INFO 2025-10-23 06:45:41,547 autoreload 74821 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:45:42,746 autoreload 74821 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-10-23 06:45:42,987 autoreload 74826 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:46:24,948 autoreload 74826 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-10-23 06:46:25,253 autoreload 74871 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:46:32,490 basehttp 74871 6123991040 "GET / HTTP/1.1" 200 4912
+ERROR 2025-10-23 06:46:32,596 log 74871 6123991040 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 100, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1321, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1353, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `latitude` is not valid for model `Ad` in `produit.serializers.AdCreateUpdateSerializer`.
+ERROR 2025-10-23 06:46:32,598 basehttp 74871 6123991040 "GET /api/schema/ HTTP/1.1" 500 188008
+ERROR 2025-10-23 06:46:32,643 log 74871 6123991040 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 100, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1321, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1353, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `latitude` is not valid for model `Ad` in `produit.serializers.AdCreateUpdateSerializer`.
+ERROR 2025-10-23 06:46:32,646 basehttp 74871 6123991040 "GET /api/schema/ HTTP/1.1" 500 188008
+INFO 2025-10-23 06:46:37,026 basehttp 74871 6123991040 "GET / HTTP/1.1" 200 4912
+ERROR 2025-10-23 06:46:37,131 log 74871 6123991040 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 100, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1321, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1353, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `latitude` is not valid for model `Ad` in `produit.serializers.AdCreateUpdateSerializer`.
+ERROR 2025-10-23 06:46:37,133 basehttp 74871 6123991040 "GET /api/schema/ HTTP/1.1" 500 188008
+ERROR 2025-10-23 06:46:37,180 log 74871 6123991040 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 100, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1321, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1353, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `latitude` is not valid for model `Ad` in `produit.serializers.AdCreateUpdateSerializer`.
+ERROR 2025-10-23 06:46:37,182 basehttp 74871 6123991040 "GET /api/schema/ HTTP/1.1" 500 188008
+INFO 2025-10-23 06:47:17,397 autoreload 74871 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-10-23 06:47:17,743 autoreload 74902 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:47:26,516 basehttp 74902 6123008000 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-23 06:47:26,606 basehttp 74902 6123008000 "GET /api/schema/ HTTP/1.1" 200 168782
+INFO 2025-10-23 06:48:29,102 autoreload 74902 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-10-23 06:48:29,494 autoreload 74943 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:49:27,098 autoreload 74943 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-10-23 06:49:27,504 autoreload 74965 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:49:37,542 basehttp 74965 6192148480 "GET / HTTP/1.1" 200 4912
+ERROR 2025-10-23 06:49:37,711 log 74965 6192148480 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 100, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1321, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1353, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `latitude` is not valid for model `Ad` in `produit.serializers.AdCreateUpdateSerializer`.
+ERROR 2025-10-23 06:49:37,714 basehttp 74965 6192148480 "GET /api/schema/ HTTP/1.1" 500 188008
+ERROR 2025-10-23 06:49:37,763 log 74965 6192148480 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 100, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1321, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1353, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `latitude` is not valid for model `Ad` in `produit.serializers.AdCreateUpdateSerializer`.
+ERROR 2025-10-23 06:49:37,765 basehttp 74965 6192148480 "GET /api/schema/ HTTP/1.1" 500 188008
+INFO 2025-10-23 06:50:08,840 autoreload 75015 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:50:14,299 basehttp 75015 6138228736 "GET / HTTP/1.1" 200 4912
+ERROR 2025-10-23 06:50:14,458 log 75015 6138228736 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 100, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1321, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1353, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `latitude` is not valid for model `Ad` in `produit.serializers.AdCreateUpdateSerializer`.
+ERROR 2025-10-23 06:50:14,460 basehttp 75015 6138228736 "GET /api/schema/ HTTP/1.1" 500 188008
+ERROR 2025-10-23 06:50:14,507 log 75015 6138228736 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 100, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1321, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1353, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `latitude` is not valid for model `Ad` in `produit.serializers.AdCreateUpdateSerializer`.
+ERROR 2025-10-23 06:50:14,509 basehttp 75015 6138228736 "GET /api/schema/ HTTP/1.1" 500 188008
+INFO 2025-10-23 06:50:17,036 basehttp 75015 6138228736 "GET / HTTP/1.1" 200 4912
+ERROR 2025-10-23 06:50:17,200 log 75015 6138228736 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 100, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1321, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1353, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `latitude` is not valid for model `Ad` in `produit.serializers.AdCreateUpdateSerializer`.
+ERROR 2025-10-23 06:50:17,202 basehttp 75015 6138228736 "GET /api/schema/ HTTP/1.1" 500 188008
+ERROR 2025-10-23 06:50:17,256 log 75015 6138228736 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 100, in get_operation
+    request_body = self._get_request_body()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1321, in _get_request_body
+    schema, partial_request_body_required = self._get_request_for_media_type(serializer, direction)
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1353, in _get_request_for_media_type
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `latitude` is not valid for model `Ad` in `produit.serializers.AdCreateUpdateSerializer`.
+ERROR 2025-10-23 06:50:17,258 basehttp 75015 6138228736 "GET /api/schema/ HTTP/1.1" 500 188008
+INFO 2025-10-23 06:52:44,880 autoreload 75015 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-10-23 06:52:45,229 autoreload 75069 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:52:49,404 basehttp 75069 6133690368 "GET / HTTP/1.1" 200 4912
+ERROR 2025-10-23 06:52:49,576 log 75069 6133690368 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1397, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1453, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `videos` is not valid for model `Ad` in `produit.serializers.AdDetailSerializer`.
+ERROR 2025-10-23 06:52:49,579 basehttp 75069 6133690368 "GET /api/schema/ HTTP/1.1" 500 189723
+ERROR 2025-10-23 06:52:49,629 log 75069 6133690368 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1397, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1453, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `videos` is not valid for model `Ad` in `produit.serializers.AdDetailSerializer`.
+ERROR 2025-10-23 06:52:49,630 basehttp 75069 6133690368 "GET /api/schema/ HTTP/1.1" 500 189723
+INFO 2025-10-23 06:52:51,157 basehttp 75069 6133690368 "GET / HTTP/1.1" 200 4912
+ERROR 2025-10-23 06:52:51,265 log 75069 6133690368 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1397, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1453, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `videos` is not valid for model `Ad` in `produit.serializers.AdDetailSerializer`.
+ERROR 2025-10-23 06:52:51,267 basehttp 75069 6133690368 "GET /api/schema/ HTTP/1.1" 500 189723
+ERROR 2025-10-23 06:52:51,316 log 75069 6133690368 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1397, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1453, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/drf_spectacular/openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `videos` is not valid for model `Ad` in `produit.serializers.AdDetailSerializer`.
+ERROR 2025-10-23 06:52:51,318 basehttp 75069 6133690368 "GET /api/schema/ HTTP/1.1" 500 189723
+INFO 2025-10-23 06:53:33,502 autoreload 75069 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-10-23 06:53:33,839 autoreload 75092 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:55:26,449 autoreload 75092 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-10-23 06:55:26,817 autoreload 75112 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 06:55:33,266 basehttp 75112 6122336256 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-23 06:55:33,372 basehttp 75112 6122336256 "GET /api/schema/ HTTP/1.1" 200 168782
+INFO 2025-10-23 06:55:43,771 basehttp 75112 6122336256 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-23 06:55:43,858 basehttp 75112 6122336256 "GET /api/schema/ HTTP/1.1" 200 168782
+INFO 2025-10-23 09:14:41,269 autoreload 75112 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py changed, reloading.
+INFO 2025-10-23 09:14:41,731 autoreload 75551 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 09:28:26,221 basehttp 75551 6159740928 "GET /admin/user/customuser/ HTTP/1.1" 200 26518
+INFO 2025-10-23 09:28:26,232 basehttp 75551 6159740928 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:28:26,237 basehttp 75551 13035925504 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,238 basehttp 75551 13103230976 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,238 basehttp 75551 6159740928 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,238 basehttp 75551 13086404608 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,238 basehttp 75551 13069578240 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,239 basehttp 75551 13052751872 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,240 basehttp 75551 13035925504 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,240 basehttp 75551 13103230976 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,241 basehttp 75551 13086404608 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,241 basehttp 75551 6159740928 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,241 basehttp 75551 13069578240 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,242 basehttp 75551 13103230976 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,242 basehttp 75551 13052751872 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,242 basehttp 75551 13035925504 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,243 basehttp 75551 13086404608 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,243 basehttp 75551 13069578240 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,243 basehttp 75551 6159740928 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,243 basehttp 75551 13103230976 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,245 basehttp 75551 13052751872 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,272 basehttp 75551 13035925504 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,272 basehttp 75551 13086404608 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,272 basehttp 75551 13069578240 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-10-23 09:28:26,272 basehttp 75551 6159740928 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-10-23 09:29:11,972 basehttp 75551 13035925504 "GET /admin/produit/adimage/ HTTP/1.1" 200 20866
+INFO 2025-10-23 09:29:11,991 basehttp 75551 13052751872 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-10-23 09:29:11,994 basehttp 75551 13052751872 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-10-23 09:29:11,995 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:29:13,200 basehttp 75551 13035925504 "GET /admin/produit/adimage/ HTTP/1.1" 200 20866
+INFO 2025-10-23 09:29:13,207 basehttp 75551 13052751872 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:29:18,354 basehttp 75551 13052751872 "GET /admin/user/customuser/ HTTP/1.1" 200 26518
+INFO 2025-10-23 09:29:18,363 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:29:25,639 basehttp 75551 13035925504 "GET /admin/user/userrating/ HTTP/1.1" 200 20315
+INFO 2025-10-23 09:29:25,647 basehttp 75551 13052751872 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:29:29,831 basehttp 75551 13052751872 "GET /admin/user/conversation/ HTTP/1.1" 200 20959
+INFO 2025-10-23 09:29:29,846 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:29:32,792 basehttp 75551 13035925504 "GET /admin/user/conversation/add/ HTTP/1.1" 200 20443
+INFO 2025-10-23 09:29:32,804 basehttp 75551 13035925504 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:29:32,807 basehttp 75551 6159740928 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:29:32,808 basehttp 75551 13086404608 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:29:32,808 basehttp 75551 13069578240 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-10-23 09:29:32,809 basehttp 75551 13052751872 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:29:32,832 basehttp 75551 13035925504 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2025-10-23 09:30:26,816 basehttp 75551 6159740928 "GET /admin/produit/adimage/ HTTP/1.1" 200 20866
+INFO 2025-10-23 09:30:26,823 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:30:35,632 basehttp 75551 13035925504 "GET /admin/produit/adreport/ HTTP/1.1" 200 21041
+INFO 2025-10-23 09:30:35,647 basehttp 75551 6159740928 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:30:37,878 basehttp 75551 6159740928 "GET /admin/produit/adview/ HTTP/1.1" 200 20126
+INFO 2025-10-23 09:30:37,893 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:30:41,247 basehttp 75551 13035925504 "GET /admin/produit/ad/ HTTP/1.1" 200 31370
+INFO 2025-10-23 09:30:41,260 basehttp 75551 6159740928 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:30:48,515 basehttp 75551 6159740928 "GET /admin/produit/advertisement/ HTTP/1.1" 200 26020
+INFO 2025-10-23 09:30:48,521 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:31:00,436 basehttp 75551 13035925504 "GET /admin/produit/adimage/ HTTP/1.1" 200 20866
+INFO 2025-10-23 09:31:00,442 basehttp 75551 6159740928 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:31:07,529 basehttp 75551 6159740928 "GET /admin/produit/adreport/ HTTP/1.1" 200 21041
+INFO 2025-10-23 09:31:07,534 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:31:09,980 basehttp 75551 13035925504 "GET /admin/produit/adview/ HTTP/1.1" 200 20126
+INFO 2025-10-23 09:31:09,988 basehttp 75551 6159740928 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:31:12,184 basehttp 75551 6159740928 "GET /admin/produit/ad/ HTTP/1.1" 200 31370
+INFO 2025-10-23 09:31:12,191 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:31:17,465 basehttp 75551 13035925504 "GET /admin/produit/favorite/ HTTP/1.1" 200 20135
+INFO 2025-10-23 09:31:17,478 basehttp 75551 6159740928 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:31:21,582 basehttp 75551 6159740928 "GET /admin/produit/ad/ HTTP/1.1" 200 31370
+INFO 2025-10-23 09:31:21,589 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+ERROR 2025-10-23 09:31:38,479 log 75551 13035925504 Internal Server Error: /admin/produit/ad/2ea4f90a-3af0-47ad-87b6-6353ff446330/change/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/forms/models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/forms/models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (latitude, contact_email, whatsapp_number, longitude, contact_phone) specified for Ad
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+        request, obj, change=not add, fields=flatten_fieldsets(fieldsets)
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 842, in get_form
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unknown field(s) (latitude, contact_email, whatsapp_number, longitude, contact_phone) specified for Ad. Check fields/fieldsets/exclude attributes of class AdAdmin.
+ERROR 2025-10-23 09:31:38,483 basehttp 75551 13035925504 "GET /admin/produit/ad/2ea4f90a-3af0-47ad-87b6-6353ff446330/change/ HTTP/1.1" 500 154985
+INFO 2025-10-23 09:31:59,144 basehttp 75551 13035925504 "GET /admin/produit/ad/?o=11 HTTP/1.1" 200 32063
+INFO 2025-10-23 09:31:59,160 basehttp 75551 6159740928 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:32:02,352 basehttp 75551 6159740928 "GET /admin/produit/ad/?o=-11 HTTP/1.1" 200 32147
+INFO 2025-10-23 09:32:02,366 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:32:09,440 basehttp 75551 13035925504 "GET /admin/user/message/ HTTP/1.1" 200 20405
+INFO 2025-10-23 09:32:09,452 basehttp 75551 6159740928 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 09:32:15,517 basehttp 75551 6159740928 "GET /admin/user/message/add/ HTTP/1.1" 200 22058
+INFO 2025-10-23 09:32:15,534 basehttp 75551 13035925504 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 12:25:57,911 autoreload 75551 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py changed, reloading.
+INFO 2025-10-23 12:25:58,958 autoreload 75957 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 12:26:36,968 autoreload 75957 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py changed, reloading.
+INFO 2025-10-23 12:26:37,361 autoreload 75970 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 12:26:55,264 autoreload 75970 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py changed, reloading.
+INFO 2025-10-23 12:26:55,592 autoreload 75993 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 12:27:24,962 autoreload 75993 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py changed, reloading.
+INFO 2025-10-23 12:27:25,290 autoreload 76009 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 12:30:05,442 autoreload 76009 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py changed, reloading.
+INFO 2025-10-23 12:30:05,833 autoreload 76035 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 12:33:04,079 autoreload 76035 8437539008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-10-23 12:33:04,449 autoreload 76061 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 12:55:07,233 autoreload 76337 8437539008 Watching for file changes with StatReloader
+INFO 2025-10-23 12:55:20,691 basehttp 76337 6136033280 "OPTIONS /api/produit/ads/create/ HTTP/1.1" 200 0
+WARNING 2025-10-23 12:55:20,717 log 76337 6136033280 Bad Request: /api/produit/ads/create/
+WARNING 2025-10-23 12:55:20,717 basehttp 76337 6136033280 "POST /api/produit/ads/create/ HTTP/1.1" 400 75
+INFO 2025-10-23 12:55:32,562 basehttp 76337 6136033280 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-10-23 12:55:32,562 basehttp 76337 6152859648 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-10-23 12:55:32,571 basehttp 76337 6136033280 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-23 12:55:32,572 basehttp 76337 6152859648 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-23 12:55:48,909 basehttp 76337 6136033280 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-23 12:55:48,909 basehttp 76337 6152859648 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-23 12:57:03,498 basehttp 76337 6136033280 "OPTIONS /api/publicite/create/ HTTP/1.1" 200 0
+ERROR 2025-10-23 12:57:03,758 log 76337 6136033280 Internal Server Error: /api/publicite/create/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py", line 271, in perform_create
+    serializer.save(user=self.request.user)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py", line 234, in create
+    duration_hours = validated_data['duration_hours']
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'duration_hours'
+ERROR 2025-10-23 12:57:03,761 basehttp 76337 6136033280 "POST /api/publicite/create/ HTTP/1.1" 500 115904
+ERROR 2025-10-23 12:57:16,019 log 76337 6136033280 Internal Server Error: /api/publicite/create/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py", line 271, in perform_create
+    serializer.save(user=self.request.user)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py", line 234, in create
+    duration_hours = validated_data['duration_hours']
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'duration_hours'
+ERROR 2025-10-23 12:57:16,022 basehttp 76337 6136033280 "POST /api/publicite/create/ HTTP/1.1" 500 115904
+INFO 2025-10-23 17:45:01,249 autoreload 2302 8552521920 Watching for file changes with StatReloader
+INFO 2025-10-23 17:45:06,606 basehttp 2302 6159347712 "GET / HTTP/1.1" 200 4912
+WARNING 2025-10-23 17:45:07,457 log 2302 6176174080 Not Found: /apple-touch-icon-precomposed.png
+WARNING 2025-10-23 17:45:07,458 basehttp 2302 6176174080 "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 4208
+INFO 2025-10-23 17:45:07,485 basehttp 2302 6159347712 "GET /api/schema/ HTTP/1.1" 200 173166
+WARNING 2025-10-23 17:45:07,521 log 2302 6176174080 Not Found: /apple-touch-icon.png
+WARNING 2025-10-23 17:45:07,521 basehttp 2302 6176174080 "GET /apple-touch-icon.png HTTP/1.1" 404 4172
+INFO 2025-10-23 17:45:10,973 basehttp 2302 6159347712 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-23 17:45:11,069 basehttp 2302 6159347712 "GET /api/schema/ HTTP/1.1" 200 173166
+INFO 2025-10-23 17:47:31,238 basehttp 2302 6159347712 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-10-23 17:47:31,238 basehttp 2302 13170143232 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-10-23 17:47:31,247 basehttp 2302 13170143232 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-23 17:47:31,247 basehttp 2302 6159347712 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-23 17:49:32,821 basehttp 2302 6159347712 "OPTIONS /api/produit/ads/create/ HTTP/1.1" 200 0
+ERROR 2025-10-23 17:49:32,994 log 2302 6159347712 Internal Server Error: /api/produit/ads/create/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table produit_ad has no column named latitude
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py", line 127, in perform_create
+    ad = serializer.save(user=self.request.user)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py", line 234, in create
+    ad = Ad.objects.create(**validated_data)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py", line 207, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table produit_ad has no column named latitude
+ERROR 2025-10-23 17:49:32,998 basehttp 2302 6159347712 "POST /api/produit/ads/create/ HTTP/1.1" 500 255636
+INFO 2025-10-23 17:55:51,983 autoreload 2417 8552521920 Watching for file changes with StatReloader
+INFO 2025-10-23 17:56:00,772 basehttp 2417 6190051328 "GET /admin/user/message/add/ HTTP/1.1" 200 22058
+INFO 2025-10-23 17:56:00,792 basehttp 2417 6190051328 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-23 17:56:00,793 basehttp 2417 6223704064 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-23 17:56:00,794 basehttp 2417 6257356800 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-23 17:56:00,795 basehttp 2417 6206877696 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 17:56:00,795 basehttp 2417 6190051328 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11973
+INFO 2025-10-23 17:56:00,796 basehttp 2417 6240530432 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-23 17:56:00,821 basehttp 2417 6223704064 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-23 17:56:06,544 basehttp 2417 6206877696 "GET /admin/user/customuser/ HTTP/1.1" 200 26518
+INFO 2025-10-23 17:56:06,547 basehttp 2417 6240530432 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 17:56:06,549 basehttp 2417 6223704064 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-23 17:56:06,549 basehttp 2417 6257356800 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-10-23 17:56:06,558 basehttp 2417 6206877696 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-23 17:56:06,558 basehttp 2417 6190051328 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-23 17:56:06,559 basehttp 2417 6240530432 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-23 17:56:11,039 basehttp 2417 6257356800 "GET /admin/user/customuser/ HTTP/1.1" 200 26518
+INFO 2025-10-23 17:56:11,044 basehttp 2417 6206877696 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 17:56:17,543 basehttp 2417 6223704064 "GET /admin/produit/ad/add/ HTTP/1.1" 200 47782
+INFO 2025-10-23 17:56:17,551 basehttp 2417 6240530432 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-10-23 17:56:17,552 basehttp 2417 6206877696 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-10-23 17:56:17,553 basehttp 2417 6257356800 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15628
+INFO 2025-10-23 17:56:17,555 basehttp 2417 6190051328 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 17:56:17,555 basehttp 2417 6223704064 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2025-10-23 17:56:17,575 basehttp 2417 6240530432 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 537
+INFO 2025-10-23 17:56:17,582 basehttp 2417 6257356800 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-10-23 17:56:17,582 basehttp 2417 6206877696 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-10-23 17:57:24,127 basehttp 2417 6190051328 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-10-23 17:57:24,368 basehttp 2417 6190051328 "POST /api/auth/login/ HTTP/1.1" 200 514
+INFO 2025-10-23 17:57:28,857 basehttp 2417 6190051328 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-23 17:57:28,857 basehttp 2417 6206877696 "GET /api/produit/cities/ HTTP/1.1" 200 825
+ERROR 2025-10-23 17:58:20,491 log 2417 6190051328 Internal Server Error: /api/produit/ads/create/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table produit_ad has no column named latitude
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py", line 127, in perform_create
+    ad = serializer.save(user=self.request.user)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py", line 234, in create
+    ad = Ad.objects.create(**validated_data)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py", line 207, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table produit_ad has no column named latitude
+ERROR 2025-10-23 17:58:20,495 basehttp 2417 6190051328 "POST /api/produit/ads/create/ HTTP/1.1" 500 243184
+INFO 2025-10-23 18:03:51,635 autoreload 2525 8552521920 Watching for file changes with StatReloader
+INFO 2025-10-23 18:04:03,341 basehttp 2525 6199930880 "OPTIONS /api/produit/ads/create/ HTTP/1.1" 200 0
+WARNING 2025-10-23 18:04:03,352 log 2525 6199930880 Unauthorized: /api/produit/ads/create/
+WARNING 2025-10-23 18:04:03,353 basehttp 2525 6199930880 "POST /api/produit/ads/create/ HTTP/1.1" 401 30
+WARNING 2025-10-23 18:04:24,522 log 2525 6199930880 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:04:24,522 basehttp 2525 6199930880 "POST /api/auth/login/ HTTP/1.1" 401 56
+WARNING 2025-10-23 18:04:33,463 log 2525 6199930880 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:04:33,464 basehttp 2525 6199930880 "POST /api/auth/login/ HTTP/1.1" 401 56
+WARNING 2025-10-23 18:05:11,243 log 2525 6199930880 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:05:11,244 basehttp 2525 6199930880 "POST /api/auth/login/ HTTP/1.1" 401 56
+WARNING 2025-10-23 18:05:33,939 log 2525 6199930880 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:05:33,940 basehttp 2525 6199930880 "POST /api/auth/login/ HTTP/1.1" 401 56
+WARNING 2025-10-23 18:07:03,320 log 2525 6199930880 Bad Request: /api/user/register/
+WARNING 2025-10-23 18:07:03,320 basehttp 2525 6199930880 "POST /api/user/register/ HTTP/1.1" 400 97
+WARNING 2025-10-23 18:07:46,554 log 2525 6199930880 Bad Request: /api/user/register/
+WARNING 2025-10-23 18:07:46,555 basehttp 2525 6199930880 "POST /api/user/register/ HTTP/1.1" 400 97
+WARNING 2025-10-23 18:08:31,681 log 2525 6216757248 Bad Request: /api/user/register/
+WARNING 2025-10-23 18:08:31,682 basehttp 2525 6216757248 "POST /api/user/register/ HTTP/1.1" 400 97
+WARNING 2025-10-23 18:08:40,203 log 2525 6216757248 Bad Request: /api/user/register/
+WARNING 2025-10-23 18:08:40,203 basehttp 2525 6216757248 "POST /api/user/register/ HTTP/1.1" 400 97
+INFO 2025-10-23 18:09:16,686 basehttp 2525 6233583616 "POST /api/user/register/ HTTP/1.1" 201 76
+INFO 2025-10-23 18:09:42,363 basehttp 2525 6233583616 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+WARNING 2025-10-23 18:09:42,595 log 2525 6233583616 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:09:42,595 basehttp 2525 6233583616 "POST /api/auth/login/ HTTP/1.1" 401 56
+INFO 2025-10-23 18:10:15,925 basehttp 2525 6199930880 "GET /admin/produit/ad/add/ HTTP/1.1" 302 0
+INFO 2025-10-23 18:10:15,949 basehttp 2525 6199930880 "GET /admin/login/?next=/admin/produit/ad/add/ HTTP/1.1" 200 4254
+INFO 2025-10-23 18:10:15,962 basehttp 2525 6199930880 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+WARNING 2025-10-23 18:10:40,103 log 2525 6216757248 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:10:40,103 basehttp 2525 6216757248 "POST /api/auth/login/ HTTP/1.1" 401 56
+WARNING 2025-10-23 18:11:48,266 log 2525 6199930880 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:11:48,267 basehttp 2525 6199930880 "POST /api/auth/login/ HTTP/1.1" 401 56
+WARNING 2025-10-23 18:12:08,660 log 2525 6199930880 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:12:08,661 basehttp 2525 6199930880 "POST /api/auth/login/ HTTP/1.1" 401 56
+WARNING 2025-10-23 18:12:19,094 log 2525 6199930880 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:12:19,094 basehttp 2525 6199930880 "POST /api/auth/login/ HTTP/1.1" 401 56
+INFO 2025-10-23 18:15:30,005 autoreload 2582 8552521920 Watching for file changes with StatReloader
+INFO 2025-10-23 18:15:34,144 basehttp 2582 6205288448 "GET /admin/login/?next=/admin/produit/ad/add/ HTTP/1.1" 200 4254
+INFO 2025-10-23 18:15:53,664 basehttp 2582 6205288448 "POST /admin/login/?next=/admin/produit/ad/add/ HTTP/1.1" 302 0
+INFO 2025-10-23 18:15:53,698 basehttp 2582 6205288448 "GET /admin/produit/ad/add/ HTTP/1.1" 200 47782
+INFO 2025-10-23 18:15:53,709 basehttp 2582 6205288448 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 18:15:58,651 basehttp 2582 6205288448 "GET /admin/user/customuser/ HTTP/1.1" 200 26520
+INFO 2025-10-23 18:15:58,658 basehttp 2582 6222114816 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 18:16:23,402 basehttp 2582 6222114816 "GET /admin/user/customuser/1/change/ HTTP/1.1" 200 50630
+INFO 2025-10-23 18:16:23,416 basehttp 2582 6205288448 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 18:16:23,416 basehttp 2582 6222114816 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+INFO 2025-10-23 18:16:50,419 basehttp 2582 6205288448 "GET /admin/user/customuser/1/password/ HTTP/1.1" 200 20289
+INFO 2025-10-23 18:16:50,430 basehttp 2582 6222114816 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2025-10-23 18:16:50,430 basehttp 2582 6205288448 "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2025-10-23 18:17:11,087 basehttp 2582 6222114816 "POST /admin/user/customuser/1/password/ HTTP/1.1" 302 0
+INFO 2025-10-23 18:17:11,108 basehttp 2582 6205288448 "GET /admin/user/customuser/1/change/ HTTP/1.1" 200 50770
+INFO 2025-10-23 18:17:11,121 basehttp 2582 6222114816 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+WARNING 2025-10-23 18:17:25,217 log 2582 6238941184 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:17:25,217 basehttp 2582 6238941184 "POST /api/auth/login/ HTTP/1.1" 401 56
+INFO 2025-10-23 18:17:38,160 basehttp 2582 6222114816 "GET /admin/user/customuser/ HTTP/1.1" 200 26520
+INFO 2025-10-23 18:17:38,169 basehttp 2582 6205288448 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+WARNING 2025-10-23 18:18:04,243 log 2582 6238941184 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:18:04,243 basehttp 2582 6238941184 "POST /api/auth/login/ HTTP/1.1" 401 56
+INFO 2025-10-23 18:18:19,295 basehttp 2582 6255767552 "POST /admin/user/customuser/ HTTP/1.1" 200 18685
+INFO 2025-10-23 18:18:19,317 basehttp 2582 6255767552 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-10-23 18:18:20,633 basehttp 2582 6255767552 "POST /admin/user/customuser/ HTTP/1.1" 302 0
+INFO 2025-10-23 18:18:20,652 basehttp 2582 6255767552 "GET /admin/user/customuser/ HTTP/1.1" 200 25808
+INFO 2025-10-23 18:18:20,661 basehttp 2582 6255767552 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 18:19:17,336 basehttp 2582 6205288448 "POST /api/user/register/ HTTP/1.1" 201 76
+WARNING 2025-10-23 18:19:39,159 log 2582 6205288448 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:19:39,161 basehttp 2582 6205288448 "POST /api/auth/login/ HTTP/1.1" 401 56
+INFO 2025-10-23 18:20:44,235 basehttp 2582 6205288448 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+WARNING 2025-10-23 18:20:44,469 log 2582 6205288448 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:20:44,469 basehttp 2582 6205288448 "POST /api/auth/login/ HTTP/1.1" 401 56
+WARNING 2025-10-23 18:20:51,977 log 2582 6205288448 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 18:20:51,978 basehttp 2582 6205288448 "POST /api/auth/login/ HTTP/1.1" 401 56
+WARNING 2025-10-23 18:22:31,661 log 2582 6205288448 Unauthorized: /api/jwt/login/
+WARNING 2025-10-23 18:22:31,662 basehttp 2582 6205288448 "POST /api/jwt/login/ HTTP/1.1" 401 79
+INFO 2025-10-23 18:22:54,828 basehttp 2582 6205288448 "GET /admin/user/customuser/ HTTP/1.1" 200 26513
+INFO 2025-10-23 18:22:54,835 basehttp 2582 6222114816 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 18:23:29,692 basehttp 2582 6222114816 "GET /admin/user/customuser/3/change/ HTTP/1.1" 200 50619
+INFO 2025-10-23 18:23:29,704 basehttp 2582 6222114816 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 18:31:27,283 basehttp 2582 6222114816 - Broken pipe from ('127.0.0.1', 49472)
+WARNING 2025-10-23 20:07:07,253 log 2582 6205288448 Unauthorized: /api/auth/login/
+WARNING 2025-10-23 20:07:07,254 basehttp 2582 6205288448 "POST /api/auth/login/ HTTP/1.1" 401 56
+WARNING 2025-10-23 20:08:41,531 log 2582 6205288448 Unauthorized: /api/jwt/login/
+WARNING 2025-10-23 20:08:41,532 basehttp 2582 6205288448 "POST /api/jwt/login/ HTTP/1.1" 401 79
+INFO 2025-10-23 20:12:46,643 basehttp 2582 6205288448 "POST /api/jwt/login/ HTTP/1.1" 200 483
+INFO 2025-10-23 20:13:01,118 basehttp 2582 6222114816 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-10-23 20:13:01,355 basehttp 2582 6222114816 "POST /api/auth/login/ HTTP/1.1" 200 536
+INFO 2025-10-23 20:13:01,897 basehttp 2582 6222114816 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-10-23 20:13:01,897 basehttp 2582 6238941184 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-10-23 20:13:01,903 basehttp 2582 6222114816 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-23 20:13:01,903 basehttp 2582 6238941184 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-23 20:14:28,688 basehttp 2582 6205288448 "OPTIONS /api/produit/ads/create/ HTTP/1.1" 200 0
+INFO 2025-10-23 20:14:28,707 basehttp 2582 6205288448 "POST /api/produit/ads/create/ HTTP/1.1" 201 344
+INFO 2025-10-23 20:14:50,035 basehttp 2582 6222114816 "GET /admin/produit/ad/ HTTP/1.1" 200 30474
+INFO 2025-10-23 20:14:50,043 basehttp 2582 6238941184 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 20:16:08,243 basehttp 2582 6205288448 "GET /admin/produit/ad/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/change/ HTTP/1.1" 200 48836
+INFO 2025-10-23 20:16:08,256 basehttp 2582 6238941184 "GET /media/ads/images/2025/10/23/ucad.jpg HTTP/1.1" 200 52850
+INFO 2025-10-23 20:16:08,257 basehttp 2582 6205288448 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-23 20:16:45,043 basehttp 2582 6205288448 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-23 20:16:45,043 basehttp 2582 6238941184 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-23 20:18:51,663 basehttp 2582 6238941184 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-23 20:18:51,663 basehttp 2582 6205288448 "GET /api/produit/categories/ HTTP/1.1" 200 635

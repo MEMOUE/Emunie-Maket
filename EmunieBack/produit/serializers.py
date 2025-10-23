@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from .models import (
-    Ad, AdImage, AdVideo, Advertisement, Favorite, AdReport,
+    Ad, AdImage, Advertisement, Favorite, AdReport,
     CATEGORY_CHOICES, CITY_CHOICES
 )
 
@@ -9,17 +9,36 @@ User = get_user_model()
 
 class AdImageSerializer(serializers.ModelSerializer):
     """Serializer pour les images d'annonces"""
+    image_url = serializers.SerializerMethodField()
+
     class Meta:
         model = AdImage
-        fields = ('id', 'image', 'caption', 'order', 'is_primary', 'created_at')
+        fields = ('id', 'image', 'image_url', 'caption', 'order', 'is_primary', 'created_at')
         read_only_fields = ('id', 'created_at')
 
-class AdVideoSerializer(serializers.ModelSerializer):
-    """Serializer pour les vidéos d'annonces"""
-    class Meta:
-        model = AdVideo
-        fields = ('id', 'video', 'thumbnail', 'caption', 'duration', 'created_at')
-        read_only_fields = ('id', 'created_at')
+    def get_image_url(self, obj):
+        request = self.context.get('request')
+        if obj.image and hasattr(obj.image, 'url'):
+            if request:
+                return request.build_absolute_uri(obj.image.url)
+            return obj.image.url
+        return None
+
+    def validate_image(self, value):
+        """Valider la taille de l'image"""
+        if value.size > 5 * 1024 * 1024:  # 5Mo
+            raise serializers.ValidationError("La taille de l'image ne doit pas dépasser 5Mo.")
+
+        # Vérifier l'extension
+        allowed_extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp']
+        ext = value.name.split('.')[-1].lower()
+        if ext not in allowed_extensions:
+            raise serializers.ValidationError(
+                f"Format non supporté. Utilisez: {', '.join(allowed_extensions)}"
+            )
+
+        return value
+
 
 class AdListSerializer(serializers.ModelSerializer):
     """Serializer pour la liste des annonces"""
@@ -28,26 +47,39 @@ class AdListSerializer(serializers.ModelSerializer):
     category_display = serializers.CharField(source='get_category_display', read_only=True)
     city_display = serializers.CharField(source='get_city_display', read_only=True)
     primary_image = serializers.SerializerMethodField()
+    images = AdImageSerializer(many=True, read_only=True)
     is_favorited = serializers.SerializerMethodField()
     time_since_published = serializers.SerializerMethodField()
+    images_count = serializers.IntegerField(read_only=True)
 
     class Meta:
         model = Ad
         fields = (
             'id', 'title', 'slug', 'price', 'currency', 'is_negotiable',
             'user_name', 'user_avatar', 'category', 'category_display',
-            'city', 'city_display', 'primary_image', 'is_favorited',
-            'is_featured', 'is_urgent', 'views_count', 'favorites_count',
-            'status', 'created_at', 'time_since_published', 'expires_at'
+            'city', 'city_display', 'primary_image', 'images', 'images_count',
+            'is_favorited', 'is_featured', 'is_urgent', 'views_count',
+            'favorites_count', 'status', 'created_at', 'time_since_published',
+            'expires_at'
         )
 
     def get_primary_image(self, obj):
+        """Obtenir l'URL de l'image primaire"""
+        request = self.context.get('request')
         primary_image = obj.images.filter(is_primary=True).first()
-        if primary_image:
-            return self.context['request'].build_absolute_uri(primary_image.image.url)
+
+        if primary_image and primary_image.image:
+            if request:
+                return request.build_absolute_uri(primary_image.image.url)
+            return primary_image.image.url
+
+        # Sinon prendre la première image
         first_image = obj.images.first()
-        if first_image:
-            return self.context['request'].build_absolute_uri(first_image.image.url)
+        if first_image and first_image.image:
+            if request:
+                return request.build_absolute_uri(first_image.image.url)
+            return first_image.image.url
+
         return None
 
     def get_is_favorited(self, obj):
@@ -63,16 +95,17 @@ class AdListSerializer(serializers.ModelSerializer):
             return timesince(obj.published_at, timezone.now())
         return None
 
+
 class AdDetailSerializer(serializers.ModelSerializer):
     """Serializer détaillé pour une annonce"""
     user = serializers.SerializerMethodField()
     category_display = serializers.CharField(source='get_category_display', read_only=True)
     city_display = serializers.CharField(source='get_city_display', read_only=True)
     images = AdImageSerializer(many=True, read_only=True)
-    videos = AdVideoSerializer(many=True, read_only=True)
     is_favorited = serializers.SerializerMethodField()
     is_owner = serializers.SerializerMethodField()
     related_ads = serializers.SerializerMethodField()
+    images_count = serializers.IntegerField(read_only=True)
 
     class Meta:
         model = Ad
@@ -80,17 +113,25 @@ class AdDetailSerializer(serializers.ModelSerializer):
             'id', 'title', 'slug', 'description', 'price', 'currency', 'is_negotiable',
             'ad_type', 'user', 'category', 'category_display', 'city', 'city_display',
             'address', 'latitude', 'longitude', 'contact_phone', 'contact_email',
-            'whatsapp_number', 'images', 'videos', 'is_favorited', 'is_owner',
+            'whatsapp_number', 'images', 'images_count', 'is_favorited', 'is_owner',
             'is_featured', 'is_urgent', 'views_count', 'favorites_count', 'status',
             'created_at', 'updated_at', 'published_at', 'expires_at', 'related_ads'
         )
 
     def get_user(self, obj):
+        request = self.context.get('request')
+        avatar_url = None
+        if obj.user.avatar and hasattr(obj.user.avatar, 'url'):
+            if request:
+                avatar_url = request.build_absolute_uri(obj.user.avatar.url)
+            else:
+                avatar_url = obj.user.avatar.url
+
         return {
             'id': obj.user.id,
             'username': obj.user.username,
             'full_name': obj.user.full_name,
-            'avatar': self.context['request'].build_absolute_uri(obj.user.avatar.url) if obj.user.avatar else None,
+            'avatar': avatar_url,
             'average_rating': obj.user.average_rating,
             'total_ads': obj.user.total_ads,
             'location': obj.user.location,
@@ -118,8 +159,16 @@ class AdDetailSerializer(serializers.ModelSerializer):
 
         return AdListSerializer(related, many=True, context=self.context).data
 
+
 class AdCreateUpdateSerializer(serializers.ModelSerializer):
     """Serializer pour créer/modifier une annonce"""
+    images = serializers.ListField(
+        child=serializers.ImageField(),
+        required=False,
+        write_only=True,
+        max_length=3,
+        min_length=1
+    )
 
     class Meta:
         model = Ad
@@ -127,14 +176,30 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
             'title', 'description', 'price', 'currency', 'is_negotiable',
             'ad_type', 'category', 'city', 'address', 'latitude', 'longitude',
             'contact_phone', 'contact_email', 'whatsapp_number', 'is_urgent',
-            'expires_at'
+            'expires_at', 'images'
         )
+
+    def validate_images(self, value):
+        """Valider les images"""
+        if len(value) < 1:
+            raise serializers.ValidationError("Vous devez ajouter au moins 1 image.")
+        if len(value) > 3:
+            raise serializers.ValidationError("Vous ne pouvez ajouter que 3 images maximum.")
+
+        # Vérifier la taille de chaque image
+        for image in value:
+            if image.size > 5 * 1024 * 1024:  # 5Mo
+                raise serializers.ValidationError(
+                    f"L'image {image.name} dépasse la taille maximale de 5Mo."
+                )
+
+        return value
 
     def validate(self, attrs):
         request = self.context.get('request')
 
-        # Vérifier si l'utilisateur peut créer une annonce
-        if self.instance is None:  # Création uniquement
+        # Vérifier si l'utilisateur peut créer une annonce (création uniquement)
+        if self.instance is None and request:
             if not request.user.can_create_ad:
                 raise serializers.ValidationError(
                     f"Limite d'annonces atteinte. Vous avez déjà {request.user.ads.filter(status='active').count()} annonces actives. "
@@ -145,14 +210,17 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         from django.utils import timezone
+        from django.utils.text import slugify
         from datetime import timedelta
+
+        # Extraire les images
+        images_data = validated_data.pop('images', [])
 
         # Calculer la date d'expiration (30 jours par défaut)
         if 'expires_at' not in validated_data or not validated_data['expires_at']:
             validated_data['expires_at'] = timezone.now() + timedelta(days=30)
 
         # Générer un slug unique
-        from django.utils.text import slugify
         title = validated_data['title']
         slug = slugify(title)
         counter = 1
@@ -161,9 +229,50 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
             counter += 1
 
         validated_data['slug'] = slug
+
+        # Créer l'annonce
         ad = Ad.objects.create(**validated_data)
 
+        # Créer les images
+        for index, image_file in enumerate(images_data):
+            AdImage.objects.create(
+                ad=ad,
+                image=image_file,
+                order=index,
+                is_primary=(index == 0)  # La première image est primaire
+            )
+
         return ad
+
+    def update(self, instance, validated_data):
+        # Extraire les images si présentes
+        images_data = validated_data.pop('images', None)
+
+        # Mettre à jour les champs de l'annonce
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+
+        instance.save()
+
+        # Gérer les images si fournies
+        if images_data is not None:
+            # Supprimer les anciennes images
+            old_images = instance.images.all()
+            for img in old_images:
+                img.image.delete(save=False)
+                img.delete()
+
+            # Créer les nouvelles images
+            for index, image_file in enumerate(images_data):
+                AdImage.objects.create(
+                    ad=instance,
+                    image=image_file,
+                    order=index,
+                    is_primary=(index == 0)
+                )
+
+        return instance
+
 
 class FavoriteSerializer(serializers.ModelSerializer):
     """Serializer pour les favoris"""
@@ -174,6 +283,7 @@ class FavoriteSerializer(serializers.ModelSerializer):
         fields = ('id', 'ad', 'created_at')
         read_only_fields = ('id', 'created_at')
 
+
 class AdReportSerializer(serializers.ModelSerializer):
     """Serializer pour signaler une annonce"""
     reporter_name = serializers.CharField(source='reporter.full_name', read_only=True)
@@ -183,17 +293,19 @@ class AdReportSerializer(serializers.ModelSerializer):
         fields = ('id', 'reason', 'description', 'reporter_name', 'created_at', 'is_resolved')
         read_only_fields = ('id', 'reporter_name', 'created_at', 'is_resolved')
 
-class publiciteerializer(serializers.ModelSerializer):
+
+class AdvertisementSerializer(serializers.ModelSerializer):
     """Serializer pour les publicités payantes"""
     user_name = serializers.CharField(source='user.full_name', read_only=True)
     duration_days = serializers.SerializerMethodField()
     is_running = serializers.ReadOnlyField()
     ctr = serializers.ReadOnlyField()
+    image_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Advertisement
         fields = (
-            'id', 'user', 'user_name', 'title', 'link', 'image',
+            'id', 'user', 'user_name', 'title', 'link', 'image', 'image_url',
             'duration_hours', 'duration_days', 'price_per_day', 'total_price',
             'start_date', 'end_date', 'is_active', 'is_approved',
             'impressions', 'clicks', 'ctr', 'is_running', 'created_at'
@@ -202,6 +314,14 @@ class publiciteerializer(serializers.ModelSerializer):
 
     def get_duration_days(self, obj):
         return obj.duration_hours / 24
+
+    def get_image_url(self, obj):
+        request = self.context.get('request')
+        if obj.image and hasattr(obj.image, 'url'):
+            if request:
+                return request.build_absolute_uri(obj.image.url)
+            return obj.image.url
+        return None
 
     def validate_image(self, value):
         """Valider la taille de l'affiche (max 2Mo)"""
@@ -214,6 +334,7 @@ class publiciteerializer(serializers.ModelSerializer):
         if value % 24 != 0:
             raise serializers.ValidationError("La durée doit être un multiple de 24 heures (1 jour, 2 jours, etc.)")
         return value
+
 
 class AdvertisementCreateSerializer(serializers.ModelSerializer):
     """Serializer pour créer une publicité"""
@@ -253,10 +374,12 @@ class AdvertisementCreateSerializer(serializers.ModelSerializer):
 
         return advertisement
 
+
 class CategoryChoiceSerializer(serializers.Serializer):
     """Serializer pour les choix de catégories"""
     value = serializers.CharField()
     label = serializers.CharField()
+
 
 class CityChoiceSerializer(serializers.Serializer):
     """Serializer pour les choix de villes"""
