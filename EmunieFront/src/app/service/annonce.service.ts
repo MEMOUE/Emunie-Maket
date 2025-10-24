@@ -46,4 +46,9 @@ export class AnnonceService {
   checkAdLimit(): Observable<any> {
     return this.http.get(`${this.apiUrl}produit/ads/check-limit/`);
   }
+
+  // Nouvelle méthode pour récupérer les données de la page d'accueil
+  getHomeData(): Observable<any> {
+    return this.http.get(`${this.apiUrl}produit/home-data/`);
+  }
 }

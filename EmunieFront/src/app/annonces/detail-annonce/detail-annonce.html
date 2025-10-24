@@ -1,1 +1,323 @@
-<p>detail-annonce works!</p>
+<div class="min-h-screen bg-gray-50">
+  <!-- Loading -->
+  @if (loading) {
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="text-center">
+        <i class="pi pi-spin pi-spinner text-5xl text-orange-500 mb-4"></i>
+        <p class="text-gray-600 text-lg">Chargement de l'annonce...</p>
+      </div>
+    </div>
+  }
+
+  <!-- Contenu de l'annonce -->
+  @else if (ad) {
+    <div class="max-w-7xl mx-auto px-4 py-8">
+
+      <!-- Breadcrumb -->
+      <div class="mb-6 text-sm text-gray-600">
+        <a routerLink="/" class="hover:text-orange-500">Accueil</a>
+        <i class="pi pi-chevron-right mx-2 text-xs"></i>
+        <a [routerLink]="['/annonces']" [queryParams]="{category: ad.category}" class="hover:text-orange-500">
+          {{ ad.category_display }}
+        </a>
+        <i class="pi pi-chevron-right mx-2 text-xs"></i>
+        <span class="text-gray-800">{{ ad.title }}</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Colonne principale -->
+        <div class="lg:col-span-2 space-y-6">
+
+          <!-- Galerie d'images -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            @if (ad.images && ad.images.length > 0) {
+              <p-galleria
+                [value]="ad.images"
+                [responsiveOptions]="responsiveOptions"
+                [numVisible]="5"
+                [circular]="true"
+                [showItemNavigators]="true"
+                [showThumbnails]="true"
+                [containerStyle]="{'max-width': '100%'}">
+
+                <ng-template pTemplate="item" let-image>
+                  <img [src]="getImageUrl(image)" [alt]="ad.title"
+                       class="w-full h-96 object-contain bg-gray-100" />
+                </ng-template>
+
+                <ng-template pTemplate="thumbnail" let-image>
+                  <img [src]="getImageUrl(image)" [alt]="ad.title"
+                       class="w-full h-16 object-cover" />
+                </ng-template>
+              </p-galleria>
+            } @else {
+              <img src="https://via.placeholder.com/800x600?text=Aucune+image"
+                   alt="Pas d'image"
+                   class="w-full h-96 object-contain bg-gray-100" />
+            }
+
+            <!-- Badges -->
+            <div class="absolute top-4 left-4 flex gap-2">
+              @if (ad.is_featured) {
+                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                  <i class="pi pi-star-fill"></i>
+                  Vedette
+                </span>
+              }
+              @if (ad.is_urgent) {
+                <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                  <i class="pi pi-exclamation-circle"></i>
+                  Urgent
+                </span>
+              }
+            </div>
+          </div>
+
+          <!-- Informations principales -->
+          <div class="bg-white rounded-xl shadow-md p-6">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">
+              {{ ad.title }}
+            </h1>
+
+            <!-- Prix et négociation -->
+            <div class="flex items-center justify-between mb-6 pb-6 border-b">
+              <div>
+                <div class="text-4xl font-bold text-orange-600 mb-1">
+                  {{ formatPrice(ad.price) }}
+                </div>
+                @if (ad.is_negotiable) {
+                  <span class="text-sm text-green-600 font-semibold flex items-center gap-1">
+                    <i class="pi pi-check-circle"></i>
+                    Prix négociable
+                  </span>
+                }
+              </div>
+
+              <!-- Actions rapides -->
+              <div class="flex gap-2">
+                <button
+                  (click)="toggleFavorite()"
+                  pButton
+                  icon="pi pi-heart"
+                  [outlined]="true"
+                  class="text-red-500 border-red-500 hover:bg-red-50"
+                  pTooltip="Ajouter aux favoris"
+                  tooltipPosition="top"></button>
+                <button
+                  (click)="shareAd()"
+                  pButton
+                  icon="pi pi-share-alt"
+                  [outlined]="true"
+                  pTooltip="Partager"
+                  tooltipPosition="top"></button>
+                <button
+                  (click)="reportAd()"
+                  pButton
+                  icon="pi pi-flag"
+                  [outlined]="true"
+                  severity="danger"
+                  pTooltip="Signaler"
+                  tooltipPosition="top"></button>
+              </div>
+            </div>
+
+            <!-- Métadonnées -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div class="text-center p-3 bg-gray-50 rounded-lg">
+                <i class="pi pi-tag text-orange-500 text-xl mb-2"></i>
+                <div class="text-sm text-gray-600">Catégorie</div>
+                <div class="font-semibold text-gray-800 text-sm">{{ ad.category_display }}</div>
+              </div>
+              <div class="text-center p-3 bg-gray-50 rounded-lg">
+                <i class="pi pi-map-marker text-orange-500 text-xl mb-2"></i>
+                <div class="text-sm text-gray-600">Localisation</div>
+                <div class="font-semibold text-gray-800 text-sm">{{ ad.city_display }}</div>
+              </div>
+              <div class="text-center p-3 bg-gray-50 rounded-lg">
+                <i class="pi pi-eye text-orange-500 text-xl mb-2"></i>
+                <div class="text-sm text-gray-600">Vues</div>
+                <div class="font-semibold text-gray-800 text-sm">{{ ad.views_count || 0 }}</div>
+              </div>
+              <div class="text-center p-3 bg-gray-50 rounded-lg">
+                <i class="pi pi-calendar text-orange-500 text-xl mb-2"></i>
+                <div class="text-sm text-gray-600">Publié le</div>
+                <div class="font-semibold text-gray-800 text-sm">{{ formatDate(ad.published_at || ad.created_at) }}</div>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div>
+              <h2 class="text-xl font-bold text-gray-800 mb-3">Description</h2>
+              <div class="text-gray-600 whitespace-pre-line leading-relaxed">
+                {{ ad.description }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Annonces similaires -->
+          @if (relatedAds.length > 0) {
+            <div class="bg-white rounded-xl shadow-md p-6">
+              <h2 class="text-xl font-bold text-gray-800 mb-4">Annonces similaires</h2>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                @for (relatedAd of relatedAds; track relatedAd.id) {
+                  <div
+                    (click)="viewRelatedAd(relatedAd.id)"
+                    class="cursor-pointer group">
+                    <div class="relative h-32 rounded-lg overflow-hidden mb-2">
+                      <img [src]="relatedAd.primary_image || 'https://via.placeholder.com/200'"
+                           [alt]="relatedAd.title"
+                           class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-sm mb-1 line-clamp-2">
+                      {{ relatedAd.title }}
+                    </h3>
+                    <p class="text-orange-600 font-bold text-sm">
+                      {{ formatPrice(relatedAd.price) }}
+                    </p>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1 space-y-6">
+
+          <!-- Actions du propriétaire -->
+          @if (isOwner) {
+            <div class="bg-white rounded-xl shadow-md p-6">
+              <h3 class="font-bold text-gray-800 mb-4">Gérer l'annonce</h3>
+              <div class="space-y-2">
+                <button
+                  (click)="editAd()"
+                  pButton
+                  label="Modifier"
+                  icon="pi pi-pencil"
+                  class="w-full bg-blue-500 border-blue-500"></button>
+                <button
+                  (click)="deleteAd()"
+                  pButton
+                  label="Supprimer"
+                  icon="pi pi-trash"
+                  severity="danger"
+                  [outlined]="true"
+                  class="w-full"></button>
+              </div>
+            </div>
+          }
+
+          <!-- Informations vendeur -->
+          <div class="bg-white rounded-xl shadow-md p-6 sticky top-4">
+            <h3 class="font-bold text-gray-800 mb-4">Informations vendeur</h3>
+
+            <div class="flex items-center gap-3 mb-4">
+              @if (ad.user.avatar) {
+                <img [src]="ad.user.avatar" [alt]="ad.user.full_name"
+                     class="w-16 h-16 rounded-full object-cover border-2 border-orange-500" />
+              } @else {
+                <div class="w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center text-2xl font-bold">
+                  {{ ad.user.full_name.charAt(0).toUpperCase() }}
+                </div>
+              }
+              <div>
+                <h4 class="font-bold text-gray-800">{{ ad.user.full_name }}</h4>
+                @if (ad.user.is_premium) {
+                  <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full font-semibold">
+                    <i class="pi pi-star-fill"></i> Premium
+                  </span>
+                }
+              </div>
+            </div>
+
+            <!-- Stats vendeur -->
+            <div class="grid grid-cols-2 gap-3 mb-4 text-center">
+              <div class="bg-gray-50 rounded-lg p-2">
+                <div class="font-bold text-gray-800">{{ ad.user.total_ads }}</div>
+                <div class="text-xs text-gray-600">Annonces</div>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-2">
+                <div class="font-bold text-gray-800 flex items-center justify-center gap-1">
+                  <i class="pi pi-star-fill text-yellow-500 text-sm"></i>
+                  {{ ad.user.average_rating || 0 }}
+                </div>
+                <div class="text-xs text-gray-600">Note</div>
+              </div>
+            </div>
+
+            <!-- Boutons de contact -->
+            @if (!isOwner) {
+              <div class="space-y-2">
+                <button
+                  (click)="contactSeller()"
+                  pButton
+                  label="Contacter"
+                  icon="pi pi-comments"
+                  class="w-full bg-gradient-to-r from-orange-500 to-orange-600 border-0"></button>
+
+                @if (ad.contact_phone) {
+                  <button
+                    (click)="callSeller()"
+                    pButton
+                    icon="pi pi-phone"
+                    [label]="ad.contact_phone"
+                    [outlined]="true"
+                    class="w-full text-sm"></button>
+                }
+
+                @if (ad.whatsapp_number) {
+                  <button
+                    (click)="contactSeller()"
+                    pButton
+                    label="WhatsApp"
+                    icon="pi pi-whatsapp"
+                    class="w-full bg-green-600 border-green-600"></button>
+                }
+
+                <button
+                  (click)="viewSellerAds()"
+                  pButton
+                  label="Voir ses annonces"
+                  icon="pi pi-list"
+                  [outlined]="true"
+                  class="w-full"></button>
+              </div>
+            }
+
+            <!-- Localisation -->
+            @if (ad.address || (ad.latitude && ad.longitude)) {
+              <div class="mt-4 pt-4 border-t">
+                <h4 class="font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                  <i class="pi pi-map-marker text-orange-500"></i>
+                  Localisation
+                </h4>
+                @if (ad.address) {
+                  <p class="text-sm text-gray-600 mb-2">{{ ad.address }}</p>
+                }
+                <!-- TODO: Ajouter une carte si latitude/longitude disponibles -->
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- Annonce non trouvée -->
+  @else {
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="text-center">
+        <i class="pi pi-exclamation-triangle text-6xl text-red-500 mb-4"></i>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Annonce introuvable</h2>
+        <p class="text-gray-600 mb-6">Cette annonce n'existe pas ou a été supprimée.</p>
+        <button
+          pButton
+          label="Retour aux annonces"
+          icon="pi pi-arrow-left"
+          routerLink="/annonces"
+          class="bg-orange-500 border-orange-500"></button>
+      </div>
+    </div>
+  }
+</div>
