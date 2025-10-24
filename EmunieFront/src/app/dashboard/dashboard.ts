@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import {Router, RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { AuthService, User } from '../service/auth';
 import { Subscription } from 'rxjs';
@@ -12,7 +12,8 @@ import { Subscription } from 'rxjs';
     CommonModule,
     RouterLink,
     RouterOutlet,
-    ButtonModule
+    ButtonModule,
+    RouterLinkActive
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'

@@ -1,0 +1,135 @@
+<div class="payment-dialog">
+  <div class="dialog-header">
+    <h2 class="text-2xl font-bold text-orange-600">Choisir un moyen de paiement</h2>
+    <p class="text-gray-600 mt-2">Montant à payer: <span class="font-bold text-green-600">{{ totalPrice }} FCFA</span></p>
+  </div>
+
+  <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()" class="mt-6">
+
+    <!-- Méthodes de paiement -->
+    <div class="payment-methods mb-6">
+      <label class="block text-gray-700 font-medium mb-3">Méthode de paiement *</label>
+
+      @if (loading()) {
+        <div class="text-center py-4">
+          <i class="pi pi-spin pi-spinner text-3xl text-orange-500"></i>
+          <p class="text-gray-600 mt-2">Chargement des méthodes de paiement...</p>
+        </div>
+      }
+
+      @if (!loading() && paymentMethods().length === 0) {
+        <div class="text-center py-4">
+          <p class="text-red-600">Aucune méthode de paiement disponible</p>
+        </div>
+      }
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        @for (method of paymentMethods(); track method.id) {
+          <div class="payment-method-card"
+               [class.selected]="paymentForm.get('payment_method')?.value === method.id"
+               (click)="paymentForm.patchValue({payment_method: method.id})">
+            <div class="flex items-center space-x-3">
+              <p-radioButton
+                [value]="method.id"
+                formControlName="payment_method"
+                [inputId]="'method_' + method.id">
+              </p-radioButton>
+
+              <div class="flex-1">
+                <div class="flex items-center space-x-2">
+                  <i [class]="getMethodIcon(method.payment_type)"
+                     class="text-2xl"
+                     [ngClass]="{
+                       'text-blue-600': method.payment_type === 'wave',
+                       'text-orange-600': method.payment_type === 'orange_money'
+                     }"></i>
+                  <span class="font-semibold text-gray-800">{{ method.name }}</span>
+                </div>
+
+                @if (method.processing_fee > 0) {
+                  <p class="text-sm text-gray-500 mt-1">
+                    Frais: {{ method.processing_fee }}%
+                  </p>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      @if (paymentForm.get('payment_method')?.invalid && paymentForm.get('payment_method')?.touched) {
+        <small class="text-red-600 mt-2 block">Veuillez sélectionner une méthode de paiement</small>
+      }
+    </div>
+
+    <!-- Numéro de téléphone -->
+    <div class="mb-6">
+      <label for="phone_number" class="block text-gray-700 font-medium mb-2">
+        Numéro de téléphone *
+      </label>
+      <div class="relative">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+          <i class="pi pi-phone"></i>
+        </span>
+        <input
+          type="tel"
+          id="phone_number"
+          formControlName="phone_number"
+          placeholder="Ex: 0700000000"
+          class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent"
+          [class.border-red-500]="paymentForm.get('phone_number')?.invalid && paymentForm.get('phone_number')?.touched">
+      </div>
+
+      @if (paymentForm.get('phone_number')?.invalid && paymentForm.get('phone_number')?.touched) {
+        <small class="text-red-600 mt-1 block">
+          @if (paymentForm.get('phone_number')?.errors?.['required']) {
+            Le numéro de téléphone est requis
+          }
+          @if (paymentForm.get('phone_number')?.errors?.['pattern']) {
+            Veuillez entrer un numéro valide (10 chiffres)
+          }
+        </small>
+      }
+    </div>
+
+    <!-- Instructions -->
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+      <div class="flex items-start space-x-3">
+        <i class="pi pi-info-circle text-blue-600 text-xl mt-1"></i>
+        <div class="text-sm text-blue-800">
+          <p class="font-medium mb-1">Instructions de paiement:</p>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Assurez-vous que votre compte dispose de fonds suffisants</li>
+            <li>Vous recevrez une notification de paiement sur votre téléphone</li>
+            <li>Validez le paiement dans les 5 minutes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Boutons d'action -->
+    <div class="flex justify-end space-x-3">
+      <button
+        type="button"
+        (click)="cancel()"
+        [disabled]="processingPayment()"
+        class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium">
+        Annuler
+      </button>
+
+      <button
+        type="submit"
+        [disabled]="paymentForm.invalid || processingPayment()"
+        class="px-6 py-3 bg-gradient-to-r from-orange-500 to-green-500 text-white rounded-lg hover:shadow-lg transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed">
+        @if (processingPayment()) {
+          <i class="pi pi-spin pi-spinner mr-2"></i>
+          Traitement en cours...
+        } @else {
+          <i class="pi pi-check-circle mr-2"></i>
+          Confirmer le paiement
+        }
+      </button>
+    </div>
+
+  </form>
+</div>

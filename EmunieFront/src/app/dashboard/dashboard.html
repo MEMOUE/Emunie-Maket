@@ -85,6 +85,15 @@
         <span class="font-medium">Acheter Pub</span>
         <i class="pi pi-star-fill text-yellow-400 ml-auto"></i>
       </a>
+
+      <a
+        routerLink="/dashboard/list-pub"
+        routerLinkActive="bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg"
+        class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-700 hover:bg-orange-50 hover:text-orange-600">
+        <i class="pi pi-megaphone text-lg"></i>
+        <span class="font-medium">Mes Pubs</span>
+        <i class="pi pi-star-fill text-yellow-400 ml-auto"></i>
+      </a>
     </nav>
 
     <!-- Bottom Actions -->
@@ -208,6 +217,15 @@
         class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-orange-50">
         <i class="pi pi-megaphone text-lg"></i>
         <span class="font-medium">Acheter Pub</span>
+      </a>
+
+      <a
+        routerLink="/dashboard/list-pub"
+        routerLinkActive="bg-gradient-to-r from-orange-500 to-orange-600 text-white"
+        (click)="toggleMobileMenu()"
+        class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-orange-50">
+        <i class="pi pi-megaphone text-lg"></i>
+        <span class="font-medium">Mes Pubs</span>
       </a>
     </nav>
 
