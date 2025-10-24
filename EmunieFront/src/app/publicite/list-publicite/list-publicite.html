@@ -1,1 +1,173 @@
-<p>list-publicite works!</p>
+<div class="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50 p-6">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h1 class="text-4xl font-extrabold text-orange-600 mb-2">Mes publicités</h1>
+        <p class="text-gray-600">Gérez vos publicités et consultez leurs performances</p>
+      </div>
+
+      <button
+        (click)="createNew()"
+        class="px-6 py-3 bg-gradient-to-r from-orange-500 to-green-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+        <i class="pi pi-plus mr-2"></i>
+        Nouvelle publicité
+      </button>
+    </div>
+
+    <!-- Loading -->
+    @if (loading()) {
+      <div class="text-center py-12">
+        <i class="pi pi-spin pi-spinner text-5xl text-orange-500"></i>
+        <p class="text-gray-600 mt-4 text-lg">Chargement de vos publicités...</p>
+      </div>
+    }
+
+    <!-- Liste vide -->
+    @if (!loading() && advertisements().length === 0) {
+      <div class="text-center py-12 bg-white rounded-xl shadow-md">
+        <i class="pi pi-megaphone text-6xl text-gray-300 mb-4"></i>
+        <h2 class="text-2xl font-bold text-gray-700 mb-2">Aucune publicité</h2>
+        <p class="text-gray-500 mb-6">Vous n'avez pas encore créé de publicité</p>
+        <button
+          (click)="createNew()"
+          class="px-6 py-3 bg-gradient-to-r from-orange-500 to-green-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all">
+          <i class="pi pi-plus mr-2"></i>
+          Créer ma première publicité
+        </button>
+      </div>
+    }
+
+    <!-- Liste des publicités -->
+    @if (!loading() && advertisements().length > 0) {
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (ad of advertisements(); track ad.id) {
+          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all overflow-hidden">
+
+            <!-- Image -->
+            <div class="relative h-48 bg-gray-200">
+              @if (ad.image_url) {
+                <img [src]="ad.image_url" [alt]="ad.title" class="w-full h-full object-cover" />
+              } @else {
+                <div class="w-full h-full flex items-center justify-center">
+                  <i class="pi pi-image text-6xl text-gray-400"></i>
+                </div>
+              }
+
+              <!-- Statut badge -->
+              <div class="absolute top-3 right-3">
+                <p-tag
+                  [value]="getStatusLabel(ad)"
+                  [severity]="getStatusSeverity(ad)"
+                  styleClass="font-semibold">
+                </p-tag>
+              </div>
+            </div>
+
+            <!-- Contenu -->
+            <div class="p-5">
+
+              <!-- Titre -->
+              <h3 class="text-xl font-bold text-gray-800 mb-2 line-clamp-2">
+                {{ ad.title }}
+              </h3>
+
+              <!-- Lien -->
+              <a
+                [href]="ad.link"
+                target="_blank"
+                class="text-blue-600 hover:text-blue-800 text-sm mb-4 block truncate">
+                <i class="pi pi-external-link mr-1"></i>
+                {{ ad.link }}
+              </a>
+
+              <!-- Informations -->
+              <div class="space-y-2 text-sm text-gray-600 mb-4">
+                <div class="flex items-center justify-between">
+                  <span class="flex items-center">
+                    <i class="pi pi-calendar mr-2 text-orange-500"></i>
+                    Début:
+                  </span>
+                  <span class="font-medium">{{ formatDate(ad.start_date) }}</span>
+                </div>
+
+                @if (ad.end_date) {
+                  <div class="flex items-center justify-between">
+                    <span class="flex items-center">
+                      <i class="pi pi-calendar-times mr-2 text-orange-500"></i>
+                      Fin:
+                    </span>
+                    <span class="font-medium">{{ formatDate(ad.end_date) }}</span>
+                  </div>
+
+                  @if (getRemainingDays(ad) > 0) {
+                    <div class="flex items-center justify-between">
+                      <span class="flex items-center">
+                        <i class="pi pi-clock mr-2 text-orange-500"></i>
+                        Restant:
+                      </span>
+                      <span class="font-medium">{{ getRemainingDays(ad) }} jour(s)</span>
+                    </div>
+                  }
+                }
+
+                <div class="flex items-center justify-between">
+                  <span class="flex items-center">
+                    <i class="pi pi-money-bill mr-2 text-green-600"></i>
+                    Prix:
+                  </span>
+                  <span class="font-medium">{{ ad.total_price | number }} FCFA</span>
+                </div>
+              </div>
+
+              <!-- Statistiques -->
+              @if (ad.is_running || ad.impressions || ad.clicks) {
+                <div class="bg-gray-50 rounded-lg p-3 mb-4">
+                  <div class="grid grid-cols-3 gap-2 text-center">
+                    <div>
+                      <div class="text-xs text-gray-500">Impressions</div>
+                      <div class="text-lg font-bold text-gray-800">{{ ad.impressions || 0 }}</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-500">Clics</div>
+                      <div class="text-lg font-bold text-gray-800">{{ ad.clicks || 0 }}</div>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-500">CTR</div>
+                      <div class="text-lg font-bold text-gray-800">{{ ad.ctr?.toFixed(1) || 0 }}%</div>
+                    </div>
+                  </div>
+                </div>
+              }
+
+              <!-- Actions -->
+              <div class="flex space-x-2">
+                <button
+                  (click)="viewStatistics(ad)"
+                  class="flex-1 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors font-medium text-sm">
+                  <i class="pi pi-chart-bar mr-1"></i>
+                  Stats
+                </button>
+
+                <button
+                  (click)="deleteAdvertisement(ad)"
+                  class="px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors font-medium text-sm">
+                  <i class="pi pi-trash"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+  </div>
+
+  <!-- Toast -->
+  <p-toast position="bottom-right"></p-toast>
+
+  <!-- Confirmation Dialog -->
+  <p-confirmDialog></p-confirmDialog>
+</div>

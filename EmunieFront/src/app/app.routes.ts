@@ -47,6 +47,10 @@ export const routes: Routes = [
     loadComponent: () => import('./publicite/new-publicite/new-publicite').then(m => m.NewPublicite) // Temporaire
   },
   {
+    path: 'dashboard/list-pub',
+    loadComponent: () => import('./publicite/list-publicite/list-publicite').then(m => m.ListPublicite) // Temporaire
+  },
+  {
     path: 'dashboard/my-ads',
     loadComponent: () => import('./annonces/list-annonce/list-annonce').then(m => m.ListAnnonce) // Temporaire
   },
