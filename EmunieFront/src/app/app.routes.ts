@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Accueil } from './accueil/accueil';
 import { Login } from './auth/login/login';
 import { Register } from './auth/register/register';
+import { authGuard } from './guard/auth.guard';
 
 export const routes: Routes = [
   {
@@ -22,46 +23,75 @@ export const routes: Routes = [
     component: Register
   },
 
+  // Routes pour les annonces
+  {
+    path: 'annonces',
+    loadComponent: () => import('./annonces/list-annonce/list-annonce').then(m => m.ListAnnonce)
+  },
+  {
+    path: 'annonces/:id',
+    loadComponent: () => import('./annonces/detail-annonce/detail-annonce').then(m => m.DetailAnnonce)
+  },
+
+  // Routes temporaires
   {
     path: 'acheter',
-    loadComponent: () => import('./accueil/accueil').then(m => m.Accueil) // Temporaire
+    redirectTo: 'annonces',
+    pathMatch: 'full'
   },
   {
     path: 'vendre',
-    loadComponent: () => import('./accueil/accueil').then(m => m.Accueil) // Temporaire
+    redirectTo: 'dashboard/new-ad',
+    pathMatch: 'full'
   },
   {
     path: 'categories',
-    loadComponent: () => import('./accueil/accueil').then(m => m.Accueil) // Temporaire
+    redirectTo: 'annonces',
+    pathMatch: 'full'
   },
   {
     path: 'contact',
     loadComponent: () => import('./accueil/accueil').then(m => m.Accueil) // Temporaire
   },
+
+  // Dashboard (protégé par authGuard)
   {
     path: 'dashboard',
-    loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard) // Temporaire
+    canActivate: [authGuard],
+    loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard)
   },
   {
     path: 'dashboard/buy-pub',
-    loadComponent: () => import('./publicite/new-publicite/new-publicite').then(m => m.NewPublicite) // Temporaire
+    canActivate: [authGuard],
+    loadComponent: () => import('./publicite/new-publicite/new-publicite').then(m => m.NewPublicite)
   },
   {
     path: 'dashboard/list-pub',
-    loadComponent: () => import('./publicite/list-publicite/list-publicite').then(m => m.ListPublicite) // Temporaire
+    canActivate: [authGuard],
+    loadComponent: () => import('./publicite/list-publicite/list-publicite').then(m => m.ListPublicite)
   },
   {
     path: 'dashboard/my-ads',
-    loadComponent: () => import('./annonces/list-annonce/list-annonce').then(m => m.ListAnnonce) // Temporaire
+    canActivate: [authGuard],
+    loadComponent: () => import('./annonces/list-annonce/list-annonce').then(m => m.ListAnnonce)
   },
   {
     path: 'dashboard/new-ad',
-    loadComponent: () => import('./annonces/new-anonce/new-anonce').then(m => m.NewAnonceComponent) // Temporaire
+    canActivate: [authGuard],
+    loadComponent: () => import('./annonces/new-anonce/new-anonce').then(m => m.NewAnonceComponent)
+  },
+  {
+    path: 'dashboard/edit-ad/:id',
+    canActivate: [authGuard],
+    loadComponent: () => import('./annonces/new-anonce/new-anonce').then(m => m.NewAnonceComponent)
   },
   {
     path: 'dashboard/overview',
-    loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard) // Temporaire
+    canActivate: [authGuard],
+    loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard)
   },
+
+  // Route 404
   {
     path: '**',
     redirectTo: 'accueil'
