@@ -90,6 +90,10 @@ export const routes: Routes = [
     canActivate: [authGuard],
     loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard)
   },
+  {
+    path: 'search',
+    loadComponent: () => import('./research-coponent/research-coponent').then(m => m.ResearchCoponent)
+  },
 
   // Route 404
   {

@@ -286,6 +286,38 @@ export class Accueil implements OnInit {
   }
 
   /**
+   * Contacter via WhatsApp
+   */
+  contactViaWhatsApp(phoneNumber: string, adTitle: string): void {
+    // Nettoyer le numéro de téléphone
+    const cleanPhone = phoneNumber.replace(/\D/g, '');
+
+    // Ajouter l'indicatif international si nécessaire
+    const internationalPhone = cleanPhone.startsWith('225') ? cleanPhone : '225' + cleanPhone;
+
+    // Créer le message
+    const message = encodeURIComponent(`Bonjour, je suis intéressé(e) par votre annonce: ${adTitle}`);
+
+    // Ouvrir WhatsApp
+    window.open(`https://wa.me/${internationalPhone}?text=${message}`, '_blank');
+  }
+
+  /**
+   * Appeler le vendeur
+   */
+  callSeller(phoneNumber: string): void {
+    window.location.href = `tel:${phoneNumber}`;
+  }
+
+  /**
+   * Envoyer un SMS au vendeur
+   */
+  sendSMS(phoneNumber: string, adTitle: string): void {
+    const message = encodeURIComponent(`Bonjour, je suis intéressé(e) par votre annonce: ${adTitle}`);
+    window.location.href = `sms:${phoneNumber}?body=${message}`;
+  }
+
+  /**
    * Formater le prix
    */
   formatPrice(price: number): string {

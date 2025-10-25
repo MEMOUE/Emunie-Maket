@@ -115,17 +115,135 @@
   cursor: not-allowed;
 }
 
-/* Messages */
+/* ===============================================
+   MESSAGES D'ERREUR ET DE SUCCÈS - AMÉLIORATION
+   =============================================== */
+
+/* Message d'erreur */
+::ng-deep .p-message.p-message-error {
+  background-color: #fee2e2 !important; /* Rouge clair */
+  border: 2px solid #ef4444 !important; /* Bordure rouge */
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+::ng-deep .p-message.p-message-error .p-message-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+::ng-deep .p-message.p-message-error .p-message-icon {
+  color: #dc2626 !important; /* Icône rouge foncé */
+  font-size: 1.25rem !important;
+}
+
+::ng-deep .p-message.p-message-error .p-message-text {
+  color: #991b1b !important; /* Texte rouge très foncé */
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Message de succès */
+::ng-deep .p-message.p-message-success {
+  background-color: #dcfce7 !important; /* Vert clair */
+  border: 2px solid #22c55e !important; /* Bordure verte */
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+::ng-deep .p-message.p-message-success .p-message-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+::ng-deep .p-message.p-message-success .p-message-icon {
+  color: #16a34a !important; /* Icône verte foncée */
+  font-size: 1.25rem !important;
+}
+
+::ng-deep .p-message.p-message-success .p-message-text {
+  color: #166534 !important; /* Texte vert très foncé */
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Message d'information */
+::ng-deep .p-message.p-message-info {
+  background-color: #dbeafe !important; /* Bleu clair */
+  border: 2px solid #3b82f6 !important; /* Bordure bleue */
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+::ng-deep .p-message.p-message-info .p-message-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+::ng-deep .p-message.p-message-info .p-message-icon {
+  color: #2563eb !important; /* Icône bleue foncée */
+  font-size: 1.25rem !important;
+}
+
+::ng-deep .p-message.p-message-info .p-message-text {
+  color: #1e40af !important; /* Texte bleu très foncé */
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Message d'avertissement */
+::ng-deep .p-message.p-message-warn {
+  background-color: #fef3c7 !important; /* Jaune clair */
+  border: 2px solid #f59e0b !important; /* Bordure orange */
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+::ng-deep .p-message.p-message-warn .p-message-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+::ng-deep .p-message.p-message-warn .p-message-icon {
+  color: #d97706 !important; /* Icône orange foncée */
+  font-size: 1.25rem !important;
+}
+
+::ng-deep .p-message.p-message-warn .p-message-text {
+  color: #92400e !important; /* Texte orange très foncé */
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Animation d'apparition des messages */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 ::ng-deep .p-message {
-  border-radius: 0.5rem;
-  border-width: 2px;
+  animation: slideDown 0.3s ease-out !important;
 }
 
-::ng-deep .p-message .p-message-text {
-  color: inherit !important;
-}
-
-/* Animation d'entrée */
+/* Animation d'entrée du formulaire */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -155,5 +273,34 @@ button[type="button"]:hover {
 @media (max-width: 640px) {
   .bg-white {
     padding: 1.5rem;
+  }
+
+  ::ng-deep .p-message {
+    padding: 0.75rem !important;
+  }
+
+  ::ng-deep .p-message .p-message-text {
+    font-size: 0.8125rem !important;
+  }
+}
+
+/* Amélioration du contraste pour l'accessibilité */
+@media (prefers-contrast: high) {
+  ::ng-deep .p-message.p-message-error {
+    background-color: #fecaca !important;
+    border-color: #b91c1c !important;
+  }
+
+  ::ng-deep .p-message.p-message-error .p-message-text {
+    color: #7f1d1d !important;
+  }
+
+  ::ng-deep .p-message.p-message-success {
+    background-color: #bbf7d0 !important;
+    border-color: #15803d !important;
+  }
+
+  ::ng-deep .p-message.p-message-success .p-message-text {
+    color: #14532d !important;
   }
 }

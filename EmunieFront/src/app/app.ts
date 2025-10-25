@@ -63,8 +63,15 @@ export class App implements OnInit, OnDestroy {
   }
 
   onSearch() {
-    console.log('Recherche:', this.searchQuery());
-    // Implémenter la logique de recherche
+    const query = this.searchQuery().trim();
+    if (query) {
+      // Naviguer vers la page de recherche avec le paramètre de requête
+      this.router.navigate(['/search'], {
+        queryParams: { q: query }
+      });
+      // Réinitialiser le champ de recherche après navigation
+      this.searchQuery.set('');
+    }
   }
 
   logout() {
