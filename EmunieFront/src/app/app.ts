@@ -40,6 +40,12 @@ export class App implements OnInit, OnDestroy {
     this.userSubscription = this.authService.currentUser$.subscribe(user => {
       this.currentUser.set(user);
       this.isAuthenticated.set(!!user);
+
+      // DEBUG: Afficher l'avatar dans la console
+      if (user) {
+        console.log('User avatar:', user.avatar);
+        console.log('User avatar_url:', (user as any).avatar_url);
+      }
     });
 
     // Vérifier l'authentification au démarrage
@@ -63,8 +69,15 @@ export class App implements OnInit, OnDestroy {
   }
 
   onSearch() {
-    console.log('Recherche:', this.searchQuery());
-    // Implémenter la logique de recherche
+    const query = this.searchQuery().trim();
+    if (query) {
+      // Naviguer vers la page de recherche avec le paramètre de requête
+      this.router.navigate(['/search'], {
+        queryParams: { q: query }
+      });
+      // Réinitialiser le champ de recherche après navigation
+      this.searchQuery.set('');
+    }
   }
 
   logout() {
@@ -80,4 +93,32 @@ export class App implements OnInit, OnDestroy {
     const lastInitial = user.last_name?.charAt(0) || '';
     return (firstInitial + lastInitial).toUpperCase();
   }
+
+  // CORRECTION : Méthode pour obtenir l'URL de l'avatar
+  getUserAvatar(): string | null {
+    const user = this.currentUser();
+    if (!user) return null;
+
+    // Essayer d'abord avatar_url (URL absolue du backend)
+    if ((user as any).avatar_url) {
+      return (user as any).avatar_url;
+    }
+
+    // Sinon utiliser avatar (peut être relatif)
+    if (user.avatar) {
+      // Si l'URL commence par http, la retourner telle quelle
+      if (user.avatar.startsWith('http')) {
+        return user.avatar;
+      }
+      // Sinon, construire l'URL complète
+      return `http://localhost:8000${user.avatar}`;
+    }
+
+    return null;
+  }
+
+  avatarError = false;
+  avatarErrorMobile = false;
+
+
 }

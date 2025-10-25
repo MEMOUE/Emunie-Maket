@@ -1,0 +1,133 @@
+/* Styles pour la page de détail de l'annonce */
+
+/* Amélioration de la galerie d'images */
+::ng-deep .p-galleria {
+  background-color: #ffffff;
+}
+
+::ng-deep .p-galleria-item-container {
+  background-color: #f9fafb;
+}
+
+::ng-deep .p-galleria-thumbnail-container {
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+::ng-deep .p-galleria-thumbnail-item {
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+::ng-deep .p-galleria-thumbnail-item:hover {
+  border-color: #f97316;
+}
+
+::ng-deep .p-galleria-thumbnail-item.p-galleria-thumbnail-item-current {
+  border-color: #f97316;
+}
+
+::ng-deep .p-galleria-thumbnail-item-content {
+  border-radius: 0.375rem;
+}
+
+/* Navigation de la galerie */
+::ng-deep .p-galleria-item-nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.2s;
+}
+
+::ng-deep .p-galleria-item-nav:hover {
+  background-color: #f97316;
+}
+
+::ng-deep .p-galleria-item-prev {
+  left: 1rem;
+}
+
+::ng-deep .p-galleria-item-next {
+  right: 1rem;
+}
+
+/* Amélioration des boutons */
+::ng-deep .p-button {
+  transition: all 0.2s;
+}
+
+::ng-deep .p-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Badges personnalisés */
+.badge-featured {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Amélioration des cartes */
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+/* Animation au survol des annonces similaires */
+.group:hover img {
+  transform: scale(1.1);
+}
+
+/* Style pour les boutons d'action */
+button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Amélioration de la sidebar */
+.sticky {
+  position: sticky;
+  top: 1rem;
+}
+
+/* Style pour les statistiques */
+.grid > div {
+  transition: all 0.2s;
+}
+
+.grid > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Amélioration du texte */
+.whitespace-pre-line {
+  line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sticky {
+    position: relative;
+    top: 0;
+  }
+}

@@ -1,0 +1,141 @@
+/* Styles pour améliorer la visibilité des champs de formulaire */
+
+/* Style pour les champs input */
+::ng-deep .p-inputtext {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #1f2937 !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s !important;
+}
+
+::ng-deep .p-inputtext:hover {
+  border-color: #f97316 !important;
+}
+
+::ng-deep .p-inputtext:focus {
+  outline: none !important;
+  border-color: #f97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1) !important;
+}
+
+::ng-deep .p-inputtext::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Style pour les select/dropdowns */
+::ng-deep .p-select {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s !important;
+}
+
+::ng-deep .p-select:hover {
+  border-color: #f97316 !important;
+}
+
+::ng-deep .p-select.p-focus {
+  outline: none !important;
+  border-color: #f97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1) !important;
+}
+
+::ng-deep .p-select-label {
+  color: #1f2937 !important;
+  padding: 0.75rem 1rem !important;
+}
+
+::ng-deep .p-select-label.p-placeholder {
+  color: #9ca3af !important;
+}
+
+::ng-deep .p-select-clear-icon {
+  color: #6b7280 !important;
+}
+
+::ng-deep .p-select-dropdown {
+  color: #f97316 !important;
+}
+
+/* Style pour le panel du dropdown */
+::ng-deep .p-select-overlay {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+::ng-deep .p-select-option {
+  color: #1f2937 !important;
+  padding: 0.75rem 1rem !important;
+}
+
+::ng-deep .p-select-option:hover {
+  background-color: #fff7ed !important;
+  color: #f97316 !important;
+}
+
+::ng-deep .p-select-option.p-focus {
+  background-color: #fff7ed !important;
+  color: #f97316 !important;
+}
+
+::ng-deep .p-select-option.p-select-option-selected {
+  background-color: #ffedd5 !important;
+  color: #f97316 !important;
+  font-weight: 600 !important;
+}
+
+/* Style pour les boutons */
+::ng-deep .p-button {
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  transition: all 0.2s !important;
+}
+
+::ng-deep .p-button.p-button-outlined {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #1f2937 !important;
+}
+
+::ng-deep .p-button.p-button-outlined:hover {
+  background-color: #f3f4f6 !important;
+  border-color: #9ca3af !important;
+  color: #1f2937 !important;
+}
+
+/* Style pour les inputs number */
+input[type="number"] {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #1f2937 !important;
+}
+
+input[type="number"]:hover {
+  border-color: #f97316 !important;
+}
+
+input[type="number"]:focus {
+  outline: none !important;
+  border-color: #f97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1) !important;
+}
+
+/* Amélioration de la lisibilité générale */
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+label {
+  color: #374151 !important;
+  font-weight: 600 !important;
+}
+
+/* Fix pour les inputs avec icônes */
+.relative input {
+  padding-left: 2.5rem !important;
+}

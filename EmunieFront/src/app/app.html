@@ -76,11 +76,17 @@
         @if (isAuthenticated()) {
           <!-- Desktop -->
           <div class="hidden sm:flex items-center gap-3">
-            <!-- Avatar et menu utilisateur -->
+            <!-- Avatar et menu utilisateur - ✅ corrigé -->
             <div class="flex items-center gap-2 px-3 py-2 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors cursor-pointer group">
-              @if (currentUser()?.avatar) {
-                <img [src]="currentUser()?.avatar" alt="Avatar" class="w-8 h-8 rounded-full object-cover border-2 border-orange-500">
-              } @else {
+              @if (getUserAvatar() && !avatarError) {
+                <img
+                  [src]="getUserAvatar()!"
+                  alt="Avatar"
+                  class="w-8 h-8 rounded-full object-cover border-2 border-orange-500"
+                  (error)="avatarError = true"
+                />
+              }
+              @if (!getUserAvatar() || avatarError) {
                 <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-sm">
                   {{ getUserInitials() }}
                 </div>
@@ -194,16 +200,23 @@
 
         <!-- Actions Mobile -->
         @if (isAuthenticated()) {
-          <!-- Profil utilisateur -->
+          <!-- Profil utilisateur - ✅ corrigé -->
           <div class="px-4 py-3 bg-orange-50 rounded-lg">
             <div class="flex items-center gap-3 mb-3">
-              @if (currentUser()?.avatar) {
-                <img [src]="currentUser()?.avatar" alt="Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-orange-500">
-              } @else {
+              @if (getUserAvatar() && !avatarErrorMobile) {
+                <img
+                  [src]="getUserAvatar()!"
+                  alt="Avatar"
+                  class="w-12 h-12 rounded-full object-cover border-2 border-orange-500"
+                  (error)="avatarErrorMobile = true"
+                />
+              }
+              @if (!getUserAvatar() || avatarErrorMobile) {
                 <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold">
                   {{ getUserInitials() }}
                 </div>
               }
+
               <div>
                 <p class="font-semibold text-gray-800">{{ currentUser()?.full_name }}</p>
                 <p class="text-xs text-gray-600">{{ currentUser()?.email }}</p>
@@ -261,17 +274,65 @@
   <div class="max-w-6xl mx-auto px-4 flex justify-center">
     <div class="grid grid-cols-1 lg:grid-cols-10 gap-6 items-center w-full lg:w-3/4">
       <div class="lg:col-span-7">
-        <div class="relative">
+        <form (submit)="onSearch()" class="relative">
           <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <i class="pi pi-search text-gray-500 text-lg"></i>
           </div>
           <input
             type="text"
-            placeholder="Rechercher une annonce..."
+            [(ngModel)]="searchQuery"
+            name="searchQuery"
+            placeholder="Rechercher par nom d'annonce (ex: iPhone 13, Voiture Toyota, Appartement...)..."
+            (keyup.enter)="onSearch()"
             class="w-full pl-12 pr-4 py-3 bg-white border-2 border-gray-200 rounded-lg
                    text-gray-800 placeholder-gray-500 focus:outline-none focus:border-orange-500
                    transition-colors">
-        </div>
+
+          @if (searchQuery()) {
+            <button
+              type="submit"
+              class="absolute inset-y-0 right-0 pr-4 flex items-center text-orange-500 hover:text-orange-600">
+              <i class="pi pi-arrow-right text-lg font-bold"></i>
+            </button>
+          }
+        </form>
+
+        @if (searchQuery() && searchQuery().length > 2) {
+          <div class="absolute z-10 w-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 max-h-60 overflow-y-auto">
+            <div class="p-2 text-sm text-gray-600">
+              <p class="px-3 py-2 font-semibold">Appuyez sur Entrée pour rechercher:</p>
+              <button
+                (click)="onSearch()"
+                class="w-full px-3 py-2 text-left hover:bg-orange-50 rounded transition-colors flex items-center gap-2">
+                <i class="pi pi-search text-orange-500"></i>
+                <span class="font-semibold text-gray-800">"{{ searchQuery() }}"</span>
+                <span class="text-gray-500 text-xs ml-auto">dans les noms d'annonces</span>
+              </button>
+
+              <div class="mt-2 pt-2 border-t border-gray-100">
+                <p class="px-3 py-1 text-xs text-gray-500 uppercase font-semibold">Recherches populaires:</p>
+                <button
+                  (click)="searchQuery.set('iPhone'); onSearch()"
+                  class="w-full px-3 py-2 text-left hover:bg-gray-50 rounded transition-colors flex items-center gap-2 text-gray-600">
+                  <i class="pi pi-mobile text-orange-500 text-sm"></i>
+                  <span>iPhone</span>
+                </button>
+                <button
+                  (click)="searchQuery.set('Voiture'); onSearch()"
+                  class="w-full px-3 py-2 text-left hover:bg-gray-50 rounded transition-colors flex items-center gap-2 text-gray-600">
+                  <i class="pi pi-car text-orange-500 text-sm"></i>
+                  <span>Voiture</span>
+                </button>
+                <button
+                  (click)="searchQuery.set('Appartement'); onSearch()"
+                  class="w-full px-3 py-2 text-left hover:bg-gray-50 rounded transition-colors flex items-center gap-2 text-gray-600">
+                  <i class="pi pi-home text-orange-500 text-sm"></i>
+                  <span>Appartement</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        }
       </div>
 
       <div class="lg:col-span-3">

@@ -98,27 +98,19 @@
               <div class="flex gap-2">
                 <button
                   (click)="toggleFavorite()"
-                  pButton
-                  icon="pi pi-heart"
-                  [outlined]="true"
-                  class="text-red-500 border-red-500 hover:bg-red-50"
-                  pTooltip="Ajouter aux favoris"
-                  tooltipPosition="top"></button>
+                  class="p-3 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-all border border-red-200">
+                  <i class="pi pi-heart text-lg"></i>
+                </button>
                 <button
                   (click)="shareAd()"
-                  pButton
-                  icon="pi pi-share-alt"
-                  [outlined]="true"
-                  pTooltip="Partager"
-                  tooltipPosition="top"></button>
+                  class="p-3 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-all border border-blue-200">
+                  <i class="pi pi-share-alt text-lg"></i>
+                </button>
                 <button
                   (click)="reportAd()"
-                  pButton
-                  icon="pi pi-flag"
-                  [outlined]="true"
-                  severity="danger"
-                  pTooltip="Signaler"
-                  tooltipPosition="top"></button>
+                  class="p-3 bg-gray-50 text-gray-600 rounded-lg hover:bg-gray-100 transition-all border border-gray-200">
+                  <i class="pi pi-flag text-lg"></i>
+                </button>
               </div>
             </div>
 
@@ -189,21 +181,19 @@
           @if (isOwner) {
             <div class="bg-white rounded-xl shadow-md p-6">
               <h3 class="font-bold text-gray-800 mb-4">Gérer l'annonce</h3>
-              <div class="space-y-2">
+              <div class="space-y-3">
                 <button
                   (click)="editAd()"
-                  pButton
-                  label="Modifier"
-                  icon="pi pi-pencil"
-                  class="w-full bg-blue-500 border-blue-500"></button>
+                  class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+                  <i class="pi pi-pencil text-lg"></i>
+                  <span>Modifier l'annonce</span>
+                </button>
                 <button
                   (click)="deleteAd()"
-                  pButton
-                  label="Supprimer"
-                  icon="pi pi-trash"
-                  severity="danger"
-                  [outlined]="true"
-                  class="w-full"></button>
+                  class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+                  <i class="pi pi-trash text-lg"></i>
+                  <span>Supprimer l'annonce</span>
+                </button>
               </div>
             </div>
           }
@@ -248,40 +238,38 @@
 
             <!-- Boutons de contact -->
             @if (!isOwner) {
-              <div class="space-y-2">
-                <button
-                  (click)="contactSeller()"
-                  pButton
-                  label="Contacter"
-                  icon="pi pi-comments"
-                  class="w-full bg-gradient-to-r from-orange-500 to-orange-600 border-0"></button>
+              <div class="space-y-3">
+                @if (ad.whatsapp_number) {
+                  <button
+                    (click)="contactViaWhatsApp(ad.whatsapp_number)"
+                    class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+                    <i class="pi pi-whatsapp text-xl"></i>
+                    <span>Contacter sur WhatsApp</span>
+                  </button>
+                }
 
                 @if (ad.contact_phone) {
                   <button
                     (click)="callSeller()"
-                    pButton
-                    icon="pi pi-phone"
-                    [label]="ad.contact_phone"
-                    [outlined]="true"
-                    class="w-full text-sm"></button>
-                }
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+                    <i class="pi pi-phone text-xl"></i>
+                    <span>{{ ad.contact_phone }}</span>
+                  </button>
 
-                @if (ad.whatsapp_number) {
                   <button
-                    (click)="contactSeller()"
-                    pButton
-                    label="WhatsApp"
-                    icon="pi pi-whatsapp"
-                    class="w-full bg-green-600 border-green-600"></button>
+                    (click)="sendSMS()"
+                    class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+                    <i class="pi pi-comment text-xl"></i>
+                    <span>Envoyer un SMS</span>
+                  </button>
                 }
 
                 <button
                   (click)="viewSellerAds()"
-                  pButton
-                  label="Voir ses annonces"
-                  icon="pi pi-list"
-                  [outlined]="true"
-                  class="w-full"></button>
+                  class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+                  <i class="pi pi-list text-xl"></i>
+                  <span>Voir ses annonces</span>
+                </button>
               </div>
             }
 

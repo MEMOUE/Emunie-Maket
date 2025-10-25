@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { GalleriaModule } from 'primeng/galleria';
-import { TooltipModule } from 'primeng/tooltip';
 import { AnnonceService } from '../../service/annonce.service';
 import { AuthService } from '../../service/auth';
 
@@ -14,8 +13,7 @@ import { AuthService } from '../../service/auth';
     CommonModule,
     RouterLink,
     ButtonModule,
-    GalleriaModule,
-    TooltipModule
+    GalleriaModule
   ],
   templateUrl: './detail-annonce.html',
   styleUrls: ['./detail-annonce.css']
@@ -106,39 +104,66 @@ export class DetailAnnonce implements OnInit {
   }
 
   /**
-   * Contacter le vendeur
+   * Contacter via WhatsApp
    */
-  contactSeller(): void {
+  contactViaWhatsApp(phoneNumber?: string): void {
     if (!this.isAuthenticated) {
       sessionStorage.setItem('returnUrl', this.router.url);
       this.router.navigate(['/login']);
       return;
     }
 
-    // Logique de contact (WhatsApp, téléphone, email, ou messagerie interne)
-    if (this.ad.whatsapp_number) {
-      const message = encodeURIComponent(`Bonjour, je suis intéressé par votre annonce: ${this.ad.title}`);
-      window.open(`https://wa.me/${this.ad.whatsapp_number}?text=${message}`, '_blank');
-    } else if (this.ad.contact_phone) {
-      window.location.href = `tel:${this.ad.contact_phone}`;
-    } else {
-      alert('Aucun moyen de contact disponible');
+    const phone = phoneNumber || this.ad.whatsapp_number;
+    if (!phone) {
+      alert('Aucun numéro WhatsApp disponible');
+      return;
     }
+
+    // Nettoyer le numéro de téléphone
+    const cleanPhone = phone.replace(/\D/g, '');
+
+    // Ajouter l'indicatif international si nécessaire
+    const internationalPhone = cleanPhone.startsWith('225') ? cleanPhone : '225' + cleanPhone;
+
+    // Créer le message
+    const message = encodeURIComponent(`Bonjour, je suis intéressé(e) par votre annonce: ${this.ad.title}`);
+
+    // Ouvrir WhatsApp
+    window.open(`https://wa.me/${internationalPhone}?text=${message}`, '_blank');
   }
 
   /**
    * Appeler le vendeur
    */
   callSeller(): void {
-    if (this.ad.contact_phone) {
-      window.location.href = `tel:${this.ad.contact_phone}`;
-    } else {
+    if (!this.ad.contact_phone) {
       alert('Aucun numéro de téléphone disponible');
+      return;
     }
+    window.location.href = `tel:${this.ad.contact_phone}`;
   }
 
   /**
-   * Envoyer un email
+   * Envoyer un SMS
+   */
+  sendSMS(): void {
+    if (!this.isAuthenticated) {
+      sessionStorage.setItem('returnUrl', this.router.url);
+      this.router.navigate(['/login']);
+      return;
+    }
+
+    if (!this.ad.contact_phone) {
+      alert('Aucun numéro de téléphone disponible');
+      return;
+    }
+
+    const message = encodeURIComponent(`Bonjour, je suis intéressé(e) par votre annonce: ${this.ad.title}`);
+    window.location.href = `sms:${this.ad.contact_phone}?body=${message}`;
+  }
+
+  /**
+   * Envoyer un email (méthode conservée pour compatibilité)
    */
   emailSeller(): void {
     if (this.ad.contact_email) {

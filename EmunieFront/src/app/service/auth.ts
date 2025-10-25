@@ -16,7 +16,7 @@ export interface RegisterData {
 }
 
 export interface LoginData {
-  username: string;
+  username: string;  // Peut être username OU email
   password: string;
 }
 
@@ -66,13 +66,17 @@ export class AuthService {
     this.loadStoredUser();
   }
 
+  /**
+   * Charger l'utilisateur stocké au démarrage
+   */
   private loadStoredUser(): void {
     const token = this.getToken();
     if (token) {
       const storedUser = localStorage.getItem('currentUser');
       if (storedUser) {
         try {
-          this.currentUserSubject.next(JSON.parse(storedUser));
+          const user = JSON.parse(storedUser);
+          this.currentUserSubject.next(user);
         } catch (e) {
           console.error('Error parsing stored user', e);
           this.logout();
@@ -107,7 +111,7 @@ export class AuthService {
         `${this.apiUrl}/user/register/`,
         formData
       ).pipe(
-        catchError(this.handleError)
+        catchError(this.handleError.bind(this))
       );
     }
 
@@ -116,12 +120,12 @@ export class AuthService {
       `${this.apiUrl}/user/register/`,
       data
     ).pipe(
-      catchError(this.handleError)
+      catchError(this.handleError.bind(this))
     );
   }
 
   /**
-   * Connexion utilisateur
+   * Connexion utilisateur avec email OU username
    */
   login(credentials: LoginData): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/auth/login/`, credentials).pipe(
@@ -130,7 +134,7 @@ export class AuthService {
           this.setSession(response);
         }
       }),
-      catchError(this.handleError)
+      catchError(this.handleError.bind(this))
     );
   }
 
@@ -138,10 +142,23 @@ export class AuthService {
    * Déconnexion
    */
   logout(): void {
+    // Appeler l'API de déconnexion si possible
+    const token = this.getToken();
+    if (token) {
+      this.http.post(`${this.apiUrl}/auth/logout/`, {}).subscribe({
+        error: (err) => console.error('Logout API error:', err)
+      });
+    }
+
+    // Nettoyer le localStorage
     localStorage.removeItem('token');
     localStorage.removeItem('refresh_token');
     localStorage.removeItem('currentUser');
+
+    // Réinitialiser le subject
     this.currentUserSubject.next(null);
+
+    // Rediriger vers l'accueil
     this.router.navigate(['/accueil']);
   }
 
@@ -154,7 +171,7 @@ export class AuthService {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
       }),
-      catchError(this.handleError)
+      catchError(this.handleError.bind(this))
     );
   }
 
@@ -167,7 +184,7 @@ export class AuthService {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
       }),
-      catchError(this.handleError)
+      catchError(this.handleError.bind(this))
     );
   }
 
@@ -183,7 +200,7 @@ export class AuthService {
       `${this.apiUrl}/user/password/change/`,
       data
     ).pipe(
-      catchError(this.handleError)
+      catchError(this.handleError.bind(this))
     );
   }
 
@@ -198,7 +215,12 @@ export class AuthService {
     try {
       const payload = this.decodeToken(token);
       if (payload && payload.exp) {
-        return payload.exp > Date.now() / 1000;
+        const isExpired = payload.exp < Date.now() / 1000;
+        if (isExpired) {
+          this.logout();
+          return false;
+        }
+        return true;
       }
       return true;
     } catch {
@@ -218,6 +240,13 @@ export class AuthService {
    */
   getCurrentUser(): User | null {
     return this.currentUserSubject.value;
+  }
+
+  /**
+   * Observable de l'utilisateur courant
+   */
+  getCurrentUser$(): Observable<User | null> {
+    return this.currentUser$;
   }
 
   /**
@@ -277,36 +306,17 @@ export class AuthService {
   }
 
   /**
-   * Gestion des erreurs
+   * Gestion des erreurs HTTP - retourne l'erreur telle quelle pour que le composant l'affiche
    */
   private handleError(error: any): Observable<never> {
-    let errorMessage = 'Une erreur est survenue';
+    console.error('HTTP Error:', {
+      status: error.status,
+      statusText: error.statusText,
+      error: error.error,
+      message: error.message
+    });
 
-    if (error.error instanceof ErrorEvent) {
-      // Erreur côté client
-      errorMessage = error.error.message;
-    } else {
-      // Erreur côté serveur
-      if (error.status === 0) {
-        errorMessage = 'Impossible de se connecter au serveur';
-      } else if (error.error) {
-        if (typeof error.error === 'string') {
-          errorMessage = error.error;
-        } else if (error.error.detail) {
-          errorMessage = error.error.detail;
-        } else if (error.error.message) {
-          errorMessage = error.error.message;
-        } else {
-          // Extraire les messages d'erreur des champs
-          const fieldErrors = Object.values(error.error).flat();
-          if (fieldErrors.length > 0) {
-            errorMessage = fieldErrors.join(' ');
-          }
-        }
-      }
-    }
-
-    console.error('Error:', errorMessage, error);
-    return throwError(() => ({...error, message: errorMessage}));
+    // Retourner l'erreur complète pour que le composant puisse extraire le message
+    return throwError(() => error);
   }
 }

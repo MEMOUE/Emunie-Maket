@@ -33,15 +33,21 @@ export class Dashboard implements OnInit, OnDestroy {
 
   // --- 🟢 Cycle de vie : initialisation
   ngOnInit() {
-    // Abonnement aux changements d’utilisateur
+    // Abonnement aux changements d'utilisateur
     this.userSubscription = this.authService.currentUser$.subscribe(user => {
       this.currentUser.set(user);
       if (!user) {
         this.router.navigate(['/login']);
       }
+
+      // DEBUG: Afficher l'avatar dans la console
+      if (user) {
+        console.log('Dashboard - User avatar:', user.avatar);
+        console.log('Dashboard - User avatar_url:', (user as any).avatar_url);
+      }
     });
 
-    // Charger le profil si l’utilisateur est déjà connecté
+    // Charger le profil si l'utilisateur est déjà connecté
     if (this.authService.isAuthenticated() && !this.currentUser()) {
       this.authService.getProfile().subscribe();
     }
@@ -85,4 +91,31 @@ export class Dashboard implements OnInit, OnDestroy {
     const lastInitial = user.last_name?.charAt(0) || '';
     return (firstInitial + lastInitial).toUpperCase();
   }
+
+  // --- 🖼️ CORRECTION : Méthode pour obtenir l'URL de l'avatar
+  getUserAvatar(): string | null {
+    const user = this.currentUser();
+    if (!user) return null;
+
+    // Essayer d'abord avatar_url (URL absolue du backend)
+    if ((user as any).avatar_url) {
+      return (user as any).avatar_url;
+    }
+
+    // Sinon utiliser avatar (peut être relatif)
+    if (user.avatar) {
+      // Si l'URL commence par http, la retourner telle quelle
+      if (user.avatar.startsWith('http')) {
+        return user.avatar;
+      }
+      // Sinon, construire l'URL complète
+      return `http://localhost:8000${user.avatar}`;
+    }
+
+    return null;
+  }
+
+  avatarError = false;
+  avatarErrorMobile = false;
+
 }

@@ -3,11 +3,14 @@
 
     <!-- Header -->
     <div class="text-center mb-8">
-      <div class="flex justify-center mb-4">
-        <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
-          <i class="pi pi-sign-in text-3xl"></i>
-        </div>
-      </div>
+<!--      <div class="flex justify-center mb-4">-->
+<!--        <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">-->
+<!--          <i class="pi pi-sign-in text-3xl"></i>-->
+<!--        </div>-->
+<!--      </div>-->
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">
+        Bienvenue
+      </h2>
       <p class="text-gray-600">
         Connectez-vous pour accéder à votre compte
       </p>
@@ -16,6 +19,11 @@
     <!-- Formulaire -->
     <div class="bg-white rounded-2xl shadow-xl p-8">
 
+      <!-- Message de succès -->
+      @if (successMessage) {
+        <p-message severity="success" [text]="successMessage" styleClass="w-full mb-6"></p-message>
+      }
+
       <!-- Message d'erreur -->
       @if (errorMessage) {
         <p-message severity="error" [text]="errorMessage" styleClass="w-full mb-6"></p-message>
@@ -23,10 +31,10 @@
 
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-6">
 
-        <!-- Nom d'utilisateur ou Email -->
+        <!-- Email ou Nom d'utilisateur -->
         <div>
           <label for="username" class="block text-sm font-semibold text-gray-700 mb-2">
-            Nom d'utilisateur ou Email
+            Email ou nom d'utilisateur
           </label>
           <div class="relative">
             <i class="pi pi-user absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
@@ -34,9 +42,10 @@
               pInputText
               id="username"
               formControlName="username"
-              placeholder="Entrez votre nom d'utilisateur"
+              placeholder="Entrez votre email ou nom d'utilisateur"
               [class.p-invalid]="isFieldInvalid('username')"
-              class="w-full pl-12 " />
+              class="w-full pl-12"
+              autocomplete="username" />
           </div>
           @if (getFieldError('username')) {
             <small class="text-red-500 mt-1 block">{{ getFieldError('username') }}</small>
@@ -61,7 +70,8 @@
             [feedback]="false"
             [class.p-invalid]="isFieldInvalid('password')"
             styleClass="w-full"
-            inputStyleClass="w-full">
+            inputStyleClass="w-full"
+            autocomplete="current-password">
           </p-password>
           @if (getFieldError('password')) {
             <small class="text-red-500 mt-1 block">{{ getFieldError('password') }}</small>
@@ -84,13 +94,14 @@
         <button
           type="submit"
           [disabled]="loading"
-          class="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all flex items-center justify-center gap-2">
+          class="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
           @if (loading) {
             <i class="pi pi-spin pi-spinner"></i>
+            <span>Connexion en cours...</span>
           } @else {
             <i class="pi pi-sign-in"></i>
+            <span>Se connecter</span>
           }
-          <span>Se connecter</span>
         </button>
 
         <!-- Lien vers Register -->
@@ -118,6 +129,7 @@
         <div class="mt-6 grid grid-cols-2 gap-3">
           <button
             type="button"
+            (click)="loginWithGoogle()"
             class="w-full inline-flex justify-center items-center gap-2 py-3 px-4 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 transition-colors">
             <i class="pi pi-google text-xl text-red-500"></i>
             <span class="text-sm font-medium text-gray-700">Google</span>
@@ -125,6 +137,7 @@
 
           <button
             type="button"
+            (click)="loginWithFacebook()"
             class="w-full inline-flex justify-center items-center gap-2 py-3 px-4 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 transition-colors">
             <i class="pi pi-facebook text-xl text-blue-600"></i>
             <span class="text-sm font-medium text-gray-700">Facebook</span>
@@ -135,11 +148,11 @@
 
     <!-- Avantages de la connexion -->
     <div class="mt-8 grid grid-cols-2 gap-4">
-      <div class="bg-white rounded-lg p-4 text-center shadow-md">
+      <div class="bg-white rounded-lg p-4 text-center shadow-md hover:shadow-lg transition-shadow">
         <i class="pi pi-shopping-bag text-2xl text-orange-500 mb-2"></i>
         <p class="text-xs text-gray-600">Gérez vos annonces</p>
       </div>
-      <div class="bg-white rounded-lg p-4 text-center shadow-md">
+      <div class="bg-white rounded-lg p-4 text-center shadow-md hover:shadow-lg transition-shadow">
         <i class="pi pi-heart text-2xl text-red-500 mb-2"></i>
         <p class="text-xs text-gray-600">Sauvegardez vos favoris</p>
       </div>
