@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgForOf, NgIf } from '@angular/common';
+import { AnnonceService } from '../../service/annonce.service';
 
 interface ImagePreview {
-  file: File;
+  file?: File;
   url: string;
   order: number;
+  existing?: boolean; // Pour différencier les images existantes des nouvelles
+  id?: string; // ID de l'image si elle existe déjà
 }
 
 @Component({
@@ -26,6 +29,11 @@ export class NewAnonceComponent implements OnInit {
   errorMessage = '';
   successMessage = '';
 
+  // Mode édition
+  isEditMode = false;
+  adId: string = '';
+  hasNewImages = false; // Flag pour savoir si de nouvelles images ont été ajoutées
+
   readonly MIN_IMAGES = 1;
   readonly MAX_IMAGES = 3;
   readonly MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5Mo
@@ -34,7 +42,9 @@ export class NewAnonceComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private annonceService: AnnonceService
   ) {}
 
   ngOnInit(): void {
@@ -58,6 +68,78 @@ export class NewAnonceComponent implements OnInit {
 
     this.loadCategories();
     this.loadCities();
+
+    // Vérifier si on est en mode édition
+    this.route.params.subscribe(params => {
+      if (params['id']) {
+        this.isEditMode = true;
+        this.adId = params['id'];
+        this.loadAdData();
+      }
+    });
+  }
+
+  /**
+   * Charger les données de l'annonce à modifier
+   */
+  loadAdData(): void {
+    this.loading = true;
+
+    this.annonceService.getAdDetail(this.adId).subscribe({
+      next: (ad) => {
+        // Remplir le formulaire avec les données existantes
+        this.form.patchValue({
+          title: ad.title,
+          description: ad.description,
+          price: ad.price,
+          currency: ad.currency || 'XOF',
+          is_negotiable: ad.is_negotiable,
+          category: ad.category,
+          city: ad.city,
+          address: ad.address || '',
+          latitude: ad.latitude,
+          longitude: ad.longitude,
+          contact_phone: ad.contact_phone || '',
+          contact_email: ad.contact_email || '',
+          whatsapp_number: ad.whatsapp_number || '',
+          is_urgent: ad.is_urgent,
+          expires_at: ad.expires_at ? this.formatDateForInput(ad.expires_at) : ''
+        });
+
+        // Charger les images existantes
+        if (ad.images && ad.images.length > 0) {
+          this.imagePreviews = ad.images.map((img: any, index: number) => ({
+            url: img.image_url || img.image,
+            order: index,
+            existing: true,
+            id: img.id
+          }));
+        }
+
+        this.loading = false;
+      },
+      error: (error) => {
+        console.error('Erreur lors du chargement de l\'annonce:', error);
+        this.errorMessage = 'Impossible de charger les données de l\'annonce';
+        this.loading = false;
+
+        // Rediriger après 2 secondes
+        setTimeout(() => {
+          this.router.navigate(['/my-ads']);
+        }, 2000);
+      }
+    });
+  }
+
+  /**
+   * Formater la date pour l'input date
+   */
+  formatDateForInput(dateString: string): string {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
   }
 
   loadCategories(): void {
@@ -87,6 +169,13 @@ export class NewAnonceComponent implements OnInit {
 
     const newFiles = Array.from(input.files);
 
+    // En mode édition, si on ajoute de nouvelles images, on remplace toutes les anciennes
+    if (this.isEditMode && !this.hasNewImages) {
+      // Vider les images existantes
+      this.imagePreviews = [];
+      this.hasNewImages = true;
+    }
+
     // Vérifier le nombre total d'images
     if (this.imagePreviews.length + newFiles.length > this.MAX_IMAGES) {
       this.errorMessage = `Vous pouvez ajouter au maximum ${this.MAX_IMAGES} images.`;
@@ -114,7 +203,8 @@ export class NewAnonceComponent implements OnInit {
         this.imagePreviews.push({
           file: file,
           url: e.target.result,
-          order: this.imagePreviews.length
+          order: this.imagePreviews.length,
+          existing: false
         });
 
         // Réinitialiser le message d'erreur si tout est OK
@@ -134,6 +224,14 @@ export class NewAnonceComponent implements OnInit {
   removeImage(index: number): void {
     if (this.imagePreviews.length <= this.MIN_IMAGES) {
       this.errorMessage = `Vous devez avoir au moins ${this.MIN_IMAGES} image.`;
+      return;
+    }
+
+    const removedImage = this.imagePreviews[index];
+
+    // Si on supprime une image existante en mode édition
+    if (this.isEditMode && removedImage.existing && !this.hasNewImages) {
+      this.errorMessage = "Pour modifier les images, ajoutez d'abord de nouvelles images.";
       return;
     }
 
@@ -209,18 +307,43 @@ export class NewAnonceComponent implements OnInit {
       }
     });
 
-    // Ajouter les images dans l'ordre
-    this.imagePreviews
-      .sort((a, b) => a.order - b.order)
-      .forEach((preview) => {
-        formData.append('images', preview.file);
-      });
+    // Ajouter les images selon le mode
+    if (this.isEditMode) {
+      // En mode édition, n'envoyer les images que si de nouvelles images ont été ajoutées
+      if (this.hasNewImages) {
+        const newImages = this.imagePreviews
+          .filter(preview => preview.file)
+          .sort((a, b) => a.order - b.order);
 
-    // Envoyer la requête
-    this.http.post(`${environment.apiUrl}produit/ads/create/`, formData).subscribe({
+        newImages.forEach((preview) => {
+          if (preview.file) {
+            formData.append('images', preview.file);
+          }
+        });
+      }
+      // Sinon, ne pas inclure le champ images du tout
+    } else {
+      // En mode création, toujours inclure les images
+      this.imagePreviews
+        .sort((a, b) => a.order - b.order)
+        .forEach((preview) => {
+          if (preview.file) {
+            formData.append('images', preview.file);
+          }
+        });
+    }
+
+    // Envoyer la requête appropriée selon le mode
+    const request = this.isEditMode
+      ? this.annonceService.updateAd(this.adId, formData)
+      : this.http.post(`${environment.apiUrl}produit/ads/create/`, formData);
+
+    request.subscribe({
       next: (response: any) => {
         this.loading = false;
-        this.successMessage = 'Annonce créée avec succès !';
+        this.successMessage = this.isEditMode
+          ? 'Annonce modifiée avec succès !'
+          : 'Annonce créée avec succès !';
 
         // Rediriger après 2 secondes
         setTimeout(() => {
@@ -229,7 +352,7 @@ export class NewAnonceComponent implements OnInit {
       },
       error: (err) => {
         this.loading = false;
-        console.error('Erreur lors de la création de l\'annonce:', err);
+        console.error('Erreur lors de la sauvegarde de l\'annonce:', err);
 
         if (err.error) {
           if (typeof err.error === 'string') {
@@ -244,7 +367,9 @@ export class NewAnonceComponent implements OnInit {
             this.errorMessage = errors.join(' ');
           }
         } else {
-          this.errorMessage = 'Une erreur est survenue lors de la création de l\'annonce.';
+          this.errorMessage = this.isEditMode
+            ? 'Une erreur est survenue lors de la modification de l\'annonce.'
+            : 'Une erreur est survenue lors de la création de l\'annonce.';
         }
 
         // Scroll vers le haut pour voir l'erreur

@@ -4,7 +4,7 @@
     <!-- Titre principal -->
     <h2
       class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-orange-500 via-white to-green-500 bg-clip-text text-transparent uppercase">
-      Créer une nouvelle annonce
+      {{ isEditMode ? 'Modifier l\'annonce' : 'Créer une nouvelle annonce' }}
     </h2>
 
     <!-- Messages d'alerte -->
@@ -308,6 +308,9 @@
           @if (loading) {
             <i class="pi pi-spin pi-spinner mr-2"></i>
             Enregistrement en cours...
+          } @else if (isEditMode) {
+            <i class="pi pi-save mr-2"></i>
+            Enregistrer les modifications
           } @else {
             <i class="pi pi-check-circle mr-2"></i>
             Publier l'annonce

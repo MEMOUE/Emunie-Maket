@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.exceptions import ValidationError as DRFValidationError
 from django.contrib.auth import get_user_model
 from .models import (
     Ad, AdImage, Advertisement, Favorite, AdReport,
@@ -27,13 +28,13 @@ class AdImageSerializer(serializers.ModelSerializer):
     def validate_image(self, value):
         """Valider la taille de l'image"""
         if value.size > 5 * 1024 * 1024:  # 5Mo
-            raise serializers.ValidationError("La taille de l'image ne doit pas dépasser 5Mo.")
+            raise DRFValidationError("La taille de l'image ne doit pas dépasser 5Mo.")
 
         # Vérifier l'extension
         allowed_extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp']
         ext = value.name.split('.')[-1].lower()
         if ext not in allowed_extensions:
-            raise serializers.ValidationError(
+            raise DRFValidationError(
                 f"Format non supporté. Utilisez: {', '.join(allowed_extensions)}"
             )
 
@@ -182,14 +183,14 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
     def validate_images(self, value):
         """Valider les images"""
         if len(value) < 1:
-            raise serializers.ValidationError("Vous devez ajouter au moins 1 image.")
+            raise DRFValidationError("Vous devez ajouter au moins 1 image.")
         if len(value) > 3:
-            raise serializers.ValidationError("Vous ne pouvez ajouter que 3 images maximum.")
+            raise DRFValidationError("Vous ne pouvez ajouter que 3 images maximum.")
 
         # Vérifier la taille de chaque image
         for image in value:
             if image.size > 5 * 1024 * 1024:  # 5Mo
-                raise serializers.ValidationError(
+                raise DRFValidationError(
                     f"L'image {image.name} dépasse la taille maximale de 5Mo."
                 )
 
@@ -201,7 +202,7 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
         # Vérifier si l'utilisateur peut créer une annonce (création uniquement)
         if self.instance is None and request:
             if not request.user.can_create_ad:
-                raise serializers.ValidationError(
+                raise DRFValidationError(
                     f"Limite d'annonces atteinte. Vous avez déjà {request.user.ads.filter(status='active').count()} annonces actives. "
                     f"Passez au compte premium pour publier des annonces illimitées."
                 )
@@ -245,6 +246,11 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
         return ad
 
     def update(self, instance, validated_data):
+        """
+        Mise à jour de l'annonce avec gestion sécurisée des images
+        """
+        from django.db import transaction
+
         # Extraire les images si présentes
         images_data = validated_data.pop('images', None)
 
@@ -255,21 +261,38 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
         instance.save()
 
         # Gérer les images si fournies
-        if images_data is not None:
-            # Supprimer les anciennes images
-            old_images = instance.images.all()
-            for img in old_images:
-                img.image.delete(save=False)
-                img.delete()
+        if images_data is not None and len(images_data) > 0:
+            try:
+                with transaction.atomic():
+                    # 1. Supprimer d'abord TOUTES les anciennes images
+                    # Utiliser delete() via queryset pour éviter la validation du modèle
+                    old_images = list(instance.images.all())
 
-            # Créer les nouvelles images
-            for index, image_file in enumerate(images_data):
-                AdImage.objects.create(
-                    ad=instance,
-                    image=image_file,
-                    order=index,
-                    is_primary=(index == 0)
-                )
+                    # Supprimer les fichiers physiques
+                    for old_img in old_images:
+                        try:
+                            if old_img.image:
+                                old_img.image.delete(save=False)
+                        except Exception as e:
+                            print(f"Avertissement: impossible de supprimer le fichier: {e}")
+
+                    # Supprimer tous les enregistrements via queryset (contourne la validation)
+                    AdImage.objects.filter(ad=instance).delete()
+
+                    # 2. Créer les nouvelles images (maintenant les orders 0,1,2 sont disponibles)
+                    for index, image_file in enumerate(images_data):
+                        AdImage.objects.create(
+                            ad=instance,
+                            image=image_file,
+                            order=index,
+                            is_primary=(index == 0)
+                        )
+
+            except Exception as e:
+                # En cas d'erreur, la transaction sera annulée automatiquement
+                raise DRFValidationError({
+                    'images': f"Erreur lors de la mise à jour des images: {str(e)}"
+                })
 
         return instance
 
@@ -326,13 +349,13 @@ class AdvertisementSerializer(serializers.ModelSerializer):
     def validate_image(self, value):
         """Valider la taille de l'affiche (max 2Mo)"""
         if value and value.size > 2 * 1024 * 1024:
-            raise serializers.ValidationError("La taille de l'affiche ne doit pas dépasser 2Mo.")
+            raise DRFValidationError("La taille de l'affiche ne doit pas dépasser 2Mo.")
         return value
 
     def validate_duration_hours(self, value):
         """S'assurer que la durée est un multiple de 24h"""
         if value % 24 != 0:
-            raise serializers.ValidationError("La durée doit être un multiple de 24 heures (1 jour, 2 jours, etc.)")
+            raise DRFValidationError("La durée doit être un multiple de 24 heures (1 jour, 2 jours, etc.)")
         return value
 
 
@@ -346,15 +369,15 @@ class AdvertisementCreateSerializer(serializers.ModelSerializer):
     def validate_image(self, value):
         """Valider la taille de l'affiche (max 2Mo)"""
         if value and value.size > 2 * 1024 * 1024:
-            raise serializers.ValidationError("La taille de l'affiche ne doit pas dépasser 2Mo.")
+            raise DRFValidationError("La taille de l'affiche ne doit pas dépasser 2Mo.")
         return value
 
     def validate_duration_hours(self, value):
         """S'assurer que la durée est un multiple de 24h"""
         if value % 24 != 0:
-            raise serializers.ValidationError("La durée doit être un multiple de 24 heures.")
+            raise DRFValidationError("La durée doit être un multiple de 24 heures.")
         if value < 24:
-            raise serializers.ValidationError("La durée minimale est de 24 heures.")
+            raise DRFValidationError("La durée minimale est de 24 heures.")
         return value
 
     def create(self, validated_data):
@@ -365,7 +388,7 @@ class AdvertisementCreateSerializer(serializers.ModelSerializer):
         start_date = validated_data['start_date']
         duration_hours = validated_data.get('duration_hours')
         if duration_hours is None:
-            raise serializers.ValidationError("Le champ 'duration_hours' est requis.")
+            raise DRFValidationError("Le champ 'duration_hours' est requis.")
 
         validated_data['end_date'] = start_date + timedelta(hours=duration_hours)
 
