@@ -3,6 +3,7 @@ import { Accueil } from './accueil/accueil';
 import { Login } from './auth/login/login';
 import { Register } from './auth/register/register';
 import { authGuard } from './guard/auth.guard';
+import {ProfileEditComponent} from './auth/profile-edit/profile-edit';
 
 export const routes: Routes = [
   {
@@ -50,6 +51,9 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'profile-edit',
+    loadComponent: () => import('./auth/profile-edit/profile-edit').then(m => m.ProfileEditComponent) // Temporaire
+  },{
     path: 'contact',
     loadComponent: () => import('./accueil/accueil').then(m => m.Accueil) // Temporaire
   },

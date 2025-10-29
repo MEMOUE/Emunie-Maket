@@ -59,6 +59,14 @@
       </a>
 
       <a
+        routerLink="/profile-edit"
+        routerLinkActive="bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg"
+        class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-700 hover:bg-orange-50 hover:text-orange-600">
+        <i class="pi pi-user-edit text-lg"></i>
+        <span class="font-medium">Mon Profil</span>
+      </a>
+
+      <a
         routerLink="/dashboard/new-ad"
         routerLinkActive="bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg"
         class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-700 hover:bg-orange-50 hover:text-orange-600">
@@ -199,6 +207,12 @@
          (click)="toggleMobileMenu()" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-orange-50">
         <i class="pi pi-chart-line text-lg"></i>
         <span class="font-medium">Vue d'ensemble</span>
+      </a>
+
+      <a routerLink="/profile-edit" routerLinkActive="bg-gradient-to-r from-orange-500 to-orange-600 text-white"
+         (click)="toggleMobileMenu()" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-orange-50">
+        <i class="pi pi-user-edit text-lg"></i>
+        <span class="font-medium">Mon Profil</span>
       </a>
 
       <a routerLink="/dashboard/new-ad" routerLinkActive="bg-gradient-to-r from-orange-500 to-orange-600 text-white"

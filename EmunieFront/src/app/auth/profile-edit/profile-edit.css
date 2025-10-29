@@ -1,0 +1,96 @@
+/* Styles pour les inputs PrimeNG */
+::ng-deep .p-inputtext {
+  border-radius: 0.5rem;
+  border: 2px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  color: #1f2937 !important;
+  background-color: #ffffff !important;
+}
+
+::ng-deep .p-inputtext::placeholder {
+  color: #9ca3af !important;
+}
+
+::ng-deep .p-inputtext:hover:not(:disabled):not(.bg-gray-100) {
+  border-color: #f97316;
+}
+
+::ng-deep .p-inputtext:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  color: #1f2937 !important;
+}
+
+::ng-deep .p-inputtext.p-invalid {
+  border-color: #ef4444;
+}
+
+::ng-deep .p-inputtext:disabled,
+::ng-deep .p-inputtext.bg-gray-100 {
+  background-color: #f3f4f6 !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Textarea */
+textarea.p-inputtext {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Boutons */
+::ng-deep .p-button {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .p-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+}
+
+::ng-deep .p-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Messages */
+::ng-deep .p-message {
+  border-radius: 0.5rem;
+  border-width: 2px;
+}
+
+/* Animation d'entrée */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-white {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Avatar hover effect */
+.relative img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .bg-white {
+    padding: 1.5rem;
+  }
+
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,278 @@
+<div class="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-2xl w-full">
+
+    <!-- Header -->
+    <div class="text-center mb-8">
+      
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">
+        Modifier mon profil
+      </h2>
+      <p class="text-gray-600">
+        Mettez à jour vos informations personnelles
+      </p>
+    </div>
+
+    <!-- Formulaire -->
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+
+      <!-- Messages -->
+      @if (successMessage) {
+        <p-message severity="success" [text]="successMessage" styleClass="w-full mb-4"></p-message>
+      }
+      @if (errorMessage) {
+        <p-message severity="error" [text]="errorMessage" styleClass="w-full mb-4"></p-message>
+      }
+
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="space-y-6">
+
+        <!-- Avatar -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Photo de profil
+            <span class="text-gray-500 font-normal ml-2">Max 1Mo</span>
+          </label>
+
+          <div class="flex items-center gap-4">
+            <!-- Aperçu de l'avatar -->
+            <div class="relative">
+              @if (avatarPreview) {
+                <img [src]="avatarPreview" alt="Avatar" class="w-20 h-20 rounded-full object-cover border-2 border-orange-500">
+                <button
+                  type="button"
+                  (click)="removeAvatar()"
+                  class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center hover:bg-red-600 transition-colors">
+                  <i class="pi pi-times text-xs"></i>
+                </button>
+              } @else {
+                <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                  <i class="pi pi-user text-3xl text-gray-400"></i>
+                </div>
+              }
+            </div>
+
+            <!-- Bouton d'upload -->
+            <label class="cursor-pointer">
+              <input
+                type="file"
+                accept="image/jpeg,image/jpg,image/png,image/gif"
+                (change)="onAvatarSelect($event)"
+                class="hidden">
+              <div class="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors flex items-center gap-2">
+                <i class="pi pi-upload"></i>
+                <span>Changer la photo</span>
+              </div>
+            </label>
+          </div>
+          <small class="text-gray-500 mt-1 block">
+            Formats acceptés : JPG, JPEG, PNG, GIF
+          </small>
+        </div>
+
+        <!-- Nom d'utilisateur (lecture seule) -->
+        <div>
+          <label for="username" class="block text-sm font-semibold text-gray-700 mb-2">
+            Nom d'utilisateur
+          </label>
+          <input
+            pInputText
+            id="username"
+            formControlName="username"
+            class="w-full bg-gray-100"
+            readonly />
+          <small class="text-gray-500 mt-1 block">
+            Le nom d'utilisateur ne peut pas être modifié
+          </small>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+            Adresse email *
+          </label>
+          <input
+            pInputText
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="votre@email.com"
+            [class.p-invalid]="isFieldInvalid('email')"
+            class="w-full" />
+          @if (getFieldError('email')) {
+            <small class="text-red-500 mt-1 block">{{ getFieldError('email') }}</small>
+          }
+        </div>
+
+        <!-- Téléphone -->
+        <div>
+          <label for="phone_number" class="block text-sm font-semibold text-gray-700 mb-2">
+            Numéro de téléphone <span class="text-gray-500 font-normal">(optionnel)</span>
+          </label>
+          <input
+            pInputText
+            id="phone_number"
+            formControlName="phone_number"
+            placeholder="+225 07 08 44 09 19"
+            [class.p-invalid]="isFieldInvalid('phone_number')"
+            class="w-full" />
+          @if (getFieldError('phone_number')) {
+            <small class="text-red-500 mt-1 block">{{ getFieldError('phone_number') }}</small>
+          }
+        </div>
+
+        <!-- Prénom et Nom -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="first_name" class="block text-sm font-semibold text-gray-700 mb-2">
+              Prénom *
+            </label>
+            <input
+              pInputText
+              id="first_name"
+              formControlName="first_name"
+              placeholder="Votre prénom"
+              [class.p-invalid]="isFieldInvalid('first_name')"
+              class="w-full" />
+            @if (getFieldError('first_name')) {
+              <small class="text-red-500 mt-1 block">{{ getFieldError('first_name') }}</small>
+            }
+          </div>
+
+          <div>
+            <label for="last_name" class="block text-sm font-semibold text-gray-700 mb-2">
+              Nom *
+            </label>
+            <input
+              pInputText
+              id="last_name"
+              formControlName="last_name"
+              placeholder="Votre nom"
+              [class.p-invalid]="isFieldInvalid('last_name')"
+              class="w-full" />
+            @if (getFieldError('last_name')) {
+              <small class="text-red-500 mt-1 block">{{ getFieldError('last_name') }}</small>
+            }
+          </div>
+        </div>
+
+        <!-- Localisation -->
+        <div>
+          <label for="location" class="block text-sm font-semibold text-gray-700 mb-2">
+            Localisation <span class="text-gray-500 font-normal">(optionnel)</span>
+          </label>
+          <input
+            pInputText
+            id="location"
+            formControlName="location"
+            placeholder="Ville, Pays"
+            class="w-full" />
+        </div>
+
+        <!-- Bio -->
+        <div>
+          <label for="bio" class="block text-sm font-semibold text-gray-700 mb-2">
+            Bio <span class="text-gray-500 font-normal">(optionnel)</span>
+          </label>
+          <textarea
+            pInputText
+            id="bio"
+            formControlName="bio"
+            placeholder="Parlez-nous un peu de vous..."
+            rows="4"
+            [class.p-invalid]="isFieldInvalid('bio')"
+            class="w-full resize-none"></textarea>
+          @if (getFieldError('bio')) {
+            <small class="text-red-500 mt-1 block">{{ getFieldError('bio') }}</small>
+          }
+          <small class="text-gray-500 mt-1 block">
+            Maximum 500 caractères
+          </small>
+        </div>
+
+        <!-- Boutons d'action -->
+        <div class="flex gap-4">
+          <button
+            type="submit"
+            [disabled]="loading"
+            class="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+            @if (loading) {
+              <i class="pi pi-spin pi-spinner"></i>
+              <span>Mise à jour...</span>
+            } @else {
+              <i class="pi pi-check"></i>
+              <span>Enregistrer</span>
+            }
+          </button>
+
+          <button
+            type="button"
+            (click)="cancel()"
+            [disabled]="loading"
+            class="flex-1 bg-gray-200 text-gray-700 font-semibold py-3 px-4 rounded-lg hover:bg-gray-300 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+            <i class="pi pi-times"></i>
+            <span>Annuler</span>
+          </button>
+        </div>
+
+        <!-- Lien vers changement de mot de passe -->
+        <div class="text-center pt-4 border-t border-gray-200">
+          <p class="text-gray-600">
+            Besoin de changer votre mot de passe ?
+            <a routerLink="/dashboard/change-password" class="text-orange-600 hover:text-orange-700 font-semibold ml-1">
+              Cliquez ici
+            </a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <!-- Informations du compte -->
+    @if (currentUser) {
+      <div class="mt-6 bg-white rounded-2xl shadow-xl p-6">
+        <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="pi pi-info-circle text-orange-500"></i>
+          Informations du compte
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <span class="text-gray-500">Membre depuis :</span>
+            <span class="ml-2 font-semibold">{{ currentUser.created_at | date:'dd/MM/yyyy' }}</span>
+          </div>
+          <div>
+            <span class="text-gray-500">Email vérifié :</span>
+            @if (currentUser.email_verified) {
+              <span class="ml-2 text-green-600 font-semibold flex items-center gap-1">
+                <i class="pi pi-check-circle"></i> Oui
+              </span>
+            } @else {
+              <span class="ml-2 text-orange-600 font-semibold flex items-center gap-1">
+                <i class="pi pi-times-circle"></i> Non
+              </span>
+            }
+          </div>
+          <div>
+            <span class="text-gray-500">Téléphone vérifié :</span>
+            @if (currentUser.phone_verified) {
+              <span class="ml-2 text-green-600 font-semibold flex items-center gap-1">
+                <i class="pi pi-check-circle"></i> Oui
+              </span>
+            } @else {
+              <span class="ml-2 text-orange-600 font-semibold flex items-center gap-1">
+                <i class="pi pi-times-circle"></i> Non
+              </span>
+            }
+          </div>
+          <div>
+            <span class="text-gray-500">Compte Premium :</span>
+            @if (currentUser.is_premium_active) {
+              <span class="ml-2 text-orange-600 font-semibold flex items-center gap-1">
+                <i class="pi pi-star-fill"></i> Actif
+              </span>
+            } @else {
+              <span class="ml-2 text-gray-600 font-semibold">Standard</span>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
