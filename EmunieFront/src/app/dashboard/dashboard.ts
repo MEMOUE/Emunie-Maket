@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import {Router, RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { AuthService, User } from '../service/auth';
-import { Subscription } from 'rxjs';
+import { AnnonceService } from '../service/annonce.service';
+import { AdvertisementService } from '../service/advertisement.service';
+import { Subscription, forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,9 +28,25 @@ export class Dashboard implements OnInit, OnDestroy {
   // --- 📱 État du menu mobile
   isMobileMenuOpen = signal(false);
 
+  // --- 📊 Statistiques utilisateur
+  userStats = signal({
+    totalAds: 0,
+    activeAds: 0,
+    totalViews: 0,
+    totalAdvertisements: 0,
+    activeAdvertisements: 0,
+    remainingAds: 0
+  });
+
+  loading = signal(true);
+  avatarError = false;
+  avatarErrorMobile = false;
+
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private annonceService: AnnonceService,
+    private advertisementService: AdvertisementService
   ) {}
 
   // --- 🟢 Cycle de vie : initialisation
@@ -38,6 +56,9 @@ export class Dashboard implements OnInit, OnDestroy {
       this.currentUser.set(user);
       if (!user) {
         this.router.navigate(['/login']);
+      } else {
+        // Charger les statistiques quand l'utilisateur est disponible
+        this.loadUserStats();
       }
 
       // DEBUG: Afficher l'avatar dans la console
@@ -57,6 +78,46 @@ export class Dashboard implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.userSubscription?.unsubscribe();
     document.body.classList.remove('menu-open'); // sécurité
+  }
+
+  // --- 📊 Charger les statistiques utilisateur
+  loadUserStats() {
+    this.loading.set(true);
+
+    forkJoin({
+      myAds: this.annonceService.getMyAds(),
+      myAdvertisements: this.advertisementService.getMyAdvertisements()
+    }).subscribe({
+      next: (results) => {
+        const user = this.currentUser();
+
+        // Calculer le nombre d'annonces actives
+        const activeAds = results.myAds.filter((ad: any) => ad.status === 'active').length;
+
+        // Calculer le nombre de publicités actives
+        const activeAdvertisements = results.myAdvertisements.filter(
+          (ad: any) => ad.is_active && ad.is_running
+        ).length;
+
+        // Calculer les vues totales
+        const totalViews = results.myAds.reduce((sum: number, ad: any) => sum + (ad.views_count || 0), 0);
+
+        this.userStats.set({
+          totalAds: results.myAds.length,
+          activeAds: activeAds,
+          totalViews: totalViews,
+          totalAdvertisements: results.myAdvertisements.length,
+          activeAdvertisements: activeAdvertisements,
+          remainingAds: user?.remaining_ads || 0
+        });
+
+        this.loading.set(false);
+      },
+      error: (error) => {
+        console.error('Erreur lors du chargement des statistiques:', error);
+        this.loading.set(false);
+      }
+    });
   }
 
   // --- 📱 Ouvrir / fermer le menu mobile
@@ -92,7 +153,7 @@ export class Dashboard implements OnInit, OnDestroy {
     return (firstInitial + lastInitial).toUpperCase();
   }
 
-  // --- 🖼️ CORRECTION : Méthode pour obtenir l'URL de l'avatar
+  // --- 🖼️ Méthode pour obtenir l'URL de l'avatar
   getUserAvatar(): string | null {
     const user = this.currentUser();
     if (!user) return null;
@@ -115,7 +176,26 @@ export class Dashboard implements OnInit, OnDestroy {
     return null;
   }
 
-  avatarError = false;
-  avatarErrorMobile = false;
+  // --- 📅 Formater la date de fin du premium
+  getPremiumEndDate(): string {
+    const user = this.currentUser();
+    if (!user || !user.premium_end_date) return '';
 
+    const endDate = new Date(user.premium_end_date);
+    return endDate.toLocaleDateString('fr-FR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  }
+
+  // --- 📊 Calculer le pourcentage d'utilisation des annonces
+  getAdsUsagePercentage(): number {
+    const user = this.currentUser();
+    if (!user || user.is_premium_active) return 0;
+
+    const maxAds = 5; // MAX_FREE_ADS
+    const usedAds = this.userStats().activeAds;
+    return Math.min(100, (usedAds / maxAds) * 100);
+  }
 }

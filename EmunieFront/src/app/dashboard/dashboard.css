@@ -30,6 +30,17 @@
   }
 }
 
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Stats Cards Animation */
 .bg-white.rounded-xl.shadow-md {
   animation: fadeIn 0.5s ease-out;
@@ -51,10 +62,73 @@
   animation-delay: 0.4s;
 }
 
+/* Mini Stats Animation */
+.bg-blue-50,
+.bg-green-50,
+.bg-purple-50 {
+  animation: countUp 0.4s ease-out;
+}
+
+/* Premium Badge Animation */
+.bg-gradient-to-r.from-orange-500 {
+  animation: fadeIn 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-gradient-to-r.from-orange-500::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+/* Progress Bar Animation */
+.bg-orange-500.h-2.rounded-full {
+  animation: expandWidth 1s ease-out;
+  transition: width 0.3s ease;
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+}
+
 /* Sidebar Hover Effects */
-aside button:hover i {
+aside button:hover i,
+aside a:hover i {
   transform: scale(1.1);
   transition: transform 0.2s ease;
+}
+
+/* Badge Pulse Animation */
+.bg-green-500.text-white.text-xs.px-2.py-1.rounded-full,
+.bg-orange-500.text-white.text-xs.px-2.py-1.rounded-full,
+.bg-purple-500.text-white.text-xs.px-2.py-1.rounded-full {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+  }
 }
 
 /* Smooth Scrollbar for tables */
@@ -167,30 +241,6 @@ details[open] summary::before {
   animation: shimmer 3s infinite;
 }
 
-@keyframes shimmer {
-  100% {
-    left: 100%;
-  }
-}
-
-/* Notification Badge Pulse */
-.bg-green-500.text-white.text-xs.px-2.py-1.rounded-full,
-.bg-orange-500.text-white.text-xs.px-2.py-1.rounded-full {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
-  }
-}
-
 /* Form Input Focus Effects */
 input:focus,
 select:focus,
@@ -223,6 +273,28 @@ textarea:focus {
   }
 }
 
+/* Stats Number Animation */
+.text-xl.font-bold,
+.text-lg.font-bold {
+  animation: countUp 0.6s ease-out;
+}
+
+/* Avatar Border Glow */
+.border-2.border-orange-500 {
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.border-2.border-orange-500:hover {
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.5);
+}
+
+/* Navigation Active State */
+.bg-gradient-to-r.from-orange-500.to-orange-600 {
+  position: relative;
+  animation: slideInFromLeft 0.3s ease-out;
+}
+
 /* Responsive Design Improvements */
 @media (max-width: 640px) {
   .grid {
@@ -244,4 +316,33 @@ textarea:focus {
   .text-4xl {
     font-size: 1.875rem;
   }
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Mini Stats Hover Effect */
+.bg-blue-50:hover,
+.bg-green-50:hover,
+.bg-purple-50:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Badge Counter Bounce */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.bg-green-500.text-white.text-xs,
+.bg-orange-500.text-white.text-xs,
+.bg-purple-500.text-white.text-xs {
+  animation: bounce 0.5s ease;
 }

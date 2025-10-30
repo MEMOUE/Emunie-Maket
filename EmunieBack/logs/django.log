@@ -3602,3 +3602,329 @@ INFO 2025-10-29 23:00:22,448 basehttp 9262 6167965696 "GET /api/produit/home-dat
 INFO 2025-10-29 23:00:22,455 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/29/ucad.jpg HTTP/1.1" 304 0
 INFO 2025-10-29 23:00:57,788 basehttp 9262 6167965696 "PATCH /api/user/profile/ HTTP/1.1" 200 525
 INFO 2025-10-29 23:01:10,835 basehttp 9262 6167965696 "PATCH /api/user/profile/ HTTP/1.1" 200 525
+INFO 2025-10-30 09:40:57,135 basehttp 9262 6167965696 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:40:57,135 basehttp 9262 13170143232 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:40:57,136 basehttp 9262 13186969600 "OPTIONS /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 0
+INFO 2025-10-30 09:40:57,159 basehttp 9262 13170143232 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 09:40:57,159 basehttp 9262 6167965696 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 09:40:57,167 basehttp 9262 13186969600 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 2391
+INFO 2025-10-30 09:40:57,172 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/29/ucad.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 09:40:57,172 basehttp 9262 13170143232 "GET /media/ads/images/2025/10/24/ucad.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 09:40:59,220 basehttp 9262 13186969600 "OPTIONS /api/produit/ads/bf74a36b-b32e-4733-ac8c-785bb93f1360/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:40:59,235 basehttp 9262 6167965696 "GET /api/produit/ads/bf74a36b-b32e-4733-ac8c-785bb93f1360/ HTTP/1.1" 200 1494
+INFO 2025-10-30 09:40:59,249 basehttp 9262 13170143232 "GET /media/ads/images/2025/10/24/ucad_95pxWrJ.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 09:41:00,925 basehttp 9262 6167965696 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 09:41:00,925 basehttp 9262 13186969600 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 09:41:00,933 basehttp 9262 13170143232 "GET /api/produit/ads/bf74a36b-b32e-4733-ac8c-785bb93f1360/ HTTP/1.1" 200 1494
+INFO 2025-10-30 09:46:53,194 basehttp 9262 6167965696 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:46:53,195 basehttp 9262 13170143232 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:46:53,198 basehttp 9262 13186969600 "OPTIONS /api/produit/ads/bf74a36b-b32e-4733-ac8c-785bb93f1360/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:46:53,209 basehttp 9262 13170143232 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 09:46:53,209 basehttp 9262 6167965696 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 09:46:53,217 basehttp 9262 13186969600 "GET /api/produit/ads/bf74a36b-b32e-4733-ac8c-785bb93f1360/ HTTP/1.1" 200 1494
+INFO 2025-10-30 09:48:18,131 basehttp 9262 6167965696 "OPTIONS /api/produit/ads/bf74a36b-b32e-4733-ac8c-785bb93f1360/update/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:48:18,162 basehttp 9262 6167965696 "PUT /api/produit/ads/bf74a36b-b32e-4733-ac8c-785bb93f1360/update/ HTTP/1.1" 200 359
+INFO 2025-10-30 09:48:20,192 basehttp 9262 6167965696 "OPTIONS /api/produit/home-data/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:48:20,222 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 5041
+INFO 2025-10-30 09:48:20,228 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 200 84356
+INFO 2025-10-30 09:48:31,301 basehttp 9262 6167965696 "OPTIONS /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:48:31,315 basehttp 9262 6167965696 "GET /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/ HTTP/1.1" 200 1510
+INFO 2025-10-30 09:48:31,328 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/29/ucad_KxDPA2s.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 09:48:33,289 basehttp 9262 6167965696 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 09:48:33,289 basehttp 9262 13170143232 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 09:48:33,300 basehttp 9262 13186969600 "GET /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/ HTTP/1.1" 200 1510
+INFO 2025-10-30 09:50:19,201 basehttp 9262 6167965696 "OPTIONS /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/update/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:50:19,223 basehttp 9262 6167965696 "PUT /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/update/ HTTP/1.1" 200 362
+INFO 2025-10-30 09:50:21,273 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 4701
+INFO 2025-10-30 09:50:21,278 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 200 40591
+INFO 2025-10-30 09:50:30,486 basehttp 9262 6167965696 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-10-30 09:50:30,496 basehttp 9262 6167965696 "POST /api/auth/logout/ HTTP/1.1" 200 34
+INFO 2025-10-30 09:50:31,837 basehttp 9262 6167965696 "GET /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/ HTTP/1.1" 200 2352
+INFO 2025-10-30 10:04:48,532 basehttp 9262 6167965696 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+WARNING 2025-10-30 10:04:48,768 log 9262 6167965696 Unauthorized: /api/auth/login/
+WARNING 2025-10-30 10:04:48,768 basehttp 9262 6167965696 "POST /api/auth/login/ HTTP/1.1" 401 62
+INFO 2025-10-30 10:05:14,212 basehttp 9262 6167965696 "POST /api/auth/login/ HTTP/1.1" 200 564
+INFO 2025-10-30 10:05:18,834 basehttp 9262 13186969600 "OPTIONS /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 0
+INFO 2025-10-30 10:05:18,836 basehttp 9262 6167965696 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 10:05:18,838 basehttp 9262 13170143232 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 10:05:18,850 basehttp 9262 13186969600 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 2112
+INFO 2025-10-30 10:05:21,246 basehttp 9262 6167965696 "GET /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/ HTTP/1.1" 200 2351
+INFO 2025-10-30 10:05:22,394 basehttp 9262 13186969600 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 10:05:22,394 basehttp 9262 13170143232 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 10:05:22,403 basehttp 9262 6167965696 "GET /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/ HTTP/1.1" 200 2351
+INFO 2025-10-30 10:06:15,820 basehttp 9262 6167965696 "POST /api/auth/logout/ HTTP/1.1" 200 34
+INFO 2025-10-30 10:06:15,846 basehttp 9262 13170143232 "GET /api/produit/home-data/ HTTP/1.1" 200 4701
+INFO 2025-10-30 10:06:21,589 basehttp 9262 13170143232 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 10:06:21,590 basehttp 9262 6167965696 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 10:06:21,598 basehttp 9262 13186969600 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 2112
+INFO 2025-10-30 10:09:43,383 basehttp 9262 6167965696 "POST /api/auth/login/ HTTP/1.1" 200 564
+INFO 2025-10-30 10:09:46,491 basehttp 9262 6167965696 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-10-30 10:09:46,491 basehttp 9262 13170143232 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-10-30 10:09:46,500 basehttp 9262 6167965696 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 10:09:46,500 basehttp 9262 13170143232 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 10:15:56,854 basehttp 9262 6167965696 "OPTIONS /api/produit/ads/create/ HTTP/1.1" 200 0
+WARNING 2025-10-30 10:15:56,869 log 9262 6167965696 Bad Request: /api/produit/ads/create/
+WARNING 2025-10-30 10:15:56,870 basehttp 9262 6167965696 "POST /api/produit/ads/create/ HTTP/1.1" 400 48
+INFO 2025-10-30 10:16:38,328 basehttp 9262 6167965696 "POST /api/produit/ads/create/ HTTP/1.1" 201 352
+INFO 2025-10-30 10:16:40,347 basehttp 9262 6167965696 "OPTIONS /api/produit/home-data/ HTTP/1.1" 200 0
+INFO 2025-10-30 10:16:40,380 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 4701
+INFO 2025-10-30 10:17:03,182 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 4701
+INFO 2025-10-30 10:17:03,188 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:03,188 basehttp 9262 13170143232 "GET /media/ads/images/2025/10/30/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:09,406 basehttp 9262 13186969600 "GET / HTTP/1.1" 200 4912
+WARNING 2025-10-30 10:17:11,590 log 9262 13203795968 Not Found: /apple-touch-icon-precomposed.png
+WARNING 2025-10-30 10:17:11,596 basehttp 9262 13203795968 "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 4208
+INFO 2025-10-30 10:17:11,642 basehttp 9262 13186969600 "GET /api/schema/ HTTP/1.1" 200 173324
+WARNING 2025-10-30 10:17:11,679 log 9262 13203795968 Not Found: /apple-touch-icon.png
+WARNING 2025-10-30 10:17:11,679 basehttp 9262 13203795968 "GET /apple-touch-icon.png HTTP/1.1" 404 4172
+INFO 2025-10-30 10:17:15,886 basehttp 9262 13186969600 "GET / HTTP/1.1" 200 4912
+INFO 2025-10-30 10:17:15,986 basehttp 9262 13186969600 "GET /api/schema/ HTTP/1.1" 200 173324
+INFO 2025-10-30 10:17:16,456 basehttp 9262 13186969600 "GET /admin/produit/ad/ HTTP/1.1" 200 32901
+INFO 2025-10-30 10:17:16,481 basehttp 9262 13186969600 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-30 10:17:16,485 basehttp 9262 13220622336 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-30 10:17:16,486 basehttp 9262 13237448704 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-30 10:17:16,487 basehttp 9262 13186969600 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-30 10:17:16,487 basehttp 9262 13287927808 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-30 10:17:16,487 basehttp 9262 13220622336 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-30 10:17:16,488 basehttp 9262 13186969600 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,489 basehttp 9262 13287927808 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,489 basehttp 9262 13220622336 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,489 basehttp 9262 13186969600 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,489 basehttp 9262 13237448704 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-30 10:17:16,490 basehttp 9262 13220622336 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,491 basehttp 9262 13287927808 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,491 basehttp 9262 13186969600 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,491 basehttp 9262 13237448704 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,492 basehttp 9262 13287927808 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,492 basehttp 9262 13186969600 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,493 basehttp 9262 13220622336 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:16,493 basehttp 9262 13254275072 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:17:16,494 basehttp 9262 13271101440 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-30 10:17:16,521 basehttp 9262 13237448704 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-30 10:17:16,521 basehttp 9262 13287927808 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-30 10:17:16,522 basehttp 9262 13186969600 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-30 10:17:16,522 basehttp 9262 13220622336 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+WARNING 2025-10-30 10:17:16,534 log 9262 13254275072 Not Found: /favicon.ico
+WARNING 2025-10-30 10:17:16,534 basehttp 9262 13254275072 "GET /favicon.ico HTTP/1.1" 404 4145
+INFO 2025-10-30 10:17:18,210 basehttp 9262 13287927808 "GET /admin/ HTTP/1.1" 200 24631
+INFO 2025-10-30 10:17:18,257 basehttp 9262 13186969600 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-30 10:17:18,267 basehttp 9262 13220622336 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-30 10:17:18,267 basehttp 9262 13254275072 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+WARNING 2025-10-30 10:17:18,278 log 9262 13321580544 Not Found: /apple-touch-icon.png
+WARNING 2025-10-30 10:17:18,282 log 9262 13304754176 Not Found: /apple-touch-icon-precomposed.png
+WARNING 2025-10-30 10:17:18,285 log 9262 13338406912 Not Found: /favicon.ico
+WARNING 2025-10-30 10:17:18,286 basehttp 9262 13321580544 "GET /apple-touch-icon.png HTTP/1.1" 404 4172
+WARNING 2025-10-30 10:17:18,286 basehttp 9262 13304754176 "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 4208
+WARNING 2025-10-30 10:17:18,286 basehttp 9262 13338406912 "GET /favicon.ico HTTP/1.1" 404 4145
+INFO 2025-10-30 10:17:36,425 basehttp 9262 13237448704 "GET /admin/produit/ad/ HTTP/1.1" 200 32901
+INFO 2025-10-30 10:17:36,433 basehttp 9262 13287927808 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:17:44,838 basehttp 9262 13220622336 "GET /admin/produit/ad/8c426b87-cd8b-4037-b3e1-0ed2187559b0/change/ HTTP/1.1" 200 48859
+INFO 2025-10-30 10:17:44,869 basehttp 9262 13186969600 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:44,869 basehttp 9262 13220622336 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:44,870 basehttp 9262 13287927808 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15628
+INFO 2025-10-30 10:17:44,870 basehttp 9262 13186969600 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:44,870 basehttp 9262 13271101440 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-10-30 10:17:44,871 basehttp 9262 13237448704 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-10-30 10:17:44,872 basehttp 9262 13254275072 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:17:44,873 basehttp 9262 13220622336 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 200 37137
+INFO 2025-10-30 10:17:44,886 basehttp 9262 13287927808 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 537
+INFO 2025-10-30 10:17:44,894 basehttp 9262 13271101440 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-10-30 10:17:44,895 basehttp 9262 13186969600 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-10-30 10:18:24,887 basehttp 9262 6167965696 "POST /admin/produit/ad/8c426b87-cd8b-4037-b3e1-0ed2187559b0/change/ HTTP/1.1" 302 0
+INFO 2025-10-30 10:18:24,909 basehttp 9262 6167965696 "GET /admin/produit/ad/ HTTP/1.1" 200 33150
+INFO 2025-10-30 10:18:24,918 basehttp 9262 6167965696 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:18:24,936 basehttp 9262 6167965696 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-10-30 10:18:29,827 basehttp 9262 13170143232 "GET /api/produit/home-data/ HTTP/1.1" 200 6542
+INFO 2025-10-30 10:18:29,832 basehttp 9262 13170143232 "GET /media/ads/images/2025/10/30/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 10:18:29,833 basehttp 9262 13203795968 "GET /media/ads/images/2025/10/30/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 10:18:29,834 basehttp 9262 13186969600 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 200 37137
+INFO 2025-10-30 10:18:36,153 basehttp 9262 6167965696 "GET /admin/produit/ad/8c426b87-cd8b-4037-b3e1-0ed2187559b0/change/ HTTP/1.1" 200 48887
+INFO 2025-10-30 10:18:36,156 basehttp 9262 13220622336 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 10:18:36,164 basehttp 9262 13220622336 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 10:18:36,167 basehttp 9262 6167965696 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:18:44,708 basehttp 9262 13220622336 "POST /admin/produit/ad/8c426b87-cd8b-4037-b3e1-0ed2187559b0/change/ HTTP/1.1" 302 0
+INFO 2025-10-30 10:18:44,732 basehttp 9262 6167965696 "GET /admin/produit/ad/ HTTP/1.1" 200 33150
+INFO 2025-10-30 10:18:44,743 basehttp 9262 13220622336 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:18:49,102 basehttp 9262 13170143232 "GET /api/produit/home-data/ HTTP/1.1" 200 6543
+INFO 2025-10-30 10:18:49,107 basehttp 9262 13203795968 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 10:22:46,804 basehttp 9262 6167965696 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-10-30 10:22:46,819 basehttp 9262 6167965696 "POST /api/auth/logout/ HTTP/1.1" 200 34
+INFO 2025-10-30 10:22:51,872 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 6545
+INFO 2025-10-30 10:22:51,878 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 10:22:51,879 basehttp 9262 13170143232 "GET /media/ads/images/2025/10/30/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 10:22:51,879 basehttp 9262 13186969600 "GET /media/ads/images/2025/10/30/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 10:23:08,461 basehttp 9262 6167965696 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 10:23:08,461 basehttp 9262 13170143232 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 10:23:08,465 basehttp 9262 13186969600 "GET /api/produit/ads/?search=sport&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-10-30 10:23:34,072 basehttp 9262 13170143232 "GET /api/produit/ads/?search=chaussure&ordering=-created_at HTTP/1.1" 200 973
+INFO 2025-10-30 10:23:34,077 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 10:23:39,742 basehttp 9262 13170143232 "GET /api/produit/ads/8c426b87-cd8b-4037-b3e1-0ed2187559b0/ HTTP/1.1" 200 3316
+INFO 2025-10-30 10:23:55,824 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 6545
+INFO 2025-10-30 10:24:04,351 basehttp 9262 6167965696 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 10:24:04,351 basehttp 9262 13170143232 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 10:24:04,360 basehttp 9262 13186969600 "GET /api/produit/ads/?search=basket&ordering=-created_at HTTP/1.1" 200 1070
+INFO 2025-10-30 10:24:07,682 basehttp 9262 6167965696 "GET /api/produit/ads/bf74a36b-b32e-4733-ac8c-785bb93f1360/ HTTP/1.1" 200 3285
+INFO 2025-10-30 10:25:34,481 basehttp 9262 6167965696 "GET /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/ HTTP/1.1" 200 3274
+INFO 2025-10-30 10:25:34,487 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 10:25:40,665 basehttp 9262 6167965696 "GET /api/produit/ads/bf74a36b-b32e-4733-ac8c-785bb93f1360/ HTTP/1.1" 200 3285
+INFO 2025-10-30 10:25:44,636 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 6545
+INFO 2025-10-30 10:54:56,191 basehttp 9262 6167965696 "GET /admin/user/customuser/ HTTP/1.1" 200 26593
+INFO 2025-10-30 10:54:56,194 basehttp 9262 13170143232 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-10-30 10:54:56,206 basehttp 9262 6167965696 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:55:13,633 basehttp 9262 6167965696 "GET /admin/user/customuser/3/change/ HTTP/1.1" 200 50687
+INFO 2025-10-30 10:55:13,639 basehttp 9262 6167965696 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2025-10-30 10:55:13,641 basehttp 9262 13186969600 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2025-10-30 10:55:13,642 basehttp 9262 13170143232 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:55:13,677 basehttp 9262 6167965696 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-10-30 10:56:21,691 basehttp 9262 6167965696 "GET /admin/user/customuser/ HTTP/1.1" 200 26593
+INFO 2025-10-30 10:56:21,697 basehttp 9262 13170143232 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:56:42,780 basehttp 9262 13170143232 "GET /admin/user/userrating/ HTTP/1.1" 200 20315
+INFO 2025-10-30 10:56:42,790 basehttp 9262 6167965696 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:56:45,103 basehttp 9262 6167965696 "GET /admin/produit/favorite/ HTTP/1.1" 200 20135
+INFO 2025-10-30 10:56:45,114 basehttp 9262 13170143232 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:56:46,603 basehttp 9262 13170143232 "GET /admin/produit/advertisement/ HTTP/1.1" 200 25998
+INFO 2025-10-30 10:56:46,618 basehttp 9262 6167965696 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-10-30 10:57:18,099 basehttp 9262 6167965696 "GET /admin/produit/advertisement/5/change/ HTTP/1.1" 200 31223
+INFO 2025-10-30 10:57:18,110 basehttp 9262 13170143232 "GET /media/publicite/2025/10/ucad_NqnaiG9.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 10:57:18,111 basehttp 9262 6167965696 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+ERROR 2025-10-30 10:57:28,359 log 9262 13170143232 Internal Server Error: /admin/produit/advertisement/5/change/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1843, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1894, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1314, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py", line 450, in save
+    self.total_price = days * self.price_per_day
+                       ~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'float' and 'decimal.Decimal'
+ERROR 2025-10-30 10:57:28,363 basehttp 9262 13170143232 "POST /admin/produit/advertisement/5/change/ HTTP/1.1" 500 131777
+ERROR 2025-10-30 10:58:57,324 log 9262 6167965696 Internal Server Error: /admin/produit/advertisement/5/change/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1843, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1894, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1314, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/models.py", line 450, in save
+    self.total_price = days * self.price_per_day
+                       ~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'float' and 'decimal.Decimal'
+ERROR 2025-10-30 10:58:57,325 basehttp 9262 6167965696 "POST /admin/produit/advertisement/5/change/ HTTP/1.1" 500 131777
+INFO 2025-10-30 11:46:43,080 basehttp 9262 6167965696 "GET /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/ HTTP/1.1" 200 3285
+INFO 2025-10-30 11:46:43,102 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 11:46:43,104 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 11:46:43,104 basehttp 9262 13170143232 "GET /media/ads/images/2025/10/30/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 11:46:54,804 basehttp 9262 6167965696 "GET /api/produit/ads/bf74a36b-b32e-4733-ac8c-785bb93f1360/ HTTP/1.1" 200 3296
+INFO 2025-10-30 11:46:57,255 basehttp 9262 13170143232 "GET /api/produit/ads/8c426b87-cd8b-4037-b3e1-0ed2187559b0/ HTTP/1.1" 200 3316
+INFO 2025-10-30 11:49:13,301 basehttp 9262 6167965696 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 11:49:13,303 basehttp 9262 13170143232 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 11:49:13,315 basehttp 9262 13186969600 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 3045
+INFO 2025-10-30 11:49:20,439 basehttp 9262 6167965696 "GET /api/produit/ads/?category=emploi_stages&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-10-30 11:49:25,778 basehttp 9262 13170143232 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 11:49:25,778 basehttp 9262 13186969600 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 11:49:25,780 basehttp 9262 6167965696 "GET /api/produit/ads/?search=ff&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-10-30 11:49:41,853 basehttp 9262 13170143232 "GET /api/produit/ads/?search=iPhone&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-10-30 11:49:55,605 basehttp 9262 13170143232 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 11:49:55,605 basehttp 9262 6167965696 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 11:49:55,617 basehttp 9262 13186969600 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 3045
+INFO 2025-10-30 11:50:03,839 basehttp 9262 13170143232 "GET /api/produit/ads/?city=yamoussoukro&ordering=-created_at HTTP/1.1" 200 1093
+INFO 2025-10-30 11:50:07,616 basehttp 9262 6167965696 "GET /api/produit/ads/?city=bouake&ordering=-created_at HTTP/1.1" 200 1070
+INFO 2025-10-30 11:50:11,804 basehttp 9262 13186969600 "GET /api/produit/ads/?city=daloa&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-10-30 11:50:15,313 basehttp 9262 13170143232 "GET /api/produit/ads/?category=vehicules&city=daloa&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-10-30 11:50:40,882 basehttp 9262 13170143232 "GET /api/produit/home-data/ HTTP/1.1" 200 6567
+INFO 2025-10-30 11:56:49,174 basehttp 9262 6167965696 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-10-30 11:56:49,415 basehttp 9262 6167965696 "POST /api/auth/login/ HTTP/1.1" 200 564
+INFO 2025-10-30 11:56:49,971 basehttp 9262 6167965696 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-10-30 11:56:49,972 basehttp 9262 13170143232 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-10-30 11:56:49,982 basehttp 9262 6167965696 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 11:56:49,982 basehttp 9262 13170143232 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 11:57:59,452 basehttp 9262 6167965696 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-10-30 11:57:59,463 basehttp 9262 6167965696 "POST /api/auth/logout/ HTTP/1.1" 200 34
+INFO 2025-10-30 11:57:59,491 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 6567
+INFO 2025-10-30 11:57:59,502 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 12:02:37,926 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 6567
+INFO 2025-10-30 12:02:37,933 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 12:02:37,933 basehttp 9262 13170143232 "GET /media/ads/images/2025/10/30/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 12:02:51,468 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 6567
+INFO 2025-10-30 12:03:38,428 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 6567
+INFO 2025-10-30 12:03:46,587 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 6567
+INFO 2025-10-30 12:24:47,372 basehttp 9262 6167965696 "GET /api/produit/home-data/ HTTP/1.1" 200 6567
+INFO 2025-10-30 12:24:47,378 basehttp 9262 6167965696 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-30 12:24:47,380 basehttp 9262 13170143232 "GET /media/ads/images/2025/10/30/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 12:24:47,380 basehttp 9262 13186969600 "GET /media/ads/images/2025/10/30/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-10-30 12:25:04,984 basehttp 9262 6167965696 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-10-30 12:25:05,226 basehttp 9262 13186969600 "POST /api/auth/login/ HTTP/1.1" 200 564
+INFO 2025-10-30 12:25:05,778 basehttp 9262 6167965696 "OPTIONS /api/publicite/my/ HTTP/1.1" 200 0
+INFO 2025-10-30 12:25:05,778 basehttp 9262 13170143232 "OPTIONS /api/produit/my-ads/ HTTP/1.1" 200 0
+INFO 2025-10-30 12:25:05,797 basehttp 9262 13186969600 "GET /api/publicite/my/ HTTP/1.1" 200 514
+INFO 2025-10-30 12:25:05,806 basehttp 9262 6167965696 "GET /api/produit/my-ads/ HTTP/1.1" 200 3045
+INFO 2025-10-30 12:25:31,039 basehttp 9262 6167965696 "OPTIONS /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 0
+INFO 2025-10-30 12:25:31,040 basehttp 9262 13186969600 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-10-30 12:25:31,040 basehttp 9262 13170143232 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-10-30 12:25:31,054 basehttp 9262 13186969600 "GET /api/produit/cities/ HTTP/1.1" 200 825
+INFO 2025-10-30 12:25:31,055 basehttp 9262 13170143232 "GET /api/produit/categories/ HTTP/1.1" 200 635
+INFO 2025-10-30 12:25:31,066 basehttp 9262 6167965696 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 3045
+INFO 2025-10-30 12:25:35,345 basehttp 9262 13170143232 "GET /api/publicite/my/ HTTP/1.1" 200 514
+INFO 2025-10-30 12:25:35,353 basehttp 9262 13186969600 "GET /api/produit/my-ads/ HTTP/1.1" 200 3045
+INFO 2025-10-30 12:26:49,083 basehttp 9262 13170143232 "GET /api/publicite/my/ HTTP/1.1" 200 514
+INFO 2025-10-30 12:26:49,094 basehttp 9262 6167965696 "GET /api/produit/my-ads/ HTTP/1.1" 200 3045
+INFO 2025-10-30 12:26:51,705 basehttp 9262 13170143232 "GET /api/publicite/my/ HTTP/1.1" 200 514
+INFO 2025-10-30 12:26:54,544 basehttp 9262 13170143232 "GET /api/publicite/my/ HTTP/1.1" 200 514
+INFO 2025-10-30 12:26:54,550 basehttp 9262 6167965696 "GET /api/produit/my-ads/ HTTP/1.1" 200 3045
