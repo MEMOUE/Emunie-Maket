@@ -171,6 +171,20 @@ export class Accueil implements OnInit {
         'Élevage & Pêche (Volailles, Poissons)',
         'Boissons & Jus locaux',
       ]
+    },
+    {
+      icon: 'pi-discord',
+      name: 'Animaux & Produits animaliers',
+      value: 'animaux_produits_animaliers',
+      count: 0,
+      color: 'from-yellow-500 to-amber-600',
+      subcategories: [
+        'Animaux domestiques (Chiens, Chats, Oiseaux...)',
+        'Produits et accessoires pour animaux',
+        'Alimentation animale',
+        'Élevage et reproduction',
+        'Services vétérinaires & soins'
+      ]
     }
   ];
 

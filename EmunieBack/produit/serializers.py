@@ -113,7 +113,7 @@ class AdDetailSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'title', 'slug', 'description', 'price', 'currency', 'is_negotiable',
             'ad_type', 'user', 'category', 'category_display', 'city', 'city_display',
-            'address', 'latitude', 'longitude', 'contact_phone', 'contact_email',
+            'address', 'latitude', 'longitude', 'contact_email',
             'whatsapp_number', 'images', 'images_count', 'is_favorited', 'is_owner',
             'is_featured', 'is_urgent', 'views_count', 'favorites_count', 'status',
             'created_at', 'updated_at', 'published_at', 'expires_at', 'related_ads'
@@ -175,8 +175,7 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
         model = Ad
         fields = (
             'title', 'description', 'price', 'currency', 'is_negotiable',
-            'ad_type', 'category', 'city', 'address', 'latitude', 'longitude',
-            'contact_phone', 'contact_email', 'whatsapp_number', 'is_urgent',
+            'ad_type', 'category', 'city', 'address', 'latitude', 'longitude', 'contact_email', 'whatsapp_number', 'is_urgent',
             'expires_at', 'images'
         )
 

@@ -20,6 +20,7 @@ CATEGORY_CHOICES = [
     ('services', 'Services & Formation'),
     ('materiaux_pro', 'Matériaux & Équipements Pro'),
     ('agroalimentaire', 'Agroalimentaire & Produits locaux'),
+    ('animaux_produits_animaliers', 'Animaux & Produits animaliers'),  # ✅ Format cohérent
     ('autre', 'Autre'),
 ]
 
@@ -33,6 +34,7 @@ CITY_CHOICES = [
     ('korhogo', 'Korhogo'),
     ('man', 'Man'),
     ('divo', 'Divo'),
+    ('seguelar', 'Seguelar'),
     ('gagnoa', 'Gagnoa'),
     ('abengourou', 'Abengourou'),
     ('anyama', 'Anyama'),
@@ -100,7 +102,7 @@ class Ad(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=200, verbose_name='Titre')
     slug = models.SlugField(unique=True, blank=True)
-    description = models.TextField(verbose_name='Description')
+    description = models.TextField(verbose_name='Description',blank=True)
 
     # Relations
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ads')
@@ -142,14 +144,14 @@ class Ad(models.Model):
     longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
 
     # État et gestion
-    status = models.CharField(max_length=20, choices=AdStatus.choices, default=AdStatus.DRAFT)
+    status = models.CharField(max_length=20, choices=AdStatus.choices, default=AdStatus.ACTIVE)
     is_featured = models.BooleanField(default=False)
     is_urgent = models.BooleanField(default=False)
     views_count = models.PositiveIntegerField(default=0)
     favorites_count = models.PositiveIntegerField(default=0)
 
     # Contact
-    contact_phone = models.CharField(max_length=20, blank=True)
+    #contact_phone = models.CharField(max_length=20, blank=True)
     contact_email = models.EmailField(blank=True)
     whatsapp_number = models.CharField(max_length=20, blank=True)
 

@@ -45,18 +45,18 @@
       <!-- Description -->
       <div>
         <label class="block font-semibold mb-1 text-gray-700">
-          Description *
-          <span class="text-sm font-normal text-gray-500 ml-2">(minimum 20 caractères)</span>
+          Description
+          <span class="text-sm font-normal text-gray-500 ml-2"></span>
         </label>
         <textarea
           formControlName="description"
           rows="5"
           class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-green-50/20"
-          [class.border-red-500]="isFieldInvalid('description')"
+
         ></textarea>
-        @if (getFieldError('description')) {
-          <small class="text-red-500 mt-1 block">{{ getFieldError('description') }}</small>
-        }
+<!--        @if (getFieldError('description')) {-->
+<!--          <small class="text-red-500 mt-1 block">{{ getFieldError('description') }}</small>-->
+<!--        }-->
       </div>
 
       <!-- Prix et négociable -->
@@ -114,18 +114,7 @@
       </div>
 
       <!-- Contact (optionnel) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label class="block font-semibold mb-1 text-gray-700">
-            Téléphone <span class="text-sm font-normal text-gray-500">(optionnel)</span>
-          </label>
-          <input
-            formControlName="contact_phone"
-            type="tel"
-            placeholder="+225 XX XX XX XX XX"
-            class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-orange-50/20"
-          />
-        </div>
+      <div class="grid grid-cols-1 sm:flex-row gap-4">
         <div>
           <label class="block font-semibold mb-1 text-gray-700">
             WhatsApp <span class="text-sm font-normal text-gray-500">(optionnel)</span>
@@ -134,15 +123,18 @@
             formControlName="whatsapp_number"
             type="tel"
             placeholder="+225 XX XX XX XX XX"
-            class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-green-50/20"
+            class="w-full border rounded-lg p-3
+             focus:ring-2 focus:ring-green-500 focus:border-green-500
+             bg-green-50/20 text-gray-800 placeholder-gray-400"
           />
         </div>
       </div>
 
+
       <!-- Date d'expiration et urgent -->
       <div class="flex flex-col sm:flex-row gap-4">
         <div class="flex-1">
-          <label class="block font-semibold mb-1 text-gray-700">Date d'expiration *</label>
+          <label class="block font-semibold mb-1 text-gray-700">Date d'expiration</label>
           <input
             formControlName="expires_at"
             type="date"
@@ -210,22 +202,22 @@
           </label>
 
           <!-- Caméra -->
-          <label
-            class="cursor-pointer bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5"
-            [class.opacity-50]="!canAddImages()"
-            [class.cursor-not-allowed]="!canAddImages()"
-          >
-            <i class="pi pi-camera mr-2"></i>
-            Prendre une photo
-            <input
-              type="file"
-              accept="image/*"
-              capture="environment"
-              (change)="onImagesSelected($event)"
-              [disabled]="!canAddImages()"
-              class="hidden"
-            />
-          </label>
+<!--          <label-->
+<!--            class="cursor-pointer bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5"-->
+<!--            [class.opacity-50]="!canAddImages()"-->
+<!--            [class.cursor-not-allowed]="!canAddImages()"-->
+<!--          >-->
+<!--            <i class="pi pi-camera mr-2"></i>-->
+<!--            Prendre une photo-->
+<!--            <input-->
+<!--              type="file"-->
+<!--              accept="image/*"-->
+<!--              capture="environment"-->
+<!--              (change)="onImagesSelected($event)"-->
+<!--              [disabled]="!canAddImages()"-->
+<!--              class="hidden"-->
+<!--            />-->
+<!--          </label>-->
         </div>
 
         <!-- Formats acceptés -->

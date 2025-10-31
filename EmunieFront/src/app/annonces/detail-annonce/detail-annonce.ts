@@ -126,7 +126,7 @@ export class DetailAnnonce implements OnInit {
     const internationalPhone = cleanPhone.startsWith('225') ? cleanPhone : '225' + cleanPhone;
 
     // Créer le message
-    const message = encodeURIComponent(`Bonjour, je suis intéressé(e) par votre annonce: ${this.ad.title}`);
+    const message = encodeURIComponent(` emuni-market.com, /n Bonjour, je suis intéressé(e) par votre annonce: ${this.ad.title}`);
 
     // Ouvrir WhatsApp
     window.open(`https://wa.me/${internationalPhone}?text=${message}`, '_blank');
@@ -153,13 +153,13 @@ export class DetailAnnonce implements OnInit {
       return;
     }
 
-    if (!this.ad.contact_phone) {
+    if (!this.ad.whatsapp_number) {
       alert('Aucun numéro de téléphone disponible');
       return;
     }
 
     const message = encodeURIComponent(`Bonjour, je suis intéressé(e) par votre annonce: ${this.ad.title}`);
-    window.location.href = `sms:${this.ad.contact_phone}?body=${message}`;
+    window.location.href = `sms:${this.ad.whatsapp_number}?body=${message}`;
   }
 
   /**

@@ -55,10 +55,7 @@ class AdAdmin(admin.ModelAdmin):
             'fields': ('address', 'latitude', 'longitude'),
             'classes': ('collapse',)
         }),
-        ('Contact', {
-            'fields': ('contact_phone', 'contact_email', 'whatsapp_number'),
-            'classes': ('collapse',)
-        }),
+
         ('État et visibilité', {
             'fields': (
                 'status', 'is_featured', 'is_urgent', 'expires_at'

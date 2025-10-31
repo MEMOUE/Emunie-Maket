@@ -50,7 +50,7 @@ export class NewAnonceComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(200)]],
-      description: ['', [Validators.required, Validators.minLength(20)]],
+      description: [null],
       price: ['', [Validators.required, Validators.min(0)]],
       currency: ['XOF'],
       is_negotiable: [true],
@@ -59,7 +59,6 @@ export class NewAnonceComponent implements OnInit {
       address: [''],
       latitude: [null],
       longitude: [null],
-      contact_phone: [''],
       contact_email: ['', Validators.email],
       whatsapp_number: [''],
       is_urgent: [false],
