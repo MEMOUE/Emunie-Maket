@@ -5,6 +5,8 @@ from rest_framework.views import APIView
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+
+from produit import models
 from .models import UserRating, Conversation, Message
 from .serializers import (
     UserRegistrationSerializer, UserProfileSerializer, UserListSerializer,

@@ -155,6 +155,7 @@ class MyAdsView(generics.ListAPIView):
     """Mes annonces"""
     serializer_class = AdListSerializer
     permission_classes = [permissions.IsAuthenticated]
+    pagination_class = None  # ✅ Désactive la pagination
     filter_backends = [filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = ['created_at', 'views_count', 'favorites_count', 'status']
     ordering = ['-created_at']
