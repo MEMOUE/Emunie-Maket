@@ -4077,3 +4077,36 @@ INFO 2025-10-31 08:43:04,383 basehttp 14860 6200291328 "GET /admin/jsi18n/ HTTP/
 INFO 2025-10-31 08:43:08,071 basehttp 14860 6200291328 "GET /admin/user/customuser/ HTTP/1.1" 200 26593
 INFO 2025-10-31 08:43:08,078 basehttp 14860 6217117696 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
 INFO 2025-10-31 09:30:19,603 autoreload 15807 8603181248 Watching for file changes with StatReloader
+INFO 2025-10-31 11:07:07,631 autoreload 16936 8603181248 Watching for file changes with StatReloader
+INFO 2025-10-31 11:07:28,255 basehttp 16936 6153531392 "GET /api/publicite/my/ HTTP/1.1" 200 514
+INFO 2025-10-31 11:07:28,259 basehttp 16936 6136705024 "GET /api/produit/my-ads/ HTTP/1.1" 200 2981
+INFO 2025-10-31 11:08:12,624 basehttp 16936 6153531392 "GET /api/publicite/my/ HTTP/1.1" 200 514
+INFO 2025-10-31 11:08:12,633 basehttp 16936 6136705024 "GET /api/produit/my-ads/ HTTP/1.1" 200 2981
+INFO 2025-10-31 11:08:19,100 basehttp 16936 6153531392 "OPTIONS /api/produit/home-data/ HTTP/1.1" 200 0
+INFO 2025-10-31 11:08:19,140 basehttp 16936 6136705024 "GET /api/produit/home-data/ HTTP/1.1" 200 6539
+INFO 2025-10-31 11:08:19,147 basehttp 16936 6153531392 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-31 11:08:19,148 basehttp 16936 6136705024 "GET /media/ads/images/2025/10/30/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-10-31 11:08:19,148 basehttp 16936 6170357760 "GET /media/ads/images/2025/10/30/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-10-31 11:12:07,251 basehttp 16936 6136705024 "GET /api/produit/home-data/ HTTP/1.1" 200 6539
+INFO 2025-10-31 11:26:42,327 autoreload 16936 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/user/views.py changed, reloading.
+INFO 2025-10-31 11:26:42,745 autoreload 17102 8603181248 Watching for file changes with StatReloader
+INFO 2025-10-31 11:30:10,633 autoreload 17102 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/user/auth_urls.py changed, reloading.
+INFO 2025-10-31 11:30:10,962 autoreload 17208 8603181248 Watching for file changes with StatReloader
+INFO 2025-10-31 11:33:49,689 autoreload 17208 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/EmunieBack/settings.py changed, reloading.
+INFO 2025-10-31 11:33:50,073 autoreload 17261 8603181248 Watching for file changes with StatReloader
+INFO 2025-10-31 11:34:13,363 autoreload 17261 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/EmunieBack/settings.py changed, reloading.
+INFO 2025-10-31 11:34:13,721 autoreload 17288 8603181248 Watching for file changes with StatReloader
+INFO 2025-10-31 11:34:28,566 autoreload 17288 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/EmunieBack/settings.py changed, reloading.
+INFO 2025-10-31 11:34:28,884 autoreload 17303 8603181248 Watching for file changes with StatReloader
+INFO 2025-10-31 11:40:41,825 basehttp 17303 6325039104 "OPTIONS /api/produit/home-data/ HTTP/1.1" 200 0
+INFO 2025-10-31 11:40:41,826 basehttp 17303 6167457792 "GET /media/avatars/ucad_Ijhh9GG.jpg HTTP/1.1" 304 0
+INFO 2025-10-31 11:40:41,860 basehttp 17303 6325039104 "GET /api/produit/home-data/ HTTP/1.1" 200 6559
+INFO 2025-10-31 11:40:43,100 basehttp 17303 6167457792 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-10-31 11:40:43,111 basehttp 17303 6325039104 "POST /api/auth/logout/ HTTP/1.1" 200 34
+INFO 2025-10-31 13:44:01,928 basehttp 17303 6167457792 "GET /api/produit/home-data/ HTTP/1.1" 200 6561
+INFO 2025-10-31 13:44:01,935 basehttp 17303 6167457792 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-10-31 13:44:01,936 basehttp 17303 6341865472 "GET /media/ads/images/2025/10/30/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-10-31 13:44:01,936 basehttp 17303 6325039104 "GET /media/ads/images/2025/10/30/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-10-31 13:44:03,034 basehttp 17303 6167457792 "GET /api/produit/home-data/ HTTP/1.1" 200 6561
+INFO 2025-10-31 14:22:56,290 autoreload 17303 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/EmunieBack/settings.py changed, reloading.
+INFO 2025-10-31 14:22:56,715 autoreload 18235 8603181248 Watching for file changes with StatReloader

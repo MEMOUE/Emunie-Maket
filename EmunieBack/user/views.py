@@ -216,3 +216,15 @@ def user_stats(request):
         ).exclude(sender=user).count(),
     }
     return Response(stats)
+
+# Google auth
+from rest_framework import serializers
+
+class GoogleAuthSerializer(serializers.Serializer):
+    """Serializer pour l'authentification Google"""
+    token = serializers.CharField(required=True, help_text="Google ID token")
+
+    def validate_token(self, value):
+        if not value or len(value) < 10:
+            raise serializers.ValidationError("Token Google invalide")
+        return value

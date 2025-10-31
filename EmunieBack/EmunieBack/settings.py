@@ -282,3 +282,22 @@ import os
 logs_dir = BASE_DIR / 'logs'
 if not os.path.exists(logs_dir):
     os.makedirs(logs_dir)
+
+
+# ===================================
+# CONFIGURATION GOOGLE OAUTH
+# ===================================
+
+# ID Client OAuth Google (à obtenir depuis Google Cloud Console)
+# https://console.cloud.google.com/apis/credentials
+import os
+
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
+
+GOOGLE_REDIRECT_URIS = [
+    "http://localhost:4200",
+    "http://localhost:4200/auth/google/callback",
+]
+
+CORS_ALLOW_CREDENTIALS = True

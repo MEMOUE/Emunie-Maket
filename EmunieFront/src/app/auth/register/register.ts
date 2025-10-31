@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+// EmunieFront/src/app/auth/register/register.ts
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -8,6 +9,7 @@ import { PasswordModule } from 'primeng/password';
 import { MessageModule } from 'primeng/message';
 import { FileUploadModule } from 'primeng/fileupload';
 import { AuthService } from '../../service/auth';
+import { GoogleAuthService } from '../../service/google-auth.service';
 
 @Component({
   selector: 'app-register',
@@ -25,9 +27,10 @@ import { AuthService } from '../../service/auth';
   templateUrl: './register.html',
   styleUrl: './register.css'
 })
-export class Register {
+export class Register implements OnInit {
   registerForm: FormGroup;
   loading = false;
+  googleLoading = false;
   errorMessage = '';
   successMessage = '';
   selectedAvatar: File | null = null;
@@ -36,6 +39,7 @@ export class Register {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
+    private googleAuthService: GoogleAuthService,
     private router: Router
   ) {
     // Rediriger si déjà connecté
@@ -43,6 +47,7 @@ export class Register {
       this.router.navigate(['/accueil']);
     }
 
+    // Initialisation du formulaire
     this.registerForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(150)]],
       email: ['', [Validators.required, Validators.email]],
@@ -52,6 +57,13 @@ export class Register {
       password: ['', [Validators.required, Validators.minLength(8)]],
       password_confirm: ['', Validators.required]
     }, { validators: this.passwordMatchValidator });
+  }
+
+  ngOnInit(): void {
+    // Initialiser Google Sign-In
+    this.googleAuthService.initializeGoogleSignIn().catch(error => {
+      console.error('Failed to initialize Google Sign-In:', error);
+    });
   }
 
   /**
@@ -108,7 +120,7 @@ export class Register {
   }
 
   /**
-   * Soumission du formulaire
+   * Soumission du formulaire d'inscription classique
    */
   onSubmit(): void {
     // Marquer tous les champs comme touchés
@@ -155,12 +167,134 @@ export class Register {
         this.loading = false;
         console.error('Registration error:', error);
 
-        this.errorMessage = error.message || 'Une erreur est survenue lors de l\'inscription';
+        this.errorMessage = this.extractErrorMessage(error);
 
         // Scroll vers le haut pour voir l'erreur
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
+  }
+
+  /**
+   * Inscription/Connexion avec Google
+   */
+  async registerWithGoogle(): Promise<void> {
+    this.googleLoading = true;
+    this.errorMessage = '';
+    this.successMessage = '';
+
+    try {
+      // Obtenir le token Google
+      const googleToken = await this.googleAuthService.signInWithGoogle();
+
+      // Envoyer le token au backend
+      this.googleAuthService.authenticateWithBackend(googleToken).subscribe({
+        next: (response) => {
+          this.googleLoading = false;
+
+          // Sauvegarder la session
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('currentUser', JSON.stringify(response.user));
+
+          const userName = response.user.full_name || response.user.username;
+
+          if (response.created) {
+            this.successMessage = `Compte créé avec succès ! Bienvenue ${userName} !`;
+          } else {
+            this.successMessage = `Ce compte existe déjà. Bienvenue ${userName} !`;
+          }
+
+          // Redirection vers dashboard après 1.5 secondes
+          setTimeout(() => {
+            this.router.navigate(['/dashboard']);
+          }, 1500);
+        },
+        error: (error) => {
+          this.googleLoading = false;
+          console.error('Google authentication error:', error);
+
+          this.errorMessage = this.extractErrorMessage(error) ||
+            'Erreur lors de l\'inscription avec Google. Veuillez réessayer.';
+
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    } catch (error) {
+      this.googleLoading = false;
+      console.error('Google Sign-In error:', error);
+      this.errorMessage = 'Erreur lors de l\'initialisation de Google Sign-In. Veuillez réessayer.';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  /**
+   * Extraire le message d'erreur de la réponse du backend
+   */
+  private extractErrorMessage(error: any): string {
+    // 1. Vérifier si error.error existe et contient un message
+    if (error.error) {
+      // 1.1 Si error.error est une string
+      if (typeof error.error === 'string') {
+        return error.error;
+      }
+
+      // 1.2 Si error.error.detail existe (format Django REST Framework)
+      if (error.error.detail) {
+        return error.error.detail;
+      }
+
+      // 1.3 Si error.error.message existe
+      if (error.error.message) {
+        return error.error.message;
+      }
+
+      // 1.4 Si error.error contient des erreurs de champs
+      if (typeof error.error === 'object') {
+        const fieldErrors: string[] = [];
+
+        // Parcourir tous les champs d'erreur
+        Object.keys(error.error).forEach(key => {
+          const value = error.error[key];
+
+          if (Array.isArray(value)) {
+            // Si c'est un tableau d'erreurs
+            fieldErrors.push(...value);
+          } else if (typeof value === 'string') {
+            // Si c'est une string
+            fieldErrors.push(value);
+          }
+        });
+
+        if (fieldErrors.length > 0) {
+          return fieldErrors.join('. ');
+        }
+      }
+    }
+
+    // 2. Si error.message existe
+    if (error.message) {
+      return error.message;
+    }
+
+    // 3. Messages par défaut selon le code HTTP
+    switch (error.status) {
+      case 0:
+        return 'Impossible de se connecter au serveur. Vérifiez votre connexion internet.';
+      case 400:
+        return 'Données invalides. Veuillez vérifier les informations saisies.';
+      case 401:
+        return 'Erreur d\'authentification Google.';
+      case 403:
+        return 'Accès refusé.';
+      case 409:
+        return 'Ce nom d\'utilisateur ou cet email existe déjà.';
+      case 500:
+        return 'Erreur serveur. Veuillez réessayer plus tard.';
+      case 503:
+        return 'Service temporairement indisponible.';
+      default:
+        return 'Une erreur est survenue lors de l\'inscription. Veuillez réessayer.';
+    }
   }
 
   /**
