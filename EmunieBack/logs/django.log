@@ -4783,3 +4783,500 @@ INFO 2025-11-01 16:53:13,128 basehttp 23595 6201929728 "OPTIONS /api/produit/ads
 INFO 2025-11-01 16:53:13,143 basehttp 23595 6201929728 "GET /api/produit/ads/?city=korhogo&ordering=-created_at HTTP/1.1" 200 1063
 INFO 2025-11-01 16:53:21,779 basehttp 23595 6201929728 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 5865
 INFO 2025-11-01 16:54:29,871 autoreload 23789 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-01 18:04:34,458 basehttp 23789 6130757632 "OPTIONS /api/produit/my-ads/ HTTP/1.1" 200 0
+INFO 2025-11-01 18:04:34,459 basehttp 23789 6147584000 "OPTIONS /api/publicite/my/ HTTP/1.1" 200 0
+INFO 2025-11-01 18:04:34,503 basehttp 23789 6147584000 "GET /api/publicite/my/ HTTP/1.1" 200 514
+INFO 2025-11-01 18:04:34,507 basehttp 23789 6130757632 "GET /api/produit/my-ads/ HTTP/1.1" 200 3997
+INFO 2025-11-01 18:04:42,761 basehttp 23789 6164410368 "GET /admin/produit/ad/629b76e6-3107-4610-850d-bfa0116edccd/change/ HTTP/1.1" 200 46881
+INFO 2025-11-01 18:04:42,776 basehttp 23789 12901707776 "GET /media/ads/images/2025/11/01/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-11-01 18:04:42,778 basehttp 23789 6164410368 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-01 18:04:47,852 basehttp 23789 12901707776 "POST /admin/produit/ad/629b76e6-3107-4610-850d-bfa0116edccd/change/ HTTP/1.1" 302 0
+INFO 2025-11-01 18:04:47,885 basehttp 23789 6164410368 "GET /admin/produit/ad/ HTTP/1.1" 200 36521
+INFO 2025-11-01 18:04:47,896 basehttp 23789 12901707776 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-01 18:04:58,076 basehttp 23789 6130757632 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-11-01 18:04:58,076 basehttp 23789 6147584000 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-11-01 18:04:58,077 basehttp 23789 12918534144 "OPTIONS /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 0
+INFO 2025-11-01 18:04:58,086 basehttp 23789 6147584000 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-01 18:04:58,086 basehttp 23789 6130757632 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-01 18:04:58,097 basehttp 23789 12918534144 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 5877
+INFO 2025-11-01 18:04:58,103 basehttp 23789 6130757632 "GET /media/ads/images/2025/11/01/ucad_7nyx3Yb.jpg HTTP/1.1" 304 0
+INFO 2025-11-01 18:04:58,103 basehttp 23789 6147584000 "GET /media/ads/images/2025/11/01/ucad.jpg HTTP/1.1" 304 0
+INFO 2025-11-01 18:05:04,438 basehttp 23789 6130757632 "GET /api/publicite/my/ HTTP/1.1" 200 514
+INFO 2025-11-01 18:05:04,445 basehttp 23789 12918534144 "GET /api/produit/my-ads/ HTTP/1.1" 200 3998
+INFO 2025-11-01 18:05:07,311 basehttp 23789 6147584000 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-01 18:05:07,311 basehttp 23789 6130757632 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-01 18:05:07,326 basehttp 23789 12918534144 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 5877
+INFO 2025-11-01 18:05:13,950 basehttp 23789 6147584000 "OPTIONS /api/produit/home-data/ HTTP/1.1" 200 0
+INFO 2025-11-01 18:05:13,994 basehttp 23789 6130757632 "GET /api/produit/home-data/ HTTP/1.1" 200 11354
+INFO 2025-11-01 18:05:23,017 basehttp 23789 6130757632 "OPTIONS /api/produit/ads/?category=services&ordering=-created_at HTTP/1.1" 200 0
+INFO 2025-11-01 18:05:23,021 basehttp 23789 6147584000 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-01 18:05:23,021 basehttp 23789 12918534144 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-01 18:05:23,030 basehttp 23789 6130757632 "GET /api/produit/ads/?category=services&ordering=-created_at HTTP/1.1" 200 1076
+INFO 2025-11-01 18:05:30,833 basehttp 23789 6147584000 "OPTIONS /api/produit/ads/629b76e6-3107-4610-850d-bfa0116edccd/ HTTP/1.1" 200 0
+INFO 2025-11-01 18:05:30,852 basehttp 23789 12918534144 "GET /api/produit/ads/629b76e6-3107-4610-850d-bfa0116edccd/ HTTP/1.1" 200 1267
+INFO 2025-11-01 18:05:34,552 basehttp 23789 6130757632 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-11-01 18:05:34,563 basehttp 23789 6147584000 "POST /api/auth/logout/ HTTP/1.1" 200 34
+INFO 2025-11-01 18:05:34,589 basehttp 23789 12918534144 "GET /api/produit/home-data/ HTTP/1.1" 200 11354
+INFO 2025-11-01 18:05:54,925 basehttp 23789 6147584000 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-01 18:05:54,925 basehttp 23789 6130757632 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-01 18:05:54,932 basehttp 23789 12918534144 "GET /api/produit/ads/?category=services&ordering=-created_at HTTP/1.1" 200 1076
+INFO 2025-11-01 18:05:57,082 basehttp 23789 6130757632 "GET /api/produit/ads/629b76e6-3107-4610-850d-bfa0116edccd/ HTTP/1.1" 200 1268
+INFO 2025-11-01 18:06:08,940 basehttp 23789 6147584000 "GET /api/produit/ads/629b76e6-3107-4610-850d-bfa0116edccd/ HTTP/1.1" 200 1268
+INFO 2025-11-01 18:06:13,572 basehttp 23789 12918534144 "GET /api/produit/ads/629b76e6-3107-4610-850d-bfa0116edccd/ HTTP/1.1" 200 1268
+INFO 2025-11-01 18:06:32,388 basehttp 23789 6147584000 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-01 18:06:32,389 basehttp 23789 12918534144 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-01 18:06:32,402 basehttp 23789 6130757632 "GET /api/produit/ads/?category=services&ordering=-created_at HTTP/1.1" 200 1076
+INFO 2025-11-01 18:06:41,436 basehttp 23789 12918534144 "GET /api/produit/home-data/ HTTP/1.1" 200 11354
+INFO 2025-11-02 10:14:20,191 basehttp 23789 6130757632 "GET /admin/produit/ad/629b76e6-3107-4610-850d-bfa0116edccd/change/ HTTP/1.1" 200 46873
+INFO 2025-11-02 10:14:20,201 basehttp 23789 6147584000 "GET /media/ads/images/2025/11/01/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-11-02 10:14:20,205 basehttp 23789 6130757632 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-02 10:46:50,592 autoreload 26241 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-02 10:50:28,576 autoreload 27883 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-02 10:51:16,849 autoreload 27883 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/EmunieBack/settings.py changed, reloading.
+INFO 2025-11-02 10:51:17,246 autoreload 27994 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-02 10:51:55,088 autoreload 27994 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/EmunieBack/settings.py changed, reloading.
+INFO 2025-11-02 10:51:55,385 autoreload 28063 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-02 19:58:37,587 autoreload 32217 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-02 19:58:47,817 basehttp 32217 6197096448 "GET /api/produit/home-data/ HTTP/1.1" 200 11371
+INFO 2025-11-02 19:58:47,824 basehttp 32217 6197096448 "GET /media/ads/images/2025/10/30/Image.jpg HTTP/1.1" 304 0
+INFO 2025-11-02 19:58:47,826 basehttp 32217 6213922816 "GET /media/ads/images/2025/11/01/ucad_7nyx3Yb.jpg HTTP/1.1" 304 0
+INFO 2025-11-02 19:58:47,826 basehttp 32217 6264401920 "GET /media/ads/images/2025/10/30/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-11-02 19:58:47,826 basehttp 32217 6247575552 "GET /media/ads/images/2025/11/01/ucad.jpg HTTP/1.1" 304 0
+INFO 2025-11-02 19:58:47,826 basehttp 32217 6230749184 "GET /media/ads/images/2025/10/30/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-11-02 19:59:17,610 basehttp 32217 6197096448 "GET /api/produit/ads/9c6345ae-2a76-4f9b-a2ed-47bb932ca6ab/ HTTP/1.1" 200 3253
+INFO 2025-11-02 19:59:17,628 basehttp 32217 6197096448 "GET /media/avatars/ucad_Ijhh9GG.jpg HTTP/1.1" 304 0
+INFO 2025-11-02 19:59:30,310 basehttp 32217 6197096448 "GET /api/produit/home-data/ HTTP/1.1" 200 11371
+INFO 2025-11-02 19:59:55,446 basehttp 32217 6197096448 "OPTIONS /api/auth/google/ HTTP/1.1" 200 0
+INFO 2025-11-02 19:59:56,004 basehttp 32217 6197096448 "POST /api/auth/google/ HTTP/1.1" 200 565
+INFO 2025-11-02 19:59:57,022 basehttp 32217 6197096448 "OPTIONS /api/produit/ads/629b76e6-3107-4610-850d-bfa0116edccd/ HTTP/1.1" 200 0
+INFO 2025-11-02 19:59:57,047 basehttp 32217 6197096448 "GET /api/produit/ads/629b76e6-3107-4610-850d-bfa0116edccd/ HTTP/1.1" 200 1268
+INFO 2025-11-02 19:59:57,061 basehttp 32217 6197096448 "GET /media/ads/images/2025/11/01/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-11-02 20:00:00,435 basehttp 32217 6197096448 "OPTIONS /api/produit/home-data/ HTTP/1.1" 200 0
+INFO 2025-11-02 20:00:00,477 basehttp 32217 6197096448 "GET /api/produit/home-data/ HTTP/1.1" 200 11371
+INFO 2025-11-02 20:00:04,431 basehttp 32217 6197096448 "OPTIONS /api/user/profile/ HTTP/1.1" 200 0
+INFO 2025-11-02 20:00:04,442 basehttp 32217 6197096448 "GET /api/user/profile/ HTTP/1.1" 200 458
+INFO 2025-11-02 20:00:04,596 basehttp 32217 6197096448 "OPTIONS /api/produit/my-ads/ HTTP/1.1" 200 0
+INFO 2025-11-02 20:00:04,597 basehttp 32217 6214496256 "OPTIONS /api/publicite/my/ HTTP/1.1" 200 0
+INFO 2025-11-02 20:00:04,608 basehttp 32217 6214496256 "GET /api/publicite/my/ HTTP/1.1" 200 2
+INFO 2025-11-02 20:00:04,616 basehttp 32217 6197096448 "GET /api/produit/my-ads/ HTTP/1.1" 200 1822
+INFO 2025-11-02 20:00:28,905 basehttp 32217 6214496256 "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+INFO 2025-11-02 20:00:28,918 basehttp 32217 6197096448 "POST /api/auth/logout/ HTTP/1.1" 200 34
+INFO 2025-11-02 20:00:28,939 basehttp 32217 6214496256 "GET /api/produit/home-data/ HTTP/1.1" 200 11371
+INFO 2025-11-02 20:00:37,065 basehttp 32217 6214496256 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-02 20:00:37,065 basehttp 32217 6197096448 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-02 20:00:37,079 basehttp 32217 6231322624 "GET /api/produit/ads/?search=s&ordering=-created_at HTTP/1.1" 200 3955
+INFO 2025-11-02 20:00:59,608 basehttp 32217 6214496256 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 5884
+INFO 2025-11-02 20:01:21,662 basehttp 32217 6214496256 "GET /api/produit/ads/?category=emploi_stages&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-11-02 20:01:26,043 basehttp 32217 6214496256 "GET /api/produit/ads/?category=immobilier&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-11-02 20:01:28,976 basehttp 32217 6214496256 "GET /api/produit/home-data/ HTTP/1.1" 200 11371
+INFO 2025-11-04 00:24:57,981 autoreload 41357 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-04 00:25:12,868 basehttp 41357 6197719040 "OPTIONS /api/auth/google/ HTTP/1.1" 200 0
+INFO 2025-11-04 00:25:13,374 basehttp 41357 6197719040 "POST /api/auth/google/ HTTP/1.1" 200 572
+INFO 2025-11-04 00:25:14,943 basehttp 41357 6197719040 "OPTIONS /api/user/profile/ HTTP/1.1" 200 0
+INFO 2025-11-04 00:25:14,956 basehttp 41357 6197719040 "GET /api/user/profile/ HTTP/1.1" 200 458
+INFO 2025-11-04 00:25:25,878 basehttp 41357 6197719040 "POST /api/auth/google/ HTTP/1.1" 200 565
+INFO 2025-11-04 00:25:26,898 basehttp 41357 6197719040 "OPTIONS /api/produit/my-ads/ HTTP/1.1" 200 0
+INFO 2025-11-04 00:25:26,903 basehttp 41357 6215118848 "OPTIONS /api/publicite/my/ HTTP/1.1" 200 0
+INFO 2025-11-04 00:25:26,916 basehttp 41357 6197719040 "GET /api/produit/my-ads/ HTTP/1.1" 200 2
+INFO 2025-11-04 00:25:26,917 basehttp 41357 6215118848 "GET /api/publicite/my/ HTTP/1.1" 200 2
+INFO 2025-11-04 00:33:35,412 basehttp 41357 6197719040 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-11-04 00:33:35,412 basehttp 41357 6215118848 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-11-04 00:33:35,421 basehttp 41357 6215118848 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 00:33:35,421 basehttp 41357 6197719040 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 00:47:03,003 basehttp 41357 6197719040 "GET /admin/produit/ad/629b76e6-3107-4610-850d-bfa0116edccd/change/ HTTP/1.1" 302 0
+INFO 2025-11-04 00:47:03,028 basehttp 41357 6197719040 "GET /admin/login/?next=/admin/produit/ad/629b76e6-3107-4610-850d-bfa0116edccd/change/ HTTP/1.1" 200 4334
+INFO 2025-11-04 00:47:03,035 basehttp 41357 6197719040 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:03,037 basehttp 41357 6231945216 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:03,038 basehttp 41357 6248771584 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:03,038 basehttp 41357 6197719040 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:03,038 basehttp 41357 6265597952 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:03,039 basehttp 41357 6282424320 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:03,040 basehttp 41357 6215118848 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+WARNING 2025-11-04 00:47:03,068 log 41357 6299250688 Not Found: /apple-touch-icon-precomposed.png
+WARNING 2025-11-04 00:47:03,069 basehttp 41357 6299250688 "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 4208
+WARNING 2025-11-04 00:47:03,141 log 41357 6299250688 Not Found: /apple-touch-icon.png
+WARNING 2025-11-04 00:47:03,142 basehttp 41357 6299250688 "GET /apple-touch-icon.png HTTP/1.1" 404 4172
+INFO 2025-11-04 00:47:18,670 basehttp 41357 6231945216 "POST /admin/login/?next=/admin/produit/ad/629b76e6-3107-4610-850d-bfa0116edccd/change/ HTTP/1.1" 302 0
+INFO 2025-11-04 00:47:18,686 basehttp 41357 6248771584 "GET /admin/produit/ad/629b76e6-3107-4610-850d-bfa0116edccd/change/ HTTP/1.1" 302 0
+INFO 2025-11-04 00:47:18,702 basehttp 41357 6265597952 "GET /admin/ HTTP/1.1" 200 21267
+INFO 2025-11-04 00:47:18,706 basehttp 41357 6197719040 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:18,709 basehttp 41357 6282424320 "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+INFO 2025-11-04 00:47:18,710 basehttp 41357 6215118848 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-11-04 00:47:18,710 basehttp 41357 6231945216 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+WARNING 2025-11-04 00:47:18,750 log 41357 6316077056 Not Found: /apple-touch-icon-precomposed.png
+WARNING 2025-11-04 00:47:18,752 log 41357 6332903424 Not Found: /apple-touch-icon.png
+WARNING 2025-11-04 00:47:18,753 basehttp 41357 6316077056 "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 4208
+WARNING 2025-11-04 00:47:18,754 log 41357 6349729792 Not Found: /favicon.ico
+WARNING 2025-11-04 00:47:18,755 basehttp 41357 6332903424 "GET /apple-touch-icon.png HTTP/1.1" 404 4172
+WARNING 2025-11-04 00:47:18,755 basehttp 41357 6349729792 "GET /favicon.ico HTTP/1.1" 404 4145
+INFO 2025-11-04 00:47:25,311 basehttp 41357 6265597952 "GET /admin/produit/ad/ HTTP/1.1" 200 25921
+INFO 2025-11-04 00:47:25,317 basehttp 41357 6197719040 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,318 basehttp 41357 6215118848 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,319 basehttp 41357 6231945216 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,320 basehttp 41357 6265597952 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,320 basehttp 41357 6248771584 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-11-04 00:47:25,322 basehttp 41357 6197719040 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,322 basehttp 41357 6215118848 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,323 basehttp 41357 6248771584 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,323 basehttp 41357 6231945216 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,324 basehttp 41357 6265597952 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,325 basehttp 41357 6215118848 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,325 basehttp 41357 6197719040 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,326 basehttp 41357 6231945216 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,329 basehttp 41357 6282424320 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-04 00:47:25,353 basehttp 41357 6265597952 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:25,354 basehttp 41357 6248771584 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-11-04 00:47:32,882 basehttp 41357 6197719040 "GET /admin/produit/ad/add/ HTTP/1.1" 200 45698
+INFO 2025-11-04 00:47:32,891 basehttp 41357 6282424320 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:32,891 basehttp 41357 6265597952 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:32,892 basehttp 41357 6248771584 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:32,893 basehttp 41357 6215118848 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:32,894 basehttp 41357 6197719040 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:32,895 basehttp 41357 6282424320 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:32,898 basehttp 41357 6231945216 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-04 00:47:32,925 basehttp 41357 6265597952 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:32,931 basehttp 41357 6248771584 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-11-04 00:47:32,931 basehttp 41357 6215118848 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-11-04 01:07:10,587 autoreload 41357 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py changed, reloading.
+INFO 2025-11-04 01:07:10,993 autoreload 44624 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-04 01:07:34,195 autoreload 44624 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/urls.py changed, reloading.
+INFO 2025-11-04 01:07:34,569 autoreload 44668 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-04 01:14:08,664 basehttp 44668 6161838080 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:14:08,665 basehttp 44668 12901707776 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:14:08,666 basehttp 44668 12918534144 "OPTIONS /api/produit/ad-types/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:14:08,667 basehttp 44668 12935360512 "OPTIONS /api/produit/ad-statuses/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:14:08,681 basehttp 44668 12918534144 "GET /api/produit/ad-types/ HTTP/1.1" 200 321
+INFO 2025-11-04 01:14:08,681 basehttp 44668 6161838080 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 01:14:08,682 basehttp 44668 12935360512 "GET /api/produit/ad-statuses/ HTTP/1.1" 200 245
+INFO 2025-11-04 01:14:08,682 basehttp 44668 12901707776 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 01:16:04,502 basehttp 44668 6161838080 "OPTIONS /api/produit/ads/create/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:16:04,634 basehttp 44668 6161838080 "POST /api/produit/ads/create/ HTTP/1.1" 201 301
+INFO 2025-11-04 01:16:06,659 basehttp 44668 6161838080 "OPTIONS /api/produit/home-data/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:16:06,709 basehttp 44668 6161838080 "GET /api/produit/home-data/ HTTP/1.1" 200 1538
+ERROR 2025-11-04 01:16:14,320 log 44668 12901707776 Internal Server Error: /admin/produit/ad/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/templatetags/admin_list.py", line 438, in date_hierarchy
+    for day in days
+               ^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 271, in __iter__
+    for row in compiler.results_iter(
+               ~~~~~~~~~~~~~~~~~~~~~^
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1541, in apply_converters
+    value = converter(value, expression, connection)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/functions/datetime.py", line 353, in convert_value
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Database returned an invalid datetime value. Are time zone definitions for your database installed?
+ERROR 2025-11-04 01:16:14,324 basehttp 44668 12901707776 "GET /admin/produit/ad/ HTTP/1.1" 500 404372
+INFO 2025-11-04 01:16:14,333 basehttp 44668 12918534144 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-04 01:16:21,102 basehttp 44668 12918534144 "GET /admin/produit/adview/ HTTP/1.1" 200 20113
+INFO 2025-11-04 01:16:21,117 basehttp 44668 12901707776 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-04 01:16:21,123 basehttp 44668 12918534144 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+ERROR 2025-11-04 01:16:26,094 log 44668 12918534144 Internal Server Error: /admin/produit/ad/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/contrib/admin/templatetags/admin_list.py", line 438, in date_hierarchy
+    for day in days
+               ^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 271, in __iter__
+    for row in compiler.results_iter(
+               ~~~~~~~~~~~~~~~~~~~~~^
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1541, in apply_converters
+    value = converter(value, expression, connection)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/functions/datetime.py", line 353, in convert_value
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Database returned an invalid datetime value. Are time zone definitions for your database installed?
+ERROR 2025-11-04 01:16:26,097 basehttp 44668 12918534144 "GET /admin/produit/ad/ HTTP/1.1" 500 404372
+INFO 2025-11-04 01:16:26,107 basehttp 44668 12901707776 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-04 01:20:10,766 autoreload 44668 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/EmunieBack/settings.py changed, reloading.
+INFO 2025-11-04 01:20:11,171 autoreload 45387 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-04 01:20:24,906 basehttp 45387 6196572160 "GET /admin/produit/ad/ HTTP/1.1" 200 30565
+INFO 2025-11-04 01:20:24,917 basehttp 45387 6213398528 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-04 01:20:24,945 basehttp 45387 6196572160 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-11-04 01:20:29,570 basehttp 45387 6196572160 "GET /admin/produit/ad/607ff44f-48db-4096-a128-39372915aafe/change/ HTTP/1.1" 200 46840
+INFO 2025-11-04 01:20:29,585 basehttp 45387 6196572160 "GET /media/ads/images/2025/11/04/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 200 84356
+INFO 2025-11-04 01:20:29,588 basehttp 45387 6213398528 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-04 01:20:35,757 basehttp 45387 6196572160 "POST /admin/produit/ad/607ff44f-48db-4096-a128-39372915aafe/change/ HTTP/1.1" 302 0
+INFO 2025-11-04 01:20:35,788 basehttp 45387 6213398528 "GET /admin/produit/ad/ HTTP/1.1" 200 30814
+INFO 2025-11-04 01:20:35,803 basehttp 45387 6196572160 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-04 01:20:35,817 basehttp 45387 6213398528 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-11-04 01:20:41,482 basehttp 45387 6230224896 "GET /api/produit/home-data/ HTTP/1.1" 200 2493
+INFO 2025-11-04 01:20:41,489 basehttp 45387 6230224896 "GET /media/ads/images/2025/11/04/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 200 84356
+INFO 2025-11-04 01:20:45,598 basehttp 45387 6230224896 "OPTIONS /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:20:45,619 basehttp 45387 6230224896 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:20:47,024 basehttp 45387 6230224896 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 01:20:47,028 basehttp 45387 6247051264 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 01:20:47,028 basehttp 45387 6263877632 "GET /api/produit/ad-types/ HTTP/1.1" 200 321
+INFO 2025-11-04 01:20:47,029 basehttp 45387 6280704000 "GET /api/produit/ad-statuses/ HTTP/1.1" 200 245
+INFO 2025-11-04 01:20:47,036 basehttp 45387 6297530368 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:21:40,132 basehttp 45387 6196572160 "OPTIONS /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/update/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:21:40,152 basehttp 45387 6196572160 "PUT /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/update/ HTTP/1.1" 200 300
+INFO 2025-11-04 01:21:42,213 basehttp 45387 6196572160 "GET /api/produit/home-data/ HTTP/1.1" 200 2493
+INFO 2025-11-04 01:21:49,477 basehttp 45387 6196572160 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:21:51,235 basehttp 45387 6196572160 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 01:21:51,243 basehttp 45387 6213398528 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 01:21:51,247 basehttp 45387 6247051264 "GET /api/produit/ad-statuses/ HTTP/1.1" 200 245
+INFO 2025-11-04 01:21:51,247 basehttp 45387 6230224896 "GET /api/produit/ad-types/ HTTP/1.1" 200 321
+INFO 2025-11-04 01:21:51,256 basehttp 45387 6263877632 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:21:58,131 basehttp 45387 6196572160 "PUT /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/update/ HTTP/1.1" 200 300
+INFO 2025-11-04 01:22:00,195 basehttp 45387 6213398528 "GET /api/produit/home-data/ HTTP/1.1" 200 2493
+INFO 2025-11-04 01:22:03,684 basehttp 45387 6247051264 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:22:05,456 basehttp 45387 6196572160 "GET /api/produit/ad-types/ HTTP/1.1" 200 321
+INFO 2025-11-04 01:22:05,456 basehttp 45387 6213398528 "GET /api/produit/ad-statuses/ HTTP/1.1" 200 245
+INFO 2025-11-04 01:22:05,456 basehttp 45387 6263877632 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 01:22:05,456 basehttp 45387 6230224896 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 01:22:05,467 basehttp 45387 6247051264 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:22:19,543 basehttp 45387 6213398528 "PUT /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/update/ HTTP/1.1" 200 300
+INFO 2025-11-04 01:22:21,599 basehttp 45387 6263877632 "GET /api/produit/home-data/ HTTP/1.1" 200 2493
+INFO 2025-11-04 01:22:24,472 basehttp 45387 6230224896 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:22:25,991 basehttp 45387 6213398528 "GET /api/produit/ad-types/ HTTP/1.1" 200 321
+INFO 2025-11-04 01:22:25,992 basehttp 45387 6263877632 "GET /api/produit/ad-statuses/ HTTP/1.1" 200 245
+INFO 2025-11-04 01:22:25,994 basehttp 45387 6196572160 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 01:22:25,996 basehttp 45387 6247051264 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 01:22:26,003 basehttp 45387 6230224896 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:22:33,619 basehttp 45387 6213398528 "PUT /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/update/ HTTP/1.1" 200 300
+INFO 2025-11-04 01:22:35,694 basehttp 45387 6263877632 "GET /api/produit/home-data/ HTTP/1.1" 200 2493
+INFO 2025-11-04 01:22:37,666 basehttp 45387 6196572160 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:22:38,968 basehttp 45387 6213398528 "GET /api/produit/ad-types/ HTTP/1.1" 200 321
+INFO 2025-11-04 01:22:38,968 basehttp 45387 6230224896 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 01:22:38,970 basehttp 45387 6263877632 "GET /api/produit/ad-statuses/ HTTP/1.1" 200 245
+INFO 2025-11-04 01:22:38,973 basehttp 45387 6247051264 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 01:22:38,983 basehttp 45387 6196572160 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:24:26,022 basehttp 45387 6196572160 "PUT /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/update/ HTTP/1.1" 200 305
+INFO 2025-11-04 01:24:28,085 basehttp 45387 6196572160 "GET /api/produit/home-data/ HTTP/1.1" 200 2513
+INFO 2025-11-04 01:24:29,680 basehttp 45387 6196572160 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1218
+INFO 2025-11-04 01:24:30,898 basehttp 45387 6196572160 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:24:30,903 basehttp 45387 6230224896 "OPTIONS /api/produit/ad-types/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:24:30,905 basehttp 45387 6213398528 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:24:30,909 basehttp 45387 6247051264 "OPTIONS /api/produit/ad-statuses/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:24:30,918 basehttp 45387 6196572160 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 01:24:30,921 basehttp 45387 6230224896 "GET /api/produit/ad-types/ HTTP/1.1" 200 321
+INFO 2025-11-04 01:24:30,922 basehttp 45387 6213398528 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 01:24:30,923 basehttp 45387 6247051264 "GET /api/produit/ad-statuses/ HTTP/1.1" 200 245
+INFO 2025-11-04 01:24:30,930 basehttp 45387 6263877632 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1218
+INFO 2025-11-04 01:24:46,911 basehttp 45387 6196572160 "PUT /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/update/ HTTP/1.1" 200 300
+INFO 2025-11-04 01:24:48,982 basehttp 45387 6230224896 "GET /api/produit/home-data/ HTTP/1.1" 200 2493
+INFO 2025-11-04 01:26:58,417 basehttp 45387 6196572160 "OPTIONS /api/produit/my-ads/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:26:58,418 basehttp 45387 6213398528 "OPTIONS /api/publicite/my/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:26:58,442 basehttp 45387 6213398528 "GET /api/publicite/my/ HTTP/1.1" 200 2
+INFO 2025-11-04 01:26:58,448 basehttp 45387 6196572160 "GET /api/produit/my-ads/ HTTP/1.1" 200 961
+INFO 2025-11-04 01:27:58,726 basehttp 45387 6196572160 "OPTIONS /api/publicite/create/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:27:58,828 basehttp 45387 6196572160 "POST /api/publicite/create/ HTTP/1.1" 201 174
+INFO 2025-11-04 01:28:10,402 basehttp 45387 6196572160 "POST /api/publicite/create/ HTTP/1.1" 201 182
+INFO 2025-11-04 01:28:25,636 basehttp 45387 6213398528 "GET /api/publicite/my/ HTTP/1.1" 200 983
+INFO 2025-11-04 01:28:25,636 basehttp 45387 6196572160 "GET /api/produit/my-ads/ HTTP/1.1" 200 961
+INFO 2025-11-04 01:28:31,373 basehttp 45387 6213398528 "GET /api/publicite/my/ HTTP/1.1" 200 983
+INFO 2025-11-04 01:34:08,627 basehttp 45387 6196572160 "GET /api/publicite/my/ HTTP/1.1" 200 983
+INFO 2025-11-04 01:34:09,774 basehttp 45387 6196572160 "GET /api/produit/my-ads/ HTTP/1.1" 200 961
+INFO 2025-11-04 01:34:09,776 basehttp 45387 6213398528 "GET /api/publicite/my/ HTTP/1.1" 200 983
+INFO 2025-11-04 01:34:15,378 basehttp 45387 6230224896 "OPTIONS /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 0
+INFO 2025-11-04 01:34:15,384 basehttp 45387 6213398528 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 01:34:15,384 basehttp 45387 6196572160 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 01:34:15,399 basehttp 45387 6230224896 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 1011
+INFO 2025-11-04 01:34:15,404 basehttp 45387 6196572160 "GET /media/ads/images/2025/11/04/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-11-04 01:34:16,274 basehttp 45387 6213398528 "OPTIONS /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:34:16,299 basehttp 45387 6230224896 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:34:17,786 basehttp 45387 6196572160 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 01:34:17,791 basehttp 45387 6230224896 "GET /api/produit/ad-types/ HTTP/1.1" 200 321
+INFO 2025-11-04 01:34:17,792 basehttp 45387 6213398528 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 01:34:17,794 basehttp 45387 6247051264 "GET /api/produit/ad-statuses/ HTTP/1.1" 200 245
+INFO 2025-11-04 01:34:17,802 basehttp 45387 6263877632 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-04 01:37:43,801 autoreload 45387 8603181248 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/serializers.py changed, reloading.
+INFO 2025-11-04 01:37:44,200 autoreload 46777 8603181248 Watching for file changes with StatReloader
+INFO 2025-11-04 01:38:01,153 basehttp 46777 6165966848 "OPTIONS /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/update/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:38:01,173 basehttp 46777 6165966848 "PUT /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/update/ HTTP/1.1" 200 316
+INFO 2025-11-04 01:38:03,227 basehttp 46777 6165966848 "OPTIONS /api/produit/home-data/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:38:03,269 basehttp 46777 6165966848 "GET /api/produit/home-data/ HTTP/1.1" 200 507
+INFO 2025-11-04 01:38:17,154 basehttp 46777 6182793216 "GET /admin/produit/ad/607ff44f-48db-4096-a128-39372915aafe/change/ HTTP/1.1" 200 46848
+INFO 2025-11-04 01:38:17,156 basehttp 46777 6199619584 "GET /media/ads/images/2025/11/04/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-11-04 01:38:17,162 basehttp 46777 6199619584 "GET /media/ads/images/2025/11/04/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-11-04 01:38:17,166 basehttp 46777 6182793216 "GET /admin/jsi18n/ HTTP/1.1" 200 8634
+INFO 2025-11-04 01:38:42,537 basehttp 46777 6165966848 "OPTIONS /api/produit/my-ads/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:38:42,537 basehttp 46777 6216445952 "OPTIONS /api/publicite/my/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:38:42,558 basehttp 46777 6216445952 "GET /api/publicite/my/ HTTP/1.1" 200 983
+INFO 2025-11-04 01:38:42,561 basehttp 46777 6165966848 "GET /api/produit/my-ads/ HTTP/1.1" 200 959
+INFO 2025-11-04 01:38:44,052 basehttp 46777 6216445952 "OPTIONS /api/produit/categories/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:38:44,052 basehttp 46777 6165966848 "OPTIONS /api/produit/cities/ HTTP/1.1" 200 0
+INFO 2025-11-04 01:38:44,063 basehttp 46777 6216445952 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-04 01:38:44,065 basehttp 46777 6165966848 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-04 01:38:44,065 basehttp 46777 6233272320 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 52

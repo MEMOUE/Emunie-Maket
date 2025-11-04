@@ -175,9 +175,17 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
         model = Ad
         fields = (
             'title', 'description', 'price', 'currency', 'is_negotiable',
-            'ad_type', 'category', 'city', 'address', 'latitude', 'longitude', 'contact_email', 'whatsapp_number', 'is_urgent',
+            'ad_type', 'status', 'category', 'city', 'address', 'latitude',
+            'longitude', 'contact_email', 'whatsapp_number', 'is_urgent',
             'expires_at', 'images'
         )
+        # ✅ Ajout du champ 'status'
+
+        # Champs optionnels avec valeurs par défaut
+        extra_kwargs = {
+            'status': {'required': False},  # Optionnel en création
+            'ad_type': {'required': False, 'default': 'sell'},
+        }
 
     def validate_images(self, value):
         """Valider les images"""
@@ -230,6 +238,10 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
 
         validated_data['slug'] = slug
 
+        # ✅ Définir le statut par défaut en création si non fourni
+        if 'status' not in validated_data:
+            validated_data['status'] = 'active'
+
         # Créer l'annonce
         ad = Ad.objects.create(**validated_data)
 
@@ -253,7 +265,7 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
         # Extraire les images si présentes
         images_data = validated_data.pop('images', None)
 
-        # Mettre à jour les champs de l'annonce
+        # ✅ Mettre à jour TOUS les champs, y compris le statut
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
 
@@ -264,7 +276,6 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
             try:
                 with transaction.atomic():
                     # 1. Supprimer d'abord TOUTES les anciennes images
-                    # Utiliser delete() via queryset pour éviter la validation du modèle
                     old_images = list(instance.images.all())
 
                     # Supprimer les fichiers physiques
@@ -275,10 +286,10 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
                         except Exception as e:
                             print(f"Avertissement: impossible de supprimer le fichier: {e}")
 
-                    # Supprimer tous les enregistrements via queryset (contourne la validation)
+                    # Supprimer tous les enregistrements via queryset
                     AdImage.objects.filter(ad=instance).delete()
 
-                    # 2. Créer les nouvelles images (maintenant les orders 0,1,2 sont disponibles)
+                    # 2. Créer les nouvelles images
                     for index, image_file in enumerate(images_data):
                         AdImage.objects.create(
                             ad=instance,
@@ -288,7 +299,6 @@ class AdCreateUpdateSerializer(serializers.ModelSerializer):
                         )
 
             except Exception as e:
-                # En cas d'erreur, la transaction sera annulée automatiquement
                 raise DRFValidationError({
                     'images': f"Erreur lors de la mise à jour des images: {str(e)}"
                 })

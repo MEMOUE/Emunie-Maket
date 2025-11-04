@@ -19,6 +19,20 @@ export class AnnonceService {
     return this.http.get(`${this.apiUrl}produit/cities/`);
   }
 
+  /**
+   * Récupérer les types d'annonces (NOUVEAU)
+   */
+  getAdTypes(): Observable<any> {
+    return this.http.get(`${this.apiUrl}produit/ad-types/`);
+  }
+
+  /**
+   * Récupérer les statuts d'annonces (NOUVEAU)
+   */
+  getAdStatuses(): Observable<any> {
+    return this.http.get(`${this.apiUrl}produit/ad-statuses/`);
+  }
+
   getAds(params?: any): Observable<any> {
     return this.http.get(`${this.apiUrl}produit/ads/`, { params });
   }

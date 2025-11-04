@@ -52,11 +52,38 @@
           formControlName="description"
           rows="5"
           class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-green-50/20"
-
         ></textarea>
-<!--        @if (getFieldError('description')) {-->
-<!--          <small class="text-red-500 mt-1 block">{{ getFieldError('description') }}</small>-->
-<!--        }-->
+      </div>
+
+      <!-- Type d'annonce et Statut (NOUVEAU) -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <div class="flex-1">
+          <label class="block font-semibold mb-1 text-gray-700">Type d'annonce *</label>
+          <select
+            formControlName="ad_type"
+            class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-orange-50/20"
+            [class.border-red-500]="isFieldInvalid('ad_type')"
+          >
+            <option value="">-- Sélectionner --</option>
+            <option *ngFor="let type of adTypes" [value]="type.value">{{ type.label }}</option>
+          </select>
+          @if (getFieldError('ad_type')) {
+            <small class="text-red-500 mt-1 block">{{ getFieldError('ad_type') }}</small>
+          }
+        </div>
+
+        @if (isEditMode) {
+          <div class="flex-1">
+            <label class="block font-semibold mb-1 text-gray-700">Statut *</label>
+            <select
+              formControlName="status"
+              class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-green-50/20"
+            >
+              <option value="">-- Sélectionner --</option>
+              <option *ngFor="let status of adStatuses" [value]="status.value">{{ status.label }}</option>
+            </select>
+          </div>
+        }
       </div>
 
       <!-- Prix et négociable -->
@@ -130,7 +157,6 @@
         </div>
       </div>
 
-
       <!-- Date d'expiration et urgent -->
       <div class="flex flex-col sm:flex-row gap-4">
         <div class="flex-1">
@@ -200,24 +226,6 @@
               class="hidden"
             />
           </label>
-
-          <!-- Caméra -->
-<!--          <label-->
-<!--            class="cursor-pointer bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5"-->
-<!--            [class.opacity-50]="!canAddImages()"-->
-<!--            [class.cursor-not-allowed]="!canAddImages()"-->
-<!--          >-->
-<!--            <i class="pi pi-camera mr-2"></i>-->
-<!--            Prendre une photo-->
-<!--            <input-->
-<!--              type="file"-->
-<!--              accept="image/*"-->
-<!--              capture="environment"-->
-<!--              (change)="onImagesSelected($event)"-->
-<!--              [disabled]="!canAddImages()"-->
-<!--              class="hidden"-->
-<!--            />-->
-<!--          </label>-->
         </div>
 
         <!-- Formats acceptés -->

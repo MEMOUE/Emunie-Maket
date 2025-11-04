@@ -10,8 +10,8 @@ interface ImagePreview {
   file?: File;
   url: string;
   order: number;
-  existing?: boolean; // Pour différencier les images existantes des nouvelles
-  id?: string; // ID de l'image si elle existe déjà
+  existing?: boolean;
+  id?: string;
 }
 
 @Component({
@@ -24,6 +24,8 @@ export class NewAnonceComponent implements OnInit {
   form!: FormGroup;
   categories: Array<{ value: string; label: string }> = [];
   cities: Array<{ value: string; label: string }> = [];
+  adTypes: Array<{ value: string; label: string }> = [];      // NOUVEAU
+  adStatuses: Array<{ value: string; label: string }> = [];   // NOUVEAU
   imagePreviews: ImagePreview[] = [];
   loading = false;
   errorMessage = '';
@@ -32,7 +34,7 @@ export class NewAnonceComponent implements OnInit {
   // Mode édition
   isEditMode = false;
   adId: string = '';
-  hasNewImages = false; // Flag pour savoir si de nouvelles images ont été ajoutées
+  hasNewImages = false;
 
   readonly MIN_IMAGES = 1;
   readonly MAX_IMAGES = 3;
@@ -54,6 +56,8 @@ export class NewAnonceComponent implements OnInit {
       price: ['', [Validators.required, Validators.min(0)]],
       currency: ['XOF'],
       is_negotiable: [true],
+      ad_type: ['sell', Validators.required],        // NOUVEAU avec valeur par défaut
+      status: ['active'],                            // NOUVEAU avec valeur par défaut
       category: ['', Validators.required],
       city: ['', Validators.required],
       address: [''],
@@ -67,6 +71,8 @@ export class NewAnonceComponent implements OnInit {
 
     this.loadCategories();
     this.loadCities();
+    this.loadAdTypes();      // NOUVEAU
+    this.loadAdStatuses();   // NOUVEAU
 
     // Vérifier si on est en mode édition
     this.route.params.subscribe(params => {
@@ -75,6 +81,26 @@ export class NewAnonceComponent implements OnInit {
         this.adId = params['id'];
         this.loadAdData();
       }
+    });
+  }
+
+  /**
+   * NOUVEAU: Charger les types d'annonces
+   */
+  loadAdTypes(): void {
+    this.annonceService.getAdTypes().subscribe({
+      next: (res) => (this.adTypes = res.ad_types ?? []),
+      error: (err) => console.error('Erreur lors du chargement des types d\'annonces:', err)
+    });
+  }
+
+  /**
+   * NOUVEAU: Charger les statuts d'annonces
+   */
+  loadAdStatuses(): void {
+    this.annonceService.getAdStatuses().subscribe({
+      next: (res) => (this.adStatuses = res.ad_statuses ?? []),
+      error: (err) => console.error('Erreur lors du chargement des statuts:', err)
     });
   }
 
@@ -93,6 +119,8 @@ export class NewAnonceComponent implements OnInit {
           price: ad.price,
           currency: ad.currency || 'XOF',
           is_negotiable: ad.is_negotiable,
+          ad_type: ad.ad_type || 'sell',          // NOUVEAU
+          status: ad.status || 'active',           // NOUVEAU
           category: ad.category,
           city: ad.city,
           address: ad.address || '',
@@ -170,7 +198,6 @@ export class NewAnonceComponent implements OnInit {
 
     // En mode édition, si on ajoute de nouvelles images, on remplace toutes les anciennes
     if (this.isEditMode && !this.hasNewImages) {
-      // Vider les images existantes
       this.imagePreviews = [];
       this.hasNewImages = true;
     }
@@ -320,7 +347,6 @@ export class NewAnonceComponent implements OnInit {
           }
         });
       }
-      // Sinon, ne pas inclure le champ images du tout
     } else {
       // En mode création, toujours inclure les images
       this.imagePreviews

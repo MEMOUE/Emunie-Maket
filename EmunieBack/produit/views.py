@@ -435,3 +435,22 @@ class MypubliciteView(APIView):
         publicites = Advertisement.objects.filter(user=request.user)
         serializer = AdvertisementSerializer(publicites, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+# Ajouter ces fonctions dans EmunieBack/produit/views.py
+
+from .models import AdType, AdStatus
+
+@api_view(['GET'])
+@permission_classes([permissions.AllowAny])
+def get_ad_types(request):
+    """Récupérer la liste des types d'annonces"""
+    ad_types = [{'value': value, 'label': label} for value, label in AdType.choices]
+    return Response({'ad_types': ad_types})
+
+@api_view(['GET'])
+@permission_classes([permissions.AllowAny])
+def get_ad_statuses(request):
+    """Récupérer la liste des statuts d'annonces"""
+    ad_statuses = [{'value': value, 'label': label} for value, label in AdStatus.choices]
+    return Response({'ad_statuses': ad_statuses})

@@ -9,6 +9,10 @@ urlpatterns = [
     path('categories/', views.get_categories, name='categories'),
     path('cities/', views.get_cities, name='cities'),
 
+    # NOUVEAU: Types et statuts d'annonces
+    path('ad-types/', views.get_ad_types, name='ad_types'),
+    path('ad-statuses/', views.get_ad_statuses, name='ad_statuses'),
+
     # === ANNONCES PRINCIPALES ===
     # Liste et création d'annonces
     path('ads/', views.AdListView.as_view(), name='ad_list'),
@@ -33,18 +37,6 @@ urlpatterns = [
     # === SIGNALEMENTS ===
     # Signaler une annonce
     path('ads/<uuid:ad_id>/report/', views.AdReportCreateView.as_view(), name='ad_report'),
-
-    # === PUBLICITÉS PAYANTES ===
-    # Liste et création de publicités
-    # path('publicite/', views.AdvertisementListView.as_view(), name='advertisement_list'),
-    # path('publicite/create/', views.AdvertisementCreateView.as_view(), name='advertisement_create'),
-    # path('publicite/my/', views.MypubliciteView.as_view(), name='my_publicite'),
-    # path('publicite/<int:pk>/', views.AdvertisementDetailView.as_view(), name='advertisement_detail'),
-    # path('publicite/<int:pk>/statistics/', views.advertisement_statistics, name='advertisement_statistics'),
-    #
-    # # Tracking des publicités
-    # path('publicite/<int:pk>/impression/', views.track_ad_impression, name='track_ad_impression'),
-    # path('publicite/<int:pk>/click/', views.track_ad_click, name='track_ad_click'),
 
     # === DONNÉES PUBLIQUES ===
     # Page d'accueil et données générales

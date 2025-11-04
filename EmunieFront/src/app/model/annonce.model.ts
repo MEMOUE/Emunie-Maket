@@ -8,6 +8,16 @@ export interface City {
   label: string;
 }
 
+export interface AdType {
+  value: string;
+  label: string;
+}
+
+export interface AdStatus {
+  value: string;
+  label: string;
+}
+
 export interface Ad {
   id: string;
   title: string;
@@ -15,6 +25,8 @@ export interface Ad {
   price: number;
   category: string;
   city: string;
+  ad_type?: string;
+  status?: string;
   contact_phone?: string;
   contact_email?: string;
   images?: string[];
