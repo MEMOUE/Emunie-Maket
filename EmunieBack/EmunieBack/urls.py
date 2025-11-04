@@ -22,6 +22,8 @@ urlpatterns = [
     # ==========================================
     path('admin/', admin.site.urls),
 
+    path('api/premium/', include('premium.urls')),
+
     # ==========================================
     # AUTHENTIFICATION (Token + JWT)
     # ==========================================

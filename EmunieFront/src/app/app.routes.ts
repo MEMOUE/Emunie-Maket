@@ -3,7 +3,7 @@ import { Accueil } from './accueil/accueil';
 import { Login } from './auth/login/login';
 import { Register } from './auth/register/register';
 import { authGuard } from './guard/auth.guard';
-import {ProfileEditComponent} from './auth/profile-edit/profile-edit';
+import {ActivatePremium} from './annonces/activate-premium/activate-premium';
 
 export const routes: Routes = [
   {
@@ -49,6 +49,11 @@ export const routes: Routes = [
     path: 'categories',
     redirectTo: 'annonces',
     pathMatch: 'full'
+  },
+  {
+    path: 'premium/activate',
+    component: ActivatePremium,
+    canActivate: [authGuard]
   },
   {
     path: 'profile-edit',

@@ -1,0 +1,193 @@
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Plans cards */
+.grid > div {
+  animation: fadeIn 0.5s ease-out;
+  position: relative;
+}
+
+.grid > div:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.grid > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.grid > div:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Popular badge animation */
+.absolute.top-0.right-0 {
+  animation: shimmer 3s infinite;
+  background: linear-gradient(
+    90deg,
+    #f97316 0%,
+    #fb923c 50%,
+    #fbbf24 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* Radio buttons styles */
+::ng-deep .p-radiobutton .p-radiobutton-box {
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .p-radiobutton .p-radiobutton-box:hover {
+  border-color: #f97316;
+}
+
+::ng-deep .p-radiobutton .p-radiobutton-box.p-highlight {
+  background-color: #f97316;
+  border-color: #f97316;
+}
+
+/* Input styles */
+::ng-deep .p-inputtext {
+  border-radius: 0.5rem;
+  border: 2px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  color: #1f2937 !important;
+  background-color: #ffffff !important;
+}
+
+::ng-deep .p-inputtext::placeholder {
+  color: #9ca3af !important;
+}
+
+::ng-deep .p-inputtext:hover {
+  border-color: #f97316;
+}
+
+::ng-deep .p-inputtext:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+::ng-deep .p-inputtext.p-invalid {
+  border-color: #ef4444;
+}
+
+/* Button hover effects */
+button {
+  transition: all 0.3s ease;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Card selection effect */
+.cursor-pointer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Payment method cards */
+label.relative {
+  transition: all 0.3s ease;
+}
+
+label.relative:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dialog animations */
+::ng-deep .p-dialog {
+  animation: fadeIn 0.3s ease-out;
+}
+
+::ng-deep .p-dialog-content {
+  padding: 0 !important;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .text-4xl {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .p-8 {
+    padding: 1.5rem;
+  }
+}
+
+/* Success icon animation */
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pi-check {
+  animation: checkmark 0.5s ease-out;
+}
+
+/* Gradient text */
+.bg-gradient-to-r {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-gradient-to-r::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 3s infinite;
+}
+
+/* List items animation */
+ul li {
+  animation: fadeIn 0.5s ease-out;
+}
+
+ul li:nth-child(1) { animation-delay: 0.1s; }
+ul li:nth-child(2) { animation-delay: 0.2s; }
+ul li:nth-child(3) { animation-delay: 0.3s; }
+ul li:nth-child(4) { animation-delay: 0.4s; }
+ul li:nth-child(5) { animation-delay: 0.5s; }
