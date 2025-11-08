@@ -4,11 +4,13 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.core.validators import MinValueValidator, MaxValueValidator, FileExtensionValidator
 from django.core.exceptions import ValidationError
 
+
 def validate_logo_size(file):
     """Valider que la taille du logo ne dépasse pas 1Mo"""
     max_size_mb = 1
     if file.size > max_size_mb * 1024 * 1024:
         raise ValidationError(f'La taille du fichier ne doit pas dépasser {max_size_mb}Mo')
+
 
 class CustomUser(AbstractUser):
     """Modèle utilisateur personnalisé"""
@@ -83,9 +85,13 @@ class CustomUser(AbstractUser):
 
     @property
     def remaining_ads(self):
-        """Nombre d'annonces restantes pour les utilisateurs gratuits"""
+        """Nombre d'annonces restantes pour les utilisateurs gratuits
+
+        Retourne:
+            int: Nombre d'annonces restantes (ou -1 pour illimité si premium)
+        """
         if self.is_premium:
-            return float('inf')
+            return -1  # -1 signifie illimité pour les utilisateurs premium
         active_ads_count = self.ads.filter(status='active').count()
         return max(0, self.MAX_FREE_ADS - active_ads_count)
 
@@ -98,6 +104,7 @@ class CustomUser(AbstractUser):
         if self.premium_end_date and self.premium_end_date < timezone.now():
             return False
         return True
+
 
 class UserRating(models.Model):
     """Système de notation entre utilisateurs"""
@@ -115,6 +122,7 @@ class UserRating(models.Model):
     def __str__(self):
         return f"{self.rater.username} rated {self.rated_user.username}: {self.rating}/5"
 
+
 class Conversation(models.Model):
     """Conversations entre utilisateurs"""
     participants = models.ManyToManyField(CustomUser, related_name='conversations')
@@ -127,6 +135,7 @@ class Conversation(models.Model):
     @property
     def last_message(self):
         return self.messages.order_by('-created_at').first()
+
 
 class Message(models.Model):
     """Messages dans les conversations"""
@@ -143,6 +152,7 @@ class Message(models.Model):
     def __str__(self):
         return f"Message from {self.sender.username} at {self.created_at}"
 
+
 class EmailVerification(models.Model):
     """Vérification d'email"""
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
@@ -150,6 +160,7 @@ class EmailVerification(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField()
     is_used = models.BooleanField(default=False)
+
 
 class PhoneVerification(models.Model):
     """Vérification de téléphone"""
