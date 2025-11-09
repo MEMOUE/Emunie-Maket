@@ -4,6 +4,7 @@ import { Login } from './auth/login/login';
 import { Register } from './auth/register/register';
 import { authGuard } from './guard/auth.guard';
 import {ActivatePremium} from './annonces/activate-premium/activate-premium';
+import {MyAnnonce} from './annonces/my-annonce/my-annonce';
 
 export const routes: Routes = [
   {
@@ -54,7 +55,9 @@ export const routes: Routes = [
     path: 'premium/activate',
     component: ActivatePremium,
     canActivate: [authGuard]
-  },
+  }, {
+  path: 'my-ads', component: MyAnnonce, // ✅ Notre nouveau composanttitle: 'Mes Annonces'
+},
   {
     path: 'profile-edit',
     loadComponent: () => import('./auth/profile-edit/profile-edit').then(m => m.ProfileEditComponent) // Temporaire

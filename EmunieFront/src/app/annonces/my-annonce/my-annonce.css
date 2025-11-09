@@ -1,0 +1,204 @@
+/* Styles pour améliorer la visibilité des composants PrimeNG */
+
+/* Input text */
+::ng-deep .p-inputtext {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #1f2937 !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s !important;
+}
+
+::ng-deep .p-inputtext:hover {
+  border-color: #f97316 !important;
+}
+
+::ng-deep .p-inputtext:focus {
+  outline: none !important;
+  border-color: #f97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1) !important;
+}
+
+::ng-deep .p-inputtext::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Select/Dropdowns */
+::ng-deep .p-select {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s !important;
+}
+
+::ng-deep .p-select:hover {
+  border-color: #f97316 !important;
+}
+
+::ng-deep .p-select.p-focus {
+  outline: none !important;
+  border-color: #f97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1) !important;
+}
+
+::ng-deep .p-select-label {
+  color: #1f2937 !important;
+  padding: 0.75rem 1rem !important;
+}
+
+::ng-deep .p-select-label.p-placeholder {
+  color: #9ca3af !important;
+}
+
+::ng-deep .p-select-overlay {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+::ng-deep .p-select-option {
+  color: #1f2937 !important;
+  padding: 0.75rem 1rem !important;
+}
+
+::ng-deep .p-select-option:hover {
+  background-color: #fff7ed !important;
+  color: #f97316 !important;
+}
+
+/* Tags */
+::ng-deep .p-tag {
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  padding: 0.375rem 0.75rem !important;
+  border-radius: 0.375rem !important;
+}
+
+/* Buttons */
+::ng-deep .p-button {
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  transition: all 0.2s !important;
+}
+
+::ng-deep .p-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+::ng-deep .p-button-outlined {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #1f2937 !important;
+}
+
+::ng-deep .p-button-outlined:hover {
+  background-color: #f3f4f6 !important;
+  border-color: #9ca3af !important;
+}
+
+/* Confirm Dialog */
+::ng-deep .p-confirm-dialog {
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+::ng-deep .p-confirm-dialog .p-dialog-header {
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  border-radius: 0.75rem 0.75rem 0 0 !important;
+}
+
+::ng-deep .p-confirm-dialog .p-dialog-content {
+  background-color: #ffffff !important;
+  color: #374151 !important;
+  padding: 1.5rem !important;
+}
+
+::ng-deep .p-confirm-dialog .p-dialog-footer {
+  background-color: #f9fafb !important;
+  border-top: 1px solid #e5e7eb !important;
+  border-radius: 0 0 0.75rem 0.75rem !important;
+  padding: 1rem 1.5rem !important;
+}
+
+/* Toast */
+::ng-deep .p-toast {
+  opacity: 1 !important;
+}
+
+::ng-deep .p-toast-message {
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+::ng-deep .p-toast-message-success {
+  background-color: #d1fae5 !important;
+  border: 1px solid #34d399 !important;
+  color: #065f46 !important;
+}
+
+::ng-deep .p-toast-message-error {
+  background-color: #fee2e2 !important;
+  border: 1px solid #f87171 !important;
+  color: #991b1b !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-white.rounded-xl {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  ::ng-deep .p-select,
+  ::ng-deep .p-inputtext {
+    font-size: 0.875rem !important;
+  }
+
+  ::ng-deep .p-button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Hover effects pour les cartes */
+.group:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* Style pour les tooltips */
+::ng-deep .p-tooltip {
+  background-color: #1f2937 !important;
+  color: #ffffff !important;
+  border-radius: 0.375rem !important;
+  font-size: 0.75rem !important;
+  padding: 0.5rem 0.75rem !important;
+}
+
+::ng-deep .p-tooltip .p-tooltip-arrow {
+  border-color: #1f2937 !important;
+}
+
+/* Amélioration du line-clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

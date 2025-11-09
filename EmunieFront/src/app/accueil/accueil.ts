@@ -300,35 +300,113 @@ export class Accueil implements OnInit {
   }
 
   /**
-   * Contacter via WhatsApp
+   * ✅ Obtenir le numéro WhatsApp à utiliser
+   * Priorité: whatsapp_number de l'annonce > phone_number du user
    */
-  contactViaWhatsApp(phoneNumber: string, adTitle: string): void {
+  getWhatsAppNumber(ad: any): string | null {
+    // 1. Si l'annonce a un numéro WhatsApp spécifique, l'utiliser
+    if (ad.whatsapp_number) {
+      return ad.whatsapp_number;
+    }
+
+    // 2. Sinon, utiliser le numéro du propriétaire
+    if (ad.user?.phone_number) {
+      return ad.user.phone_number;
+    }
+
+    return null;
+  }
+
+  /**
+   * ✅ Obtenir le numéro de téléphone à utiliser pour appels et SMS
+   * Priorité: phone_number du user > whatsapp_number de l'annonce
+   */
+  getPhoneNumber(ad: any): string | null {
+    // 1. Si le propriétaire a un numéro de téléphone, l'utiliser
+    if (ad.user?.phone_number) {
+      return ad.user.phone_number;
+    }
+
+    // 2. Sinon, utiliser le numéro WhatsApp de l'annonce
+    if (ad.whatsapp_number) {
+      return ad.whatsapp_number;
+    }
+
+    return null;
+  }
+
+  /**
+   * ✅ Contacter via WhatsApp avec message prédéfini
+   */
+  contactViaWhatsApp(ad: any, event?: Event): void {
+    if (event) {
+      event.stopPropagation();
+    }
+
+    const phone = this.getWhatsAppNumber(ad);
+    if (!phone) {
+      alert('Aucun numéro WhatsApp disponible');
+      return;
+    }
+
     // Nettoyer le numéro de téléphone
-    const cleanPhone = phoneNumber.replace(/\D/g, '');
+    const cleanPhone = phone.replace(/\D/g, '');
 
     // Ajouter l'indicatif international si nécessaire
     const internationalPhone = cleanPhone.startsWith('225') ? cleanPhone : '225' + cleanPhone;
 
-    // Créer le message
-    const message = encodeURIComponent(`Bonjour, je suis intéressé(e) par votre annonce: ${adTitle}`);
+    // Message prédéfini
+    const message = `Bonjour,
+
+Je suis intéressé(e) par votre annonce "${ad.title}".
+
+Prix affiché: ${this.formatPrice(ad.price)}
+Catégorie: ${ad.category_display}
+Localisation: ${ad.city_display}
+
+Pouvez-vous me donner plus d'informations ?
+
+Vu sur emunie-market.com`;
+
+    // Encoder le message pour l'URL
+    const encodedMessage = encodeURIComponent(message);
 
     // Ouvrir WhatsApp
-    window.open(`https://wa.me/${internationalPhone}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${internationalPhone}?text=${encodedMessage}`, '_blank');
   }
 
   /**
-   * Appeler le vendeur
+   * ✅ Appeler le vendeur
    */
-  callSeller(phoneNumber: string): void {
-    window.location.href = `tel:${phoneNumber}`;
+  callSeller(ad: any, event?: Event): void {
+    if (event) {
+      event.stopPropagation();
+    }
+
+    const phone = this.getPhoneNumber(ad);
+    if (!phone) {
+      alert('Aucun numéro de téléphone disponible');
+      return;
+    }
+    window.location.href = `tel:${phone}`;
   }
 
   /**
-   * Envoyer un SMS au vendeur
+   * ✅ Envoyer un SMS au vendeur
    */
-  sendSMS(phoneNumber: string, adTitle: string): void {
-    const message = encodeURIComponent(`Bonjour, je suis intéressé(e) par votre annonce: ${adTitle}`);
-    window.location.href = `sms:${phoneNumber}?body=${message}`;
+  sendSMS(ad: any, event?: Event): void {
+    if (event) {
+      event.stopPropagation();
+    }
+
+    const phone = this.getPhoneNumber(ad);
+    if (!phone) {
+      alert('Aucun numéro de téléphone disponible');
+      return;
+    }
+
+    const message = encodeURIComponent(`Bonjour, je suis intéressé(e) par votre annonce: ${ad.title}`);
+    window.location.href = `sms:${phone}?body=${message}`;
   }
 
   /**

@@ -233,25 +233,26 @@ def home_data(request):
     """Données pour la page d'accueil"""
     now = timezone.now()
 
-    # Annonces mises en avant
+    # ========== ANNONCES EN VEDETTE (max 6, affichage aléatoire, NON urgentes) ==========
+    # Afficher TOUTES les annonces actives (sauf urgentes) de façon aléatoire
     featured_ads = Ad.objects.filter(
         status=AdStatus.ACTIVE,
-        is_featured=True,
+        is_urgent=False,  # ✅ Exclure uniquement les annonces urgentes
         expires_at__gt=now
-    ).select_related('user').prefetch_related('images')[:8]
+    ).select_related('user').prefetch_related('images').order_by('?')[:4]  # ✅ Ordre aléatoire, max 6
 
-    # Annonces récentes
+    # ========== ANNONCES RÉCENTES (12 dernières, ordre chronologique) ==========
     recent_ads = Ad.objects.filter(
         status=AdStatus.ACTIVE,
         expires_at__gt=now
     ).select_related('user').prefetch_related('images').order_by('-created_at')[:12]
 
-    # Annonces urgentes
+    # ========== ANNONCES URGENTES (max 6, affichage aléatoire) ==========
     urgent_ads = Ad.objects.filter(
         status=AdStatus.ACTIVE,
         is_urgent=True,
         expires_at__gt=now
-    ).select_related('user').prefetch_related('images')[:6]
+    ).select_related('user').prefetch_related('images').order_by('?')[:4]  # ✅ Ordre aléatoire, max 6
 
     # Statistiques par catégorie
     categories_stats = []

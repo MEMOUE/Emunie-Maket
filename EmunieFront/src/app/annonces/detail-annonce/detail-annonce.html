@@ -236,24 +236,26 @@
               </div>
             </div>
 
-            <!-- Boutons de contact -->
+            <!-- ✅ SECTION MODIFIÉE: Boutons de contact avec nouvelle logique -->
             @if (!isOwner) {
               <div class="space-y-3">
-                @if (ad.whatsapp_number) {
+                <!-- ✅ WhatsApp: priorité whatsapp_number de l'annonce > phone_number du user -->
+                @if (hasWhatsApp()) {
                   <button
-                    (click)="contactViaWhatsApp(ad.whatsapp_number)"
+                    (click)="contactViaWhatsApp()"
                     class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
                     <i class="pi pi-whatsapp text-xl"></i>
                     <span>Contacter sur WhatsApp</span>
                   </button>
                 }
 
-                @if (ad.contact_phone) {
+                <!-- ✅ Téléphone: priorité phone_number du user > whatsapp_number de l'annonce -->
+                @if (hasPhone()) {
                   <button
                     (click)="callSeller()"
                     class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
                     <i class="pi pi-phone text-xl"></i>
-                    <span>{{ ad.contact_phone }}</span>
+                    <span>{{ getPhoneNumber() }}</span>
                   </button>
 
                   <button

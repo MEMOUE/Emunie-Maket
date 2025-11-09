@@ -41,10 +41,16 @@ class AdImageSerializer(serializers.ModelSerializer):
         return value
 
 
+# Modifications à apporter dans EmunieBack/produit/serializers.py
+
+# ✅ MODIFICATION 1: AdListSerializer
+# Remplacer la classe AdListSerializer par celle-ci:
+
 class AdListSerializer(serializers.ModelSerializer):
     """Serializer pour la liste des annonces"""
     user_name = serializers.CharField(source='user.full_name', read_only=True)
     user_avatar = serializers.ImageField(source='user.avatar', read_only=True)
+    user_phone = serializers.CharField(source='user.phone_number', read_only=True)  # ✅ AJOUT
     category_display = serializers.CharField(source='get_category_display', read_only=True)
     city_display = serializers.CharField(source='get_city_display', read_only=True)
     primary_image = serializers.SerializerMethodField()
@@ -57,12 +63,13 @@ class AdListSerializer(serializers.ModelSerializer):
         model = Ad
         fields = (
             'id', 'title', 'slug', 'price', 'currency', 'is_negotiable',
-            'user_name', 'user_avatar', 'category', 'category_display',
+            'user_name', 'user_avatar', 'user_phone', 'category', 'category_display',  # ✅ user_phone ajouté
             'city', 'city_display', 'primary_image', 'images', 'images_count',
             'is_favorited', 'is_featured', 'is_urgent', 'views_count',
             'favorites_count', 'status', 'created_at', 'time_since_published',
-            'expires_at'
+            'expires_at', 'whatsapp_number'  # ✅ whatsapp_number ajouté
         )
+
 
     def get_primary_image(self, obj):
         """Obtenir l'URL de l'image primaire"""

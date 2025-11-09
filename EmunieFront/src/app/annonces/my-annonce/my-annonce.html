@@ -1,0 +1,273 @@
+<div class="min-h-screen bg-gray-50">
+  <!-- Toast pour les messages -->
+  <p-toast></p-toast>
+
+  <!-- Dialog de confirmation -->
+  <p-confirmDialog></p-confirmDialog>
+
+  <!-- Header -->
+  <div class="bg-gradient-to-r from-orange-500 to-green-600 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold mb-2">Mes Annonces</h1>
+      <p class="text-orange-100">
+        Gérez toutes vos annonces en un seul endroit
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Barre d'actions -->
+    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+      <div class="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
+
+        <!-- Recherche -->
+        <div class="flex-1 w-full lg:w-auto">
+          <div class="relative">
+            <i class="pi pi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            <input
+              pInputText
+              [(ngModel)]="searchQuery"
+              (keyup)="applyFilters()"
+              placeholder="Rechercher une annonce..."
+              class="w-full pl-10" />
+          </div>
+        </div>
+
+        <!-- Filtres -->
+        <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+          <!-- Filtre par statut -->
+          <p-select
+            [(ngModel)]="selectedStatus"
+            [options]="statusOptions"
+            optionLabel="label"
+            optionValue="value"
+            (onChange)="applyFilters()"
+            placeholder="Statut"
+            [showClear]="true"
+            styleClass="w-full sm:w-auto">
+          </p-select>
+
+          <!-- Tri -->
+          <p-select
+            [(ngModel)]="sortBy"
+            [options]="sortOptions"
+            optionLabel="label"
+            optionValue="value"
+            (onChange)="applyFilters()"
+            styleClass="w-full sm:w-auto">
+          </p-select>
+
+          <!-- Bouton réinitialiser -->
+          <button
+            pButton
+            icon="pi pi-refresh"
+            label="Réinitialiser"
+            (click)="resetFilters()"
+            class="p-button-outlined"
+            [disabled]="!searchQuery && !selectedStatus && sortBy === '-created_at'">
+          </button>
+        </div>
+      </div>
+
+      <!-- Compteur -->
+      <div class="mt-4 pt-4 border-t border-gray-200">
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-600">
+            <strong class="text-gray-800">{{ filteredAds.length }}</strong> annonce(s) affichée(s)
+            @if (filteredAds.length !== ads.length) {
+              sur <strong class="text-gray-800">{{ ads.length }}</strong> au total
+            }
+          </span>
+
+          <a
+            routerLink="/dashboard/new-ad"
+            class="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all shadow-md hover:shadow-lg">
+            <i class="pi pi-plus"></i>
+            <span>Nouvelle annonce</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    @if (loading) {
+      <div class="text-center py-20">
+        <i class="pi pi-spin pi-spinner text-5xl text-orange-500 mb-4"></i>
+        <p class="text-gray-600 text-lg">Chargement de vos annonces...</p>
+      </div>
+    }
+
+    <!-- Aucune annonce -->
+    @else if (filteredAds.length === 0) {
+      <div class="bg-white rounded-xl shadow-md p-12 text-center">
+        <i class="pi pi-inbox text-6xl text-gray-300 mb-4"></i>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">
+          @if (ads.length === 0) {
+            Aucune annonce
+          } @else {
+            Aucun résultat
+          }
+        </h3>
+        <p class="text-gray-600 mb-6">
+          @if (ads.length === 0) {
+            Vous n'avez pas encore créé d'annonce. Commencez dès maintenant !
+          } @else {
+            Aucune annonce ne correspond à vos critères de recherche.
+          }
+        </p>
+        @if (ads.length === 0) {
+          <a
+            routerLink="/dashboard/new-ad"
+            class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all shadow-md hover:shadow-lg font-semibold">
+            <i class="pi pi-plus"></i>
+            <span>Créer ma première annonce</span>
+          </a>
+        } @else {
+          <button
+            pButton
+            label="Réinitialiser les filtres"
+            icon="pi pi-refresh"
+            (click)="resetFilters()">
+          </button>
+        }
+      </div>
+    }
+
+    <!-- Liste des annonces -->
+    @else {
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (ad of filteredAds; track ad.id) {
+          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all overflow-hidden group">
+
+            <!-- Image -->
+            <div class="relative h-48 overflow-hidden">
+              <img
+                [src]="getImageUrl(ad)"
+                [alt]="ad.title"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer"
+                (click)="viewDetails(ad.id)">
+
+              <!-- Badges -->
+              <div class="absolute top-3 left-3 flex flex-col gap-2">
+                <p-tag
+                  [value]="getStatusLabel(ad.status)"
+                  [severity]="getStatusSeverity(ad.status)">
+                </p-tag>
+
+                @if (ad.is_featured) {
+                  <span class="bg-orange-500 text-white px-2 py-1 rounded text-xs font-bold flex items-center gap-1 w-fit">
+                    <i class="pi pi-star-fill"></i>
+                    Vedette
+                  </span>
+                }
+
+                @if (ad.is_urgent) {
+                  <span class="bg-red-500 text-white px-2 py-1 rounded text-xs font-bold flex items-center gap-1 w-fit">
+                    <i class="pi pi-exclamation-circle"></i>
+                    Urgent
+                  </span>
+                }
+              </div>
+
+              <!-- Badge d'expiration -->
+              @if (isExpired(ad)) {
+                <div class="absolute top-3 right-3">
+                  <span class="bg-yellow-500 text-white px-2 py-1 rounded text-xs font-bold flex items-center gap-1">
+                    <i class="pi pi-clock"></i>
+                    Expirée
+                  </span>
+                </div>
+              }
+            </div>
+
+            <!-- Contenu -->
+            <div class="p-4">
+              <!-- Titre -->
+              <h3
+                class="font-bold text-gray-800 text-lg mb-2 line-clamp-2 cursor-pointer hover:text-orange-600"
+                (click)="viewDetails(ad.id)">
+                {{ ad.title }}
+              </h3>
+
+              <!-- Prix -->
+              <div class="flex items-center justify-between mb-3">
+                <p class="text-orange-600 font-bold text-xl">
+                  {{ formatPrice(ad.price) }}
+                </p>
+                @if (ad.is_negotiable) {
+                  <span class="text-xs text-green-600 font-semibold">
+                    Négociable
+                  </span>
+                }
+              </div>
+
+              <!-- Informations -->
+              <div class="space-y-2 mb-4 text-sm text-gray-600">
+                <div class="flex items-center gap-2">
+                  <i class="pi pi-tag text-orange-500"></i>
+                  <span>{{ ad.category_display }}</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="pi pi-map-marker text-orange-500"></i>
+                  <span>{{ ad.city_display }}</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <i class="pi pi-calendar text-orange-500"></i>
+                  <span>{{ formatDate(ad.created_at) }}</span>
+                </div>
+              </div>
+
+              <!-- Stats -->
+              <div class="flex items-center justify-between text-gray-500 text-xs pt-3 border-t border-gray-100 mb-4">
+                <span class="flex items-center gap-1">
+                  <i class="pi pi-eye"></i>
+                  {{ ad.views_count || 0 }}
+                </span>
+                <span class="flex items-center gap-1">
+                  <i class="pi pi-heart"></i>
+                  {{ ad.favorites_count || 0 }}
+                </span>
+                <span class="flex items-center gap-1">
+                  <i class="pi pi-images"></i>
+                  {{ ad.images_count || 0 }}
+                </span>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex gap-2">
+                <button
+                  pButton
+                  icon="pi pi-eye"
+                  (click)="viewDetails(ad.id)"
+                  class="flex-1 p-button-outlined p-button-sm"
+                  label="Voir"
+                  pTooltip="Voir les détails">
+                </button>
+
+                <button
+                  pButton
+                  icon="pi pi-pencil"
+                  (click)="editAd(ad.id)"
+                  class="flex-1 p-button-sm"
+                  label="Modifier"
+                  pTooltip="Modifier l'annonce"
+                  [style]="{'background': '#3b82f6', 'border-color': '#3b82f6'}">
+                </button>
+
+                <button
+                  pButton
+                  icon="pi pi-trash"
+                  (click)="deleteAd(ad)"
+                  class="p-button-danger p-button-sm"
+                  pTooltip="Supprimer l'annonce">
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>
