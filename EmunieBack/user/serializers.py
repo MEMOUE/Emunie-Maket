@@ -140,3 +140,51 @@ class PhoneVerificationSerializer(serializers.Serializer):
     """Serializer pour la vérification de téléphone"""
     phone_number = serializers.CharField()
     code = serializers.CharField(max_length=6, required=False)
+
+
+# Ajouter ces serializers dans EmunieBack/user/serializers.py
+
+from rest_framework import serializers
+from django.contrib.auth import get_user_model
+from django.contrib.auth.password_validation import validate_password
+
+User = get_user_model()
+
+
+class PasswordResetRequestSerializer(serializers.Serializer):
+    """Serializer pour la demande de réinitialisation"""
+    email = serializers.EmailField(required=True)
+
+    def validate_email(self, value):
+        """Vérifier que l'email existe"""
+        try:
+            User.objects.get(email=value, is_active=True)
+        except User.DoesNotExist:
+            # Ne pas révéler si l'email existe ou non pour des raisons de sécurité
+            # mais retourner une erreur générique
+            pass
+        return value
+
+
+class PasswordResetConfirmSerializer(serializers.Serializer):
+    """Serializer pour confirmer la réinitialisation"""
+    token = serializers.CharField(required=True, max_length=100)
+    new_password = serializers.CharField(
+        required=True,
+        write_only=True,
+        validators=[validate_password]
+    )
+    new_password_confirm = serializers.CharField(required=True, write_only=True)
+
+    def validate(self, attrs):
+        """Vérifier que les mots de passe correspondent"""
+        if attrs['new_password'] != attrs['new_password_confirm']:
+            raise serializers.ValidationError({
+                'new_password_confirm': 'Les mots de passe ne correspondent pas.'
+            })
+        return attrs
+
+
+class PasswordResetVerifyTokenSerializer(serializers.Serializer):
+    """Serializer pour vérifier un token"""
+    token = serializers.CharField(required=True, max_length=100)

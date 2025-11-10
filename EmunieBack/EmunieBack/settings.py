@@ -317,3 +317,68 @@ GOOGLE_REDIRECT_URIS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+
+
+
+
+# À ajouter dans EmunieBack/EmunieBack/settings.py
+
+# ========================================
+# CONFIGURATION EMAIL POUR RÉINITIALISATION MOT DE PASSE
+# ========================================
+
+# URL du frontend (pour les liens de réinitialisation)
+FRONTEND_URL = 'http://localhost:4200'
+
+# Configuration Email (choisir une méthode)
+
+# MÉTHODE 1: Console (Développement) - Affiche les emails dans la console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'noreply@emunie-market.com'
+
+# MÉTHODE 2: Gmail SMTP (Production)
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'votre-email@gmail.com'
+# EMAIL_HOST_PASSWORD = 'votre-mot-de-passe-application'  # Utiliser un mot de passe d'application
+# DEFAULT_FROM_EMAIL = 'Emunie Market <votre-email@gmail.com>'
+
+# MÉTHODE 3: Service Email (ex: SendGrid, Mailgun)
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_HOST_PASSWORD = 'votre-api-key-sendgrid'
+# DEFAULT_FROM_EMAIL = 'Emunie Market <noreply@emunie-market.com>'
+
+# ========================================
+# INSTRUCTIONS POUR GMAIL
+# ========================================
+# 1. Activer la validation en 2 étapes sur votre compte Google
+# 2. Générer un "Mot de passe d'application" :
+#    - Aller sur https://myaccount.google.com/security
+#    - Cliquer sur "Mots de passe d'application"
+#    - Sélectionner "Autre" et nommer "Django Emunie"
+#    - Copier le mot de passe généré dans EMAIL_HOST_PASSWORD
+# 3. Utiliser ce mot de passe d'application (pas votre mot de passe Gmail)
+
+# ========================================
+# VARIABLES D'ENVIRONNEMENT (Recommandé pour Production)
+# ========================================
+# import os
+# from dotenv import load_dotenv
+#
+# load_dotenv()
+#
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
+# EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
+# EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
+# EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+# DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'noreply@emunie-market.com')
+# FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:4200')

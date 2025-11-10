@@ -103,3 +103,42 @@ class PhoneVerificationAdmin(admin.ModelAdmin):
     list_filter = ('is_used', 'created_at', 'expires_at')
     search_fields = ('user__username', 'user__phone_number')
     raw_id_fields = ('user',)
+
+
+# Ajouter dans EmunieBack/user/admin.py
+
+from django.contrib import admin
+from .models import PasswordResetToken
+
+
+@admin.register(PasswordResetToken)
+class PasswordResetTokenAdmin(admin.ModelAdmin):
+    """Administration des tokens de réinitialisation"""
+    list_display = ('user', 'token_preview', 'created_at', 'expires_at', 'is_used', 'is_expired', 'is_valid')
+    list_filter = ('is_used', 'created_at', 'expires_at')
+    search_fields = ('user__username', 'user__email', 'token')
+    raw_id_fields = ('user',)
+    readonly_fields = ('token', 'created_at', 'expires_at', 'is_expired', 'is_valid')
+
+    def token_preview(self, obj):
+        """Afficher un aperçu du token"""
+        return f"{obj.token[:20]}..." if len(obj.token) > 20 else obj.token
+
+    token_preview.short_description = 'Token'
+
+    def is_expired(self, obj):
+        """Afficher si le token a expiré"""
+        return obj.is_expired
+
+    is_expired.short_description = 'Expiré'
+    is_expired.boolean = True
+
+    def is_valid(self, obj):
+        """Afficher si le token est valide"""
+        return obj.is_valid
+
+    is_valid.short_description = 'Valide'
+    is_valid.boolean = True
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).select_related('user')

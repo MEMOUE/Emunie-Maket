@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from . import views, password_reset_views
 
 app_name = 'user'
 
@@ -28,4 +28,9 @@ urlpatterns = [
     path('conversations/start/', views.StartConversationView.as_view(), name='start_conversation'),
     path('conversations/<int:pk>/', views.ConversationDetailView.as_view(), name='conversation_detail'),
     path('conversations/<int:conversation_id>/messages/', views.MessageListCreateView.as_view(), name='conversation_messages'),
+
+
+    path('password/reset/request/', password_reset_views.request_password_reset, name='password_reset_request'),
+    path('password/reset/verify/', password_reset_views.verify_reset_token, name='password_reset_verify'),
+    path('password/reset/confirm/', password_reset_views.confirm_password_reset, name='password_reset_confirm'),
 ]

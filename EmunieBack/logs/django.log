@@ -6116,3 +6116,820 @@ INFO 2025-11-10 10:21:50,332 autoreload 7110 8419303616 Watching for file change
 INFO 2025-11-10 10:21:56,349 basehttp 7110 6156267520 "GET /api/produit/home-data/ HTTP/1.1" 200 13621
 INFO 2025-11-10 10:32:22,627 basehttp 7110 6156267520 "GET /media/ads/images/2025/11/10/035116_Honda_P-NUT_Concept_un_vehicule_urbain_ultracompact.jpg HTTP/1.1" 304 0
 INFO 2025-11-10 10:32:22,627 basehttp 7110 6173093888 "GET /media/ads/images/2025/11/10/home-vehicle_w1308.jpg HTTP/1.1" 304 0
+INFO 2025-11-10 10:47:34,939 basehttp 7110 6156267520 "GET /api/produit/ads/4d393c92-670b-446f-a3d5-e290098cd8d8/ HTTP/1.1" 200 5143
+INFO 2025-11-10 10:47:34,973 basehttp 7110 6156267520 "GET /media/ads/images/2025/11/09/categories-vehicules_izuOX94.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 10:47:34,973 basehttp 7110 13035925504 "GET /media/ads/images/2025/11/10/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 10:47:34,974 basehttp 7110 6173093888 "GET /media/ads/images/2025/11/10/images.jpeg HTTP/1.1" 304 0
+INFO 2025-11-10 10:47:48,287 basehttp 7110 6156267520 "GET /api/produit/ads/4d393c92-670b-446f-a3d5-e290098cd8d8/ HTTP/1.1" 200 5143
+INFO 2025-11-10 10:47:54,484 basehttp 7110 6173093888 "GET /api/produit/ads/4d393c92-670b-446f-a3d5-e290098cd8d8/ HTTP/1.1" 200 5143
+INFO 2025-11-10 10:47:57,495 basehttp 7110 13035925504 "GET /api/produit/home-data/ HTTP/1.1" 200 13415
+INFO 2025-11-10 10:47:57,503 basehttp 7110 6156267520 "GET /media/ads/images/2025/11/09/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 10:49:04,818 basehttp 7110 6156267520 "GET /api/produit/home-data/ HTTP/1.1" 200 13492
+INFO 2025-11-10 10:49:10,887 basehttp 7110 6156267520 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-10 10:49:10,887 basehttp 7110 6173093888 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-10 10:49:10,894 basehttp 7110 13035925504 "GET /api/produit/ads/?category=agroalimentaire&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-11-10 10:49:13,348 basehttp 7110 6156267520 "GET /api/produit/home-data/ HTTP/1.1" 200 13367
+INFO 2025-11-10 10:56:08,213 basehttp 7110 6156267520 "GET /api/produit/home-data/ HTTP/1.1" 200 13557
+INFO 2025-11-10 10:59:36,847 basehttp 7110 6156267520 "GET /api/produit/home-data/ HTTP/1.1" 200 13422
+INFO 2025-11-10 11:01:54,326 basehttp 7110 6156267520 "GET /api/produit/home-data/ HTTP/1.1" 200 13530
+INFO 2025-11-10 16:36:41,013 autoreload 7110 8419303616 /Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py changed, reloading.
+INFO 2025-11-10 16:36:41,444 autoreload 8418 8419303616 Watching for file changes with StatReloader
+INFO 2025-11-10 16:51:20,442 autoreload 8915 8419303616 Watching for file changes with StatReloader
+INFO 2025-11-10 16:51:31,031 basehttp 8915 6200979456 "GET /api/produit/home-data/ HTTP/1.1" 200 13464
+INFO 2025-11-10 16:51:31,044 basehttp 8915 6200979456 "GET /media/ads/images/2025/11/10/035116_Honda_P-NUT_Concept_un_vehicule_urbain_ultracompact.jpg HTTP/1.1" 304 0
+INFO 2025-11-10 16:51:31,046 basehttp 8915 6217805824 "GET /media/ads/images/2025/11/10/home-vehicle_w1308.jpg HTTP/1.1" 304 0
+INFO 2025-11-10 16:51:31,049 basehttp 8915 6251458560 "GET /media/ads/images/2025/11/10/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 16:51:31,049 basehttp 8915 6234632192 "GET /media/ads/images/2025/11/10/images.jpeg HTTP/1.1" 304 0
+INFO 2025-11-10 16:51:31,050 basehttp 8915 6268284928 "GET /media/ads/images/2025/11/09/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 17:15:09,709 basehttp 8915 6200979456 "GET /api/produit/home-data/ HTTP/1.1" 200 13482
+INFO 2025-11-10 17:15:09,719 basehttp 8915 6200979456 "GET /media/ads/images/2025/11/07/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-11-10 17:15:09,720 basehttp 8915 6217805824 "GET /media/ads/images/2025/11/04/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-11-10 17:16:20,805 basehttp 8915 6200979456 "OPTIONS /api/user/password/reset/request/ HTTP/1.1" 200 0
+ERROR 2025-11-10 17:16:20,902 log 8915 6200979456 Internal Server Error: /api/user/password/reset/request/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/password_reset_views.py", line 44, in request_password_reset
+    reset_token = PasswordResetToken.generate_token(user, expiry_hours=24)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py", line 212, in generate_token
+    cls.objects.filter(user=user, is_used=False).update(is_used=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1261, in update
+    rows = query.get_compiler(self.db).execute_sql(ROW_COUNT)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 2060, in execute_sql
+    row_count = super().execute_sql(result_type)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+ERROR 2025-11-10 17:16:20,910 basehttp 8915 6200979456 "POST /api/user/password/reset/request/ HTTP/1.1" 500 225339
+ERROR 2025-11-10 17:16:25,320 log 8915 6200979456 Internal Server Error: /api/user/password/reset/request/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/password_reset_views.py", line 44, in request_password_reset
+    reset_token = PasswordResetToken.generate_token(user, expiry_hours=24)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py", line 212, in generate_token
+    cls.objects.filter(user=user, is_used=False).update(is_used=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1261, in update
+    rows = query.get_compiler(self.db).execute_sql(ROW_COUNT)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 2060, in execute_sql
+    row_count = super().execute_sql(result_type)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+ERROR 2025-11-10 17:16:25,327 basehttp 8915 6200979456 "POST /api/user/password/reset/request/ HTTP/1.1" 500 225339
+ERROR 2025-11-10 17:16:26,383 log 8915 6200979456 Internal Server Error: /api/user/password/reset/request/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/password_reset_views.py", line 44, in request_password_reset
+    reset_token = PasswordResetToken.generate_token(user, expiry_hours=24)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py", line 212, in generate_token
+    cls.objects.filter(user=user, is_used=False).update(is_used=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1261, in update
+    rows = query.get_compiler(self.db).execute_sql(ROW_COUNT)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 2060, in execute_sql
+    row_count = super().execute_sql(result_type)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+ERROR 2025-11-10 17:16:26,391 basehttp 8915 6200979456 "POST /api/user/password/reset/request/ HTTP/1.1" 500 225339
+ERROR 2025-11-10 17:16:27,098 log 8915 6200979456 Internal Server Error: /api/user/password/reset/request/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/password_reset_views.py", line 44, in request_password_reset
+    reset_token = PasswordResetToken.generate_token(user, expiry_hours=24)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py", line 212, in generate_token
+    cls.objects.filter(user=user, is_used=False).update(is_used=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1261, in update
+    rows = query.get_compiler(self.db).execute_sql(ROW_COUNT)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 2060, in execute_sql
+    row_count = super().execute_sql(result_type)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+ERROR 2025-11-10 17:16:27,105 basehttp 8915 6200979456 "POST /api/user/password/reset/request/ HTTP/1.1" 500 225339
+ERROR 2025-11-10 17:16:27,752 log 8915 6200979456 Internal Server Error: /api/user/password/reset/request/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/password_reset_views.py", line 44, in request_password_reset
+    reset_token = PasswordResetToken.generate_token(user, expiry_hours=24)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py", line 212, in generate_token
+    cls.objects.filter(user=user, is_used=False).update(is_used=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1261, in update
+    rows = query.get_compiler(self.db).execute_sql(ROW_COUNT)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 2060, in execute_sql
+    row_count = super().execute_sql(result_type)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+ERROR 2025-11-10 17:16:27,760 basehttp 8915 6200979456 "POST /api/user/password/reset/request/ HTTP/1.1" 500 225339
+ERROR 2025-11-10 17:19:03,741 log 8915 6217805824 Internal Server Error: /api/user/password/reset/request/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/password_reset_views.py", line 44, in request_password_reset
+    reset_token = PasswordResetToken.generate_token(user, expiry_hours=24)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py", line 212, in generate_token
+    cls.objects.filter(user=user, is_used=False).update(is_used=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1261, in update
+    rows = query.get_compiler(self.db).execute_sql(ROW_COUNT)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 2060, in execute_sql
+    row_count = super().execute_sql(result_type)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+ERROR 2025-11-10 17:19:03,749 basehttp 8915 6217805824 "POST /api/user/password/reset/request/ HTTP/1.1" 500 225339
+ERROR 2025-11-10 17:19:06,176 log 8915 6217805824 Internal Server Error: /api/user/password/reset/request/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/password_reset_views.py", line 44, in request_password_reset
+    reset_token = PasswordResetToken.generate_token(user, expiry_hours=24)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py", line 212, in generate_token
+    cls.objects.filter(user=user, is_used=False).update(is_used=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1261, in update
+    rows = query.get_compiler(self.db).execute_sql(ROW_COUNT)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 2060, in execute_sql
+    row_count = super().execute_sql(result_type)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+ERROR 2025-11-10 17:19:06,181 basehttp 8915 6217805824 "POST /api/user/password/reset/request/ HTTP/1.1" 500 225339
+INFO 2025-11-10 17:19:29,937 basehttp 8915 6217805824 "GET /api/produit/home-data/ HTTP/1.1" 200 13660
+INFO 2025-11-10 17:19:29,945 basehttp 8915 6217805824 "GET /media/ads/images/2025/11/09/categories-vehicules_izuOX94.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 17:21:38,336 autoreload 8915 8419303616 /Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py changed, reloading.
+INFO 2025-11-10 17:21:38,749 autoreload 9322 8419303616 Watching for file changes with StatReloader

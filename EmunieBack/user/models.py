@@ -4,6 +4,13 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.core.validators import MinValueValidator, MaxValueValidator, FileExtensionValidator
 from django.core.exceptions import ValidationError
 
+from django.db import models
+from django.contrib.auth import get_user_model
+from django.utils import timezone
+import secrets
+
+
+
 
 def validate_logo_size(file):
     """Valider que la taille du logo ne dépasse pas 1Mo"""
@@ -169,3 +176,46 @@ class PhoneVerification(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField()
     is_used = models.BooleanField(default=False)
+
+
+
+User = get_user_model()
+class PasswordResetToken(models.Model):
+    """Token de réinitialisation de mot de passe"""
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='password_reset_tokens')
+    token = models.CharField(max_length=100, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expires_at = models.DateTimeField()
+    is_used = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"Reset token for {self.user.username}"
+
+    @property
+    def is_expired(self):
+        """Vérifier si le token a expiré"""
+        return timezone.now() > self.expires_at
+
+    @property
+    def is_valid(self):
+        """Vérifier si le token est valide (non utilisé et non expiré)"""
+        return not self.is_used and not self.is_expired
+
+    @classmethod
+    def generate_token(cls, user, expiry_hours=24):
+        """Générer un nouveau token de réinitialisation"""
+        # Invalider tous les tokens précédents
+        cls.objects.filter(user=user, is_used=False).update(is_used=True)
+
+        # Créer un nouveau token
+        token = secrets.token_urlsafe(32)
+        expires_at = timezone.now() + timezone.timedelta(hours=expiry_hours)
+
+        return cls.objects.create(
+            user=user,
+            token=token,
+            expires_at=expires_at
+        )

@@ -5,6 +5,8 @@ import { Register } from './auth/register/register';
 import { authGuard } from './guard/auth.guard';
 import {ActivatePremium} from './annonces/activate-premium/activate-premium';
 import {MyAnnonce} from './annonces/my-annonce/my-annonce';
+import {ForgotPasswordComponent} from './auth/forgot-password/forgot-password';
+import {ResetPasswordComponent} from './auth/reset-password/reset-password';
 
 export const routes: Routes = [
   {
@@ -106,6 +108,17 @@ export const routes: Routes = [
     path: 'search',
     loadComponent: () => import('./research-coponent/research-coponent').then(m => m.ResearchCoponent)
   },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
+    title: 'Mot de passe oublié - Emunie Market'
+  },
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent,
+    title: 'Réinitialiser le mot de passe - Emunie Market'
+  },
+
 
   // Route 404
   {
