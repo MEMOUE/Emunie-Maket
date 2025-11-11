@@ -6933,3 +6933,155 @@ INFO 2025-11-10 17:19:29,937 basehttp 8915 6217805824 "GET /api/produit/home-dat
 INFO 2025-11-10 17:19:29,945 basehttp 8915 6217805824 "GET /media/ads/images/2025/11/09/categories-vehicules_izuOX94.jpeg.webp HTTP/1.1" 304 0
 INFO 2025-11-10 17:21:38,336 autoreload 8915 8419303616 /Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py changed, reloading.
 INFO 2025-11-10 17:21:38,749 autoreload 9322 8419303616 Watching for file changes with StatReloader
+INFO 2025-11-10 17:26:23,640 autoreload 9553 8419303616 Watching for file changes with StatReloader
+INFO 2025-11-10 17:26:49,680 basehttp 9553 6131331072 "OPTIONS /api/user/password/reset/request/ HTTP/1.1" 200 0
+ERROR 2025-11-10 17:26:49,770 log 9553 6131331072 Internal Server Error: /api/user/password/reset/request/
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/password_reset_views.py", line 44, in request_password_reset
+    reset_token = PasswordResetToken.generate_token(user, expiry_hours=24)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/user/models.py", line 211, in generate_token
+    cls.objects.filter(user=user, is_used=False).update(is_used=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/query.py", line 1261, in update
+    rows = query.get_compiler(self.db).execute_sql(ROW_COUNT)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 2060, in execute_sql
+    row_count = super().execute_sql(result_type)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/django/db/backends/mysql/base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 826, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/memouekone/projets/Emunie-Maket/EmunieBack/env/lib/python3.13/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'emunie_db.user_passwordresettoken' doesn't exist")
+ERROR 2025-11-10 17:26:49,775 basehttp 9553 6131331072 "POST /api/user/password/reset/request/ HTTP/1.1" 500 225339
+INFO 2025-11-10 17:27:21,654 basehttp 9553 6148157440 "GET /api/produit/home-data/ HTTP/1.1" 200 13389
+INFO 2025-11-10 17:28:23,691 basehttp 9553 6148157440 "GET /api/produit/home-data/ HTTP/1.1" 200 13526
+INFO 2025-11-10 17:28:44,836 basehttp 9553 6148157440 "GET /api/produit/ads/4d393c92-670b-446f-a3d5-e290098cd8d8/ HTTP/1.1" 200 5146
+INFO 2025-11-10 17:28:51,961 basehttp 9553 6148157440 "GET /api/produit/ads/697f9f99-b3af-4253-8005-8c38b441aa49/ HTTP/1.1" 200 5168
+INFO 2025-11-10 17:28:56,101 basehttp 9553 6148157440 "GET /api/produit/ads/4d393c92-670b-446f-a3d5-e290098cd8d8/ HTTP/1.1" 200 5146
+INFO 2025-11-10 17:28:57,842 basehttp 9553 6148157440 "GET /api/produit/home-data/ HTTP/1.1" 200 13465
+INFO 2025-11-10 19:25:59,623 autoreload 9753 8419303616 Watching for file changes with StatReloader
+INFO 2025-11-10 19:51:00,357 basehttp 9753 6197620736 "GET /api/produit/home-data/ HTTP/1.1" 200 13449
+INFO 2025-11-10 19:51:00,368 basehttp 9753 6197620736 "GET /media/ads/images/2025/11/09/categories-vehicules_izuOX94.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 19:51:00,369 basehttp 9753 6231273472 "GET /media/ads/images/2025/11/10/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 19:51:00,370 basehttp 9753 6214447104 "GET /media/ads/images/2025/11/10/images.jpeg HTTP/1.1" 304 0
+INFO 2025-11-10 19:51:00,370 basehttp 9753 6248099840 "GET /media/ads/images/2025/11/09/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 19:53:40,979 basehttp 9753 6197620736 "GET /api/produit/home-data/ HTTP/1.1" 200 13513
+INFO 2025-11-10 19:53:40,988 basehttp 9753 6197620736 "GET /media/ads/images/2025/11/10/home-vehicle_w1308.jpg HTTP/1.1" 304 0
+INFO 2025-11-10 21:37:53,661 basehttp 9753 6197620736 "GET /api/produit/categories/ HTTP/1.1" 200 715
+INFO 2025-11-10 21:37:53,664 basehttp 9753 6214447104 "GET /api/produit/cities/ HTTP/1.1" 200 865
+INFO 2025-11-10 21:37:53,709 basehttp 9753 6231273472 "GET /api/produit/ads/?ordering=-created_at HTTP/1.1" 200 7995
+INFO 2025-11-10 21:37:53,715 basehttp 9753 6197620736 "GET /media/ads/images/2025/11/10/035116_Honda_P-NUT_Concept_un_vehicule_urbain_ultracompact.jpg HTTP/1.1" 304 0
+INFO 2025-11-10 21:38:21,436 basehttp 9753 6214447104 "GET /api/produit/ads/?category=vehicules&ordering=-created_at HTTP/1.1" 200 6977
+INFO 2025-11-10 21:38:29,857 basehttp 9753 6214447104 "GET /api/produit/ads/?category=emploi_stages&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-11-10 21:38:39,726 basehttp 9753 6214447104 "GET /api/produit/ads/?category=immobilier&ordering=-created_at HTTP/1.1" 200 52
+INFO 2025-11-10 21:38:44,568 basehttp 9753 6214447104 "GET /api/produit/ads/?category=mode_beaute&ordering=-created_at HTTP/1.1" 200 1069
+INFO 2025-11-10 21:38:46,120 basehttp 9753 6214447104 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-10 21:41:57,247 autoreload 9753 8419303616 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py changed, reloading.
+INFO 2025-11-10 21:41:57,635 autoreload 10293 8419303616 Watching for file changes with StatReloader
+INFO 2025-11-10 21:42:05,490 basehttp 10293 6160838656 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-10 21:42:18,628 autoreload 10293 8419303616 /Users/memouekone/projets/Emunie-Maket/EmunieBack/produit/views.py changed, reloading.
+INFO 2025-11-10 21:42:18,963 autoreload 10316 8419303616 Watching for file changes with StatReloader
+INFO 2025-11-10 21:45:24,864 basehttp 10316 6133657600 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-10 21:45:27,191 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13424
+INFO 2025-11-10 22:59:43,563 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13429
+INFO 2025-11-10 22:59:43,576 basehttp 10316 6133657600 "GET /media/ads/images/2025/11/10/images.jpeg HTTP/1.1" 304 0
+INFO 2025-11-10 22:59:43,576 basehttp 10316 6167310336 "GET /media/ads/images/2025/11/10/home-vehicle_w1308.jpg HTTP/1.1" 304 0
+INFO 2025-11-10 22:59:43,576 basehttp 10316 6150483968 "GET /media/ads/images/2025/11/10/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 22:59:43,577 basehttp 10316 13035925504 "GET /media/ads/images/2025/11/09/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-10 23:03:21,207 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13427
+INFO 2025-11-10 23:05:26,952 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13317
+INFO 2025-11-10 23:09:43,293 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13410
