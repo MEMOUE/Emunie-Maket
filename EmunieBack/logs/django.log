@@ -7085,3 +7085,29 @@ INFO 2025-11-10 22:59:43,577 basehttp 10316 13035925504 "GET /media/ads/images/2
 INFO 2025-11-10 23:03:21,207 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13427
 INFO 2025-11-10 23:05:26,952 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13317
 INFO 2025-11-10 23:09:43,293 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13410
+INFO 2025-11-11 11:38:05,389 basehttp 10316 6133657600 "GET /api/produit/ads/607ff44f-48db-4096-a128-39372915aafe/ HTTP/1.1" 200 1208
+INFO 2025-11-11 11:38:10,634 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13537
+INFO 2025-11-11 11:38:10,645 basehttp 10316 6133657600 "GET /media/ads/images/2025/11/10/035116_Honda_P-NUT_Concept_un_vehicule_urbain_ultracompact.jpg HTTP/1.1" 304 0
+INFO 2025-11-11 11:38:10,647 basehttp 10316 6150483968 "GET /media/ads/images/2025/11/10/home-vehicle_w1308.jpg HTTP/1.1" 304 0
+INFO 2025-11-11 11:38:10,648 basehttp 10316 6167310336 "GET /media/ads/images/2025/11/09/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-11 11:38:10,648 basehttp 10316 13035925504 "GET /media/ads/images/2025/11/07/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-11-11 11:38:16,139 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13542
+INFO 2025-11-11 11:38:16,147 basehttp 10316 6150483968 "GET /media/ads/images/2025/11/09/categories-vehicules_izuOX94.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-11 11:38:16,147 basehttp 10316 6167310336 "GET /media/ads/images/2025/11/04/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 304 0
+INFO 2025-11-11 11:38:16,151 basehttp 10316 13035925504 "GET /media/ads/images/2025/11/10/images.jpeg HTTP/1.1" 304 0
+INFO 2025-11-12 17:19:21,374 basehttp 10316 6133657600 "GET /admin/produit/ad/ HTTP/1.1" 302 0
+WARNING 2025-11-12 17:19:21,375 log 10316 6150483968 Not Found: /apple-touch-icon-precomposed.png
+WARNING 2025-11-12 17:19:21,375 log 10316 6167310336 Not Found: /apple-touch-icon.png
+WARNING 2025-11-12 17:19:21,375 log 10316 13035925504 Not Found: /favicon.ico
+WARNING 2025-11-12 17:19:21,376 basehttp 10316 6150483968 "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 4363
+WARNING 2025-11-12 17:19:21,376 basehttp 10316 6167310336 "GET /apple-touch-icon.png HTTP/1.1" 404 4327
+WARNING 2025-11-12 17:19:21,376 basehttp 10316 13035925504 "GET /favicon.ico HTTP/1.1" 404 4300
+INFO 2025-11-12 17:19:21,394 basehttp 10316 6133657600 "GET /admin/login/?next=/admin/produit/ad/ HTTP/1.1" 200 4246
+INFO 2025-11-12 17:19:21,497 basehttp 10316 6150483968 - Broken pipe from ('127.0.0.1', 52390)
+INFO 2025-11-12 17:19:21,498 basehttp 10316 6133657600 - Broken pipe from ('127.0.0.1', 52389)
+INFO 2025-11-12 17:19:23,744 basehttp 10316 6150483968 "GET /media/ads/images/2025/11/09/categories-vehicules_izuOX94.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-12 17:19:23,901 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13536
+INFO 2025-11-12 17:19:23,908 basehttp 10316 6133657600 "GET /media/ads/images/2025/11/10/035116_Honda_P-NUT_Concept_un_vehicule_urbain_ultracompact.jpg HTTP/1.1" 304 0
+INFO 2025-11-12 17:19:23,908 basehttp 10316 6150483968 "GET /media/ads/images/2025/11/07/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 304 0
+INFO 2025-11-12 17:19:23,909 basehttp 10316 6167310336 "GET /media/ads/images/2025/11/10/images.jpeg HTTP/1.1" 304 0
+INFO 2025-11-12 17:19:23,909 basehttp 10316 13035925504 "GET /media/ads/images/2025/11/09/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
