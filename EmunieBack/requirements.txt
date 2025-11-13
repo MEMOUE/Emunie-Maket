@@ -7,10 +7,9 @@ Pillow>=10.0.0
 phonenumbers>=8.13.0
 django-phonenumber-field>=7.1.0
 python-decouple>=3.8
-psycopg2-binary
+mysqlclient
 gunicorn
 whitenoise
-
 
 django-allauth==0.57.0
 dj-rest-auth==5.0.2
