@@ -111,12 +111,12 @@ export const routes: Routes = [
   {
     path: 'forgot-password',
     component: ForgotPasswordComponent,
-    title: 'Mot de passe oublié - Emunie Market'
+    title: 'Mot de passe oublié - Éburnie Market'
   },
   {
     path: 'reset-password',
     component: ResetPasswordComponent,
-    title: 'Réinitialiser le mot de passe - Emunie Market'
+    title: 'Réinitialiser le mot de passe - Éburnie Market'
   },
 
 

@@ -366,7 +366,7 @@ Localisation: ${ad.city_display}
 
 Pouvez-vous me donner plus d'informations ?
 
-Vu sur emunie-market.com`;
+Vu sur Éburnie-market.com`;
 
     // Encoder le message pour l'URL
     const encodedMessage = encodeURIComponent(message);

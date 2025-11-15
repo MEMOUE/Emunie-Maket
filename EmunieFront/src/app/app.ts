@@ -21,7 +21,7 @@ import { Subscription } from 'rxjs';
   styleUrl: './app.css'
 })
 export class App implements OnInit, OnDestroy {
-  protected readonly title = signal('Emunie-Market');
+  protected readonly title = signal('Éburnie-Market');
   protected activeTab = signal('accueil');
   protected mobileMenuOpen = signal(false);
   protected searchQuery = signal('');

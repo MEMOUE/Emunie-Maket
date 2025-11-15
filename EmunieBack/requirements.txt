@@ -10,7 +10,7 @@ python-decouple>=3.8
 mysqlclient
 gunicorn
 whitenoise
-
+pymysql
 django-allauth==0.57.0
 dj-rest-auth==5.0.2
 djangorestframework-simplejwt
