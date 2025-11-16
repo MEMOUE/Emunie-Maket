@@ -7190,3 +7190,5 @@ INFO 2025-11-16 07:03:25,656 basehttp 5069 6129577984 "GET /api/produit/home-dat
 INFO 2025-11-16 07:05:11,336 basehttp 5069 6129577984 "GET /api/produit/home-data/ HTTP/1.1" 200 13588
 INFO 2025-11-16 07:05:30,344 basehttp 5069 6129577984 "GET /api/produit/home-data/ HTTP/1.1" 200 13477
 INFO 2025-11-16 07:05:42,457 basehttp 5069 6129577984 "GET /api/produit/home-data/ HTTP/1.1" 200 13477
+INFO 2025-11-16 07:34:42,667 autoreload 5069 8304419008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/EmunieBack/settings.py changed, reloading.
+INFO 2025-11-16 07:34:43,065 autoreload Watching for file changes with StatReloader
