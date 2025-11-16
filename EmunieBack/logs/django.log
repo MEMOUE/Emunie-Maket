@@ -7176,3 +7176,17 @@ INFO 2025-11-13 20:08:26,016 basehttp 10316 6151057408 "GET /api/produit/my-ads/
 INFO 2025-11-13 20:09:27,953 basehttp 10316 6133657600 "GET /api/produit/my-ads/ HTTP/1.1" 200 6944
 INFO 2025-11-13 20:09:54,637 basehttp 10316 6133657600 "POST /api/auth/logout/ HTTP/1.1" 200 34
 INFO 2025-11-13 20:09:54,701 basehttp 10316 6133657600 "GET /api/produit/home-data/ HTTP/1.1" 200 13496
+INFO 2025-11-16 07:03:04,128 autoreload 5069 8304419008 Watching for file changes with StatReloader
+INFO 2025-11-16 07:03:11,693 basehttp 5069 6129577984 "GET /api/produit/home-data/ HTTP/1.1" 200 13614
+INFO 2025-11-16 07:03:11,709 basehttp 5069 6146404352 "GET /media/ads/images/2025/11/09/categories-vehicules_izuOX94.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-16 07:03:11,713 basehttp 5069 6163230720 "GET /media/ads/images/2025/11/10/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-16 07:03:11,721 basehttp 5069 6180057088 "GET /media/ads/images/2025/11/10/035116_Honda_P-NUT_Concept_un_vehicule_urbain_ultracompact.jpg HTTP/1.1" 304 0
+INFO 2025-11-16 07:03:11,722 basehttp 5069 6129577984 "GET /media/ads/images/2025/11/04/E66F8AA4-3A05-4346-91E5-AF0D63B8FA5A.jpeg HTTP/1.1" 200 84356
+INFO 2025-11-16 07:03:11,724 basehttp 5069 6196883456 "GET /media/ads/images/2025/11/09/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-16 07:03:20,660 basehttp 5069 6146404352 "GET /api/produit/ads/fd6999b6-cafc-45d1-bec1-5f5e5070d684/ HTTP/1.1" 200 5136
+INFO 2025-11-16 07:03:20,687 basehttp 5069 6180057088 "GET /media/ads/images/2025/11/10/home-vehicle_w1308.jpg HTTP/1.1" 304 0
+INFO 2025-11-16 07:03:20,687 basehttp 5069 6163230720 "GET /media/ads/images/2025/11/10/images.jpeg HTTP/1.1" 304 0
+INFO 2025-11-16 07:03:25,656 basehttp 5069 6129577984 "GET /api/produit/home-data/ HTTP/1.1" 200 13450
+INFO 2025-11-16 07:05:11,336 basehttp 5069 6129577984 "GET /api/produit/home-data/ HTTP/1.1" 200 13588
+INFO 2025-11-16 07:05:30,344 basehttp 5069 6129577984 "GET /api/produit/home-data/ HTTP/1.1" 200 13477
+INFO 2025-11-16 07:05:42,457 basehttp 5069 6129577984 "GET /api/produit/home-data/ HTTP/1.1" 200 13477

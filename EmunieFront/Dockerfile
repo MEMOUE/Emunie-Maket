@@ -1,39 +1,19 @@
-# ========================================
-# ÉTAPE 1: BUILD
-# ========================================
-FROM node:20-alpine as build
+FROM node:20-slim as build
 
 WORKDIR /app
 
-# Copier package.json et package-lock.json
+RUN npm cache verify && npm cache clean --force
+
 COPY package*.json ./
+RUN npm install --legacy-peer-deps --no-audit --no-fund --prefer-online
 
-# Installer les dépendances
-RUN npm ci --only=production
-
-# Copier le code source
 COPY . .
 
-# Build Angular en mode production
-RUN npm run build -- --configuration production --output-path=dist
+RUN npm install -g @angular/cli
+RUN npm install @angular/animations @angular/core @angular/common --save
 
-# ========================================
-# ÉTAPE 2: NGINX
-# ========================================
+# Build Angular en production sans bloquer pour le budget
+RUN ng build EmunieFront --configuration production
+
 FROM nginx:alpine
-
-# Copier la configuration Nginx personnalisée
-COPY nginx-angular.conf /etc/nginx/conf.d/default.conf
-
-# Copier les fichiers buildés depuis l'étape précédente
-COPY --from=build /app/dist /usr/share/nginx/html
-
-# Exposer le port 80
-EXPOSE 80
-
-# Healthcheck
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD wget --quiet --tries=1 --spider http://localhost/ || exit 1
-
-# Démarrer Nginx
-CMD ["nginx", "-g", "daemon off;"]
+COPY --from=build /app/dist/EmunieFront /usr/share/nginx/html
