@@ -7192,3 +7192,17 @@ INFO 2025-11-16 07:05:30,344 basehttp 5069 6129577984 "GET /api/produit/home-dat
 INFO 2025-11-16 07:05:42,457 basehttp 5069 6129577984 "GET /api/produit/home-data/ HTTP/1.1" 200 13477
 INFO 2025-11-16 07:34:42,667 autoreload 5069 8304419008 /Users/memouekone/projets/Emunie-Maket/EmunieBack/EmunieBack/settings.py changed, reloading.
 INFO 2025-11-16 07:34:43,065 autoreload Watching for file changes with StatReloader
+INFO 2025-11-16 07:56:05,523 autoreload /Users/memouekone/projets/Emunie-Maket/EmunieBack/EmunieBack/settings.py changed, reloading.
+INFO 2025-11-16 07:56:05,907 autoreload 6659 8304419008 Watching for file changes with StatReloader
+INFO 2025-11-18 09:44:34,406 basehttp 6659 6199521280 "GET /api/produit/home-data/ HTTP/1.1" 200 13518
+INFO 2025-11-18 09:44:34,419 basehttp 6659 6250000384 "GET /media/ads/images/2025/11/09/categories-vehicules.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-18 09:44:34,419 basehttp 6659 6233174016 "GET /media/ads/images/2025/11/10/035116_Honda_P-NUT_Concept_un_vehicule_urbain_ultracompact.jpg HTTP/1.1" 304 0
+INFO 2025-11-18 09:44:34,419 basehttp 6659 6266826752 "GET /media/ads/images/2025/11/09/categories-vehicules_izuOX94.jpeg.webp HTTP/1.1" 304 0
+INFO 2025-11-18 09:44:34,419 basehttp 6659 6216347648 "GET /media/ads/images/2025/11/10/images.jpeg HTTP/1.1" 304 0
+INFO 2025-11-18 09:44:34,421 basehttp 6659 6199521280 "GET /media/ads/images/2025/11/07/467F26B0-2051-4969-AB92-F5314755A883.jpeg HTTP/1.1" 200 40591
+INFO 2025-11-18 10:07:32,601 basehttp 6659 6199521280 "GET /api/produit/home-data/ HTTP/1.1" 200 13477
+INFO 2025-11-18 10:07:48,756 basehttp 6659 6199521280 "GET /api/produit/home-data/ HTTP/1.1" 200 13366
+INFO 2025-11-18 10:31:04,388 basehttp 6659 6199521280 "GET /api/produit/home-data/ HTTP/1.1" 200 13434
+INFO 2025-11-18 10:31:08,741 basehttp 6659 6199521280 "GET /api/produit/home-data/ HTTP/1.1" 200 13539
+INFO 2025-11-18 10:32:17,106 basehttp 6659 6199521280 "GET /api/produit/home-data/ HTTP/1.1" 200 13597
+INFO 2025-11-18 10:32:20,348 basehttp 6659 6199521280 "GET /api/produit/home-data/ HTTP/1.1" 200 13372

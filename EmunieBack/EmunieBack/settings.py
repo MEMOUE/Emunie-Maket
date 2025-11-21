@@ -264,7 +264,6 @@ LOGGING = {
         'level': 'INFO',
     },
 }
-
 # Créer le dossier logs
 logs_dir = BASE_DIR / 'logs'
 if not os.path.exists(logs_dir):
