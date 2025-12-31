@@ -1,77 +1,19 @@
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-orange-500 via-orange-600 to-green-600 text-white">
-  <div class="max-w-7xl mx-auto px-4 py-20">
-    <div class="text-center">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-        Bienvenue sur Éburnie-Market
-      </h1>
-      <p class="text-xl md:text-2xl mb-8 text-orange-100 max-w-3xl mx-auto">
-        La première marketplace 100% ivoirienne tout acheter et tout vendre simplement
-      </p>
-    </div>
-  </div>
-</section>
+<!--<section class="bg-gradient-to-br from-orange-500 via-orange-600 to-green-600 text-white">-->
+<!--  <div class="max-w-7xl mx-auto px-4 py-20">-->
+<!--    <div class="text-center">-->
+<!--      <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">-->
+<!--        Bienvenue sur Éburnie-Market-->
+<!--      </h1>-->
+<!--      <p class="text-xl md:text-2xl mb-8 text-orange-100 max-w-3xl mx-auto">-->
+<!--        La première marketplace 100% ivoirienne tout acheter et tout vendre simplement-->
+<!--      </p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 
 <!-- Catégories Populaires -->
-<section class="py-16 bg-gray-50 overflow-visible">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-        Catégories Populaires
-      </h2>
-      <p class="text-gray-600 text-lg">
-        Explorez nos catégories les plus recherchées
-      </p>
-    </div>
 
-    @if (loading) {
-      <div class="text-center py-12">
-        <i class="pi pi-spin pi-spinner text-4xl text-orange-500"></i>
-        <p class="text-gray-600 mt-4">Chargement des catégories...</p>
-      </div>
-    } @else {
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 pb-8">
-        @for (category of categories; track category.value) {
-          <div
-            (click)="viewCategoryAds(category.value)"
-            class="relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all cursor-pointer group p-6 hover:scale-105 hover:z-50">
-            <div class="bg-gradient-to-br {{ category.color }} w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <i class="pi {{ category.icon }} text-3xl text-white"></i>
-            </div>
-            <h3 class="font-bold text-gray-800 text-lg mb-1">{{ category.name }}</h3>
-            <p class="text-gray-500 text-sm mb-3">{{ category.count }} annonces</p>
-
-            <!-- Indicateur de sous-catégories -->
-            <div class="flex items-center gap-1 text-orange-500 text-xs font-semibold">
-              <i class="pi pi-angle-down"></i>
-              <span>{{ category.subcategories.length }} sous-catégories</span>
-            </div>
-
-            <!-- Dropdown des sous-catégories au hover -->
-            <div class="category-dropdown absolute left-0 right-0 top-full mt-2 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 max-h-96 overflow-y-auto">
-              <div class="p-4">
-                <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
-                  <i class="pi {{ category.icon }} text-orange-500"></i>
-                  {{ category.name }}
-                </h4>
-                <ul class="space-y-2">
-                  @for (subcategory of category.subcategories; track subcategory) {
-                    <li>
-                      <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-orange-500 hover:bg-orange-50 px-3 py-2 rounded-lg transition-colors group/item">
-                        <i class="pi pi-chevron-right text-xs group-hover/item:translate-x-1 transition-transform"></i>
-                        <span class="text-sm">{{ subcategory }}</span>
-                      </a>
-                    </li>
-                  }
-                </ul>
-              </div>
-            </div>
-          </div>
-        }
-      </div>
-    }
-  </div>
-</section>
 
 <!-- Annonces en Vedette -->
 <section class="py-16 bg-white">
@@ -273,6 +215,66 @@
     </div>
   </section>
 }
+
+<section class="py-16 bg-gray-50 overflow-visible">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        Catégories Populaires
+      </h2>
+      <p class="text-gray-600 text-lg">
+        Explorez nos catégories les plus recherchées
+      </p>
+    </div>
+
+    @if (loading) {
+      <div class="text-center py-12">
+        <i class="pi pi-spin pi-spinner text-4xl text-orange-500"></i>
+        <p class="text-gray-600 mt-4">Chargement des catégories...</p>
+      </div>
+    } @else {
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 pb-8">
+        @for (category of categories; track category.value) {
+          <div
+            (click)="viewCategoryAds(category.value)"
+            class="relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all cursor-pointer group p-6 hover:scale-105 hover:z-50">
+            <div class="bg-gradient-to-br {{ category.color }} w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <i class="pi {{ category.icon }} text-3xl text-white"></i>
+            </div>
+            <h3 class="font-bold text-gray-800 text-lg mb-1">{{ category.name }}</h3>
+            <p class="text-gray-500 text-sm mb-3">{{ category.count }} annonces</p>
+
+            <!-- Indicateur de sous-catégories -->
+            <div class="flex items-center gap-1 text-orange-500 text-xs font-semibold">
+              <i class="pi pi-angle-down"></i>
+              <span>{{ category.subcategories.length }} sous-catégories</span>
+            </div>
+
+            <!-- Dropdown des sous-catégories au hover -->
+            <div class="category-dropdown absolute left-0 right-0 top-full mt-2 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 max-h-96 overflow-y-auto">
+              <div class="p-4">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <i class="pi {{ category.icon }} text-orange-500"></i>
+                  {{ category.name }}
+                </h4>
+                <ul class="space-y-2">
+                  @for (subcategory of category.subcategories; track subcategory) {
+                    <li>
+                      <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-orange-500 hover:bg-orange-50 px-3 py-2 rounded-lg transition-colors group/item">
+                        <i class="pi pi-chevron-right text-xs group-hover/item:translate-x-1 transition-transform"></i>
+                        <span class="text-sm">{{ subcategory }}</span>
+                      </a>
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
 
 <!-- Pourquoi nous choisir -->
 <section class="py-16 bg-gradient-to-br from-orange-50 to-green-50">

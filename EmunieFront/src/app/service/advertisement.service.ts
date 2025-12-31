@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Advertisement, PaymentMethod, PaymentResponse } from '../model/advertisement.model';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdvertisementService {
-  private baseUrl = 'http://localhost:8000/api/publicite/';
-  private monetisationUrl = 'http://localhost:8000/api/monetisation/';
+  private baseUrl = environment.apiUrl + 'publicite/';
+  private monetisationUrl = environment.apiUrl + 'monetisation/';
+
 
   constructor(private http: HttpClient) {}
 
