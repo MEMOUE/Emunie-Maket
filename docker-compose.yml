@@ -19,6 +19,21 @@ services:
       timeout: 20s
       retries: 10
 
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: user_emunie
+      PMA_PASSWORD: Emunie@2025
+      MYSQL_ROOT_PASSWORD: RootEmunie@2025
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
   backend:
     build: ./EmunieBack
     container_name: django_backend
@@ -26,17 +41,20 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    env_file:
+      - .env
     environment:
-      DB_NAME: Emunie_db
-      DB_USER: user_emunie
-      DB_PASSWORD: Emunie@2025
-      DB_HOST: db
-      DB_PORT: 3306
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
     expose:
       - "8000"
     volumes:
       - ./EmunieBack:/app
       - static_volume:/app/staticfiles
+      - media_volume:/app/media  # ✅ AJOUTER CETTE LIGNE
 
   frontend:
     build: ./EmunieFront
@@ -54,8 +72,16 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
       - static_volume:/app/staticfiles
+      - media_volume:/app/media  # ✅ DÉJÀ PRÉSENT
     ports:
       - "80:80"
       - "443:443"
     depends_on:
       - backend
+      - frontend
+
+# Déclaration des volumes
+volumes:
+  db_data:
+  static_volume:
+  media_volume:

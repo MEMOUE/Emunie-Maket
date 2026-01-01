@@ -1,11 +1,13 @@
 FROM python:3.11-slim
 
 WORKDIR /app
+
 # Installer les dépendances système pour mysqlclient
 RUN apt-get update && apt-get install -y \
     default-libmysqlclient-dev \
     gcc \
     pkg-config \
+    netcat-openbsd \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
@@ -13,8 +15,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Collecte des fichiers statiques
-RUN python manage.py collectstatic --noinput
+# Créer le dossier pour les fichiers statiques
+RUN mkdir -p /app/staticfiles /app/media /app/logs
 
-CMD ["gunicorn", "EmunieBack.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Script de démarrage
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 
+ENTRYPOINT ["/docker-entrypoint.sh"]
